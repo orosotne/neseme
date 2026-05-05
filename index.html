@@ -1,0 +1,3148 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#111111" />
+  <meta name="format-detection" content="telephone=no" />
+  <title>Neseme — XL doprava, výnos a montáž | Bratislava a okolie</title>
+  <meta name="description" content="Neseme veľké veci až k vám domov. Doprava, výnos a montáž bielej techniky, nábytku a XL zásielok po Bratislave a okolí. Pre domácnosti aj e-shopy." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;700;900&family=Inter:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ============================================================
+       SWOOSH BOLD — DESIGN TOKENS
+       ============================================================ */
+    :root {
+      --c-primary: #111111;
+      --c-primary-hover: #292929;
+      --c-secondary: #FA5400;
+      --c-neutral: #707072;
+      --c-bg: #FFFFFF;
+      --c-surface: #F5F5F5;
+      --c-text-primary: #111111;
+      --c-text-secondary: #707072;
+      --c-border: #E5E5E5;
+      --c-success: #128A09;
+      --c-warning: #FFC107;
+      --c-error: #D43F21;
+
+      --font-display: 'Jost', system-ui, sans-serif;
+      --font-body: 'Inter', system-ui, sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+
+      --shadow-card-hover: 0 4px 12px rgba(0, 0, 0, 0.08);
+      --shadow-nav: 0 2px 4px rgba(0, 0, 0, 0.05);
+      --shadow-modal: 0 8px 32px rgba(0, 0, 0, 0.12);
+
+      --radius-sharp: 0;
+      --radius-checkbox: 2px;
+      --radius-tooltip: 4px;
+      --radius-input: 8px;
+      --radius-button: 30px;
+      --radius-pill: 9999px;
+
+      --ease: cubic-bezier(0.22, 1, 0.36, 1);
+      --duration: 200ms;
+
+      --container: 1440px;
+      --container-narrow: 960px;
+    }
+
+    /* ============================================================
+       RESET + BASE
+       ============================================================ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+    body {
+      font-family: var(--font-body);
+      font-size: 15px;
+      line-height: 1.5;
+      color: var(--c-text-primary);
+      background: var(--c-bg);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      -webkit-tap-highlight-color: transparent;
+      overflow-x: hidden;
+      width: 100%;
+    }
+    a, button { -webkit-tap-highlight-color: transparent; touch-action: manipulation; }
+    img, svg { display: block; max-width: 100%; }
+    button { font: inherit; border: none; background: none; cursor: pointer; color: inherit; }
+    a { color: inherit; text-decoration: none; }
+    ::selection { background: var(--c-primary); color: var(--c-bg); }
+
+    /* ============================================================
+       TYPOGRAPHY UTILITIES
+       ============================================================ */
+    .display {
+      font-family: var(--font-display);
+      font-weight: 900;
+      letter-spacing: -0.02em;
+      line-height: 1.02;
+      text-transform: uppercase;
+    }
+    .label {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .meta {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--c-text-secondary);
+    }
+
+    /* ============================================================
+       BUTTONS — Signature 30px rounded rectangle
+       ============================================================ */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      height: 48px;
+      padding: 0 28px;
+      font-family: var(--font-body);
+      font-size: 15px;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      border-radius: var(--radius-button);
+      transition: all var(--duration) var(--ease);
+      white-space: nowrap;
+      cursor: pointer;
+    }
+    .btn-primary {
+      background: var(--c-primary);
+      color: var(--c-bg);
+    }
+    .btn-primary:hover {
+      background: var(--c-primary-hover);
+      transform: translateY(-1px);
+    }
+    .btn-secondary {
+      background: var(--c-bg);
+      color: var(--c-primary);
+      border: 1px solid var(--c-primary);
+    }
+    .btn-secondary:hover {
+      background: var(--c-primary);
+      color: var(--c-bg);
+      transform: translateY(-1px);
+    }
+    .btn-orange {
+      background: var(--c-secondary);
+      color: var(--c-bg);
+    }
+    .btn-orange:hover {
+      background: #E84A00;
+      transform: translateY(-1px);
+    }
+    .btn-ghost-light {
+      background: transparent;
+      color: var(--c-bg);
+      border: 1px solid rgba(255,255,255,0.4);
+    }
+    .btn-ghost-light:hover {
+      background: var(--c-bg);
+      color: var(--c-primary);
+      border-color: var(--c-bg);
+    }
+    .btn-arrow svg { transition: transform var(--duration) var(--ease); }
+    .btn:hover .btn-arrow svg { transform: translateX(4px); }
+
+    /* ============================================================
+       HEADER / NAV
+       ============================================================ */
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 64px;
+      background: var(--c-bg);
+      z-index: 100;
+      transition: box-shadow var(--duration) var(--ease);
+    }
+    .header.scrolled { box-shadow: var(--shadow-nav); }
+    .header-inner {
+      max-width: var(--container);
+      height: 100%;
+      margin: 0 auto;
+      padding: 0 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 32px;
+    }
+    .logo {
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: 24px;
+      letter-spacing: -0.02em;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-shrink: 0;
+    }
+    .logo-mark {
+      display: inline-block;
+      width: 28px;
+      height: 18px;
+      position: relative;
+    }
+    .logo-mark::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: var(--c-primary);
+      clip-path: polygon(0 70%, 35% 0, 100% 0, 100% 30%, 65% 100%, 0 100%);
+    }
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      flex: 1;
+    }
+    .nav-link {
+      font-family: var(--font-body);
+      font-weight: 500;
+      font-size: 15px;
+      color: var(--c-text-primary);
+      transition: color var(--duration) var(--ease);
+      position: relative;
+    }
+    .nav-link:hover { color: var(--c-secondary); }
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -6px;
+      height: 2px;
+      background: var(--c-secondary);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform var(--duration) var(--ease);
+    }
+    .nav-link:hover::after { transform: scaleX(1); }
+    .header-actions { display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
+    .header-phone {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 15px;
+      letter-spacing: 0.01em;
+    }
+    .header-phone svg { color: var(--c-secondary); }
+
+    .menu-toggle { display: none; }
+
+    /* ============================================================
+       HERO
+       ============================================================ */
+    .hero {
+      position: relative;
+      background: var(--c-primary);
+      color: var(--c-bg);
+      padding: 64px 0 0;
+      overflow: hidden;
+    }
+    .hero-grid {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 56px 32px 48px;
+      display: block;
+      min-height: auto;
+      position: relative;
+      z-index: 2;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 3;
+      max-width: 1100px;
+    }
+    .hero-visual { display: none; }
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 12px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--c-secondary);
+      margin-bottom: 24px;
+      animation: slideUp 600ms var(--ease) both;
+    }
+    .hero-eyebrow::before {
+      content: '';
+      display: inline-block;
+      width: 32px;
+      height: 2px;
+      background: var(--c-secondary);
+    }
+    .hero-title {
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: clamp(44px, 7.4vw, 108px);
+      line-height: 1.04;
+      letter-spacing: -0.025em;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+      padding-top: 0.14em;
+      animation: slideUp 700ms 100ms var(--ease) both;
+      hyphens: none;
+      word-spacing: 0.02em;
+    }
+    .hero-title > span,
+    .hero-title .row {
+      display: block;
+      white-space: nowrap;
+    }
+    .hero-title .accent {
+      color: var(--c-secondary);
+      display: inline-block;
+    }
+    .hero-title .strike {
+      position: relative;
+      display: inline-block;
+    }
+    .hero-descriptor {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: clamp(18px, 2vw, 22px);
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      color: var(--c-bg);
+      margin-bottom: 32px;
+      padding-top: 24px;
+      border-top: 2px solid rgba(255,255,255,0.15);
+      animation: slideUp 800ms 200ms var(--ease) both;
+    }
+    .hero-descriptor .pipe {
+      display: inline-block;
+      width: 14px;
+      height: 2px;
+      background: var(--c-secondary);
+      vertical-align: middle;
+      margin: 0 10px 4px;
+    }
+    .hero-body {
+      font-family: var(--font-body);
+      font-size: 17px;
+      line-height: 1.55;
+      color: rgba(255,255,255,0.78);
+      max-width: 520px;
+      margin-bottom: 40px;
+      animation: slideUp 900ms 300ms var(--ease) both;
+    }
+    .hero-cta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 56px;
+      animation: slideUp 1000ms 400ms var(--ease) both;
+    }
+    .hero-cta .btn-primary { background: var(--c-bg); color: var(--c-primary); }
+    .hero-cta .btn-primary:hover { background: #f1f1f1; }
+
+    .hero-marquee {
+      display: flex;
+      gap: 40px;
+      align-items: center;
+      flex-wrap: wrap;
+      padding-top: 40px;
+      border-top: 1px solid rgba(255,255,255,0.15);
+      animation: slideUp 1100ms 500ms var(--ease) both;
+    }
+    .hero-marquee-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-body);
+      font-size: 13px;
+      font-weight: 500;
+      color: rgba(255,255,255,0.7);
+    }
+    .hero-marquee-item svg { color: var(--c-secondary); flex-shrink: 0; }
+
+    .hero-visual {
+      position: relative;
+      aspect-ratio: 1 / 1;
+      animation: slideUp 1000ms 200ms var(--ease) both;
+    }
+    .hero-visual-frame {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background:
+        radial-gradient(ellipse at 70% 50%, rgba(250,84,0,0.1) 0%, transparent 65%),
+        linear-gradient(180deg, #1a1a1a 0%, #0a0a0a 100%);
+    }
+    .hero-visual-frame svg.van-illustration {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+    .van-body { stroke: var(--c-secondary); stroke-width: 5; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+    .van-detail { stroke: var(--c-secondary); stroke-width: 3; fill: none; stroke-linecap: round; }
+    .van-window { fill: rgba(250,84,0,0.08); stroke: var(--c-secondary); stroke-width: 3; }
+    .van-wheel-outer { stroke: var(--c-secondary); stroke-width: 5; fill: #0a0a0a; }
+    .van-wheel-inner { fill: var(--c-secondary); }
+    .van-text {
+      font-family: 'Jost', sans-serif;
+      font-weight: 900;
+      fill: var(--c-secondary);
+      letter-spacing: -0.02em;
+    }
+    .van-grid {
+      stroke: rgba(255,255,255,0.06);
+      stroke-width: 1;
+    }
+    .van-speed { stroke: var(--c-secondary); stroke-width: 4; stroke-linecap: round; }
+    .van-speed-fade { stroke: rgba(250,84,0,0.45); stroke-width: 4; stroke-linecap: round; }
+    .van-speed-faint { stroke: rgba(250,84,0,0.2); stroke-width: 4; stroke-linecap: round; }
+    .van-floor { stroke: rgba(255,255,255,0.2); stroke-width: 1; stroke-dasharray: 4 6; }
+    .van-badge-circle { fill: var(--c-secondary); }
+    .van-badge-text { fill: #0a0a0a; font-family: 'Jost', sans-serif; font-weight: 900; letter-spacing: 0; }
+    .van-tag-line { stroke: rgba(255,255,255,0.3); stroke-width: 1; stroke-dasharray: 3 4; }
+    .van-tag-text { fill: rgba(255,255,255,0.65); font-family: 'JetBrains Mono', monospace; font-size: 13px; letter-spacing: 0.04em; }
+
+    @keyframes vanRoll {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-3px); }
+    }
+    @keyframes wheelSpin {
+      to { transform: rotate(360deg); }
+    }
+    @keyframes speedDash {
+      to { transform: translateX(-30px); opacity: 0; }
+    }
+    .van-group {
+      animation: vanRoll 2.4s ease-in-out infinite;
+      transform-origin: center;
+    }
+    .wheel-group {
+      transform-origin: center;
+      animation: wheelSpin 2s linear infinite;
+    }
+    .speed-line {
+      animation: speedDash 1.2s ease-out infinite;
+    }
+    .speed-line:nth-child(2) { animation-delay: 0.3s; }
+    .speed-line:nth-child(3) { animation-delay: 0.6s; }
+    .speed-line:nth-child(4) { animation-delay: 0.9s; }
+    @media (prefers-reduced-motion: reduce) {
+      .van-group, .wheel-group, .speed-line { animation: none; }
+    }
+    /* Circular performance medallion — overlaps left edge */
+    .hero-medallion {
+      position: absolute;
+      bottom: -36px;
+      left: -64px;
+      width: 220px;
+      height: 220px;
+      z-index: 6;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--c-secondary);
+      color: var(--c-bg);
+      border-radius: 50%;
+      filter: drop-shadow(0 16px 40px rgba(250, 84, 0, 0.4));
+    }
+    .hero-medallion::before {
+      content: '';
+      position: absolute;
+      inset: 8px;
+      border: 2px solid rgba(255,255,255,0.28);
+      border-radius: 50%;
+    }
+    .hero-medallion-ring {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      animation: spinSlow 22s linear infinite;
+    }
+    .hero-medallion-inner {
+      position: relative;
+      text-align: center;
+      z-index: 2;
+      padding: 0 16px;
+    }
+    .hero-medallion-num {
+      display: block;
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: 64px;
+      line-height: 0.9;
+      letter-spacing: -0.04em;
+    }
+    .hero-medallion-num i {
+      font-style: normal;
+      font-size: 0.5em;
+      vertical-align: top;
+      margin-left: 2px;
+      font-weight: 700;
+    }
+    .hero-medallion-rule {
+      display: block;
+      width: 28px;
+      height: 2px;
+      background: rgba(255,255,255,0.65);
+      margin: 8px auto;
+    }
+    .hero-medallion-label {
+      display: block;
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      line-height: 1.3;
+    }
+    @keyframes spinSlow {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .hero-medallion-ring { animation: none; }
+    }
+
+    /* Secondary stat — top-right floating tag */
+    .hero-stat-side {
+      position: absolute;
+      top: 40px;
+      right: -28px;
+      background: var(--c-bg);
+      color: var(--c-primary);
+      padding: 14px 18px;
+      z-index: 5;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+    }
+    .hero-stat-side::before {
+      content: '';
+      width: 10px;
+      height: 10px;
+      background: var(--c-secondary);
+      border-radius: 50%;
+      flex-shrink: 0;
+      animation: pulseDot 1.6s ease-out infinite;
+    }
+    @keyframes pulseDot {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(250,84,0,0.6); }
+      50% { box-shadow: 0 0 0 8px rgba(250,84,0,0); }
+    }
+    .hero-stat-side .num {
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: 26px;
+      letter-spacing: -0.02em;
+      line-height: 1;
+    }
+    .hero-stat-side .lbl {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 9px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--c-text-secondary);
+      max-width: 76px;
+      line-height: 1.3;
+    }
+
+    /* Badge "ŤAŽKÁ VÁHA" — repositioned as tilted stamp */
+    .hero-badge {
+      position: absolute;
+      top: -14px;
+      right: 24%;
+      background: var(--c-primary);
+      color: var(--c-bg);
+      padding: 8px 14px;
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      z-index: 7;
+      transform: rotate(-3deg);
+      border: 2px solid var(--c-bg);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+    .hero-badge::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: -8px;
+      transform: translateY(-50%);
+      width: 6px;
+      height: 6px;
+      background: var(--c-secondary);
+      border-radius: 50%;
+    }
+
+    .hero-bg-text {
+      position: absolute;
+      top: 50%;
+      left: -5%;
+      transform: translateY(-50%);
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: clamp(200px, 40vw, 600px);
+      line-height: 1;
+      color: rgba(255,255,255,0.025);
+      pointer-events: none;
+      letter-spacing: -0.04em;
+      z-index: 1;
+      white-space: nowrap;
+    }
+
+    /* ============================================================
+       VAN BAND — dedicated illustration strip
+       ============================================================ */
+    .van-band {
+      position: relative;
+      background: var(--c-primary);
+      overflow: hidden;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .van-band-inner {
+      position: relative;
+      width: 100%;
+      max-width: 1600px;
+      margin: 0 auto;
+      height: clamp(280px, 26vw, 380px);
+    }
+    .van-band-bg-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: clamp(160px, 22vw, 320px);
+      line-height: 0.9;
+      color: rgba(250, 84, 0, 0.06);
+      letter-spacing: -0.05em;
+      pointer-events: none;
+      white-space: nowrap;
+      z-index: 1;
+      user-select: none;
+    }
+    .van-band-svg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 2;
+    }
+    .van-band-medallion {
+      position: absolute !important;
+      top: 50% !important;
+      left: 6% !important;
+      bottom: auto !important;
+      transform: translateY(-50%);
+      width: 200px !important;
+      height: 200px !important;
+      z-index: 6;
+    }
+    .van-band-stat {
+      position: absolute;
+      bottom: 32px;
+      right: 32px;
+      z-index: 6;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      color: var(--c-bg);
+      font-family: var(--font-display);
+      padding: 16px 20px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.1);
+      backdrop-filter: blur(4px);
+    }
+    .van-band-stat .num {
+      font-weight: 900;
+      font-size: clamp(32px, 3.4vw, 48px);
+      line-height: 1;
+      letter-spacing: -0.03em;
+    }
+    .van-band-stat .num span { color: var(--c-secondary); }
+    .van-band-stat .lbl {
+      font-weight: 700;
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.7);
+      max-width: 100px;
+      line-height: 1.4;
+    }
+    .van-band-stat-pulse {
+      width: 8px;
+      height: 8px;
+      background: var(--c-secondary);
+      border-radius: 50%;
+      box-shadow: 0 0 0 0 rgba(250,84,0,0.6);
+      animation: pulseDot 1.6s ease-out infinite;
+      flex-shrink: 0;
+    }
+
+    /* Top right corner badge "Ťažká váha" floats over van-band now */
+    .van-band-tag {
+      position: absolute;
+      top: 28px;
+      right: 32px;
+      background: var(--c-primary);
+      color: var(--c-bg);
+      padding: 8px 14px;
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      z-index: 7;
+      transform: rotate(-3deg);
+      border: 2px solid var(--c-bg);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+    .van-band-tag::before { display: none; }
+
+    /* Caption below the band - subtle navigator */
+    .van-band-caption {
+      position: absolute;
+      top: 28px;
+      left: 32px;
+      z-index: 7;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.6);
+    }
+    .van-band-caption::before {
+      content: '';
+      width: 32px;
+      height: 2px;
+      background: var(--c-secondary);
+    }
+
+    /* ============================================================
+       MARQUEE STRIPE — under hero
+       ============================================================ */
+    .marquee-stripe {
+      background: var(--c-secondary);
+      color: var(--c-bg);
+      overflow: hidden;
+      padding: 18px 0;
+      margin-top: -1px;
+    }
+    .marquee-stripe-track {
+      display: flex;
+      gap: 40px;
+      width: max-content;
+      animation: scrollX 28s linear infinite;
+    }
+    .marquee-stripe-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 16px;
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: 22px;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+    .marquee-stripe-item::after {
+      content: '';
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      background: var(--c-bg);
+      transform: rotate(45deg);
+      margin-left: 24px;
+    }
+    @keyframes scrollX {
+      to { transform: translateX(-50%); }
+    }
+
+    /* ============================================================
+       SERVICES SECTION
+       ============================================================ */
+    .section { padding: 120px 0; }
+    .section-tight { padding: 96px 0; }
+    .section-inner {
+      max-width: var(--container);
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 48px;
+      margin-bottom: 64px;
+      flex-wrap: wrap;
+    }
+    .section-eyebrow {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 13px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--c-secondary);
+      margin-bottom: 16px;
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .section-eyebrow::before {
+      content: '';
+      width: 24px;
+      height: 2px;
+      background: var(--c-secondary);
+    }
+    .section-title {
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: clamp(40px, 6vw, 80px);
+      line-height: 1.02;
+      letter-spacing: -0.025em;
+      text-transform: uppercase;
+      max-width: 900px;
+      padding-top: 0.1em;
+    }
+    .section-title .o { color: var(--c-secondary); }
+    .section-lead {
+      font-family: var(--font-body);
+      font-size: 17px;
+      color: var(--c-text-secondary);
+      max-width: 420px;
+      line-height: 1.55;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 4px;
+    }
+    .service-card {
+      background: var(--c-surface);
+      padding: 32px 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      transition: all var(--duration) var(--ease);
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+      min-height: 480px;
+    }
+    .service-card:hover {
+      background: var(--c-primary);
+      color: var(--c-bg);
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-card-hover);
+    }
+    .service-card:hover .service-arrow {
+      background: var(--c-secondary);
+      color: var(--c-bg);
+      transform: rotate(-45deg);
+    }
+    .service-card:hover .service-num,
+    .service-card:hover .service-desc { color: rgba(255,255,255,0.7); }
+    .service-card:hover .service-icon { color: var(--c-secondary); }
+    .service-card:hover .service-features li { border-color: rgba(255,255,255,0.15); }
+
+    .service-tag {
+      display: inline-block;
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      background: var(--c-primary);
+      color: var(--c-bg);
+      width: fit-content;
+      transition: all var(--duration) var(--ease);
+    }
+    .service-card:hover .service-tag {
+      background: var(--c-secondary);
+    }
+    .service-tag.tag-orange { background: var(--c-secondary); }
+    .service-card:hover .service-tag.tag-orange { background: var(--c-bg); color: var(--c-primary); }
+
+    .service-num {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.05em;
+      color: var(--c-text-secondary);
+      transition: color var(--duration) var(--ease);
+    }
+    .service-icon {
+      width: 56px;
+      height: 56px;
+      color: var(--c-primary);
+      transition: color var(--duration) var(--ease);
+      margin: 16px 0 0;
+    }
+    .service-name {
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: 28px;
+      line-height: 0.95;
+      letter-spacing: -0.02em;
+      text-transform: uppercase;
+      margin-top: auto;
+    }
+    .service-name .sub {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 14px;
+      letter-spacing: 0.06em;
+      color: var(--c-text-secondary);
+      display: block;
+      margin-bottom: 4px;
+      transition: color var(--duration) var(--ease);
+      text-transform: uppercase;
+    }
+    .service-card:hover .service-name .sub { color: var(--c-secondary); }
+    .service-desc {
+      font-family: var(--font-body);
+      font-size: 14px;
+      line-height: 1.5;
+      color: var(--c-text-secondary);
+      transition: color var(--duration) var(--ease);
+    }
+    .service-features {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+    .service-features li {
+      padding: 10px 0;
+      font-family: var(--font-body);
+      font-size: 13px;
+      font-weight: 500;
+      border-top: 1px solid var(--c-border);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .service-features li::before {
+      content: '+';
+      color: var(--c-secondary);
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: 16px;
+    }
+    .service-arrow {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      width: 36px;
+      height: 36px;
+      border-radius: var(--radius-pill);
+      background: var(--c-bg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all var(--duration) var(--ease);
+    }
+
+    /* ============================================================
+       MANIFESTO — big statement block
+       ============================================================ */
+    .manifesto {
+      background: var(--c-primary);
+      color: var(--c-bg);
+      padding: 160px 0;
+      position: relative;
+      overflow: hidden;
+    }
+    .manifesto-inner {
+      max-width: var(--container);
+      margin: 0 auto;
+      padding: 0 32px;
+      position: relative;
+      z-index: 2;
+    }
+    .manifesto-text {
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: clamp(48px, 8vw, 130px);
+      line-height: 1.02;
+      letter-spacing: -0.03em;
+      text-transform: uppercase;
+      max-width: 1200px;
+      padding-top: 0.08em;
+    }
+    .manifesto-text .word {
+      display: inline-block;
+      transition: transform var(--duration) var(--ease);
+    }
+    .manifesto-text .word:hover { transform: translateY(-6px); }
+    .manifesto-text .o { color: var(--c-secondary); }
+    .manifesto-text .strike-through {
+      position: relative;
+      color: rgba(255,255,255,0.35);
+    }
+    .manifesto-text .strike-through::after {
+      content: '';
+      position: absolute;
+      left: -2%;
+      right: -2%;
+      top: 58%;
+      height: 8px;
+      background: var(--c-secondary);
+      transform: rotate(-2deg);
+    }
+    .manifesto-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 80px;
+      padding-top: 40px;
+      border-top: 2px solid rgba(255,255,255,0.15);
+      flex-wrap: wrap;
+      gap: 24px;
+    }
+    .manifesto-meta .label { color: rgba(255,255,255,0.6); }
+    .manifesto-meta strong {
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: 22px;
+      color: var(--c-bg);
+      text-transform: uppercase;
+      letter-spacing: 0.01em;
+    }
+    .manifesto-bg {
+      position: absolute;
+      bottom: -80px;
+      right: -100px;
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: 480px;
+      line-height: 0.8;
+      color: rgba(250, 84, 0, 0.06);
+      pointer-events: none;
+      letter-spacing: -0.04em;
+    }
+
+    /* ============================================================
+       HOW IT WORKS
+       ============================================================ */
+    .how-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 4px;
+      border-top: 1px solid var(--c-border);
+      border-bottom: 1px solid var(--c-border);
+    }
+    .how-step {
+      padding: 48px 32px;
+      background: var(--c-bg);
+      position: relative;
+      transition: background var(--duration) var(--ease);
+      border-right: 1px solid var(--c-border);
+    }
+    .how-step:last-child { border-right: none; }
+    .how-step:hover { background: var(--c-surface); }
+    .how-step-num {
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: 96px;
+      line-height: 1;
+      letter-spacing: -0.04em;
+      color: var(--c-primary);
+      margin-bottom: 24px;
+      position: relative;
+      display: inline-block;
+    }
+    .how-step-num .dot {
+      position: absolute;
+      top: 6px;
+      right: -16px;
+      width: 12px;
+      height: 12px;
+      background: var(--c-secondary);
+      border-radius: 50%;
+    }
+    .how-step-title {
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: 24px;
+      letter-spacing: -0.01em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+    .how-step-desc {
+      font-family: var(--font-body);
+      font-size: 15px;
+      line-height: 1.55;
+      color: var(--c-text-secondary);
+    }
+    .how-step-icon {
+      position: absolute;
+      top: 32px;
+      right: 32px;
+      width: 32px;
+      height: 32px;
+      color: var(--c-text-secondary);
+      opacity: 0.3;
+      transition: opacity var(--duration) var(--ease);
+    }
+    .how-step:hover .how-step-icon { opacity: 1; color: var(--c-secondary); }
+
+    /* ============================================================
+       STATS BAND
+       ============================================================ */
+    .stats-band {
+      background: var(--c-bg);
+      padding: 96px 0;
+      border-top: 1px solid var(--c-border);
+      border-bottom: 1px solid var(--c-border);
+    }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+    }
+    .stat {
+      padding: 0 32px;
+      border-right: 1px solid var(--c-border);
+    }
+    .stat:last-child { border-right: none; }
+    .stat-num {
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: clamp(48px, 6vw, 88px);
+      line-height: 0.95;
+      letter-spacing: -0.03em;
+      color: var(--c-primary);
+      margin-bottom: 8px;
+    }
+    .stat-num .accent { color: var(--c-secondary); }
+    .stat-num .small {
+      font-size: 0.45em;
+      vertical-align: top;
+      margin-left: 4px;
+      font-weight: 700;
+      letter-spacing: 0;
+    }
+    .stat-label {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 13px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--c-text-secondary);
+    }
+
+    /* ============================================================
+       BUSINESS / B2B
+       ============================================================ */
+    .business {
+      background: var(--c-surface);
+      padding: 120px 0;
+    }
+    .business-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+    }
+    .business-visual {
+      aspect-ratio: 1 / 1;
+      position: relative;
+      background: var(--c-primary);
+      overflow: hidden;
+    }
+    .business-visual img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      mix-blend-mode: luminosity;
+      opacity: 0.85;
+    }
+    .business-visual-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(17,17,17,0.4) 0%, rgba(250,84,0,0.3) 100%);
+      mix-blend-mode: multiply;
+    }
+    .business-visual-text {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: flex-end;
+      padding: 32px;
+      z-index: 2;
+    }
+    .business-visual-text .label {
+      color: var(--c-secondary);
+      font-size: 13px;
+    }
+    .business-visual-text .big {
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: clamp(40px, 5vw, 64px);
+      line-height: 0.92;
+      letter-spacing: -0.025em;
+      text-transform: uppercase;
+      color: var(--c-bg);
+      margin-top: 8px;
+    }
+
+    .business-features {
+      list-style: none;
+      margin-top: 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+    .business-features li {
+      display: grid;
+      grid-template-columns: 32px 1fr;
+      gap: 16px;
+      padding: 20px 0;
+      border-top: 1px solid var(--c-border);
+      align-items: start;
+    }
+    .business-features li:last-child { border-bottom: 1px solid var(--c-border); }
+    .business-features li .num {
+      font-family: var(--font-mono);
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--c-secondary);
+      padding-top: 2px;
+    }
+    .business-features li .content strong {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 17px;
+      letter-spacing: -0.01em;
+      display: block;
+      margin-bottom: 4px;
+      text-transform: uppercase;
+    }
+    .business-features li .content span {
+      font-size: 14px;
+      color: var(--c-text-secondary);
+      line-height: 1.55;
+    }
+    .business-cta { margin-top: 32px; display: flex; gap: 12px; flex-wrap: wrap; }
+
+    .partners-row {
+      display: flex;
+      align-items: center;
+      gap: 48px;
+      flex-wrap: wrap;
+      margin-top: 40px;
+      padding-top: 32px;
+      border-top: 1px solid var(--c-border);
+    }
+    .partners-row .label { color: var(--c-text-secondary); }
+    .partner-logos {
+      display: flex;
+      gap: 32px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .partner-logo {
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: 22px;
+      letter-spacing: -0.02em;
+      color: var(--c-primary);
+      opacity: 0.55;
+      transition: opacity var(--duration) var(--ease);
+    }
+    .partner-logo:hover { opacity: 1; }
+
+    /* ============================================================
+       COVERAGE / AREAS
+       ============================================================ */
+    .coverage {
+      padding: 120px 0;
+      background: var(--c-bg);
+    }
+    .coverage-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 80px;
+      align-items: center;
+    }
+    .coverage-text .section-title { max-width: 600px; }
+    .coverage-cities {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 4px;
+      margin-top: 40px;
+    }
+    .city-chip {
+      padding: 14px 16px;
+      background: var(--c-surface);
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 13px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: all var(--duration) var(--ease);
+      cursor: pointer;
+    }
+    .city-chip:hover {
+      background: var(--c-primary);
+      color: var(--c-bg);
+    }
+    .city-chip:hover .city-dist { color: var(--c-secondary); }
+    .city-dist {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 400;
+      color: var(--c-text-secondary);
+      transition: color var(--duration) var(--ease);
+    }
+
+    .coverage-map {
+      aspect-ratio: 1 / 1;
+      background: var(--c-primary);
+      position: relative;
+      overflow: hidden;
+    }
+    .coverage-map svg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+    }
+    .coverage-map-pulse {
+      position: absolute;
+      width: 18px;
+      height: 18px;
+      background: var(--c-secondary);
+      border-radius: 50%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      box-shadow: 0 0 0 0 rgba(250,84,0,0.6);
+      animation: pulse 2.4s var(--ease) infinite;
+      z-index: 5;
+    }
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(250,84,0,0.6); }
+      100% { box-shadow: 0 0 0 60px rgba(250,84,0,0); }
+    }
+    .coverage-map-label {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(20px, -50%);
+      background: var(--c-bg);
+      padding: 6px 12px;
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--c-primary);
+      z-index: 6;
+    }
+    .coverage-map-stat {
+      position: absolute;
+      bottom: 24px;
+      left: 24px;
+      color: var(--c-bg);
+      font-family: var(--font-display);
+      z-index: 4;
+    }
+    .coverage-map-stat .num {
+      font-weight: 900;
+      font-size: 56px;
+      letter-spacing: -0.03em;
+      line-height: 1;
+    }
+    .coverage-map-stat .lbl {
+      font-weight: 700;
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.7);
+      margin-top: 4px;
+    }
+
+    /* ============================================================
+       PRICING / SIZING TABLE
+       ============================================================ */
+    .pricing {
+      padding: 120px 0;
+      background: var(--c-surface);
+    }
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 4px;
+      margin-top: 48px;
+    }
+    .pricing-card {
+      background: var(--c-bg);
+      padding: 40px 32px;
+      transition: all var(--duration) var(--ease);
+      border: 1px solid transparent;
+      position: relative;
+    }
+    .pricing-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-card-hover);
+    }
+    .pricing-card.featured {
+      background: var(--c-primary);
+      color: var(--c-bg);
+    }
+    .pricing-card.featured .pricing-name { color: var(--c-secondary); }
+    .pricing-card.featured .pricing-features li { border-color: rgba(255,255,255,0.15); }
+    .pricing-card.featured .pricing-features li::before { color: var(--c-secondary); }
+    .pricing-card.featured .pricing-meta { color: rgba(255,255,255,0.7); }
+    .pricing-tag {
+      display: inline-block;
+      padding: 4px 10px;
+      background: var(--c-secondary);
+      color: var(--c-bg);
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      position: absolute;
+      top: 20px;
+      right: 20px;
+    }
+    .pricing-name {
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: 28px;
+      letter-spacing: -0.02em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    .pricing-meta {
+      font-size: 14px;
+      color: var(--c-text-secondary);
+      margin-bottom: 24px;
+    }
+    .pricing-price {
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: 56px;
+      letter-spacing: -0.03em;
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+    .pricing-price .currency { font-size: 0.4em; vertical-align: top; margin-right: 4px; }
+    .pricing-price .period { font-size: 0.32em; color: var(--c-text-secondary); font-weight: 500; }
+    .pricing-card.featured .pricing-price .period { color: rgba(255,255,255,0.6); }
+    .pricing-features {
+      list-style: none;
+      margin: 32px 0;
+      display: flex;
+      flex-direction: column;
+    }
+    .pricing-features li {
+      padding: 12px 0;
+      border-top: 1px solid var(--c-border);
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .pricing-features li::before {
+      content: '+';
+      color: var(--c-secondary);
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: 18px;
+    }
+
+    /* ============================================================
+       CTA FINAL
+       ============================================================ */
+    .cta-final {
+      background: var(--c-primary);
+      color: var(--c-bg);
+      padding: 140px 0;
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-final-inner {
+      max-width: var(--container);
+      margin: 0 auto;
+      padding: 0 32px;
+      position: relative;
+      z-index: 2;
+    }
+    .cta-final-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 80px;
+      align-items: center;
+    }
+    .cta-final-title {
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: clamp(48px, 7vw, 104px);
+      line-height: 1.02;
+      letter-spacing: -0.03em;
+      text-transform: uppercase;
+      padding-top: 0.08em;
+    }
+    .cta-final-title .o { color: var(--c-secondary); }
+    .cta-final-body {
+      font-size: 17px;
+      line-height: 1.55;
+      color: rgba(255,255,255,0.7);
+      max-width: 380px;
+      margin-bottom: 32px;
+    }
+    .cta-final-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .cta-final-actions .btn { width: 100%; max-width: 380px; }
+    .cta-final-actions .btn-primary {
+      background: var(--c-secondary);
+      color: var(--c-bg);
+      height: 64px;
+      font-size: 17px;
+    }
+    .cta-final-actions .btn-primary:hover { background: #E84A00; }
+    .cta-final-actions .btn-ghost-light {
+      height: 64px;
+      font-size: 17px;
+    }
+    .cta-final-bg {
+      position: absolute;
+      top: -80px;
+      left: -100px;
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: 480px;
+      line-height: 0.8;
+      color: rgba(255,255,255,0.025);
+      pointer-events: none;
+      letter-spacing: -0.04em;
+      z-index: 1;
+    }
+
+    /* ============================================================
+       FOOTER
+       ============================================================ */
+    .footer {
+      background: var(--c-primary);
+      color: var(--c-bg);
+      padding: 80px 0 40px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+    }
+    .footer-inner {
+      max-width: var(--container);
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+      gap: 48px;
+      padding-bottom: 64px;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    .footer-brand .logo { color: var(--c-bg); margin-bottom: 16px; font-size: 32px; }
+    .footer-brand .logo .logo-mark::before { background: var(--c-bg); }
+    .footer-brand p {
+      font-size: 14px;
+      color: rgba(255,255,255,0.6);
+      max-width: 320px;
+      line-height: 1.6;
+      margin-bottom: 24px;
+    }
+    .footer-col h4 {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 12px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--c-secondary);
+      margin-bottom: 20px;
+    }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .footer-col a {
+      color: rgba(255,255,255,0.7);
+      font-size: 14px;
+      transition: color var(--duration) var(--ease);
+    }
+    .footer-col a:hover { color: var(--c-secondary); }
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 32px;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .footer-bottom-meta {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: rgba(255,255,255,0.5);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+    .footer-social { display: flex; gap: 12px; }
+    .footer-social a {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all var(--duration) var(--ease);
+    }
+    .footer-social a:hover {
+      background: var(--c-secondary);
+      transform: translateY(-2px);
+    }
+
+    /* ============================================================
+       ANIMATIONS
+       ============================================================ */
+    @keyframes slideUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    [data-reveal] {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 700ms var(--ease), transform 700ms var(--ease);
+    }
+    [data-reveal].in {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ============================================================
+       MOBILE MENU OVERLAY
+       ============================================================ */
+    .mobile-menu {
+      position: fixed;
+      inset: 0;
+      background: var(--c-primary);
+      color: var(--c-bg);
+      z-index: 200;
+      transform: translateX(100%);
+      transition: transform 320ms var(--ease);
+      display: flex;
+      flex-direction: column;
+      padding: 24px;
+      overflow-y: auto;
+      visibility: hidden;
+    }
+    .mobile-menu.open { transform: translateX(0); visibility: visible; }
+    .mobile-menu-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 64px;
+      margin-bottom: 32px;
+    }
+    .mobile-menu-header .logo { color: var(--c-bg); font-size: 22px; }
+    .mobile-menu-header .logo .logo-mark::before { background: var(--c-bg); }
+    .mobile-menu-close {
+      width: 48px;
+      height: 48px;
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--c-bg);
+    }
+    .mobile-menu-nav {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      flex: 1;
+    }
+    .mobile-menu-nav a {
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: 32px;
+      letter-spacing: -0.02em;
+      text-transform: uppercase;
+      padding: 18px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      color: var(--c-bg);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: color var(--duration) var(--ease);
+    }
+    .mobile-menu-nav a:hover,
+    .mobile-menu-nav a:active { color: var(--c-secondary); }
+    .mobile-menu-nav a span.idx {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: var(--c-secondary);
+      font-weight: 500;
+      letter-spacing: 0.04em;
+    }
+    .mobile-menu-cta {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      padding-top: 32px;
+      padding-bottom: 24px;
+    }
+    .mobile-menu-cta .btn {
+      width: 100%;
+      height: 56px;
+      font-size: 16px;
+    }
+    .mobile-menu-cta .btn-primary {
+      background: var(--c-secondary);
+      color: var(--c-bg);
+    }
+    .mobile-menu-cta .btn-ghost-light {
+      border-color: rgba(255,255,255,0.3);
+    }
+    .mobile-menu-meta {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      font-size: 13px;
+      color: rgba(255,255,255,0.6);
+    }
+    body.menu-open { overflow: hidden; }
+
+    /* ============================================================
+       RESPONSIVE
+       ============================================================ */
+    @media (max-width: 1100px) {
+      .services-grid { grid-template-columns: repeat(2, 1fr); }
+      .service-card { min-height: 420px; }
+      .footer-grid { grid-template-columns: 1.5fr 1fr 1fr; }
+      .footer-col:nth-child(4), .footer-col:nth-child(5) { display: none; }
+      .business-grid, .coverage-grid { gap: 48px; }
+      .business-grid { grid-template-columns: 1fr 1fr; }
+      .coverage-grid { grid-template-columns: 1fr 1fr; }
+      .cta-final-grid { gap: 48px; }
+    }
+
+    @media (max-width: 900px) {
+      .header-inner { padding: 0 20px; gap: 16px; }
+      .nav { display: none; }
+      .header-phone { display: none; }
+      .header-actions .btn-primary { display: none; }
+      .menu-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 44px;
+        height: 44px;
+        border: 1px solid var(--c-border);
+        border-radius: 50%;
+        -webkit-tap-highlight-color: transparent;
+      }
+      .header { height: 60px; }
+      .header-inner { height: 60px; }
+
+      .hero { padding-top: 60px; }
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 36px;
+        padding: 48px 20px 0;
+        min-height: auto;
+      }
+      .hero-eyebrow { margin-bottom: 18px; font-size: 11px; }
+      .hero-title { margin-bottom: 18px; }
+      .hero-descriptor {
+        font-size: 14px;
+        padding-top: 18px;
+        margin-bottom: 24px;
+      }
+      .hero-descriptor .pipe { width: 10px; margin: 0 6px 3px; }
+      .hero-body { font-size: 15px; margin-bottom: 28px; }
+      .hero-cta { gap: 10px; margin-bottom: 36px; }
+      .hero-cta .btn { flex: 1 1 100%; }
+      .hero-marquee {
+        padding-top: 24px;
+        gap: 14px;
+      }
+      .hero-marquee-item { font-size: 12px; }
+      .hero-visual { display: none; }
+      .van-band-inner { height: clamp(260px, 60vw, 380px); }
+      .van-band-medallion {
+        width: 140px !important;
+        height: 140px !important;
+        left: 4% !important;
+      }
+      .van-band-medallion .hero-medallion-num { font-size: 40px; }
+      .van-band-medallion .hero-medallion-label { font-size: 9px; }
+      .van-band-medallion .hero-medallion-ring text { font-size: 9px; letter-spacing: 2.4px; }
+      .van-band-stat { right: 16px; bottom: 16px; padding: 12px 14px; gap: 12px; }
+      .van-band-stat .num { font-size: 26px; }
+      .van-band-stat .lbl { font-size: 9px; max-width: 80px; }
+      .van-band-tag { font-size: 9px; padding: 6px 10px; top: 16px; right: 16px; }
+      .van-band-caption { font-size: 9px; top: 16px; left: 16px; gap: 8px; }
+      .van-band-caption::before { width: 20px; }
+      .van-band-bg-text { font-size: clamp(120px, 36vw, 200px); }
+
+      .hero-medallion {
+        width: 140px;
+        height: 140px;
+        bottom: -24px;
+        left: -20px;
+      }
+      .hero-medallion-num { font-size: 40px; }
+      .hero-medallion-rule { width: 22px; margin: 6px auto; }
+      .hero-medallion-label { font-size: 9px; letter-spacing: 0.1em; }
+      .hero-medallion-ring text { font-size: 9px; letter-spacing: 2.4px; }
+      .hero-stat-side {
+        top: 24px;
+        right: -12px;
+        padding: 10px 14px;
+        gap: 10px;
+      }
+      .hero-stat-side .num { font-size: 18px; }
+      .hero-stat-side .lbl { font-size: 8px; max-width: 64px; }
+      .hero-badge { font-size: 9px; padding: 6px 10px; top: -10px; right: 16%; }
+      .hero-bg-text { font-size: clamp(180px, 80vw, 400px); }
+
+      .section { padding: 72px 0; }
+      .section-tight { padding: 64px 0; }
+      .section-inner { padding: 0 20px; }
+      .section-header { margin-bottom: 36px; gap: 24px; }
+      .section-eyebrow { font-size: 11px; margin-bottom: 12px; }
+      .section-lead { font-size: 15px; max-width: none; }
+
+      .marquee-stripe { padding: 14px 0; }
+      .marquee-stripe-track { gap: 28px; }
+      .marquee-stripe-item { font-size: 16px; }
+      .marquee-stripe-item::after { width: 6px; height: 6px; margin-left: 16px; }
+
+      .services-grid { gap: 4px; }
+      .service-card {
+        min-height: auto;
+        padding: 24px 20px;
+        gap: 14px;
+      }
+      .service-name { font-size: 22px; }
+      .service-name .sub { font-size: 12px; }
+      .service-icon { width: 44px; height: 44px; margin: 8px 0 0; }
+      .service-arrow { top: 16px; right: 16px; width: 32px; height: 32px; }
+      .service-features li { padding: 8px 0; font-size: 12px; }
+
+      .manifesto { padding: 80px 0; }
+      .manifesto-meta {
+        margin-top: 48px;
+        padding-top: 32px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 24px;
+      }
+      .manifesto-meta > div:last-child { gap: 32px; flex-wrap: wrap; }
+      .manifesto-meta strong { font-size: 18px; }
+      .manifesto-bg { font-size: clamp(220px, 60vw, 320px); right: -40px; bottom: -40px; }
+
+      .how-grid { grid-template-columns: repeat(2, 1fr); border-top: none; border-bottom: none; }
+      .how-step { padding: 32px 20px; border-right: 1px solid var(--c-border); border-bottom: 1px solid var(--c-border); }
+      .how-step:nth-child(2n) { border-right: none; }
+      .how-step:nth-child(1), .how-step:nth-child(2) { border-top: 1px solid var(--c-border); }
+      .how-step-num { font-size: 64px; margin-bottom: 16px; }
+      .how-step-title { font-size: 18px; }
+      .how-step-desc { font-size: 14px; }
+      .how-step-icon { width: 24px; height: 24px; top: 24px; right: 20px; }
+
+      .stats-band { padding: 64px 0; }
+      .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 32px 16px; padding: 0 20px; }
+      .stat { border-right: none; padding: 0; }
+      .stat:nth-child(odd) { border-right: 1px solid var(--c-border); padding-right: 16px; }
+      .stat:nth-child(even) { padding-left: 16px; }
+      .stat:nth-child(1), .stat:nth-child(2) { padding-bottom: 24px; border-bottom: 1px solid var(--c-border); }
+      .stat-num { font-size: 44px; }
+      .stat-label { font-size: 11px; }
+
+      .business { padding: 80px 0; }
+      .business-grid { grid-template-columns: 1fr; gap: 32px; }
+      .business-visual { aspect-ratio: 16/13; max-height: 360px; }
+      .business-visual-text { padding: 20px; }
+      .business-visual-text .big { font-size: 32px; }
+      .business-grid h3 { font-size: 24px !important; }
+      .business-grid p { font-size: 15px; }
+      .business-features li { grid-template-columns: 24px 1fr; gap: 12px; padding: 14px 0; }
+      .business-features li .content strong { font-size: 15px; }
+      .business-features li .content span { font-size: 13px; }
+      .business-cta .btn { flex: 1 1 100%; }
+      .partners-row { gap: 16px; margin-top: 28px; padding-top: 24px; }
+      .partner-logos { gap: 18px; }
+      .partner-logo { font-size: 16px; }
+
+      .coverage { padding: 80px 0; }
+      .coverage-grid { grid-template-columns: 1fr; gap: 36px; }
+      .coverage-cities { grid-template-columns: 1fr 1fr; gap: 4px; margin-top: 28px; }
+      .city-chip { padding: 12px 14px; font-size: 12px; }
+      .city-dist { font-size: 10px; }
+      .coverage-map { aspect-ratio: 4/3; max-height: 380px; }
+      .coverage-map-stat .num { font-size: 40px; }
+
+      .pricing { padding: 80px 0; }
+      .pricing-grid { grid-template-columns: 1fr; gap: 4px; margin-top: 32px; }
+      .pricing-card { padding: 32px 24px; }
+      .pricing-card.featured {
+        order: -1;
+        transform: scale(1);
+      }
+      .pricing-name { font-size: 24px; }
+      .pricing-price { font-size: 44px; }
+      .pricing-tag { top: 16px; right: 16px; font-size: 10px; padding: 3px 8px; }
+
+      .cta-final { padding: 80px 0; }
+      .cta-final-grid { grid-template-columns: 1fr; gap: 32px; }
+      .cta-final-body { font-size: 15px; margin-bottom: 24px; }
+      .cta-final-actions .btn { max-width: none; height: 56px; font-size: 15px; }
+      .cta-final-bg { font-size: clamp(280px, 80vw, 420px); top: auto; bottom: -120px; left: -60px; }
+
+      .footer { padding: 64px 0 32px; }
+      .footer-inner { padding: 0 20px; }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; padding-bottom: 40px; }
+      .footer-brand { grid-column: 1 / -1; }
+      .footer-brand p { max-width: none; font-size: 13px; }
+      .footer-col h4 { font-size: 11px; margin-bottom: 14px; }
+      .footer-col a { font-size: 13px; }
+      .footer-bottom { padding-top: 24px; flex-direction: column; align-items: flex-start; gap: 16px; }
+      .footer-bottom-meta { font-size: 11px; }
+    }
+
+    @media (max-width: 560px) {
+      .header-inner { padding: 0 16px; }
+      .hero-grid { padding: 36px 16px 0; gap: 32px; }
+      .hero-visual { max-width: none; }
+      .section { padding: 64px 0; }
+      .section-inner { padding: 0 16px; }
+      .section-header { flex-direction: column; align-items: flex-start; }
+      .footer-inner { padding: 0 16px; }
+      .footer-grid { grid-template-columns: 1fr; gap: 28px; }
+      .footer-brand { grid-column: auto; }
+
+      .services-grid { grid-template-columns: 1fr; }
+      .service-card { min-height: 240px; }
+      .coverage-cities { grid-template-columns: 1fr 1fr; }
+      .hero-marquee { gap: 12px; }
+      .hero-marquee-item { font-size: 11.5px; }
+      .partner-logo { font-size: 16px; }
+
+      .hero-title {
+        font-size: clamp(36px, 12.5vw, 64px);
+        letter-spacing: -0.02em;
+        padding-top: 0.16em;
+      }
+      .hero-title > span,
+      .hero-title .row { white-space: normal; }
+
+      .section-title { font-size: clamp(34px, 10vw, 56px); }
+      .manifesto-text { font-size: clamp(38px, 11vw, 64px); }
+      .cta-final-title { font-size: clamp(36px, 11vw, 60px); }
+
+      .stat-num { font-size: 38px; }
+      .how-step-num { font-size: 52px; }
+
+      .business-visual-text .big { font-size: 26px; }
+      .business-visual-text .big br { display: none; }
+
+      .marquee-stripe-item { font-size: 14px; }
+
+      .pricing-card { padding: 28px 20px; }
+      .pricing-price { font-size: 40px; }
+      .pricing-features li { font-size: 13px; padding: 10px 0; }
+
+      .manifesto { padding: 64px 0; }
+      .manifesto-meta strong { font-size: 16px; }
+    }
+
+    @media (max-width: 380px) {
+      .header-actions { gap: 8px; }
+      .logo { font-size: 20px; }
+      .logo-mark { width: 22px; height: 14px; }
+      .hero-title { font-size: clamp(32px, 11vw, 48px); }
+      .section-title { font-size: clamp(30px, 9vw, 44px); }
+      .manifesto-text { font-size: clamp(34px, 10vw, 52px); }
+      .hero-medallion { width: 120px; height: 120px; bottom: -16px; left: -12px; }
+      .hero-medallion-num { font-size: 32px; }
+      .hero-medallion-label { font-size: 8px; }
+      .hero-medallion-ring text { font-size: 8px; letter-spacing: 1.8px; }
+      .hero-stat-side { padding: 8px 12px; top: 16px; right: -8px; }
+      .hero-stat-side .num { font-size: 16px; }
+      .hero-stat-side .lbl { font-size: 7px; }
+    }
+
+    /* iPhone notch / safe area */
+    @supports (padding: max(0px)) {
+      .header-inner { padding-left: max(20px, env(safe-area-inset-left)); padding-right: max(20px, env(safe-area-inset-right)); }
+      .mobile-menu { padding-left: max(24px, env(safe-area-inset-left)); padding-right: max(24px, env(safe-area-inset-right)); padding-bottom: max(24px, env(safe-area-inset-bottom)); }
+    }
+
+    /* Reduce motion for users who prefer it */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+      }
+      .marquee-stripe-track { animation: none; }
+      [data-reveal] { opacity: 1; transform: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ============================================================
+       HEADER
+       ============================================================ -->
+  <header class="header" id="header">
+    <div class="header-inner">
+      <a href="#" class="logo" aria-label="Neseme">
+        <span class="logo-mark"></span>
+        <span>NESEME</span>
+      </a>
+      <nav class="nav">
+        <a href="#sluzby" class="nav-link">Služby</a>
+        <a href="#ako-to-funguje" class="nav-link">Ako to funguje</a>
+        <a href="#firmy" class="nav-link">Pre firmy</a>
+        <a href="#oblasti" class="nav-link">Pokrytie</a>
+        <a href="#cennik" class="nav-link">Cenník</a>
+      </nav>
+      <div class="header-actions">
+        <a href="tel:+421900000000" class="header-phone">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <span>+421 900 000 000</span>
+        </a>
+        <a href="#objednat" class="btn btn-primary">Objednať</a>
+        <button class="menu-toggle" aria-label="Menu" id="menuOpen">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============================================================
+       MOBILE MENU
+       ============================================================ -->
+  <div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-label="Menu">
+    <div class="mobile-menu-header">
+      <a href="#" class="logo">
+        <span class="logo-mark"></span>
+        <span>NESEME</span>
+      </a>
+      <button class="mobile-menu-close" aria-label="Zavrieť menu" id="menuClose">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
+    </div>
+    <nav class="mobile-menu-nav">
+      <a href="#sluzby"><span>Služby</span><span class="idx">01</span></a>
+      <a href="#ako-to-funguje"><span>Ako to funguje</span><span class="idx">02</span></a>
+      <a href="#firmy"><span>Pre firmy</span><span class="idx">03</span></a>
+      <a href="#oblasti"><span>Pokrytie</span><span class="idx">04</span></a>
+      <a href="#cennik"><span>Cenník</span><span class="idx">05</span></a>
+    </nav>
+    <div class="mobile-menu-cta">
+      <a href="#objednat" class="btn btn-primary btn-arrow">
+        Objednať dopravu
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </a>
+      <a href="tel:+421900000000" class="btn btn-ghost-light">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        +421 900 000 000
+      </a>
+    </div>
+    <div class="mobile-menu-meta">
+      <span>Po–Ne · 7:00–21:00</span>
+      <span>Račianska 88, Bratislava</span>
+      <span>ahoj@neseme.sk</span>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       HERO
+       ============================================================ -->
+  <section class="hero">
+    <div class="hero-bg-text" aria-hidden="true">NESEME</div>
+    <div class="hero-grid">
+      <div class="hero-content">
+        <div class="hero-eyebrow">XL Doprava · Bratislava &amp; okolie</div>
+        <h1 class="hero-title">
+          <span class="row">Veľké veci</span>
+          <span class="row">až&nbsp;k&nbsp;vám&nbsp;<span class="accent">domov.</span></span>
+        </h1>
+        <div class="hero-descriptor">
+          DOVEZIEME <span class="pipe"></span> VYNESIEME <span class="pipe"></span> ZAPOJÍME
+        </div>
+        <p class="hero-body">
+          Doprava, výnos a montáž bielej techniky, nábytku a XL zásielok pre domácnosti aj e-shopy. Tam, kam bežný kuriér nejde — my prichádzame ako prvý.
+        </p>
+        <div class="hero-cta">
+          <a href="#objednat" class="btn btn-primary btn-arrow">
+            Objednať dopravu
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </a>
+          <a href="#firmy" class="btn btn-ghost-light">Dopyt pre firmy</a>
+        </div>
+        <div class="hero-marquee">
+          <div class="hero-marquee-item">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg>
+            <span>Doručenie do 24 hodín</span>
+          </div>
+          <div class="hero-marquee-item">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg>
+            <span>Výnos na poschodie v cene</span>
+          </div>
+          <div class="hero-marquee-item">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg>
+            <span>Odvoz starého spotrebiča</span>
+          </div>
+          <div class="hero-marquee-item">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg>
+            <span>Bez stresu, na čas</span>
+          </div>
+        </div>
+      </div>
+      <div class="hero-visual" aria-hidden="true" style="display:none">
+
+        <div class="hero-visual-frame">
+          <svg class="van-illustration" viewBox="0 0 1000 1000" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Dodávka Neseme">
+            <!-- Grid background -->
+            <defs>
+              <pattern id="vanGrid" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+                <circle cx="2" cy="2" r="1.2" fill="rgba(255,255,255,0.05)"/>
+              </pattern>
+            </defs>
+            <rect width="1000" height="1000" fill="url(#vanGrid)"/>
+
+            <!-- Top tag -->
+            <line class="van-tag-line" x1="60" y1="100" x2="220" y2="100"/>
+            <text class="van-tag-text" x="240" y="105">XL · DO 500 KG</text>
+
+            <!-- Right vertical tag -->
+            <text class="van-tag-text" x="940" y="500" transform="rotate(90 940 500)" font-size="11">BRATISLAVA → 200 KM</text>
+
+            <!-- Bottom tag -->
+            <line class="van-tag-line" x1="640" y1="940" x2="900" y2="940"/>
+            <text class="van-tag-text" x="620" y="945" text-anchor="end">DOVEZIEME · VYNESIEME</text>
+
+            <!-- Big background NESEME text -->
+            <text x="500" y="560" text-anchor="middle" font-family="Jost" font-weight="900" font-size="220" fill="rgba(250,84,0,0.06)" letter-spacing="-0.04em">NESEME</text>
+
+            <!-- Diagonal scaffold lines -->
+            <line x1="0" y1="200" x2="200" y2="0" stroke="rgba(250,84,0,0.08)" stroke-width="1"/>
+            <line x1="800" y1="1000" x2="1000" y2="800" stroke="rgba(250,84,0,0.08)" stroke-width="1"/>
+
+            <!-- Speed lines (behind van) -->
+            <g class="speed-lines">
+              <line class="van-speed speed-line" x1="60" y1="480" x2="200" y2="480"/>
+              <line class="van-speed-fade speed-line" x1="40" y1="540" x2="220" y2="540"/>
+              <line class="van-speed speed-line" x1="80" y1="600" x2="180" y2="600"/>
+              <line class="van-speed-faint speed-line" x1="30" y1="660" x2="200" y2="660"/>
+            </g>
+
+            <!-- Floor line -->
+            <line class="van-floor" x1="40" y1="780" x2="960" y2="780"/>
+
+            <!-- Direction arrow ahead of van -->
+            <g transform="translate(900 500)" stroke="var(--c-secondary)" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="-30" y1="0" x2="30" y2="0"/>
+              <path d="M 14 -16 L 30 0 L 14 16"/>
+            </g>
+            <text x="900" y="476" text-anchor="middle" font-family="JetBrains Mono" font-size="10" fill="rgba(250,84,0,0.7)" letter-spacing="0.08em">FORWARD</text>
+
+            <!-- VAN GROUP — sized larger, centered -->
+            <g class="van-group" transform="translate(20 0)">
+              <!-- Cargo box body -->
+              <path class="van-body" d="M 200 780 L 200 380 Q 200 360 220 360 L 660 360 Q 680 360 680 380 L 680 780"/>
+
+              <!-- Cab (front) hood -->
+              <path class="van-body" d="M 680 780 L 680 500 L 800 500 Q 815 500 818 514 L 826 580 Q 830 600 830 620 L 830 780"/>
+
+              <!-- Cab roof line connecting -->
+              <line class="van-detail" x1="680" y1="500" x2="680" y2="360"/>
+
+              <!-- Bottom chassis line -->
+              <line class="van-body" x1="200" y1="780" x2="830" y2="780"/>
+
+              <!-- Cargo door vertical lines -->
+              <line class="van-detail" x1="370" y1="395" x2="370" y2="760"/>
+              <line class="van-detail" x1="540" y1="395" x2="540" y2="760"/>
+
+              <!-- Door handles -->
+              <line class="van-detail" x1="350" y1="570" x2="350" y2="610"/>
+              <line class="van-detail" x1="520" y1="570" x2="520" y2="610"/>
+              <line class="van-detail" x1="660" y1="570" x2="660" y2="610"/>
+
+              <!-- Side window (cab) -->
+              <path class="van-window" d="M 690 518 L 690 600 Q 690 614 704 614 L 800 614 Q 816 614 814 600 L 808 518 Z"/>
+
+              <!-- Window mullion -->
+              <line class="van-detail" x1="752" y1="518" x2="752" y2="614" stroke-width="2"/>
+
+              <!-- Side mirror -->
+              <line class="van-detail" x1="816" y1="520" x2="844" y2="504"/>
+              <circle cx="850" cy="500" r="8" fill="none" stroke="var(--c-secondary)" stroke-width="3"/>
+
+              <!-- Headlight -->
+              <rect class="van-detail" x="816" y="700" width="16" height="26" rx="2"/>
+              <line class="van-detail" x1="800" y1="700" x2="816" y2="700"/>
+
+              <!-- Front bumper -->
+              <line class="van-detail" x1="680" y1="755" x2="830" y2="755"/>
+
+              <!-- Side branding badge — bigger -->
+              <rect x="232" y="430" width="160" height="56" rx="2" fill="var(--c-secondary)"/>
+              <text x="312" y="468" text-anchor="middle" class="van-badge-text" font-size="34">NESEME</text>
+
+              <!-- XL tag below badge -->
+              <text x="232" y="520" font-family="JetBrains Mono" font-size="13" fill="rgba(250,84,0,0.75)" letter-spacing="0.1em">XL DOPRAVA · BA</text>
+
+              <!-- Bottom side stripe -->
+              <line x1="232" y1="700" x2="660" y2="700" stroke="var(--c-secondary)" stroke-width="2" stroke-dasharray="6 4" opacity="0.5"/>
+
+              <!-- Cargo box rivets -->
+              <circle cx="220" cy="395" r="2.5" fill="var(--c-secondary)"/>
+              <circle cx="660" cy="395" r="2.5" fill="var(--c-secondary)"/>
+              <circle cx="220" cy="755" r="2.5" fill="var(--c-secondary)"/>
+              <circle cx="660" cy="755" r="2.5" fill="var(--c-secondary)"/>
+
+              <!-- Wheels -->
+              <g transform="translate(300 780)">
+                <circle class="van-wheel-outer" r="46"/>
+                <g class="wheel-group">
+                  <circle class="van-wheel-inner" r="16"/>
+                  <line x1="-30" y1="0" x2="-20" y2="0" stroke="var(--c-secondary)" stroke-width="3" stroke-linecap="round"/>
+                  <line x1="30" y1="0" x2="20" y2="0" stroke="var(--c-secondary)" stroke-width="3" stroke-linecap="round"/>
+                  <line x1="0" y1="-30" x2="0" y2="-20" stroke="var(--c-secondary)" stroke-width="3" stroke-linecap="round"/>
+                  <line x1="0" y1="30" x2="0" y2="20" stroke="var(--c-secondary)" stroke-width="3" stroke-linecap="round"/>
+                </g>
+              </g>
+              <g transform="translate(770 780)">
+                <circle class="van-wheel-outer" r="46"/>
+                <g class="wheel-group">
+                  <circle class="van-wheel-inner" r="16"/>
+                  <line x1="-30" y1="0" x2="-20" y2="0" stroke="var(--c-secondary)" stroke-width="3" stroke-linecap="round"/>
+                  <line x1="30" y1="0" x2="20" y2="0" stroke="var(--c-secondary)" stroke-width="3" stroke-linecap="round"/>
+                  <line x1="0" y1="-30" x2="0" y2="-20" stroke="var(--c-secondary)" stroke-width="3" stroke-linecap="round"/>
+                  <line x1="0" y1="30" x2="0" y2="20" stroke="var(--c-secondary)" stroke-width="3" stroke-linecap="round"/>
+                </g>
+              </g>
+            </g>
+
+            <!-- EXPRESS tag — top right -->
+            <g transform="translate(820 200)">
+              <rect x="-60" y="-20" width="120" height="40" fill="var(--c-secondary)"/>
+              <text text-anchor="middle" y="6" font-family="Jost" font-weight="900" font-size="18" fill="#0a0a0a" letter-spacing="0.06em">EXPRESS</text>
+            </g>
+
+            <!-- 5T circular spec — top left -->
+            <g transform="translate(140 220)">
+              <circle r="50" fill="none" stroke="var(--c-secondary)" stroke-width="2"/>
+              <circle r="42" fill="none" stroke="rgba(250,84,0,0.3)" stroke-width="1" stroke-dasharray="2 3"/>
+              <text text-anchor="middle" y="-2" font-family="Jost" font-weight="900" font-size="24" fill="#fff">5T</text>
+              <text text-anchor="middle" y="18" font-family="JetBrains Mono" font-size="9" fill="rgba(255,255,255,0.6)" letter-spacing="0.08em">PAYLOAD</text>
+            </g>
+
+            <!-- Crosshair markers -->
+            <g transform="translate(940 60)" stroke="rgba(250,84,0,0.5)" stroke-width="2">
+              <line x1="0" y1="0" x2="20" y2="0"/>
+              <line x1="0" y1="0" x2="0" y2="20"/>
+            </g>
+            <g transform="translate(60 940)" stroke="rgba(250,84,0,0.5)" stroke-width="2">
+              <line x1="0" y1="0" x2="20" y2="0"/>
+              <line x1="0" y1="0" x2="0" y2="-20"/>
+            </g>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       VAN BAND — full-width van illustration strip
+       ============================================================ -->
+  <section class="van-band" aria-label="Dodávka Neseme v pohybe">
+    <div class="van-band-inner">
+      <div class="van-band-tag">Ťažká váha · 500 kg</div>
+      <div class="van-band-bg-text">NESEME</div>
+
+      <svg class="van-band-svg" viewBox="0 0 1600 500" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <defs>
+          <pattern id="vanBandGrid" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+            <circle cx="2" cy="2" r="1.1" fill="rgba(255,255,255,0.04)"/>
+          </pattern>
+          <linearGradient id="speedFade" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="rgba(250,84,0,0)"/>
+            <stop offset="100%" stop-color="rgba(250,84,0,0.6)"/>
+          </linearGradient>
+        </defs>
+        <rect width="1600" height="500" fill="url(#vanBandGrid)"/>
+
+        <!-- Floor line full width -->
+        <line x1="0" y1="380" x2="1600" y2="380" stroke="rgba(255,255,255,0.16)" stroke-dasharray="6 8" stroke-width="1"/>
+
+        <!-- Subtle horizontal guides -->
+        <line x1="0" y1="80" x2="1600" y2="80" stroke="rgba(250,84,0,0.08)" stroke-width="1"/>
+        <line x1="0" y1="450" x2="1600" y2="450" stroke="rgba(250,84,0,0.08)" stroke-width="1"/>
+
+        <!-- Tags top -->
+        <line class="van-tag-line" x1="60" y1="60" x2="220" y2="60"/>
+        <text class="van-tag-text" x="240" y="65">XL · 500 KG</text>
+
+        <line class="van-tag-line" x1="1380" y1="60" x2="1540" y2="60"/>
+        <text class="van-tag-text" x="1360" y="65" text-anchor="end">BA → 200 KM</text>
+
+        <!-- Speed lines streaming from left (van's wake) -->
+        <g class="speed-lines">
+          <line class="van-speed speed-line" x1="320" y1="170" x2="500" y2="170"/>
+          <line class="van-speed-fade speed-line" x1="280" y1="220" x2="520" y2="220"/>
+          <line class="van-speed speed-line" x1="340" y1="280" x2="480" y2="280"/>
+          <line class="van-speed-faint speed-line" x1="260" y1="120" x2="500" y2="120"/>
+        </g>
+
+        <!-- Long gradient trail behind van -->
+        <line x1="0" y1="340" x2="500" y2="340" stroke="url(#speedFade)" stroke-width="3"/>
+
+        <!-- VAN GROUP -->
+        <g class="van-group">
+          <!-- Cargo box body -->
+          <path class="van-body" d="M 540 380 L 540 96 Q 540 80 556 80 L 940 80 Q 956 80 956 96 L 956 380"/>
+
+          <!-- Cab front -->
+          <path class="van-body" d="M 956 380 L 956 200 L 1080 200 Q 1094 200 1097 214 L 1106 274 Q 1110 290 1110 308 L 1110 380"/>
+
+          <!-- Cab roof connection -->
+          <line class="van-detail" x1="956" y1="200" x2="956" y2="80"/>
+
+          <!-- Bottom chassis -->
+          <line class="van-body" x1="540" y1="380" x2="1110" y2="380"/>
+
+          <!-- Door lines on cargo box -->
+          <line class="van-detail" x1="700" y1="112" x2="700" y2="358"/>
+          <line class="van-detail" x1="840" y1="112" x2="840" y2="358"/>
+
+          <!-- Handles -->
+          <line class="van-detail" x1="684" y1="240" x2="684" y2="270"/>
+          <line class="van-detail" x1="824" y1="240" x2="824" y2="270"/>
+          <line class="van-detail" x1="940" y1="240" x2="940" y2="270"/>
+
+          <!-- Side window cab -->
+          <path class="van-window" d="M 966 218 L 966 296 Q 966 308 980 308 L 1078 308 Q 1094 308 1092 296 L 1084 218 Z"/>
+          <line class="van-detail" x1="1024" y1="218" x2="1024" y2="308" stroke-width="2"/>
+
+          <!-- Mirror -->
+          <line class="van-detail" x1="1092" y1="220" x2="1124" y2="206"/>
+          <circle cx="1130" cy="202" r="9" fill="none" stroke="var(--c-secondary)" stroke-width="3"/>
+
+          <!-- Headlight -->
+          <rect class="van-detail" x="1094" y="316" width="18" height="28" rx="2"/>
+          <line class="van-detail" x1="1078" y1="316" x2="1094" y2="316"/>
+
+          <!-- Front bumper -->
+          <line class="van-detail" x1="956" y1="358" x2="1110" y2="358"/>
+
+          <!-- Side branding NESEME badge -->
+          <rect x="572" y="160" width="180" height="60" rx="2" fill="var(--c-secondary)"/>
+          <text x="662" y="202" text-anchor="middle" class="van-badge-text" font-size="38">NESEME</text>
+
+          <!-- XL DOPRAVA tag below badge -->
+          <text x="572" y="250" font-family="JetBrains Mono" font-size="13" fill="rgba(250,84,0,0.85)" letter-spacing="0.12em">XL DOPRAVA · BA</text>
+
+          <!-- Bottom side dashed stripe -->
+          <line x1="572" y1="320" x2="940" y2="320" stroke="var(--c-secondary)" stroke-width="2" stroke-dasharray="6 4" opacity="0.55"/>
+
+          <!-- Rivets -->
+          <circle cx="556" cy="112" r="2.6" fill="var(--c-secondary)"/>
+          <circle cx="940" cy="112" r="2.6" fill="var(--c-secondary)"/>
+          <circle cx="556" cy="358" r="2.6" fill="var(--c-secondary)"/>
+          <circle cx="940" cy="358" r="2.6" fill="var(--c-secondary)"/>
+
+          <!-- Wheels -->
+          <g transform="translate(640 380)">
+            <circle class="van-wheel-outer" r="46"/>
+            <g class="wheel-group">
+              <circle class="van-wheel-inner" r="16"/>
+              <line x1="-30" y1="0" x2="-20" y2="0" stroke="var(--c-secondary)" stroke-width="3" stroke-linecap="round"/>
+              <line x1="30" y1="0" x2="20" y2="0" stroke="var(--c-secondary)" stroke-width="3" stroke-linecap="round"/>
+              <line x1="0" y1="-30" x2="0" y2="-20" stroke="var(--c-secondary)" stroke-width="3" stroke-linecap="round"/>
+              <line x1="0" y1="30" x2="0" y2="20" stroke="var(--c-secondary)" stroke-width="3" stroke-linecap="round"/>
+            </g>
+          </g>
+          <g transform="translate(1050 380)">
+            <circle class="van-wheel-outer" r="46"/>
+            <g class="wheel-group">
+              <circle class="van-wheel-inner" r="16"/>
+              <line x1="-30" y1="0" x2="-20" y2="0" stroke="var(--c-secondary)" stroke-width="3" stroke-linecap="round"/>
+              <line x1="30" y1="0" x2="20" y2="0" stroke="var(--c-secondary)" stroke-width="3" stroke-linecap="round"/>
+              <line x1="0" y1="-30" x2="0" y2="-20" stroke="var(--c-secondary)" stroke-width="3" stroke-linecap="round"/>
+              <line x1="0" y1="30" x2="0" y2="20" stroke="var(--c-secondary)" stroke-width="3" stroke-linecap="round"/>
+            </g>
+          </g>
+        </g>
+
+        <!-- Direction arrow + caption right side -->
+        <g transform="translate(1280 240)" stroke="var(--c-secondary)" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="-44" y1="0" x2="44" y2="0"/>
+          <path d="M 28 -16 L 44 0 L 28 16"/>
+        </g>
+        <text x="1280" y="216" text-anchor="middle" font-family="JetBrains Mono" font-size="11" fill="rgba(250,84,0,0.7)" letter-spacing="0.1em">FORWARD · GO</text>
+        <line class="van-tag-line" x1="1224" y1="282" x2="1336" y2="282"/>
+        <text class="van-tag-text" x="1280" y="300" text-anchor="middle">DOVEZIEME</text>
+
+        <!-- 5T circle bottom-right small -->
+        <g transform="translate(1450 250)">
+          <circle r="42" fill="none" stroke="var(--c-secondary)" stroke-width="2"/>
+          <circle r="34" fill="none" stroke="rgba(250,84,0,0.3)" stroke-width="1" stroke-dasharray="2 3"/>
+          <text text-anchor="middle" y="-2" font-family="Jost" font-weight="900" font-size="22" fill="#fff">5T</text>
+          <text text-anchor="middle" y="16" font-family="JetBrains Mono" font-size="9" fill="rgba(255,255,255,0.6)" letter-spacing="0.08em">PAYLOAD</text>
+        </g>
+
+        <!-- Crosshair markers -->
+        <g transform="translate(1540 450)" stroke="rgba(250,84,0,0.4)" stroke-width="2">
+          <line x1="0" y1="0" x2="-20" y2="0"/>
+          <line x1="0" y1="0" x2="0" y2="-20"/>
+        </g>
+        <g transform="translate(60 450)" stroke="rgba(250,84,0,0.4)" stroke-width="2">
+          <line x1="0" y1="0" x2="20" y2="0"/>
+          <line x1="0" y1="0" x2="0" y2="-20"/>
+        </g>
+      </svg>
+
+      <!-- HTML overlay: 98% medallion -->
+      <div class="hero-medallion van-band-medallion" aria-label="98 percent zásielok doručených na prvý raz">
+        <svg class="hero-medallion-ring" viewBox="0 0 220 220" aria-hidden="true">
+          <defs>
+            <path id="medallionPath" d="M 110,110 m -88,0 a 88,88 0 1,1 176,0 a 88,88 0 1,1 -176,0"/>
+          </defs>
+          <text font-family="Jost" font-weight="700" font-size="11" letter-spacing="3.6" fill="rgba(255,255,255,0.7)">
+            <textPath href="#medallionPath" startOffset="0">★ NESEME GUARANTEED ★ DORUČENIE NA PRVÝ RAZ ★</textPath>
+          </text>
+        </svg>
+        <div class="hero-medallion-inner">
+          <span class="hero-medallion-num">98<i>%</i></span>
+          <span class="hero-medallion-rule"></span>
+          <span class="hero-medallion-label">First-Try Rate</span>
+        </div>
+      </div>
+
+      <!-- HTML overlay: 240K+ stat -->
+      <div class="van-band-stat">
+        <span class="num">240K<span>+</span></span>
+        <span class="lbl">Doručených zásielok</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       MARQUEE STRIPE
+       ============================================================ -->
+  <div class="marquee-stripe" aria-hidden="true">
+    <div class="marquee-stripe-track">
+      <span class="marquee-stripe-item">Veľké veci až na miesto</span>
+      <span class="marquee-stripe-item">Keď kuriér nestačí</span>
+      <span class="marquee-stripe-item">Ťažké veci berieme na seba</span>
+      <span class="marquee-stripe-item">Od skladu až do bytu</span>
+      <span class="marquee-stripe-item">Dovezieme. Vynesieme. Zapojíme.</span>
+      <span class="marquee-stripe-item">Veľké veci až na miesto</span>
+      <span class="marquee-stripe-item">Keď kuriér nestačí</span>
+      <span class="marquee-stripe-item">Ťažké veci berieme na seba</span>
+      <span class="marquee-stripe-item">Od skladu až do bytu</span>
+      <span class="marquee-stripe-item">Dovezieme. Vynesieme. Zapojíme.</span>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       SERVICES
+       ============================================================ -->
+  <section class="section" id="sluzby">
+    <div class="section-inner">
+      <div class="section-header" data-reveal>
+        <div>
+          <div class="section-eyebrow">Naše služby</div>
+          <h2 class="section_title section-title">5 spôsobov ako <span class="o">presunúť</span> ťažké</h2>
+        </div>
+        <p class="section-lead">
+          Každá služba má iný režim, iné vybavenie a iný tím. Vyberáme ten, ktorý sedí na vašu zásielku — nie naopak.
+        </p>
+      </div>
+
+      <div class="services-grid" data-reveal>
+        <!-- 1: XL -->
+        <article class="service-card">
+          <div class="service-arrow">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M7 17L17 7M9 7h8v8"/></svg>
+          </div>
+          <span class="service-num">01 / NESEME XL</span>
+          <span class="service-tag">XL formát</span>
+          <svg class="service-icon" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="6" y="20" width="36" height="28"/>
+            <path d="M42 28h12l6 8v12H42z"/>
+            <circle cx="18" cy="52" r="5"/>
+            <circle cx="48" cy="52" r="5"/>
+            <path d="M14 14h16M18 8h12"/>
+          </svg>
+          <div>
+            <div class="service-name">
+              <span class="sub">XL formát</span>
+              Veľké zásielky &amp; nábytok
+            </div>
+            <p class="service-desc" style="margin-top:8px">Sedačky, postele, stolíky, balíky nad 50&nbsp;kg. Tam, kde sa kuriérska sieť končí, my len začíname.</p>
+          </div>
+          <ul class="service-features">
+            <li>Do 500 kg na zásielku</li>
+            <li>Dvojica nosičov</li>
+            <li>Demontáž &amp; montáž</li>
+          </ul>
+        </article>
+
+        <!-- 2: ELEKTRO -->
+        <article class="service-card">
+          <div class="service-arrow">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M7 17L17 7M9 7h8v8"/></svg>
+          </div>
+          <span class="service-num">02 / NESEME ELEKTRO</span>
+          <span class="service-tag">Biela technika</span>
+          <svg class="service-icon" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="14" y="6" width="36" height="52" rx="2"/>
+            <path d="M14 24h36"/>
+            <circle cx="22" cy="14" r="2"/>
+            <path d="M22 32v16M28 32v16"/>
+            <path d="M40 36l4 4-4 4"/>
+          </svg>
+          <div>
+            <div class="service-name">
+              <span class="sub">Biela technika</span>
+              Spotrebiče &amp; zapojenie
+            </div>
+            <p class="service-desc" style="margin-top:8px">Chladničky, práčky, rúry, sušičky. Pripojíme do siete, otestujeme — starý spotrebič odvezieme.</p>
+          </div>
+          <ul class="service-features">
+            <li>Zapojenie elektro &amp; voda</li>
+            <li>Test funkčnosti</li>
+            <li>Odvoz starého kusu</li>
+          </ul>
+        </article>
+
+        <!-- 3: HOME -->
+        <article class="service-card">
+          <div class="service-arrow">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M7 17L17 7M9 7h8v8"/></svg>
+          </div>
+          <span class="service-num">03 / NESEME HOME</span>
+          <span class="service-tag tag-orange">Až do bytu</span>
+          <svg class="service-icon" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M8 30L32 8l24 22"/>
+            <path d="M14 28v28h36V28"/>
+            <path d="M26 56V40h12v16"/>
+            <path d="M44 16v8"/>
+          </svg>
+          <div>
+            <div class="service-name">
+              <span class="sub">Domov</span>
+              Doručenie, výnos, montáž
+            </div>
+            <p class="service-desc" style="margin-top:8px">Z auta až do bytu na ľubovoľné poschodie. S výťahom aj bez. Postavíme, zapojíme, upraceme.</p>
+          </div>
+          <ul class="service-features">
+            <li>Výnos na poschodie</li>
+            <li>Montáž v cene</li>
+            <li>Odvoz obalov</li>
+          </ul>
+        </article>
+
+        <!-- 4: BUSINESS -->
+        <article class="service-card">
+          <div class="service-arrow">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M7 17L17 7M9 7h8v8"/></svg>
+          </div>
+          <span class="service-num">04 / NESEME BUSINESS</span>
+          <span class="service-tag">B2B partner</span>
+          <svg class="service-icon" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="6" y="20" width="22" height="32"/>
+            <rect x="36" y="14" width="22" height="38"/>
+            <path d="M6 28h22M6 36h22M36 22h22M36 30h22M36 38h22"/>
+            <path d="M14 52v6M20 52v6M44 52v6M50 52v6"/>
+          </svg>
+          <div>
+            <div class="service-name">
+              <span class="sub">E-shopy &amp; sklady</span>
+              B2B rozvoz, white-label
+            </div>
+            <p class="service-desc" style="margin-top:8px">Pravidelné zvozy a rozvozy pre Alzu, Nay a partnerské e-shopy. Poistenie, SLA, tracking, fakturácia.</p>
+          </div>
+          <ul class="service-features">
+            <li>SLA do 24 hodín</li>
+            <li>API integrácia</li>
+            <li>Poistenie do 5&nbsp;000&nbsp;€</li>
+          </ul>
+        </article>
+
+        <!-- 5: EXPRESS -->
+        <article class="service-card">
+          <div class="service-arrow">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M7 17L17 7M9 7h8v8"/></svg>
+          </div>
+          <span class="service-num">05 / NESEME EXPRESS</span>
+          <span class="service-tag tag-orange">Mestská</span>
+          <svg class="service-icon" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M30 6l-12 28h14l-4 24 22-32H36L46 6z"/>
+          </svg>
+          <div>
+            <div class="service-name">
+              <span class="sub">Express</span>
+              Mestská rýchla doprava
+            </div>
+            <p class="service-desc" style="margin-top:8px">Bratislava a okolie do 90 minút. Keď to potrebujete dnes — zdvihneme, naložíme, doručíme.</p>
+          </div>
+          <ul class="service-features">
+            <li>Do 90 minút</li>
+            <li>Live tracking</li>
+            <li>Foto-potvrdenie</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       MANIFESTO
+       ============================================================ -->
+  <section class="manifesto">
+    <div class="manifesto-bg" aria-hidden="true">XL</div>
+    <div class="manifesto-inner" data-reveal>
+      <h2 class="manifesto-text">
+        <span class="word">Doručíme</span> <span class="word">tam,</span><br>
+        <span class="word">kam</span> <span class="word strike-through">bežný</span><br>
+        <span class="word">kuriér</span> <span class="word o">nejde.</span>
+      </h2>
+      <div class="manifesto-meta">
+        <div>
+          <div class="label" style="margin-bottom:4px">Manifest</div>
+          <strong>Ťažké veci berieme na seba — od skladu až do bytu.</strong>
+        </div>
+        <div style="display:flex; gap:32px;">
+          <div>
+            <div class="label" style="margin-bottom:4px">Pôsobíme od</div>
+            <strong>2019</strong>
+          </div>
+          <div>
+            <div class="label" style="margin-bottom:4px">Doručených zásielok</div>
+            <strong>240&nbsp;000+</strong>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       HOW IT WORKS
+       ============================================================ -->
+  <section class="section" id="ako-to-funguje">
+    <div class="section-inner">
+      <div class="section-header" data-reveal>
+        <div>
+          <div class="section-eyebrow">Ako to funguje</div>
+          <h2 class="section-title">Štyri <span class="o">kroky.</span><br>Žiadne výhovorky.</h2>
+        </div>
+        <p class="section-lead">
+          Od kliknutia po zapojenú práčku. Bez mätúcich poplatkov, bez čakania, bez odovzdávania balíka susedovi.
+        </p>
+      </div>
+
+      <div class="how-grid" data-reveal>
+        <div class="how-step">
+          <svg class="how-step-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="1"/><path d="M9 9h6M9 13h6M9 17h4"/></svg>
+          <div class="how-step-num">01<span class="dot"></span></div>
+          <h3 class="how-step-title">Objednáte</h3>
+          <p class="how-step-desc">Online formulár, telefón alebo e-mail. Rozmery, adresa, poschodie — máme to za 60 sekúnd.</p>
+        </div>
+        <div class="how-step">
+          <svg class="how-step-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 17h2l1-7h12l1 7h2"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/></svg>
+          <div class="how-step-num">02<span class="dot"></span></div>
+          <h3 class="how-step-title">Privezieme</h3>
+          <p class="how-step-desc">Zo skladu, predajne alebo z hocijakého e-shopu. Naložíme, zaistíme, prinesieme načas.</p>
+        </div>
+        <div class="how-step">
+          <svg class="how-step-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 22V8M5 15l7-7 7 7M3 4h18"/></svg>
+          <div class="how-step-num">03<span class="dot"></span></div>
+          <h3 class="how-step-title">Vynesieme</h3>
+          <p class="how-step-desc">Aj na 6. poschodie bez výťahu. Aj cez úzke schodisko. Aj cez balkón, ak treba.</p>
+        </div>
+        <div class="how-step">
+          <svg class="how-step-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M14 7l-1.5-1.5a2 2 0 0 0-2.83 0L4 11.17V14h2.83l5.67-5.67a2 2 0 0 0 0-2.83zM18 21H6M14 17h4M14 13h4"/></svg>
+          <div class="how-step-num">04<span class="dot"></span></div>
+          <h3 class="how-step-title">Zapojíme</h3>
+          <p class="how-step-desc">Pripojíme do siete, otestujeme, odvezieme starý spotrebič a obaly. Vy len používate.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       STATS BAND
+       ============================================================ -->
+  <section class="stats-band">
+    <div class="stats-grid" data-reveal>
+      <div class="stat">
+        <div class="stat-num">240<span class="small">K+</span></div>
+        <div class="stat-label">Doručených zásielok</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">98<span class="small">%</span></div>
+        <div class="stat-label">Úspešnosť na prvý raz</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">90<span class="small">min</span></div>
+        <div class="stat-label">Express priemerný čas</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">5<span class="accent">·</span>000<span class="small">€</span></div>
+        <div class="stat-label">Poistenie zásielky</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       BUSINESS / B2B
+       ============================================================ -->
+  <section class="business" id="firmy">
+    <div class="section-inner">
+      <div class="section-header" data-reveal>
+        <div>
+          <div class="section-eyebrow">Pre e-shopy &amp; firmy</div>
+          <h2 class="section-title">Doručovací <span class="o">partner,</span><br>nie subdodávateľ.</h2>
+        </div>
+        <p class="section-lead">
+          Pre B2B máme vlastný tím, vlastné autá a SLA na papieri. Vy spravujete katalóg — my robíme last-mile.
+        </p>
+      </div>
+
+      <div class="business-grid" data-reveal>
+        <div class="business-visual">
+          <div class="business-visual-overlay"></div>
+          <img
+            src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1400&q=80"
+            alt="Sklad s veľkými zásielkami"
+            onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1553413077-190dd305871c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1400&q=80';"
+          />
+          <div class="business-visual-text">
+            <div>
+              <span class="label">B2B Operácia</span>
+              <div class="big">Sklady,<br>kamióny,<br>SLA.</div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <h3 style="font-family:var(--font-display); font-weight:900; font-size:32px; letter-spacing:-0.02em; line-height:1; text-transform:uppercase; margin-bottom:16px">
+            White-label last-mile pre <span style="color:var(--c-secondary)">XL kategórie.</span>
+          </h3>
+          <p style="font-size:16px; line-height:1.6; color:var(--c-text-secondary); max-width:520px;">
+            Pripojíme sa cez API, zoberieme vám doručenie veľkých vecí z krku a vystupujeme v mene vašej značky. Auto, oblek, foto-protokol, NPS po doručení — všetko brand-aligned.
+          </p>
+
+          <ul class="business-features">
+            <li>
+              <span class="num">01</span>
+              <div class="content">
+                <strong>API integrácia za 7 dní</strong>
+                <span>Magento, Shoptet, Shopify, custom. Realtime stavy, webhooks, tracking link.</span>
+              </div>
+            </li>
+            <li>
+              <span class="num">02</span>
+              <div class="content">
+                <strong>Brandovaný protokol</strong>
+                <span>Naši ľudia v uniformách s vaším logom. Zákazník vidí vás, nie nás.</span>
+              </div>
+            </li>
+            <li>
+              <span class="num">03</span>
+              <div class="content">
+                <strong>Garantované SLA</strong>
+                <span>Doručenie do 24/48/72 h podľa zóny. Pokuty za omeškanie definované v zmluve.</span>
+              </div>
+            </li>
+            <li>
+              <span class="num">04</span>
+              <div class="content">
+                <strong>Reklamácia bez stresu</strong>
+                <span>Vy stratíte zákazníka — my vám zaplatíme náhradu. Poistenie do 5 000 € na zásielku.</span>
+              </div>
+            </li>
+          </ul>
+
+          <div class="business-cta">
+            <a href="#objednat" class="btn btn-primary btn-arrow">
+              Dohodnúť stretnutie
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+            </a>
+            <a href="#" class="btn btn-secondary">Stiahnuť one-pager</a>
+          </div>
+
+          <div class="partners-row">
+            <span class="label">Pracujeme s</span>
+            <div class="partner-logos">
+              <span class="partner-logo">ALZA</span>
+              <span class="partner-logo">NAY</span>
+              <span class="partner-logo">DATART</span>
+              <span class="partner-logo">PLANEO</span>
+              <span class="partner-logo">EXISPORT</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       COVERAGE
+       ============================================================ -->
+  <section class="coverage" id="oblasti">
+    <div class="section-inner">
+      <div class="section-header" data-reveal>
+        <div>
+          <div class="section-eyebrow">Pokrytie</div>
+          <h2 class="section-title">Bratislava <span class="o">+</span><br>celý západ.</h2>
+        </div>
+        <p class="section-lead">
+          Domáca zóna do 60 km od Bratislavy. Mimo zónu doručujeme do 48 hodín — v cene aj výnos.
+        </p>
+      </div>
+
+      <div class="coverage-grid" data-reveal>
+        <div class="coverage-text">
+          <p style="font-size:17px; line-height:1.6; color:var(--c-text-secondary); max-width:560px;">
+            Naše tímy operujú zo skladu v Bratislave-Rači. Express doručenie pokrýva celé mesto a okres Senec, Pezinok, Malacky. Štandardné XL doručenie pokrýva celý západ Slovenska — bez príplatkov za poschodie.
+          </p>
+          <div class="coverage-cities">
+            <div class="city-chip"><span>Bratislava</span><span class="city-dist">0 km</span></div>
+            <div class="city-chip"><span>Senec</span><span class="city-dist">25 km</span></div>
+            <div class="city-chip"><span>Pezinok</span><span class="city-dist">22 km</span></div>
+            <div class="city-chip"><span>Malacky</span><span class="city-dist">38 km</span></div>
+            <div class="city-chip"><span>Trnava</span><span class="city-dist">45 km</span></div>
+            <div class="city-chip"><span>Galanta</span><span class="city-dist">48 km</span></div>
+            <div class="city-chip"><span>Nitra</span><span class="city-dist">90 km</span></div>
+            <div class="city-chip"><span>Trenčín</span><span class="city-dist">130 km</span></div>
+            <div class="city-chip"><span>Žilina</span><span class="city-dist">200 km</span></div>
+          </div>
+        </div>
+        <div class="coverage-map">
+          <svg viewBox="0 0 400 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <defs>
+              <pattern id="dots" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+                <circle cx="2" cy="2" r="1.2" fill="rgba(255,255,255,0.12)"/>
+              </pattern>
+              <radialGradient id="ring" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="rgba(250,84,0,0.5)"/>
+                <stop offset="55%" stop-color="rgba(250,84,0,0.05)"/>
+                <stop offset="100%" stop-color="rgba(250,84,0,0)"/>
+              </radialGradient>
+            </defs>
+            <rect width="400" height="400" fill="url(#dots)"/>
+            <circle cx="200" cy="200" r="180" fill="url(#ring)"/>
+            <circle cx="200" cy="200" r="80" fill="none" stroke="rgba(250,84,0,0.4)" stroke-width="1" stroke-dasharray="3 4"/>
+            <circle cx="200" cy="200" r="140" fill="none" stroke="rgba(250,84,0,0.25)" stroke-width="1" stroke-dasharray="3 4"/>
+            <!-- City dots -->
+            <circle cx="160" cy="180" r="3" fill="#fff"/>
+            <text x="148" y="170" fill="#fff" font-family="JetBrains Mono" font-size="9">Senec</text>
+            <circle cx="240" cy="170" r="3" fill="#fff"/>
+            <text x="246" y="166" fill="#fff" font-family="JetBrains Mono" font-size="9">Pezinok</text>
+            <circle cx="180" cy="120" r="3" fill="#fff"/>
+            <text x="188" y="116" fill="#fff" font-family="JetBrains Mono" font-size="9">Malacky</text>
+            <circle cx="280" cy="240" r="3" fill="#fff"/>
+            <text x="218" y="252" fill="#fff" font-family="JetBrains Mono" font-size="9">Trnava</text>
+            <circle cx="120" cy="260" r="3" fill="#fff"/>
+            <text x="60" y="272" fill="#fff" font-family="JetBrains Mono" font-size="9">Galanta</text>
+          </svg>
+          <div class="coverage-map-pulse"></div>
+          <div class="coverage-map-label">Bratislava — HQ</div>
+          <div class="coverage-map-stat">
+            <div class="num">200<span style="font-size:0.4em">km</span></div>
+            <div class="lbl">Express okruh</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       PRICING
+       ============================================================ -->
+  <section class="pricing" id="cennik">
+    <div class="section-inner">
+      <div class="section-header" data-reveal>
+        <div>
+          <div class="section-eyebrow">Cenník</div>
+          <h2 class="section-title">Tri balíčky.<br>Žiadne <span class="o">prekvapenia.</span></h2>
+        </div>
+        <p class="section-lead">
+          Cena obsahuje dopravu aj výnos do bytu. Žiadne príplatky za poschodie, výťah, váhu pod 100 kg ani za dvoch ľudí.
+        </p>
+      </div>
+
+      <div class="pricing-grid" data-reveal>
+        <article class="pricing-card">
+          <div class="pricing-name">Štart</div>
+          <div class="pricing-meta">Pre malé domáce zásielky</div>
+          <div class="pricing-price">
+            <span class="currency">€</span>29
+            <span class="period">/zásielka</span>
+          </div>
+          <ul class="pricing-features">
+            <li>Do 50 kg</li>
+            <li>Bratislava + okolie 25 km</li>
+            <li>Doručenie do 48 hodín</li>
+            <li>Výnos po prízemie</li>
+            <li>Foto-potvrdenie</li>
+          </ul>
+          <a href="#objednat" class="btn btn-secondary" style="width:100%">Objednať</a>
+        </article>
+
+        <article class="pricing-card featured">
+          <span class="pricing-tag">Najobľúbenejšie</span>
+          <div class="pricing-name">Domácnosť</div>
+          <div class="pricing-meta">Pre nábytok &amp; spotrebiče</div>
+          <div class="pricing-price">
+            <span class="currency">€</span>69
+            <span class="period">/zásielka</span>
+          </div>
+          <ul class="pricing-features">
+            <li>Do 250 kg</li>
+            <li>Celé západné Slovensko</li>
+            <li>Doručenie do 24 hodín</li>
+            <li>Výnos na ľubovoľné poschodie</li>
+            <li>Demontáž &amp; montáž</li>
+            <li>Odvoz starého spotrebiča</li>
+          </ul>
+          <a href="#objednat" class="btn btn-orange" style="width:100%">Objednať</a>
+        </article>
+
+        <article class="pricing-card">
+          <div class="pricing-name">XL Pro</div>
+          <div class="pricing-meta">Pre veľké &amp; ťažké zásielky</div>
+          <div class="pricing-price">
+            <span class="currency">€</span>129
+            <span class="period">/zásielka</span>
+          </div>
+          <ul class="pricing-features">
+            <li>Do 500 kg</li>
+            <li>Celé Slovensko</li>
+            <li>Termín na minútu</li>
+            <li>Dvojica nosičov</li>
+            <li>Plná montáž &amp; zapojenie</li>
+            <li>Poistenie do 5 000 €</li>
+          </ul>
+          <a href="#objednat" class="btn btn-secondary" style="width:100%">Objednať</a>
+        </article>
+      </div>
+
+      <p style="margin-top:24px; text-align:center; color:var(--c-text-secondary); font-size:13px;">
+        Ceny sú orientačné, vrátane DPH. Pre B2B dohodneme individuálny cenník podľa objemu.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       CTA FINAL
+       ============================================================ -->
+  <section class="cta-final" id="objednat">
+    <div class="cta-final-bg" aria-hidden="true">GO</div>
+    <div class="cta-final-inner">
+      <div class="cta-final-grid" data-reveal>
+        <div>
+          <div class="hero-eyebrow" style="margin-bottom:24px">Pripravení? Tak ideme.</div>
+          <h2 class="cta-final-title">
+            Ťažké veci<br>
+            <span class="o">berieme</span><br>
+            na seba.
+          </h2>
+        </div>
+        <div>
+          <p class="cta-final-body">
+            Napíšte rozmery a adresu — do hodiny vám voláme s presným termínom a cenou. Cez víkendy aj sviatky.
+          </p>
+          <div class="cta-final-actions">
+            <a href="#" class="btn btn-primary btn-arrow">
+              Objednať dopravu
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+            </a>
+            <a href="tel:+421900000000" class="btn btn-ghost-light">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              Volať +421 900 000 000
+            </a>
+          </div>
+          <p style="margin-top:16px; font-size:13px; color:rgba(255,255,255,0.5);">Po–Ne · 7:00–21:00 · Reagujeme do 60 min</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#" class="logo">
+            <span class="logo-mark"></span>
+            <span>NESEME</span>
+          </a>
+          <p>XL doprava, výnos a montáž pre domácnosti aj e-shopy. Bratislava a celé západné Slovensko.</p>
+          <div style="display:flex; gap:8px; flex-wrap:wrap;">
+            <span class="service-tag" style="background:var(--c-secondary);">Veľké veci až na miesto</span>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Služby</h4>
+          <ul>
+            <li><a href="#">Neseme XL</a></li>
+            <li><a href="#">Neseme Elektro</a></li>
+            <li><a href="#">Neseme Home</a></li>
+            <li><a href="#">Neseme Business</a></li>
+            <li><a href="#">Neseme Express</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Firma</h4>
+          <ul>
+            <li><a href="#">O nás</a></li>
+            <li><a href="#">Kariéra</a></li>
+            <li><a href="#">Kontakt</a></li>
+            <li><a href="#">Pre médiá</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Pre firmy</h4>
+          <ul>
+            <li><a href="#">B2B partnerstvo</a></li>
+            <li><a href="#">API dokumentácia</a></li>
+            <li><a href="#">Cenník B2B</a></li>
+            <li><a href="#">Prípadové štúdie</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Kontakt</h4>
+          <ul>
+            <li><a href="tel:+421900000000">+421 900 000 000</a></li>
+            <li><a href="mailto:ahoj@neseme.sk">ahoj@neseme.sk</a></li>
+            <li><a href="#">Račianska 88, BA</a></li>
+            <li><a href="#">Po–Ne · 7:00–21:00</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span class="footer-bottom-meta">© 2026 Neseme s.r.o. — IČO 00000000</span>
+        <div class="footer-social">
+          <a href="#" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17" cy="7" r="1" fill="currentColor"/></svg></a>
+          <a href="#" aria-label="Facebook"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M9 8H6v4h3v12h5V12h3.6l.4-4h-4V6.5c0-1 .2-1.5 1.4-1.5H18V0h-3.5C10.7 0 9 1.7 9 5v3z"/></svg></a>
+          <a href="#" aria-label="LinkedIn"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM5 8H0v16h5V8zm7.98 0H8v16h5v-8.4c0-4.6 6-5 6 0V24h5v-9.4c0-7.8-9-7.5-11-3.6V8h-.02z"/></svg></a>
+          <a href="#" aria-label="TikTok"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19 8.5a7.6 7.6 0 0 1-4-1.2v8.2a6 6 0 1 1-6-6V13a3 3 0 1 0 3 3V0h3.5a4.5 4.5 0 0 0 4.5 4.5v4z"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Header shadow on scroll
+    const header = document.getElementById('header');
+    const onScroll = () => {
+      if (window.scrollY > 8) header.classList.add('scrolled');
+      else header.classList.remove('scrolled');
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+
+    // Reveal on scroll
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -80px 0px' });
+
+    document.querySelectorAll('[data-reveal]').forEach(el => observer.observe(el));
+
+    // Mobile menu toggle
+    const menuOpen = document.getElementById('menuOpen');
+    const menuClose = document.getElementById('menuClose');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const openMenu = () => {
+      mobileMenu.classList.add('open');
+      document.body.classList.add('menu-open');
+    };
+    const closeMenu = () => {
+      mobileMenu.classList.remove('open');
+      document.body.classList.remove('menu-open');
+    };
+    if (menuOpen) menuOpen.addEventListener('click', openMenu);
+    if (menuClose) menuClose.addEventListener('click', closeMenu);
+    document.querySelectorAll('.mobile-menu-nav a, .mobile-menu-cta a').forEach(a => {
+      a.addEventListener('click', closeMenu);
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && mobileMenu.classList.contains('open')) closeMenu();
+    });
+
+    // Set CSS var for true viewport height (handles mobile browser chrome)
+    const setVH = () => {
+      document.documentElement.style.setProperty('--vh', `${window.innerHeight * 0.01}px`);
+    };
+    setVH();
+    window.addEventListener('resize', setVH);
+    window.addEventListener('orientationchange', setVH);
+  </script>
+</body>
+</html>
