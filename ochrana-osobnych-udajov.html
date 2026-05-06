@@ -34,9 +34,8 @@
     a:hover { color: var(--c-secondary); }
     .header { padding: 24px 32px; border-bottom: 1px solid var(--c-border); position: sticky; top: 0; background: var(--c-bg); z-index: 10; }
     .header-inner { max-width: 960px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; }
-    .logo { display: flex; align-items: center; gap: 8px; font-family: var(--font-display); font-weight: 900; font-size: 22px; letter-spacing: -0.02em; text-transform: uppercase; text-decoration: none; color: var(--c-primary); }
-    .logo-mark { display: inline-block; width: 1.2em; height: 0.78em; position: relative; flex-shrink: 0; }
-    .logo-mark::before { content: ''; position: absolute; inset: 0; background: var(--c-primary); clip-path: polygon(0 70%, 35% 0, 100% 0, 100% 30%, 65% 100%, 0 100%); }
+    .logo { display: flex; align-items: center; flex-shrink: 0; line-height: 0; text-decoration: none; }
+    .logo-img { height: 28px; width: auto; display: block; }
     .back-link { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none; color: var(--c-text-secondary); }
     .back-link:hover { color: var(--c-secondary); }
     main { max-width: 720px; margin: 0 auto; padding: 64px 32px 96px; }
@@ -84,8 +83,7 @@
   <header class="header">
     <div class="header-inner">
       <a href="/" class="logo" aria-label="Neseme — domovská stránka">
-        <span class="logo-mark"></span>
-        <span>NESEME</span>
+        <img src="/logo-neseme.svg" alt="Neseme" class="logo-img" />
       </a>
       <a href="/" class="back-link">← Späť na hlavnú</a>
     </div>
