@@ -80,22 +80,25 @@
       gap: 32px;
     }
     .logo {
-      display: flex; align-items: center; gap: 10px;
+      display: flex; align-items: center; gap: 8px;
       font-family: var(--font-display);
-      font-weight: 900; font-size: 20px;
+      font-weight: 900; font-size: 24px;
       letter-spacing: -0.02em; text-transform: uppercase;
+      flex-shrink: 0;
     }
     .logo-mark {
-      width: 28px; height: 28px;
-      background: var(--c-primary);
-      border-radius: 4px;
+      display: inline-block;
+      width: 28px; height: 18px;
       position: relative;
     }
-    .logo-mark::after {
-      content: ''; position: absolute;
-      left: 6px; top: 12px; width: 16px; height: 4px;
-      background: var(--c-secondary);
+    .logo-mark::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: var(--c-primary);
+      clip-path: polygon(0 70%, 35% 0, 100% 0, 100% 30%, 65% 100%, 0 100%);
     }
+    .footer-brand .logo .logo-mark::before { background: var(--c-bg); }
     .nav { display: flex; align-items: center; gap: 28px; }
     .nav-link {
       font-weight: 500; font-size: 14px;
