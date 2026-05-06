@@ -719,11 +719,11 @@
       flex-shrink: 0;
     }
 
-    /* "Ťažká váha" tag — pinned near van's top-right corner */
+    /* "Ťažká váha" tag — pinned at top-left area of the band */
     .van-band-tag {
       position: absolute;
-      top: 36%;
-      right: 22%;
+      top: 10%;
+      right: 45%;
       background: var(--c-primary);
       color: var(--c-bg);
       padding: 8px 14px;
@@ -733,7 +733,7 @@
       letter-spacing: 0.1em;
       text-transform: uppercase;
       z-index: 7;
-      transform: rotate(-3deg);
+      transform: rotate(3deg);
       border: 2px solid var(--c-bg);
       box-shadow: 0 4px 12px rgba(0,0,0,0.3);
     }
@@ -1023,17 +1023,26 @@
     .manifesto-text .o { color: var(--c-secondary); }
     .manifesto-text .strike-through {
       position: relative;
+      display: inline-block;
       color: rgba(255,255,255,0.35);
     }
+    .manifesto-text .strike-through::before,
     .manifesto-text .strike-through::after {
       content: '';
       position: absolute;
-      left: -2%;
-      right: -2%;
-      top: 58%;
+      left: -4%;
+      right: -4%;
+      top: 50%;
       height: 8px;
       background: var(--c-secondary);
-      transform: rotate(-2deg);
+      border-radius: 2px;
+      transform-origin: center;
+    }
+    .manifesto-text .strike-through::before {
+      transform: translateY(-50%) rotate(-12deg);
+    }
+    .manifesto-text .strike-through::after {
+      transform: translateY(-50%) rotate(12deg);
     }
     .manifesto-meta {
       display: flex;
@@ -1099,10 +1108,10 @@
     }
     .how-step-num .dot {
       position: absolute;
-      top: 6px;
-      right: -16px;
-      width: 12px;
-      height: 12px;
+      bottom: 14px;
+      right: -10px;
+      width: 10px;
+      height: 10px;
       background: var(--c-secondary);
       border-radius: 50%;
     }
@@ -1120,53 +1129,209 @@
       line-height: 1.55;
       color: var(--c-text-secondary);
     }
-    .how-step-icon {
+    .how-step-icon-wrap {
       position: absolute;
       top: 32px;
       right: 32px;
-      width: 32px;
-      height: 32px;
-      color: var(--c-text-secondary);
-      opacity: 0.3;
-      transition: opacity var(--duration) var(--ease);
+      width: 56px;
+      height: 56px;
+      border: 1px solid var(--c-border);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--c-primary);
+      transition: all var(--duration) var(--ease);
     }
-    .how-step:hover .how-step-icon { opacity: 1; color: var(--c-secondary); }
+    .how-step-icon {
+      width: 24px;
+      height: 24px;
+      transition: transform var(--duration) var(--ease);
+    }
+    .how-step:hover .how-step-icon-wrap {
+      background: var(--c-primary);
+      color: var(--c-bg);
+      border-color: var(--c-primary);
+    }
+    .how-step:hover .how-step-icon { transform: scale(1.08); }
 
     /* ============================================================
        STATS BAND
        ============================================================ */
     .stats-band {
-      background: var(--c-bg);
-      padding: 96px 0;
-      border-top: 1px solid var(--c-border);
-      border-bottom: 1px solid var(--c-border);
+      background: var(--c-primary);
+      color: var(--c-bg);
+      padding: 96px 32px;
+      position: relative;
+      overflow: hidden;
+    }
+    /* Grid dot pattern background */
+    .stats-band::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(circle, rgba(255,255,255,0.06) 1px, transparent 1px);
+      background-size: 32px 32px;
+      pointer-events: none;
+    }
+    /* Giant background NUMBERS text */
+    .stats-band::after {
+      content: 'NESEME';
+      position: absolute;
+      bottom: -40px;
+      right: -40px;
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: clamp(180px, 24vw, 360px);
+      line-height: 0.85;
+      letter-spacing: -0.04em;
+      color: rgba(255,255,255,0.04);
+      pointer-events: none;
+      user-select: none;
+      white-space: nowrap;
+    }
+    .stats-band-header {
+      max-width: var(--container);
+      margin: 0 auto 48px;
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 32px;
+      position: relative;
+      z-index: 1;
+    }
+    .stats-band-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-family: var(--font-mono);
+      font-size: 12px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--c-secondary);
+    }
+    .stats-band-eyebrow::before {
+      content: '';
+      width: 32px;
+      height: 1px;
+      background: var(--c-secondary);
+    }
+    .stats-band-title {
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: clamp(28px, 3.6vw, 48px);
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+      text-transform: uppercase;
+      padding-top: 0.12em;
+      margin-top: 12px;
+      max-width: 600px;
+    }
+    .stats-band-title .o { color: var(--c-secondary); }
+    .stats-band-meta {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+      text-align: right;
+      flex-shrink: 0;
+    }
+    .stats-band-meta strong {
+      display: block;
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: 16px;
+      letter-spacing: 0.04em;
+      color: var(--c-bg);
+      margin-top: 4px;
     }
     .stats-grid {
+      max-width: var(--container);
+      margin: 0 auto;
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 0;
+      position: relative;
+      z-index: 1;
     }
     .stat {
-      padding: 0 32px;
-      border-right: 1px solid var(--c-border);
+      padding: 32px 32px 32px;
+      border-right: 1px solid rgba(255,255,255,0.12);
+      position: relative;
     }
     .stat:last-child { border-right: none; }
+    /* Decorative corner mark on each stat */
+    .stat::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 32px;
+      width: 24px;
+      height: 2px;
+      background: var(--c-secondary);
+    }
+    .stat-index {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      color: rgba(255,255,255,0.4);
+      margin-bottom: 24px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .stat-index .dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--c-secondary);
+      animation: statPulse 2s var(--ease) infinite;
+    }
+    @keyframes statPulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(0.8); }
+    }
     .stat-num {
       font-family: var(--font-display);
       font-weight: 900;
-      font-size: clamp(48px, 6vw, 88px);
-      line-height: 0.95;
-      letter-spacing: -0.03em;
-      color: var(--c-primary);
-      margin-bottom: 8px;
+      font-size: clamp(56px, 6.5vw, 96px);
+      line-height: 0.92;
+      letter-spacing: -0.035em;
+      color: var(--c-bg);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: flex-start;
+      gap: 4px;
     }
     .stat-num .accent { color: var(--c-secondary); }
     .stat-num .small {
-      font-size: 0.45em;
-      vertical-align: top;
-      margin-left: 4px;
+      font-size: 0.32em;
       font-weight: 700;
-      letter-spacing: 0;
+      letter-spacing: 0.02em;
+      color: var(--c-secondary);
+      margin-top: 0.25em;
+      text-transform: uppercase;
+    }
+    /* Decorative bar under number */
+    .stat-bar {
+      width: 100%;
+      height: 4px;
+      background: rgba(255,255,255,0.08);
+      margin-bottom: 16px;
+      position: relative;
+      overflow: hidden;
+    }
+    .stat-bar::after {
+      content: '';
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      background: var(--c-secondary);
+      width: var(--bar-fill, 60%);
+      animation: barFill 1.4s var(--ease) both;
+    }
+    @keyframes barFill {
+      from { width: 0; }
+      to { width: var(--bar-fill, 60%); }
     }
     .stat-label {
       font-family: var(--font-display);
@@ -1174,7 +1339,14 @@
       font-size: 13px;
       letter-spacing: 0.08em;
       text-transform: uppercase;
-      color: var(--c-text-secondary);
+      color: rgba(255,255,255,0.85);
+      margin-bottom: 6px;
+    }
+    .stat-sub {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.06em;
+      color: rgba(255,255,255,0.4);
     }
 
     /* ============================================================
@@ -1439,6 +1611,7 @@
     .pricing-card.featured {
       background: var(--c-primary);
       color: var(--c-bg);
+      padding-top: 64px;
     }
     .pricing-card.featured .pricing-name { color: var(--c-secondary); }
     .pricing-card.featured .pricing-features li { border-color: rgba(255,255,255,0.15); }
@@ -1932,16 +2105,23 @@
       .how-step-num { font-size: 64px; margin-bottom: 16px; }
       .how-step-title { font-size: 18px; }
       .how-step-desc { font-size: 14px; }
-      .how-step-icon { width: 24px; height: 24px; top: 24px; right: 20px; }
+      .how-step-icon-wrap { width: 44px; height: 44px; top: 20px; right: 20px; }
+      .how-step-icon { width: 18px; height: 18px; }
 
-      .stats-band { padding: 64px 0; }
-      .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 32px 16px; padding: 0 20px; }
-      .stat { border-right: none; padding: 0; }
-      .stat:nth-child(odd) { border-right: 1px solid var(--c-border); padding-right: 16px; }
+      .stats-band { padding: 64px 20px; }
+      .stats-band-header { flex-direction: column; align-items: flex-start; gap: 16px; margin-bottom: 32px; }
+      .stats-band-meta { text-align: left; }
+      .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 32px 16px; padding: 0; }
+      .stat { border-right: none; padding: 24px 16px 0; }
+      .stat::before { left: 16px; width: 18px; }
+      .stat-index { margin-bottom: 16px; font-size: 10px; }
+      .stat:nth-child(odd) { border-right: 1px solid rgba(255,255,255,0.12); }
       .stat:nth-child(even) { padding-left: 16px; }
-      .stat:nth-child(1), .stat:nth-child(2) { padding-bottom: 24px; border-bottom: 1px solid var(--c-border); }
+      .stat:nth-child(1), .stat:nth-child(2) { padding-bottom: 24px; border-bottom: 1px solid rgba(255,255,255,0.12); }
       .stat-num { font-size: 44px; }
       .stat-label { font-size: 11px; }
+      .stat-sub { font-size: 10px; }
+      .stat-bar { height: 3px; }
 
       .business { padding: 80px 0; }
       .business-grid { grid-template-columns: 1fr; gap: 32px; }
@@ -2453,7 +2633,7 @@
             <path d="M8 30L32 8l24 22"/>
             <path d="M14 28v28h36V28"/>
             <path d="M26 56V40h12v16"/>
-            <path d="M44 16v8"/>
+            <path d="M42 17V11h6v10"/>
           </svg>
           <div>
             <div class="service-name">
@@ -2570,25 +2750,54 @@
 
       <div class="how-grid" data-reveal>
         <div class="how-step">
-          <svg class="how-step-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="1"/><path d="M9 9h6M9 13h6M9 17h4"/></svg>
+          <div class="how-step-icon-wrap">
+            <svg class="how-step-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="3" y="3" width="18" height="18" rx="1"/>
+              <path d="M9 9h6M9 13h6M9 17h4"/>
+            </svg>
+          </div>
           <div class="how-step-num">01<span class="dot"></span></div>
           <h3 class="how-step-title">Objednáte</h3>
           <p class="how-step-desc">Online formulár, telefón alebo e-mail. Rozmery, adresa, poschodie — máme to za 60 sekúnd.</p>
         </div>
         <div class="how-step">
-          <svg class="how-step-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 17h2l1-7h12l1 7h2"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/></svg>
+          <div class="how-step-icon-wrap">
+            <svg class="how-step-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="2" y="8" width="12" height="9"/>
+              <path d="M14 11h4l3 3v3h-7z"/>
+              <circle cx="7" cy="18" r="1.6"/>
+              <circle cx="17" cy="18" r="1.6"/>
+              <path d="M9 8v9"/>
+            </svg>
+          </div>
           <div class="how-step-num">02<span class="dot"></span></div>
           <h3 class="how-step-title">Privezieme</h3>
           <p class="how-step-desc">Zo skladu, predajne alebo z hocijakého e-shopu. Naložíme, zaistíme, prinesieme načas.</p>
         </div>
         <div class="how-step">
-          <svg class="how-step-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 22V8M5 15l7-7 7 7M3 4h18"/></svg>
+          <div class="how-step-icon-wrap">
+            <svg class="how-step-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="6" y="11" width="12" height="9"/>
+              <path d="M9 11V8h6v3"/>
+              <path d="M12 6V2"/>
+              <path d="M9 5l3-3 3 3"/>
+              <path d="M3 22h18"/>
+            </svg>
+          </div>
           <div class="how-step-num">03<span class="dot"></span></div>
           <h3 class="how-step-title">Vynesieme</h3>
           <p class="how-step-desc">Aj na 6. poschodie bez výťahu. Aj cez úzke schodisko. Aj cez balkón, ak treba.</p>
         </div>
         <div class="how-step">
-          <svg class="how-step-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M14 7l-1.5-1.5a2 2 0 0 0-2.83 0L4 11.17V14h2.83l5.67-5.67a2 2 0 0 0 0-2.83zM18 21H6M14 17h4M14 13h4"/></svg>
+          <div class="how-step-icon-wrap">
+            <svg class="how-step-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M9 3v5"/>
+              <path d="M15 3v5"/>
+              <path d="M6 8h12v4a6 6 0 0 1-12 0z"/>
+              <path d="M12 18v3"/>
+              <path d="M12 21a3 3 0 0 0 3 3h3"/>
+            </svg>
+          </div>
           <div class="how-step-num">04<span class="dot"></span></div>
           <h3 class="how-step-title">Zapojíme</h3>
           <p class="how-step-desc">Pripojíme do siete, otestujeme, odvezieme starý spotrebič a obaly. Vy len používate.</p>
@@ -2601,22 +2810,44 @@
        STATS BAND
        ============================================================ -->
   <section class="stats-band">
+    <div class="stats-band-header" data-reveal>
+      <div>
+        <div class="stats-band-eyebrow">Čísla, ktoré <span style="color:rgba(255,255,255,0.6)">stoja za nami</span></div>
+        <h2 class="stats-band-title">Dôvera v <span class="o">číslach,</span><br>nie v sľuboch.</h2>
+      </div>
+      <div class="stats-band-meta">
+        Aktualizované<br>
+        <strong>05/2026</strong>
+      </div>
+    </div>
     <div class="stats-grid" data-reveal>
-      <div class="stat">
+      <div class="stat" style="--bar-fill: 95%">
+        <div class="stat-index"><span class="dot"></span>01 / Volume</div>
         <div class="stat-num">240<span class="small">K+</span></div>
+        <div class="stat-bar"></div>
         <div class="stat-label">Doručených zásielok</div>
+        <div class="stat-sub">Od roku 2019</div>
       </div>
-      <div class="stat">
+      <div class="stat" style="--bar-fill: 98%">
+        <div class="stat-index"><span class="dot"></span>02 / Quality</div>
         <div class="stat-num">98<span class="small">%</span></div>
+        <div class="stat-bar"></div>
         <div class="stat-label">Úspešnosť na prvý raz</div>
+        <div class="stat-sub">Bez druhého pokusu</div>
       </div>
-      <div class="stat">
+      <div class="stat" style="--bar-fill: 75%">
+        <div class="stat-index"><span class="dot"></span>03 / Speed</div>
         <div class="stat-num">90<span class="small">min</span></div>
+        <div class="stat-bar"></div>
         <div class="stat-label">Express priemerný čas</div>
+        <div class="stat-sub">Bratislava + okolie</div>
       </div>
-      <div class="stat">
+      <div class="stat" style="--bar-fill: 85%">
+        <div class="stat-index"><span class="dot"></span>04 / Trust</div>
         <div class="stat-num">5<span class="accent">·</span>000<span class="small">€</span></div>
+        <div class="stat-bar"></div>
         <div class="stat-label">Poistenie zásielky</div>
+        <div class="stat-sub">Štandardne v cene</div>
       </div>
     </div>
   </section>
@@ -2757,22 +2988,89 @@
                 <stop offset="55%" stop-color="rgba(250,84,0,0.05)"/>
                 <stop offset="100%" stop-color="rgba(250,84,0,0)"/>
               </radialGradient>
+              <linearGradient id="danube" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="rgba(120,180,220,0)"/>
+                <stop offset="50%" stop-color="rgba(120,180,220,0.45)"/>
+                <stop offset="100%" stop-color="rgba(120,180,220,0)"/>
+              </linearGradient>
             </defs>
+
+            <!-- Background dot grid -->
             <rect width="400" height="400" fill="url(#dots)"/>
+
+            <!-- Subtle latitude lines -->
+            <line x1="0" y1="100" x2="400" y2="100" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+            <line x1="0" y1="200" x2="400" y2="200" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+            <line x1="0" y1="300" x2="400" y2="300" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+            <line x1="100" y1="0" x2="100" y2="400" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+            <line x1="200" y1="0" x2="200" y2="400" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+            <line x1="300" y1="0" x2="300" y2="400" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+
+            <!-- Slovakia / Austria border (Morava + Danube approximation, runs SW of BA) -->
+            <path d="M 80 80 Q 100 130 130 175 Q 155 200 180 220 Q 195 230 195 245" fill="none" stroke="rgba(255,255,255,0.18)" stroke-width="1.2" stroke-dasharray="4 4"/>
+
+            <!-- Danube river (flows roughly W→E through Bratislava, then SE) -->
+            <path d="M 0 215 Q 80 210 160 220 Q 200 230 240 240 Q 300 260 400 280" fill="none" stroke="url(#danube)" stroke-width="3" stroke-linecap="round"/>
+            <path d="M 0 215 Q 80 210 160 220 Q 200 230 240 240 Q 300 260 400 280" fill="none" stroke="rgba(120,180,220,0.18)" stroke-width="6" stroke-linecap="round"/>
+
+            <!-- Coverage rings (60 km, ~100 km, ~150 km) -->
             <circle cx="200" cy="200" r="180" fill="url(#ring)"/>
-            <circle cx="200" cy="200" r="80" fill="none" stroke="rgba(250,84,0,0.4)" stroke-width="1" stroke-dasharray="3 4"/>
-            <circle cx="200" cy="200" r="140" fill="none" stroke="rgba(250,84,0,0.25)" stroke-width="1" stroke-dasharray="3 4"/>
-            <!-- City dots -->
-            <circle cx="160" cy="180" r="3" fill="#fff"/>
-            <text x="148" y="170" fill="#fff" font-family="JetBrains Mono" font-size="9">Senec</text>
-            <circle cx="240" cy="170" r="3" fill="#fff"/>
-            <text x="246" y="166" fill="#fff" font-family="JetBrains Mono" font-size="9">Pezinok</text>
-            <circle cx="180" cy="120" r="3" fill="#fff"/>
-            <text x="188" y="116" fill="#fff" font-family="JetBrains Mono" font-size="9">Malacky</text>
-            <circle cx="280" cy="240" r="3" fill="#fff"/>
-            <text x="218" y="252" fill="#fff" font-family="JetBrains Mono" font-size="9">Trnava</text>
-            <circle cx="120" cy="260" r="3" fill="#fff"/>
-            <text x="60" y="272" fill="#fff" font-family="JetBrains Mono" font-size="9">Galanta</text>
+            <circle cx="200" cy="200" r="80" fill="none" stroke="rgba(250,84,0,0.55)" stroke-width="1.2" stroke-dasharray="3 4"/>
+            <circle cx="200" cy="200" r="135" fill="none" stroke="rgba(250,84,0,0.3)" stroke-width="1" stroke-dasharray="3 4"/>
+            <circle cx="200" cy="200" r="190" fill="none" stroke="rgba(250,84,0,0.15)" stroke-width="1" stroke-dasharray="2 5"/>
+
+            <!-- N compass indicator -->
+            <g transform="translate(364 36)">
+              <circle r="14" fill="rgba(0,0,0,0.5)" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+              <path d="M0 -8 L3 4 L0 1 L-3 4 Z" fill="var(--c-secondary)"/>
+              <text x="0" y="-18" text-anchor="middle" fill="rgba(255,255,255,0.7)" font-family="JetBrains Mono" font-size="9" letter-spacing="0.1em">N</text>
+            </g>
+
+            <!-- Scale bar bottom-right -->
+            <g transform="translate(290 372)">
+              <line x1="0" y1="0" x2="80" y2="0" stroke="rgba(255,255,255,0.5)" stroke-width="1.2"/>
+              <line x1="0" y1="-3" x2="0" y2="3" stroke="rgba(255,255,255,0.5)" stroke-width="1.2"/>
+              <line x1="40" y1="-2" x2="40" y2="2" stroke="rgba(255,255,255,0.5)" stroke-width="1"/>
+              <line x1="80" y1="-3" x2="80" y2="3" stroke="rgba(255,255,255,0.5)" stroke-width="1.2"/>
+              <text x="0" y="-7" fill="rgba(255,255,255,0.6)" font-family="JetBrains Mono" font-size="8">0</text>
+              <text x="80" y="-7" fill="rgba(255,255,255,0.6)" font-family="JetBrains Mono" font-size="8" text-anchor="end">60 km</text>
+            </g>
+
+            <!-- ============== CITIES (geographically correct relative to BA) ============== -->
+            <!-- Malacky — ~38 km NNW -->
+            <g>
+              <circle cx="183" cy="151" r="3" fill="#fff"/>
+              <circle cx="183" cy="151" r="6" fill="none" stroke="rgba(255,255,255,0.25)" stroke-width="1"/>
+              <text x="190" y="154" fill="#fff" font-family="JetBrains Mono" font-size="10">Malacky</text>
+            </g>
+
+            <!-- Pezinok — ~22 km NNE -->
+            <g>
+              <circle cx="212" cy="174" r="3" fill="#fff"/>
+              <circle cx="212" cy="174" r="6" fill="none" stroke="rgba(255,255,255,0.25)" stroke-width="1"/>
+              <text x="219" y="177" fill="#fff" font-family="JetBrains Mono" font-size="10">Pezinok</text>
+            </g>
+
+            <!-- Senec — ~25 km ENE -->
+            <g>
+              <circle cx="231" cy="189" r="3" fill="#fff"/>
+              <circle cx="231" cy="189" r="6" fill="none" stroke="rgba(255,255,255,0.25)" stroke-width="1"/>
+              <text x="238" y="192" fill="#fff" font-family="JetBrains Mono" font-size="10">Senec</text>
+            </g>
+
+            <!-- Trnava — ~47 km NE -->
+            <g>
+              <circle cx="252" cy="167" r="3" fill="var(--c-secondary)"/>
+              <circle cx="252" cy="167" r="6" fill="none" stroke="rgba(250,84,0,0.4)" stroke-width="1"/>
+              <text x="259" y="170" fill="#fff" font-family="JetBrains Mono" font-size="10">Trnava</text>
+            </g>
+
+            <!-- Galanta — ~48 km ESE -->
+            <g>
+              <circle cx="260" cy="220" r="3" fill="var(--c-secondary)"/>
+              <circle cx="260" cy="220" r="6" fill="none" stroke="rgba(250,84,0,0.4)" stroke-width="1"/>
+              <text x="267" y="223" fill="#fff" font-family="JetBrains Mono" font-size="10">Galanta</text>
+            </g>
           </svg>
           <div class="coverage-map-pulse"></div>
           <div class="coverage-map-label">Bratislava — HQ</div>
