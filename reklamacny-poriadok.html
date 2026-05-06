@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="theme-color" content="#111111" />
   <meta name="robots" content="index, follow" />
-  <title>Reklamačný poriadok — Neseme</title>
-  <meta name="description" content="Reklamačný poriadok spoločnosti Orostone s.r.o. (značka Neseme). Postup uplatnenia reklamácie podľa zákona 250/2007 Z. z." />
+  <title>Reklamačný poriadok — Neseme | Orostone s.r.o.</title>
+  <meta name="description" content="Reklamačný poriadok spoločnosti Orostone s.r.o. (značka Neseme) — postup uplatnenia reklamácie podľa § 18 zák. č. 250/2007 Z. z. a Občianskeho zákonníka." />
   <link rel="canonical" href="https://neseme.sk/reklamacny-poriadok.html" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
@@ -28,11 +28,11 @@
       --ease: cubic-bezier(0.22, 1, 0.36, 1);
     }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { -webkit-text-size-adjust: 100%; }
-    body { font-family: var(--font-body); font-size: 16px; line-height: 1.7; color: var(--c-primary); background: var(--c-bg); -webkit-font-smoothing: antialiased; }
+    html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+    body { font-family: var(--font-body); font-size: 15px; line-height: 1.7; color: var(--c-primary); background: var(--c-bg); -webkit-font-smoothing: antialiased; }
     a { color: var(--c-primary); text-decoration: underline; }
     a:hover { color: var(--c-secondary); }
-    .header { padding: 24px 32px; border-bottom: 1px solid var(--c-border); }
+    .header { padding: 24px 32px; border-bottom: 1px solid var(--c-border); position: sticky; top: 0; background: var(--c-bg); z-index: 10; }
     .header-inner { max-width: 960px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; }
     .logo { display: flex; align-items: center; gap: 8px; font-family: var(--font-display); font-weight: 900; font-size: 22px; letter-spacing: -0.02em; text-transform: uppercase; text-decoration: none; color: var(--c-primary); }
     .logo-mark { display: inline-block; width: 1.2em; height: 0.78em; position: relative; flex-shrink: 0; }
@@ -42,16 +42,39 @@
     main { max-width: 720px; margin: 0 auto; padding: 64px 32px 96px; }
     .eyebrow { display: inline-flex; align-items: center; gap: 12px; font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--c-secondary); margin-bottom: 16px; }
     .eyebrow::before { content: ''; width: 28px; height: 1px; background: var(--c-secondary); }
-    h1 { font-family: var(--font-display); font-weight: 900; font-size: clamp(36px, 5vw, 56px); line-height: 1.05; letter-spacing: -0.025em; text-transform: uppercase; padding-top: 0.14em; margin-bottom: 16px; }
-    .updated { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--c-text-secondary); margin-bottom: 48px; }
-    h2 { font-family: var(--font-display); font-weight: 900; font-size: 22px; letter-spacing: -0.01em; text-transform: uppercase; padding-top: 0.1em; margin-top: 48px; margin-bottom: 12px; }
-    p, li { margin-bottom: 12px; }
-    ul, ol { padding-left: 24px; margin-bottom: 16px; }
-    .info-card { background: var(--c-surface); padding: 24px 28px; border-left: 3px solid var(--c-secondary); border-radius: 4px; margin: 24px 0; font-size: 15px; }
+    h1 { font-family: var(--font-display); font-weight: 900; font-size: clamp(32px, 4.5vw, 48px); line-height: 1.05; letter-spacing: -0.025em; text-transform: uppercase; padding-top: 0.14em; margin-bottom: 16px; }
+    .doc-meta { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--c-text-secondary); margin-bottom: 32px; padding-bottom: 24px; border-bottom: 1px solid var(--c-border); }
+    .doc-meta p { margin-bottom: 6px; }
+    .doc-meta strong { color: var(--c-primary); }
+    .toc { background: var(--c-surface); padding: 24px 28px; border-radius: 4px; margin: 32px 0 48px; }
+    .toc-title { font-family: var(--font-display); font-weight: 900; font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--c-text-secondary); margin-bottom: 12px; }
+    .toc ol { list-style: none; padding: 0; margin: 0; column-count: 2; column-gap: 24px; font-size: 13px; }
+    .toc ol li { margin-bottom: 6px; break-inside: avoid; }
+    .toc ol li a { color: var(--c-primary); text-decoration: none; }
+    .toc ol li a:hover { color: var(--c-secondary); text-decoration: underline; }
+    @media (max-width: 600px) { .toc ol { column-count: 1; } }
+    h2 { font-family: var(--font-display); font-weight: 900; font-size: 20px; letter-spacing: -0.01em; text-transform: uppercase; padding-top: 0.1em; margin-top: 48px; margin-bottom: 16px; scroll-margin-top: 80px; }
+    h2 .num { color: var(--c-secondary); display: inline-block; min-width: 1.5em; }
+    h3 { font-family: var(--font-display); font-weight: 700; font-size: 15px; margin-top: 20px; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.02em; }
+    p, li { margin-bottom: 10px; }
+    p { text-align: justify; }
+    .clause-num { font-family: var(--font-mono); font-size: 13px; color: var(--c-secondary); margin-right: 8px; font-weight: 500; }
+    ul, ol { padding-left: 24px; margin-bottom: 14px; }
+    ul li, ol li { margin-bottom: 6px; }
+    .info-card { background: var(--c-surface); padding: 24px 28px; border-left: 3px solid var(--c-secondary); border-radius: 4px; margin: 24px 0; font-size: 14px; }
     .info-card strong { display: block; margin-bottom: 8px; }
     .steps { counter-reset: step; padding: 0; list-style: none; margin: 24px 0; }
     .steps > li { padding: 16px 20px 16px 56px; border-left: 3px solid var(--c-secondary); background: var(--c-surface); margin-bottom: 8px; position: relative; counter-increment: step; }
     .steps > li::before { content: counter(step); position: absolute; left: 16px; top: 16px; font-family: var(--font-display); font-weight: 900; font-size: 24px; color: var(--c-secondary); line-height: 1; }
+    @media print {
+      .header { position: static; }
+      .back-link { display: none; }
+      .toc { background: none; padding: 0; }
+      h2, h3 { page-break-after: avoid; page-break-inside: avoid; }
+      .info-card { page-break-inside: avoid; }
+      a[href^="http"]::after { content: " (" attr(href) ")"; font-size: 9pt; color: #555; }
+      a[href^="mailto"]::after { content: " <" attr(href) ">"; font-size: 9pt; color: #555; }
+    }
     footer { border-top: 1px solid var(--c-border); padding: 32px; text-align: center; font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.08em; color: var(--c-text-secondary); }
     footer a { color: var(--c-secondary); text-decoration: none; }
   </style>
@@ -70,90 +93,186 @@
   <main>
     <div class="eyebrow">Právne dokumenty</div>
     <h1>Reklamačný<br>poriadok</h1>
-    <div class="updated">Účinné od 6. mája 2026 · Zákon 250/2007 Z. z. § 18</div>
-
-    <p>Reklamačný poriadok upravuje postup uplatnenia práv z vady služby (zásielky) poskytnutej spoločnosťou <strong>Orostone s.r.o.</strong> (značka <strong>Neseme</strong>) v súlade so zákonom č. 250/2007 Z. z. o ochrane spotrebiteľa.</p>
-
-    <div class="info-card">
-      <strong>Poskytovateľ</strong>
-      Orostone s.r.o., Landererova 8, 811 09 Bratislava<br>
-      IČO: 55 254 772 · DIČ: 2121930580 · IČ DPH: SK2121930580<br>
-      Reklamácie: <a href="mailto:ahoj@neseme.sk?subject=Reklamácia">ahoj@neseme.sk</a> · Tel: <a href="tel:+421917588738">+421 917 588 738</a>
+    <div class="doc-meta">
+      <p><strong>Vydavateľ:</strong> Orostone s.r.o.</p>
+      <p><strong>Verzia:</strong> 1.0</p>
+      <p><strong>Dátum vydania:</strong> 6. máj 2026</p>
+      <p><strong>Účinnosť:</strong> od 6. mája 2026</p>
+      <p><strong>Právny základ:</strong> § 18 zák. č. 250/2007 Z. z., § 622–629 Občianskeho zákonníka</p>
     </div>
 
-    <h2>1. Práva zákazníka</h2>
-    <p>1.1. Zákazník má právo reklamovať najmä:</p>
+    <p>Tento reklamačný poriadok obchodnej spoločnosti <strong>Orostone s.r.o.</strong>, vydaný v súlade s ustanovením § 18 zákona č. 250/2007 Z. z. o ochrane spotrebiteľa v znení neskorších predpisov a § 622 a nasl. zákona č. 40/1964 Zb. Občiansky zákonník v znení neskorších predpisov (ďalej len „<strong>Reklamačný poriadok</strong>"), upravuje postup pri uplatňovaní reklamácie zo strany objednávateľa služby, vrátane lehôt, vybavovacieho konania, oprávnení reklamačného oddelenia a ďalších otázok.</p>
+
+    <div class="info-card">
+      <strong>Reklamačné oddelenie</strong>
+      Orostone s.r.o., Landererova 8, 811 09 Bratislava — Staré Mesto<br>
+      IČO: 55 254 772 · IČ DPH: SK2121930580<br>
+      E-mail: <a href="mailto:ahoj@neseme.sk?subject=Reklamácia">ahoj@neseme.sk</a><br>
+      Telefón: <a href="tel:+421917588738">+421 917 588 738</a><br>
+      Úradné hodiny: Po–Ne · 7:00–21:00
+    </div>
+
+    <div class="toc" aria-label="Obsah dokumentu">
+      <div class="toc-title">Obsah</div>
+      <ol>
+        <li><a href="#cl1">Úvodné ustanovenia</a></li>
+        <li><a href="#cl2">Predmet reklamácie</a></li>
+        <li><a href="#cl3">Práva objednávateľa zo zodpovednosti za vady</a></li>
+        <li><a href="#cl4">Reklamačné lehoty</a></li>
+        <li><a href="#cl5">Spôsob uplatnenia reklamácie</a></li>
+        <li><a href="#cl6">Náležitosti reklamácie</a></li>
+        <li><a href="#cl7">Postup vybavenia reklamácie</a></li>
+        <li><a href="#cl8">Lehota na vybavenie</a></li>
+        <li><a href="#cl9">Možnosti rozhodnutia</a></li>
+        <li><a href="#cl10">Náklady spojené s reklamáciou</a></li>
+        <li><a href="#cl11">Alternatívne riešenie sporov</a></li>
+        <li><a href="#cl12">Záverečné ustanovenia</a></li>
+      </ol>
+    </div>
+
+    <h2 id="cl1"><span class="num">I.</span>Úvodné ustanovenia</h2>
+    <p><span class="clause-num">1.1</span>Tento Reklamačný poriadok upravuje vzťahy medzi spoločnosťou Orostone s.r.o. ako poskytovateľom služieb (ďalej len „<strong>poskytovateľ</strong>") a objednávateľom služby (ďalej len „<strong>objednávateľ</strong>") pri uplatňovaní práv zo zodpovednosti za vady poskytnutých prepravných, vynáškových a montážnych služieb.</p>
+    <p><span class="clause-num">1.2</span>Reklamačný poriadok je vypracovaný v súlade s týmito právnymi predpismi:</p>
     <ul>
-      <li>Poškodenie zásielky pri preprave</li>
-      <li>Stratu alebo zámenu zásielky</li>
-      <li>Omeškanie doručenia oproti dohodnutému termínu</li>
-      <li>Nedodanie objednanej služby (napr. nezapojenie spotrebiča pri Neseme Elektro)</li>
-      <li>Iné vady služby</li>
+      <li>zákon č. 40/1964 Zb. Občiansky zákonník (najmä § 619–627);</li>
+      <li>zákon č. 513/1991 Zb. Obchodný zákonník (pri B2B vzťahoch);</li>
+      <li>zákon č. 250/2007 Z. z. o ochrane spotrebiteľa (§ 18);</li>
+      <li>zákon č. 102/2014 Z. z. o ochrane spotrebiteľa pri predaji na diaľku;</li>
+      <li>zákon č. 391/2015 Z. z. o alternatívnom riešení spotrebiteľských sporov.</li>
     </ul>
-    <p>1.2. Pri preukázanej zodpovednosti poskytovateľa má zákazník právo na:</p>
+    <p><span class="clause-num">1.3</span>Reklamačný poriadok tvorí neoddeliteľnú súčasť <a href="/obchodne-podmienky.html">Všeobecných obchodných podmienok</a> poskytovateľa.</p>
+    <p><span class="clause-num">1.4</span>Reklamačný poriadok je prístupný v elektronickej forme na webovej stránke <a href="https://neseme.sk/reklamacny-poriadok.html">neseme.sk/reklamacny-poriadok</a> a v písomnej forme v sídle poskytovateľa.</p>
+
+    <h2 id="cl2"><span class="num">II.</span>Predmet reklamácie</h2>
+    <p><span class="clause-num">2.1</span>Predmetom reklamácie môžu byť najmä:</p>
     <ul>
-      <li>Odstránenie vady (napr. opätovné doručenie)</li>
-      <li>Primeranú zľavu z ceny služby</li>
-      <li>Náhradu škody do výšky poistnej sumy <strong>5 000 € na zásielku</strong></li>
-      <li>Odstúpenie od zmluvy, ak vada nie je odstrániteľná</li>
+      <li><strong>Vady kvality služby</strong> — neposkytnutie služby v dohodnutej kvalite, rozsahu alebo termíne;</li>
+      <li><strong>Strata, zámena alebo zničenie zásielky</strong> — zaplnené alebo úplne stratené zásielky počas prepravy;</li>
+      <li><strong>Mechanické poškodenie zásielky</strong> — vrátane škrabancov, vyplnenia, zlomenia častí, deformácie obalu;</li>
+      <li><strong>Omeškanie doručenia</strong> — pokiaľ je oneskorenie viac ako 60 minút oproti potvrdenému termínu a nie je spôsobené vyššou mocou;</li>
+      <li><strong>Nesplnenie dohodnutých dodatočných služieb</strong> — napríklad nezapojenie spotrebiča (Neseme Elektro), neuskutočnenie odvozu starej techniky, nedoručenie do požadovaného poschodia;</li>
+      <li><strong>Nesprávna fakturácia</strong> — nesúlad ceny s dohodnutou cenou;</li>
+      <li><strong>Iné vady služby</strong> spôsobené poskytovateľom alebo jeho subdodávateľmi.</li>
     </ul>
 
-    <h2>2. Lehota na uplatnenie reklamácie</h2>
-    <p>2.1. Viditeľné vady (napr. poškodenie obalu, vidieľné poškodenie tovaru) je zákazník povinný reklamovať <strong>pri prevzatí zásielky</strong>. Vodič vyhotoví zápis o škode (POD).</p>
-    <p>2.2. Skryté vady, ktoré nebolo možné zistiť pri prevzatí, je nutné reklamovať <strong>do 7 dní</strong> od prevzatia zásielky.</p>
-    <p>2.3. Maximálna lehota na uplatnenie všetkých práv z vady je <strong>30 dní</strong> od prevzatia služby (zákonná premlčacia lehota pre prepravu).</p>
+    <h2 id="cl3"><span class="num">III.</span>Práva objednávateľa zo zodpovednosti za vady</h2>
+    <p><span class="clause-num">3.1</span>V prípade preukázanej zodpovednosti poskytovateľa za vadu má objednávateľ podľa charakteru a rozsahu vady právo na:</p>
+    <ul>
+      <li><strong>odstránenie vady</strong> — napríklad opätovné dodanie služby, doplnenie chýbajúcej časti plnenia, oprava poškodenej zásielky alebo jej časti;</li>
+      <li><strong>primeranú zľavu z ceny</strong> služby zodpovedajúcu rozsahu vady;</li>
+      <li><strong>náhradu škody</strong> spôsobenú vadou plnenia, najmä na zásielke alebo majetku objednávateľa, do výšky štandardnej poistnej sumy 5 000 € na zásielku (čl. X VOP);</li>
+      <li><strong>odstúpenie od zmluvy</strong>, ak ide o podstatné porušenie zmluvy alebo ak vada nie je odstrániteľná v primeranej lehote;</li>
+      <li><strong>náhradu účelne vynaložených nákladov</strong> spojených s uplatnením práva zo zodpovednosti za vady (§ 598 OZ).</li>
+    </ul>
+    <p><span class="clause-num">3.2</span>Voľba medzi uvedenými právami patrí objednávateľovi, pričom musí byť uplatnená v okamihu uplatnenia reklamácie alebo bez zbytočného odkladu po nej (§ 622 ods. 4 OZ). Vykonanú voľbu nemôže objednávateľ jednostranne meniť bez súhlasu poskytovateľa.</p>
 
-    <h2>3. Spôsob uplatnenia reklamácie</h2>
-    <p>Reklamáciu je možné uplatniť troma spôsobmi:</p>
+    <h2 id="cl4"><span class="num">IV.</span>Reklamačné lehoty</h2>
+    <p><span class="clause-num">4.1</span><strong>Viditeľné (zjavné) vady</strong> — vady zistiteľné pri vynaložení obvyklej pozornosti pri prevzatí zásielky (poškodenie obalu, viditeľné mechanické poškodenie tovaru) je objednávateľ povinný reklamovať <strong>ihneď pri prevzatí zásielky</strong> formou zápisu do preberacieho protokolu (POD) za prítomnosti vodiča. Neskoršia reklamácia týchto vád môže byť poskytovateľom odmietnutá.</p>
+    <p><span class="clause-num">4.2</span><strong>Skryté vady</strong> — vady, ktoré nebolo možné zistiť pri prevzatí pri vynaložení obvyklej pozornosti, je nutné reklamovať <strong>bez zbytočného odkladu, najneskôr však do 7 dní</strong> odo dňa, keď ich objednávateľ zistil alebo pri vynaložení obvyklej pozornosti zistiť mohol.</p>
+    <p><span class="clause-num">4.3</span><strong>Premlčacia lehota</strong> — práva zo zodpovednosti za vady plnenia sa premlčia uplynutím <strong>1 roka</strong> odo dňa poskytnutia služby (§ 626 OZ pri zmluvách o dielo a o preprave). Po jej márnom uplynutí poskytovateľ nie je povinný reklamáciu vybaviť, môže však tak urobiť dobrovoľne.</p>
+    <p><span class="clause-num">4.4</span><strong>Reklamácia omeškania</strong> sa uplatňuje najneskôr do 14 dní od dohodnutého termínu plnenia.</p>
+
+    <h2 id="cl5"><span class="num">V.</span>Spôsob uplatnenia reklamácie</h2>
+    <p><span class="clause-num">5.1</span>Reklamáciu je možné uplatniť ktorýmkoľvek z nasledujúcich spôsobov:</p>
 
     <ol class="steps">
-      <li><strong>E-mailom</strong> — pošlite správu na <a href="mailto:ahoj@neseme.sk?subject=Reklamácia&amp;body=Dobrý%20deň%2C%0A%0Achcem%20reklamovať%3A%0A-%20Číslo%20objednávky%2Fdátum%3A%0A-%20Popis%20vady%3A%0A-%20Požadovaný%20spôsob%20vybavenia%3A%0A%0AĎakujem.">ahoj@neseme.sk</a> s predmetom „Reklamácia". Pripojte fotodokumentáciu a kópiu dokladu o objednaní.</li>
-      <li><strong>Telefonicky</strong> — zavolajte na <a href="tel:+421917588738">+421 917 588 738</a> (Po–Ne 7:00–21:00). Pre evidenciu vyžadujeme následné písomné potvrdenie e-mailom.</li>
-      <li><strong>Písomne</strong> — zaslaním listu na adresu sídla: Orostone s.r.o., Landererova 8, 811 09 Bratislava.</li>
+      <li><strong>Elektronicky e-mailom</strong> — odoslaním reklamácie na adresu <a href="mailto:ahoj@neseme.sk?subject=Reklamácia">ahoj@neseme.sk</a> s predmetom „Reklamácia" a priložením všetkých relevantných dokladov, najmä fotodokumentácie poškodenia, kópie objednávky/faktúry a preberacieho protokolu (POD).</li>
+      <li><strong>Telefonicky</strong> — kontaktovaním reklamačnej linky <a href="tel:+421917588738">+421 917 588 738</a> v úradných hodinách Po–Ne 7:00–21:00. Na základe telefonického nahlásenia bude zaslaný reklamačný formulár, ktorý je nutné vyplnený doručiť poskytovateľovi e-mailom alebo poštou.</li>
+      <li><strong>Písomne poštou</strong> — odoslaním reklamácie na adresu sídla: Orostone s.r.o., Landererova 8, 811 09 Bratislava, doporučene s doručenkou. Za dátum uplatnenia reklamácie sa považuje dátum doručenia.</li>
+      <li><strong>Osobne</strong> — v sídle poskytovateľa po predchádzajúcom telefonickom dohovore termínu.</li>
     </ol>
 
-    <h2>4. Náležitosti reklamácie</h2>
-    <p>Reklamácia musí obsahovať:</p>
+    <h2 id="cl6"><span class="num">VI.</span>Náležitosti reklamácie</h2>
+    <p><span class="clause-num">6.1</span>Pre riadne uplatnenie reklamácie je potrebné, aby reklamácia obsahovala:</p>
     <ul>
-      <li>Meno, priezvisko (alebo názov firmy) a adresu</li>
-      <li>Telefónne číslo a e-mail</li>
-      <li>Číslo objednávky alebo dátum doručenia</li>
-      <li>Popis vady (čo, kedy, ako sa stalo)</li>
-      <li>Fotodokumentáciu poškodenia (ak je relevantná)</li>
-      <li>Požadovaný spôsob vybavenia (oprava, zľava, náhrada škody)</li>
+      <li>identifikačné údaje objednávateľa (meno a priezvisko alebo obchodné meno, adresa, IČO/dátum narodenia);</li>
+      <li>kontaktné údaje (telefón, e-mail);</li>
+      <li>označenie zmluvy/objednávky (číslo objednávky, dátum poskytnutia služby alebo prevzatia zásielky);</li>
+      <li>presný a podrobný opis vady (čo, kedy, ako sa stalo);</li>
+      <li>fotodokumentáciu poškodenia (najmenej 3 fotografie zo strany dohodnutej s poskytovateľom);</li>
+      <li>kópiu preberacieho protokolu (POD), pokiaľ bol vyhotovený;</li>
+      <li>návrh, akým spôsobom má byť reklamácia vybavená (odstránenie vady, zľava, náhrada škody, odstúpenie);</li>
+      <li>dátum uplatnenia reklamácie a podpis objednávateľa (pri písomnej forme).</li>
     </ul>
+    <p><span class="clause-num">6.2</span>Ak reklamácia neobsahuje všetky uvedené náležitosti, poskytovateľ vyzve objednávateľa na ich doplnenie. Lehota na vybavenie reklamácie začína plynúť až po doručení doplnenia.</p>
 
-    <h2>5. Vybavenie reklamácie</h2>
-    <p>5.1. Poskytovateľ vystaví zákazníkovi <strong>písomné potvrdenie o prijatí reklamácie</strong> najneskôr do 3 pracovných dní (e-mailom).</p>
-    <p>5.2. Reklamácia bude vybavená najneskôr do <strong>30 dní</strong> od jej uplatnenia (zákonná lehota podľa § 18 ods. 4 zák. č. 250/2007 Z. z.).</p>
-    <p>5.3. O výsledku reklamácie informujeme zákazníka písomne (e-mailom) s odôvodnením rozhodnutia.</p>
-    <p>5.4. Ak rozhodnutie nepríde do 30 dní, zákazník má právo odstúpiť od zmluvy alebo požadovať primeranú zľavu.</p>
-
-    <h2>6. Odmietnutie reklamácie</h2>
-    <p>Reklamácia môže byť odmietnutá ak:</p>
+    <h2 id="cl7"><span class="num">VII.</span>Postup vybavenia reklamácie</h2>
+    <p><span class="clause-num">7.1</span>Poskytovateľ je povinný objednávateľovi vystaviť <strong>písomné potvrdenie o uplatnení reklamácie</strong> ihneď, najneskôr však do 3 pracovných dní (§ 18 ods. 5 ZOS), ktoré obsahuje:</p>
     <ul>
-      <li>Bola uplatnená po zákonnej lehote (viď bod 2.3.)</li>
-      <li>Vada bola spôsobená nesprávnym balením tovaru objednávateľom</li>
-      <li>Vada bola spôsobená vyššou mocou (živelná pohroma, dopravná nehoda spôsobená treťou osobou)</li>
-      <li>Zákazník neposkytol potrebné údaje alebo súčinnosť</li>
+      <li>kedy bola reklamácia uplatnená;</li>
+      <li>aký druh vady objednávateľ uplatňuje;</li>
+      <li>aký nárok zo zodpovednosti za vady objednávateľ uplatňuje;</li>
+      <li>predpokladaná lehota vybavenia.</li>
     </ul>
-    <p>Aj v prípade odmietnutia má zákazník právo obrátiť sa na alternatívne riešenie sporov (ARS).</p>
+    <p><span class="clause-num">7.2</span>Poskytovateľ posúdi opodstatnenosť reklamácie a v prípade potreby si vyžiada od objednávateľa doplňujúce informácie alebo súčinnosť (napr. pristúpenie k obhliadke poškodenej zásielky).</p>
+    <p><span class="clause-num">7.3</span>Ak je predmetom reklamácie poškodenie zásielky, objednávateľ je povinný umožniť poskytovateľovi alebo jeho poistnému znalcovi obhliadku zásielky pred jej opravou alebo iným zásahom.</p>
+    <p><span class="clause-num">7.4</span>O výsledku reklamácie poskytovateľ vydá objednávateľovi <strong>písomný doklad</strong> (e-mailom alebo poštou) najneskôr v lehote stanovenej v čl. VIII.</p>
 
-    <h2>7. Mimosúdne riešenie sporov (ARS)</h2>
-    <p>Ak nie ste spokojní s vybavením reklamácie, môžete sa obrátiť na orgán alternatívneho riešenia sporov:</p>
+    <h2 id="cl8"><span class="num">VIII.</span>Lehota na vybavenie reklamácie</h2>
+    <p><span class="clause-num">8.1</span>Reklamáciu pri zmluvách so spotrebiteľom je poskytovateľ povinný vybaviť bezodkladne, najneskôr však do <strong>30 dní</strong> odo dňa uplatnenia reklamácie (§ 18 ods. 4 ZOS), pokiaľ sa zmluvné strany nedohodnú na dlhšej lehote.</p>
+    <p><span class="clause-num">8.2</span>Ak reklamácia nie je vybavená v lehote 30 dní, má objednávateľ-spotrebiteľ rovnaké práva, akoby išlo o vadu, ktorú nemožno odstrániť (§ 18 ods. 4 ZOS) — t. j. právo na odstúpenie od zmluvy alebo primeranú zľavu.</p>
+    <p><span class="clause-num">8.3</span>Pri B2B vzťahoch sa lehota na vybavenie reklamácie spravuje dohodou strán, prípadne primerane sa použijú pravidlá ObchZ.</p>
+
+    <h2 id="cl9"><span class="num">IX.</span>Možnosti rozhodnutia o reklamácii</h2>
+    <p><span class="clause-num">9.1</span>Poskytovateľ môže reklamáciu vybaviť jedným z nasledujúcich spôsobov (§ 2 písm. m) ZOS):</p>
+    <ul>
+      <li><strong>Uznanie reklamácie a odstránenie vady</strong> — opätovné dodanie služby alebo náhradné plnenie;</li>
+      <li><strong>Uznanie reklamácie a poskytnutie primeranej zľavy</strong> z ceny služby;</li>
+      <li><strong>Uznanie reklamácie a vyplatenie náhrady škody</strong> v peňažnej forme;</li>
+      <li><strong>Uznanie reklamácie a umožnenie odstúpenia od zmluvy</strong> s vrátením zaplatenej ceny;</li>
+      <li><strong>Odôvodnené zamietnutie reklamácie</strong> — ak nie sú splnené podmienky pre uznanie.</li>
+    </ul>
+    <p><span class="clause-num">9.2</span>Reklamácia môže byť odôvodnene zamietnutá, ak:</p>
+    <ul>
+      <li>bola uplatnená po uplynutí premlčacej lehoty (§ 626 OZ);</li>
+      <li>vada nebola spôsobená poskytovateľom, ale objednávateľom (nesprávne balenie, nepravdivé informácie);</li>
+      <li>vada vznikla v dôsledku vyššej moci;</li>
+      <li>vada vznikla nedovoleným zásahom objednávateľa alebo tretej osoby do zásielky po jej odovzdaní;</li>
+      <li>ide o bežné opotrebenie alebo nesúvisí s poskytnutou službou;</li>
+      <li>objednávateľ neposkytol potrebnú súčinnosť napriek opakovanej výzve.</li>
+    </ul>
+    <p><span class="clause-num">9.3</span>Odôvodnené zamietnutie reklamácie nezbavuje objednávateľa práva obrátiť sa na orgán alternatívneho riešenia sporov alebo súd (čl. XI).</p>
+
+    <h2 id="cl10"><span class="num">X.</span>Náklady spojené s reklamáciou</h2>
+    <p><span class="clause-num">10.1</span>V prípade <strong>oprávnenej reklamácie</strong> má objednávateľ nárok na úhradu účelne vynaložených nákladov nevyhnutne potrebných na uplatnenie reklamácie (§ 598 OZ), najmä na poštovné a iné prepravné náklady.</p>
+    <p><span class="clause-num">10.2</span>V prípade <strong>neoprávnenej reklamácie</strong> hradí náklady objednávateľ.</p>
+    <p><span class="clause-num">10.3</span>Náklady na fotodokumentáciu, ak sú primerané, znáša poskytovateľ pri uznaní reklamácie.</p>
+
+    <h2 id="cl11"><span class="num">XI.</span>Alternatívne riešenie sporov (ARS)</h2>
+    <p><span class="clause-num">11.1</span>Ak objednávateľ-spotrebiteľ nie je spokojný so spôsobom vybavenia reklamácie, alebo sa domnieva, že poskytovateľ porušil jeho práva, má právo obrátiť sa na poskytovateľa so žiadosťou o nápravu. Ak poskytovateľ na žiadosť odpovie zamietavo, alebo neodpovie do 30 dní od jej odoslania, spotrebiteľ má právo podať návrh na začatie alternatívneho riešenia sporu (ARS) podľa zákona č. 391/2015 Z. z.</p>
+    <p><span class="clause-num">11.2</span>Príslušným subjektom alternatívneho riešenia sporov je:</p>
     <div class="info-card">
       <strong>Slovenská obchodná inšpekcia (SOI)</strong>
-      Bajkalská 21/A, 827 99 Bratislava 27<br>
+      Ústredný inšpektorát SOI<br>
+      Bajkalská 21/A, P. O. BOX 29, 827 99 Bratislava 27<br>
       Web: <a href="https://www.soi.sk" target="_blank" rel="noopener">www.soi.sk</a><br>
-      E-mail: ars@soi.sk<br>
-      Tel: 02/58272 132
+      ARS portál: <a href="https://www.soi.sk/sk/Alternativne-riesenie-spotrebitelskych-sporov.soi" target="_blank" rel="noopener">soi.sk/sk/Alternativne-riesenie-spotrebitelskych-sporov</a><br>
+      E-mail: <a href="mailto:ars@soi.sk">ars@soi.sk</a>, <a href="mailto:adr@soi.sk">adr@soi.sk</a><br>
+      Telefón: 02/58 27 21 32
     </div>
-    <p>Alebo cez európsku platformu <strong>RSO (Riešenie sporov online):</strong> <a href="https://ec.europa.eu/consumers/odr" target="_blank" rel="noopener">ec.europa.eu/consumers/odr</a></p>
+    <p><span class="clause-num">11.3</span>Spotrebiteľ môže využiť aj online platformu pre riešenie sporov dostupnú na webovej stránke Európskej komisie:</p>
+    <div class="info-card">
+      <strong>Online riešenie sporov (ODR)</strong>
+      <a href="https://ec.europa.eu/consumers/odr" target="_blank" rel="noopener">ec.europa.eu/consumers/odr</a><br>
+      Platforma umožňuje cezhraničné a vnútroštátne mimosúdne riešenie sporov medzi spotrebiteľom a obchodníkom s elektronicky uzavretou zmluvou.
+    </div>
+    <p><span class="clause-num">11.4</span>Návrh na ARS môže spotrebiteľ podať najneskôr do <strong>1 roka</strong> odo dňa, keď uplatnil svoje právo voči poskytovateľovi.</p>
+    <p><span class="clause-num">11.5</span>ARS konanie je pre spotrebiteľa <strong>bezplatné</strong> (s výnimkou poplatku do 5 € pri opätovných návrhoch v tej istej veci).</p>
 
-    <h2>8. Záverečné ustanovenia</h2>
-    <p>8.1. Tento Reklamačný poriadok je platný a účinný odo dňa 6. mája 2026.</p>
-    <p>8.2. Tvorí neoddeliteľnú súčasť <a href="/obchodne-podmienky.html">Všeobecných obchodných podmienok</a>.</p>
-    <p>8.3. Poskytovateľ si vyhradzuje právo Reklamačný poriadok meniť. Aktuálne znenie je vždy na webovej stránke.</p>
+    <h2 id="cl12"><span class="num">XII.</span>Záverečné ustanovenia</h2>
+    <p><span class="clause-num">12.1</span>Tento Reklamačný poriadok nadobúda platnosť a účinnosť dňom 6. mája 2026 a nahrádza všetky predchádzajúce reklamačné poriadky vydané poskytovateľom.</p>
+    <p><span class="clause-num">12.2</span>Poskytovateľ si vyhradzuje právo Reklamačný poriadok jednostranne meniť, pričom aktuálne znenie je vždy zverejnené na webovej stránke.</p>
+    <p><span class="clause-num">12.3</span>Práva objednávateľa zaručené kogentnými ustanoveniami zákona nie sú týmto Reklamačným poriadkom dotknuté ani obmedzené.</p>
+    <p><span class="clause-num">12.4</span>V otázkach týmto Reklamačným poriadkom neupravených platia ustanovenia Občianskeho zákonníka, zákona o ochrane spotrebiteľa, ostatných platných právnych predpisov SR a <a href="/obchodne-podmienky.html">Všeobecných obchodných podmienok</a> poskytovateľa.</p>
+    <p><span class="clause-num">12.5</span>Reklamačný poriadok je archivovaný v elektronickej forme po dobu 10 rokov.</p>
+
+    <div class="info-card" style="margin-top:48px">
+      <strong>Súvisiace dokumenty</strong>
+      <a href="/obchodne-podmienky.html">Všeobecné obchodné podmienky</a><br>
+      <a href="/odstupenie-od-zmluvy.html">Odstúpenie od zmluvy (14-dňová lehota pre spotrebiteľov)</a><br>
+      <a href="/ochrana-osobnych-udajov.html">Ochrana osobných údajov (GDPR)</a><br>
+      <a href="/cookies.html">Zásady používania cookies</a>
+    </div>
   </main>
 
   <footer>

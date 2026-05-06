@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="theme-color" content="#111111" />
   <meta name="robots" content="index, follow" />
-  <title>Ochrana osobných údajov — Neseme</title>
-  <meta name="description" content="Zásady ochrany osobných údajov spoločnosti Orostone s.r.o. (značka Neseme). Spracovanie podľa GDPR." />
+  <title>Zásady ochrany osobných údajov (GDPR) — Neseme | Orostone s.r.o.</title>
+  <meta name="description" content="Zásady ochrany osobných údajov vypracované v zmysle GDPR (Nariadenie EÚ 2016/679) a zákona č. 18/2018 Z. z. — Orostone s.r.o. (Neseme)." />
   <link rel="canonical" href="https://neseme.sk/ochrana-osobnych-udajov.html" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
@@ -28,139 +28,56 @@
       --ease: cubic-bezier(0.22, 1, 0.36, 1);
     }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { -webkit-text-size-adjust: 100%; }
-    body {
-      font-family: var(--font-body);
-      font-size: 16px;
-      line-height: 1.7;
-      color: var(--c-primary);
-      background: var(--c-bg);
-      -webkit-font-smoothing: antialiased;
-    }
+    html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+    body { font-family: var(--font-body); font-size: 15px; line-height: 1.7; color: var(--c-primary); background: var(--c-bg); -webkit-font-smoothing: antialiased; }
     a { color: var(--c-primary); text-decoration: underline; }
     a:hover { color: var(--c-secondary); }
-    .header {
-      padding: 24px 32px;
-      border-bottom: 1px solid var(--c-border);
-    }
-    .header-inner {
-      max-width: 960px;
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      font-family: var(--font-display);
-      font-weight: 900;
-      font-size: 22px;
-      letter-spacing: -0.02em;
-      text-transform: uppercase;
-      text-decoration: none;
-      color: var(--c-primary);
-    }
-    .logo-mark {
-      display: inline-block;
-      width: 26px;
-      height: 16px;
-      position: relative;
-    }
-    .logo-mark::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: var(--c-primary);
-      clip-path: polygon(0 70%, 35% 0, 100% 0, 100% 30%, 65% 100%, 0 100%);
-    }
-    .back-link {
-      font-family: var(--font-mono);
-      font-size: 12px;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      text-decoration: none;
-      color: var(--c-text-secondary);
-    }
+    .header { padding: 24px 32px; border-bottom: 1px solid var(--c-border); position: sticky; top: 0; background: var(--c-bg); z-index: 10; }
+    .header-inner { max-width: 960px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; }
+    .logo { display: flex; align-items: center; gap: 8px; font-family: var(--font-display); font-weight: 900; font-size: 22px; letter-spacing: -0.02em; text-transform: uppercase; text-decoration: none; color: var(--c-primary); }
+    .logo-mark { display: inline-block; width: 1.2em; height: 0.78em; position: relative; flex-shrink: 0; }
+    .logo-mark::before { content: ''; position: absolute; inset: 0; background: var(--c-primary); clip-path: polygon(0 70%, 35% 0, 100% 0, 100% 30%, 65% 100%, 0 100%); }
+    .back-link { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none; color: var(--c-text-secondary); }
     .back-link:hover { color: var(--c-secondary); }
-    main {
-      max-width: 720px;
-      margin: 0 auto;
-      padding: 64px 32px 96px;
-    }
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 12px;
-      font-family: var(--font-mono);
-      font-size: 12px;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--c-secondary);
-      margin-bottom: 16px;
-    }
-    .eyebrow::before {
-      content: '';
-      width: 28px;
-      height: 1px;
-      background: var(--c-secondary);
-    }
-    h1 {
-      font-family: var(--font-display);
-      font-weight: 900;
-      font-size: clamp(36px, 5vw, 56px);
-      line-height: 1.05;
-      letter-spacing: -0.025em;
-      text-transform: uppercase;
-      padding-top: 0.14em;
-      margin-bottom: 16px;
-    }
-    .updated {
-      font-family: var(--font-mono);
-      font-size: 12px;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--c-text-secondary);
-      margin-bottom: 48px;
-    }
-    h2 {
-      font-family: var(--font-display);
-      font-weight: 900;
-      font-size: 22px;
-      letter-spacing: -0.01em;
-      text-transform: uppercase;
-      padding-top: 0.1em;
-      margin-top: 48px;
-      margin-bottom: 12px;
-    }
-    h3 {
-      font-family: var(--font-display);
-      font-weight: 700;
-      font-size: 17px;
-      margin-top: 24px;
-      margin-bottom: 8px;
-    }
-    p, li { margin-bottom: 12px; }
-    ul, ol { padding-left: 24px; margin-bottom: 16px; }
-    .info-card {
-      background: var(--c-surface);
-      padding: 24px 28px;
-      border-left: 3px solid var(--c-secondary);
-      border-radius: 4px;
-      margin: 24px 0;
-      font-size: 15px;
-    }
+    main { max-width: 720px; margin: 0 auto; padding: 64px 32px 96px; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 12px; font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--c-secondary); margin-bottom: 16px; }
+    .eyebrow::before { content: ''; width: 28px; height: 1px; background: var(--c-secondary); }
+    h1 { font-family: var(--font-display); font-weight: 900; font-size: clamp(32px, 4.5vw, 48px); line-height: 1.05; letter-spacing: -0.025em; text-transform: uppercase; padding-top: 0.14em; margin-bottom: 16px; }
+    .doc-meta { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--c-text-secondary); margin-bottom: 32px; padding-bottom: 24px; border-bottom: 1px solid var(--c-border); }
+    .doc-meta p { margin-bottom: 6px; }
+    .doc-meta strong { color: var(--c-primary); }
+    .toc { background: var(--c-surface); padding: 24px 28px; border-radius: 4px; margin: 32px 0 48px; }
+    .toc-title { font-family: var(--font-display); font-weight: 900; font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--c-text-secondary); margin-bottom: 12px; }
+    .toc ol { list-style: none; padding: 0; margin: 0; column-count: 2; column-gap: 24px; font-size: 13px; }
+    .toc ol li { margin-bottom: 6px; break-inside: avoid; }
+    .toc ol li a { color: var(--c-primary); text-decoration: none; }
+    .toc ol li a:hover { color: var(--c-secondary); text-decoration: underline; }
+    @media (max-width: 600px) { .toc ol { column-count: 1; } }
+    h2 { font-family: var(--font-display); font-weight: 900; font-size: 20px; letter-spacing: -0.01em; text-transform: uppercase; padding-top: 0.1em; margin-top: 48px; margin-bottom: 16px; scroll-margin-top: 80px; }
+    h2 .num { color: var(--c-secondary); display: inline-block; min-width: 1.5em; }
+    h3 { font-family: var(--font-display); font-weight: 700; font-size: 15px; margin-top: 20px; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.02em; }
+    p, li { margin-bottom: 10px; }
+    p { text-align: justify; }
+    .clause-num { font-family: var(--font-mono); font-size: 13px; color: var(--c-secondary); margin-right: 8px; font-weight: 500; }
+    ul, ol { padding-left: 24px; margin-bottom: 14px; }
+    ul li, ol li { margin-bottom: 6px; }
+    .info-card { background: var(--c-surface); padding: 24px 28px; border-left: 3px solid var(--c-secondary); border-radius: 4px; margin: 24px 0; font-size: 14px; }
     .info-card strong { display: block; margin-bottom: 8px; }
-    footer {
-      border-top: 1px solid var(--c-border);
-      padding: 32px;
-      text-align: center;
-      font-family: var(--font-mono);
-      font-size: 11px;
-      letter-spacing: 0.08em;
-      color: var(--c-text-secondary);
+    table { width: 100%; border-collapse: collapse; margin: 24px 0; font-size: 13px; }
+    table th, table td { text-align: left; padding: 12px 10px; border-bottom: 1px solid var(--c-border); vertical-align: top; }
+    table th { font-family: var(--font-display); font-weight: 700; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--c-text-secondary); background: var(--c-surface); }
+    @media (max-width: 600px) { table { font-size: 12px; } table th, table td { padding: 10px 6px; } }
+    @media print {
+      .header { position: static; }
+      .back-link { display: none; }
+      .toc { background: none; padding: 0; }
+      h2, h3 { page-break-after: avoid; page-break-inside: avoid; }
+      .info-card, table { page-break-inside: avoid; }
+      a[href^="http"]::after { content: " (" attr(href) ")"; font-size: 9pt; color: #555; }
+      a[href^="mailto"]::after { content: " <" attr(href) ">"; font-size: 9pt; color: #555; }
     }
+    footer { border-top: 1px solid var(--c-border); padding: 32px; text-align: center; font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.08em; color: var(--c-text-secondary); }
+    footer a { color: var(--c-secondary); text-decoration: none; }
   </style>
 </head>
 <body>
@@ -176,91 +93,226 @@
 
   <main>
     <div class="eyebrow">Právne dokumenty</div>
-    <h1>Ochrana<br>osobných údajov</h1>
-    <div class="updated">Účinné od 6. mája 2026 · GDPR + zákon č. 18/2018 Z. z.</div>
+    <h1>Zásady ochrany<br>osobných údajov</h1>
+    <div class="doc-meta">
+      <p><strong>Vydavateľ:</strong> Orostone s.r.o.</p>
+      <p><strong>Verzia:</strong> 1.0</p>
+      <p><strong>Dátum vydania:</strong> 6. máj 2026</p>
+      <p><strong>Účinnosť:</strong> od 6. mája 2026</p>
+      <p><strong>Právny základ:</strong> GDPR (Nariadenie EÚ 2016/679) + zák. č. 18/2018 Z. z.</p>
+    </div>
 
-    <p>Spoločnosť <strong>Orostone s.r.o.</strong> (značka <strong>Neseme</strong>) rešpektuje vaše súkromie. Tento dokument vysvetľuje, aké osobné údaje spracúvame, na aký účel, ako ich chránime a aké máte práva.</p>
+    <p>Tieto Zásady ochrany osobných údajov (ďalej len „<strong>Zásady</strong>") obchodnej spoločnosti <strong>Orostone s.r.o.</strong> (ďalej aj „<strong>Prevádzkovateľ</strong>" alebo „<strong>Neseme</strong>") sú vypracované v súlade s Nariadením Európskeho parlamentu a Rady (EÚ) 2016/679 z 27. apríla 2016 o ochrane fyzických osôb pri spracúvaní osobných údajov a o voľnom pohybe takýchto údajov, ktorým sa zrušuje smernica 95/46/ES (všeobecné nariadenie o ochrane údajov, ďalej len „<strong>GDPR</strong>"), a v súlade so zákonom č. 18/2018 Z. z. o ochrane osobných údajov v znení neskorších predpisov (ďalej len „<strong>ZOOÚ</strong>").</p>
+
+    <p>Tieto Zásady poskytujú dotknutým osobám transparentné, zrozumiteľné a ľahko prístupné informácie o tom, akým spôsobom Prevádzkovateľ získava, spracúva a chráni osobné údaje, v zmysle čl. 12, 13 a 14 GDPR.</p>
 
     <div class="info-card">
-      <strong>Prevádzkovateľ</strong>
-      Orostone s.r.o., Landererova 8, 811 09 Bratislava<br>
+      <strong>Identifikácia Prevádzkovateľa</strong>
+      Obchodné meno: Orostone s.r.o.<br>
+      Sídlo: Landererova 8, 811 09 Bratislava — Staré Mesto, Slovenská republika<br>
       IČO: 55 254 772 · DIČ: 2121930580 · IČ DPH: SK2121930580<br>
-      E-mail: <a href="mailto:ahoj@neseme.sk">ahoj@neseme.sk</a> · Tel: <a href="tel:+421917588738">+421 917 588 738</a>
+      Zapísaná v Obchodnom registri Mestského súdu Bratislava III<br>
+      E-mail pre žiadosti GDPR: <a href="mailto:ahoj@neseme.sk?subject=GDPR%20žiadosť">ahoj@neseme.sk</a><br>
+      Telefón: <a href="tel:+421917588738">+421 917 588 738</a><br>
+      <em>Prevádzkovateľ neurčil zodpovednú osobu (DPO), keďže to nevyžaduje čl. 37 GDPR.</em>
     </div>
 
-    <h2>1. Aké údaje spracúvame</h2>
-    <p>Pri objednávke dopravy alebo dopyte spracúvame:</p>
+    <div class="toc" aria-label="Obsah dokumentu">
+      <div class="toc-title">Obsah</div>
+      <ol>
+        <li><a href="#cl1">Definície pojmov</a></li>
+        <li><a href="#cl2">Kategórie spracúvaných údajov</a></li>
+        <li><a href="#cl3">Účely a právne základy spracúvania</a></li>
+        <li><a href="#cl4">Doba uchovávania</a></li>
+        <li><a href="#cl5">Príjemcovia osobných údajov</a></li>
+        <li><a href="#cl6">Medzinárodné prenosy</a></li>
+        <li><a href="#cl7">Práva dotknutých osôb</a></li>
+        <li><a href="#cl8">Automatizované rozhodovanie a profilovanie</a></li>
+        <li><a href="#cl9">Zabezpečenie údajov</a></li>
+        <li><a href="#cl10">Cookies a sledovacie technológie</a></li>
+        <li><a href="#cl11">Sťažnosť dozornému orgánu</a></li>
+        <li><a href="#cl12">Záverečné ustanovenia</a></li>
+      </ol>
+    </div>
+
+    <h2 id="cl1"><span class="num">I.</span>Definície pojmov</h2>
+    <p><span class="clause-num">1.1</span>Na účely týchto Zásad majú pojmy uvedené v čl. 4 GDPR rovnaký význam, najmä:</p>
     <ul>
-      <li><strong>Identifikačné údaje:</strong> meno a priezvisko, názov firmy</li>
-      <li><strong>Kontaktné údaje:</strong> telefón, e-mail, adresa doručenia a vyzdvihnutia</li>
-      <li><strong>Údaje o zásielke:</strong> rozmery, váha, druh tovaru, fotodokumentácia odovzdania</li>
-      <li><strong>Fakturačné údaje:</strong> IČO, DIČ, IČ DPH, fakturačná adresa (pri B2B)</li>
-      <li><strong>Technické údaje:</strong> IP adresa, typ prehliadača, čas návštevy (z logov servera)</li>
+      <li><strong>Osobné údaje</strong> — akékoľvek informácie týkajúce sa identifikovanej alebo identifikovateľnej fyzickej osoby (čl. 4 ods. 1 GDPR);</li>
+      <li><strong>Spracúvanie</strong> — akýkoľvek úkon vykonávaný s osobnými údajmi (zhromažďovanie, ukladanie, použitie, prenos, vymazanie atď.);</li>
+      <li><strong>Prevádzkovateľ</strong> — osoba, ktorá určuje účely a prostriedky spracúvania;</li>
+      <li><strong>Sprostredkovateľ</strong> — osoba spracúvajúca osobné údaje v mene Prevádzkovateľa;</li>
+      <li><strong>Dotknutá osoba</strong> — fyzická osoba, ktorej osobné údaje sa spracúvajú;</li>
+      <li><strong>Súhlas</strong> — slobodný, konkrétny, informovaný a jednoznačný prejav vôle dotknutej osoby (čl. 4 ods. 11 GDPR);</li>
+      <li><strong>Tretia strana</strong> — fyzická alebo právnická osoba odlišná od dotknutej osoby, Prevádzkovateľa, Sprostredkovateľa a osôb pod ich priamym vedením.</li>
     </ul>
 
-    <h2>2. Účel spracúvania</h2>
+    <h2 id="cl2"><span class="num">II.</span>Kategórie spracúvaných údajov</h2>
+    <p><span class="clause-num">2.1</span>Prevádzkovateľ spracúva nasledujúce kategórie osobných údajov dotknutých osôb:</p>
     <ul>
-      <li><strong>Plnenie zmluvy</strong> — zabezpečenie dopravy, výnosu a montáže (čl. 6 ods. 1 písm. b GDPR)</li>
-      <li><strong>Plnenie zákonných povinností</strong> — fakturácia, účtovníctvo, archivácia (čl. 6 ods. 1 písm. c GDPR)</li>
-      <li><strong>Oprávnený záujem</strong> — riešenie reklamácií, evidencia odovzdania, ochrana pred zneužitím (čl. 6 ods. 1 písm. f GDPR)</li>
-      <li><strong>Súhlas</strong> — pri marketingovej komunikácii, ak ho výslovne udelíte (čl. 6 ods. 1 písm. a GDPR)</li>
+      <li><strong>Identifikačné údaje:</strong> meno, priezvisko, titul, dátum narodenia (pri B2C), obchodné meno (pri B2B);</li>
+      <li><strong>Kontaktné údaje:</strong> adresa trvalého pobytu / sídla, doručovacia adresa, telefónne číslo, e-mailová adresa;</li>
+      <li><strong>Údaje o zásielke:</strong> rozmery, hmotnosť, obsah, fotodokumentácia odovzdania (POD), čas a miesto odovzdania;</li>
+      <li><strong>Fakturačné údaje:</strong> IČO, DIČ, IČ DPH, fakturačná adresa, číslo bankového účtu, údaje o platbách;</li>
+      <li><strong>Komunikačné údaje:</strong> obsah e-mailovej komunikácie, záznamy z telefonických hovorov (pri B2B alebo reklamáciách);</li>
+      <li><strong>Technické údaje:</strong> IP adresa, typ prehliadača, čas návštevy webovej stránky (zo serverových logov).</li>
     </ul>
+    <p><span class="clause-num">2.2</span>Prevádzkovateľ <strong>nespracúva osobitné kategórie osobných údajov</strong> v zmysle čl. 9 GDPR (citlivé údaje), ani osobné údaje súvisiace s odsúdeniami v zmysle čl. 10 GDPR.</p>
 
-    <h2>3. Doba uchovávania</h2>
+    <h2 id="cl3"><span class="num">III.</span>Účely a právne základy spracúvania</h2>
+    <p><span class="clause-num">3.1</span>Prevádzkovateľ spracúva osobné údaje výlučne na vopred určené, výslovné a legitímne účely v súlade so zásadou obmedzenia účelu (čl. 5 ods. 1 písm. b) GDPR):</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Účel</th>
+          <th>Právny základ (GDPR)</th>
+          <th>Doba uchovávania</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Plnenie zmluvy o preprave / poskytnutí služby</td>
+          <td>čl. 6 ods. 1 písm. b) — plnenie zmluvy</td>
+          <td>10 rokov (zákon o účtovníctve)</td>
+        </tr>
+        <tr>
+          <td>Plnenie zákonných povinností (fakturácia, archivácia, daňové)</td>
+          <td>čl. 6 ods. 1 písm. c) — zákonná povinnosť</td>
+          <td>10 rokov</td>
+        </tr>
+        <tr>
+          <td>Riešenie reklamácií a sporov</td>
+          <td>čl. 6 ods. 1 písm. f) — oprávnený záujem</td>
+          <td>3 roky od vybavenia</td>
+        </tr>
+        <tr>
+          <td>Ochrana pred zneužitím a podvodom</td>
+          <td>čl. 6 ods. 1 písm. f) — oprávnený záujem</td>
+          <td>3 roky</td>
+        </tr>
+        <tr>
+          <td>Odpovedanie na dopyty cez kontaktný formulár</td>
+          <td>čl. 6 ods. 1 písm. f) / b) — predzmluvné kroky</td>
+          <td>1 rok od poslednej komunikácie</td>
+        </tr>
+        <tr>
+          <td>Marketingová komunikácia (newsletter)</td>
+          <td>čl. 6 ods. 1 písm. a) — súhlas</td>
+          <td>Do odvolania súhlasu</td>
+        </tr>
+        <tr>
+          <td>Bezpečnosť webovej stránky (logy)</td>
+          <td>čl. 6 ods. 1 písm. f) — oprávnený záujem</td>
+          <td>30 dní</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p><span class="clause-num">3.2</span>Pri spracúvaní založenom na <strong>oprávnenom záujme</strong> Prevádzkovateľ vykonal test proporcionality v zmysle GDPR a vyhodnotil, že záujem na spracúvaní prevažuje nad záujmom dotknutých osôb na ochrane ich osobných údajov.</p>
+    <p><span class="clause-num">3.3</span>Pri spracúvaní založenom na <strong>súhlase</strong> má dotknutá osoba právo súhlas kedykoľvek odvolať s účinkami do budúcna (čl. 7 ods. 3 GDPR).</p>
+
+    <h2 id="cl4"><span class="num">IV.</span>Doba uchovávania</h2>
+    <p><span class="clause-num">4.1</span>Osobné údaje uchovávame iba po dobu nevyhnutnú na dosiahnutie účelu, na ktorý sa spracúvajú (zásada minimalizácie podľa čl. 5 ods. 1 písm. e) GDPR). Konkrétne lehoty sú uvedené v tabuľke v čl. 3.1 týchto Zásad.</p>
+    <p><span class="clause-num">4.2</span>Po uplynutí lehoty uchovávania sú údaje bezpečne vymazané alebo anonymizované.</p>
+
+    <h2 id="cl5"><span class="num">V.</span>Príjemcovia osobných údajov</h2>
+    <p><span class="clause-num">5.1</span>Prevádzkovateľ poskytuje osobné údaje výlučne nasledujúcim kategóriám príjemcov:</p>
     <ul>
-      <li>Údaje k objednávke: <strong>10 rokov</strong> (zákon o účtovníctve)</li>
-      <li>Daňové doklady: <strong>10 rokov</strong></li>
-      <li>Komunikácia s klientmi: <strong>3 roky</strong></li>
-      <li>Logy servera: <strong>30 dní</strong></li>
+      <li><strong>Sprostredkovatelia:</strong>
+        <ul>
+          <li>externý účtovník (na základe zmluvy o spracúvaní podľa čl. 28 GDPR);</li>
+          <li>poskytovateľ hostingových služieb — Vercel Inc. (USA), na základe SCC;</li>
+          <li>poskytovateľ e-mailových služieb;</li>
+          <li>právny zástupca pri vymáhaní pohľadávok.</li>
+        </ul>
+      </li>
+      <li><strong>Orgány verejnej moci:</strong> daňový úrad, súdy, polícia (iba ak to vyžaduje zákon);</li>
+      <li><strong>Poisťovňa</strong> (pri poistnom plnení v rámci poistenia zásielky);</li>
+      <li><strong>Banky a platobné inštitúcie</strong> (pri spracovaní platieb).</li>
     </ul>
+    <p><span class="clause-num">5.2</span>S každým Sprostredkovateľom má Prevádzkovateľ uzatvorenú písomnú zmluvu o spracúvaní osobných údajov s minimálnym obsahom podľa čl. 28 ods. 3 GDPR.</p>
 
-    <h2>4. Komu údaje poskytujeme</h2>
-    <p>Údaje neposkytujeme tretím stranám, okrem nasledujúcich príjemcov:</p>
+    <h2 id="cl6"><span class="num">VI.</span>Medzinárodné prenosy</h2>
+    <p><span class="clause-num">6.1</span>Niektorí Sprostredkovatelia (napr. Vercel Inc., Google LLC) majú sídlo mimo Európskeho hospodárskeho priestoru (EHP), najmä v USA. Prenos osobných údajov do týchto krajín sa uskutočňuje výlučne na základe primeraných záruk podľa kapitoly V GDPR:</p>
     <ul>
-      <li><strong>Účtovník</strong> — pre vedenie účtovníctva (zmluva o spracúvaní)</li>
-      <li><strong>Orgány verejnej moci</strong> — daňový úrad, súdy (ak to vyžaduje zákon)</li>
-      <li><strong>Poskytovatelia IT služieb</strong> — Vercel Inc. (hosting), Google LLC (e-mail) — všetci so štandardnými zmluvnými doložkami pre prenos do EÚ/USA</li>
+      <li><strong>Štandardné zmluvné doložky (SCC)</strong> prijaté Európskou komisiou (Vykonávacie rozhodnutie Komisie (EÚ) 2021/914);</li>
+      <li><strong>EU-US Data Privacy Framework</strong>, kde je tretia strana certifikovaná;</li>
+      <li>Doplnkové technické a organizačné opatrenia podľa odporúčaní EDPB.</li>
     </ul>
+    <p><span class="clause-num">6.2</span>Dotknutá osoba môže získať kópiu primeraných záruk kontaktovaním Prevádzkovateľa.</p>
 
-    <h2>5. Vaše práva</h2>
-    <p>Máte právo:</p>
+    <h2 id="cl7"><span class="num">VII.</span>Práva dotknutých osôb</h2>
+    <p><span class="clause-num">7.1</span>Dotknutá osoba má v zmysle čl. 15–22 GDPR nasledujúce práva:</p>
     <ul>
-      <li><strong>Na prístup</strong> k vašim osobným údajom (čl. 15 GDPR)</li>
-      <li><strong>Na opravu</strong> nesprávnych údajov (čl. 16 GDPR)</li>
-      <li><strong>Na výmaz</strong> ("právo byť zabudnutý"), ak je to možné (čl. 17 GDPR)</li>
-      <li><strong>Na obmedzenie spracúvania</strong> (čl. 18 GDPR)</li>
-      <li><strong>Na prenosnosť údajov</strong> (čl. 20 GDPR)</li>
-      <li><strong>Namietať</strong> proti spracúvaniu (čl. 21 GDPR)</li>
-      <li><strong>Odvolať súhlas</strong>, ak ste ho udelili</li>
-      <li><strong>Podať sťažnosť</strong> Úradu na ochranu osobných údajov SR (<a href="https://dataprotection.gov.sk" target="_blank" rel="noopener">dataprotection.gov.sk</a>)</li>
+      <li><strong>Právo na prístup</strong> (čl. 15 GDPR) — získať potvrdenie, či sa Vaše osobné údaje spracúvajú, a získať ich kópiu;</li>
+      <li><strong>Právo na opravu</strong> (čl. 16 GDPR) — opravu nesprávnych alebo neúplných údajov;</li>
+      <li><strong>Právo na vymazanie</strong> (čl. 17 GDPR) — „právo byť zabudnutý" za podmienok stanovených GDPR;</li>
+      <li><strong>Právo na obmedzenie spracúvania</strong> (čl. 18 GDPR);</li>
+      <li><strong>Právo na prenosnosť údajov</strong> (čl. 20 GDPR) — získať údaje v štruktúrovanom strojovo čitateľnom formáte;</li>
+      <li><strong>Právo namietať</strong> (čl. 21 GDPR) — proti spracúvaniu na základe oprávneného záujmu alebo na účely priameho marketingu;</li>
+      <li><strong>Právo nepodliehať automatizovanému rozhodovaniu</strong> (čl. 22 GDPR) — vrátane profilovania;</li>
+      <li><strong>Právo odvolať súhlas</strong> (čl. 7 ods. 3 GDPR) — kedykoľvek, ak je spracúvanie založené na súhlase;</li>
+      <li><strong>Právo podať sťažnosť</strong> dozornému orgánu (čl. 77 GDPR).</li>
     </ul>
+    <p><span class="clause-num">7.2</span>Žiadosť o uplatnenie práv môžete podať e-mailom na <a href="mailto:ahoj@neseme.sk?subject=GDPR%20žiadosť">ahoj@neseme.sk</a> alebo písomne na adresu sídla. Prevádzkovateľ vybaví žiadosť bez zbytočného odkladu, najneskôr <strong>do 1 mesiaca</strong> od jej doručenia (čl. 12 ods. 3 GDPR), pričom túto lehotu možno vo výnimočných prípadoch predĺžiť o ďalšie 2 mesiace.</p>
+    <p><span class="clause-num">7.3</span>Vybavenie žiadosti je <strong>bezplatné</strong>. Pri zjavne neopodstatnených alebo neprimeraných žiadostiach (najmä opakovaných) môže Prevádzkovateľ účtovať primeraný poplatok alebo žiadosť odmietnuť (čl. 12 ods. 5 GDPR).</p>
+    <p><span class="clause-num">7.4</span>Prevádzkovateľ je oprávnený si od dotknutej osoby vyžiadať dodatočné informácie potrebné na overenie totožnosti pred vybavením žiadosti.</p>
 
-    <h2>6. Cookies</h2>
-    <p>Web <strong>neseme.sk</strong> používa iba <strong>technicky nevyhnutné cookies</strong> (pre fungovanie stránky), ktoré nepotrebujú váš súhlas. Nepoužívame analytické ani reklamné cookies.</p>
-    <p>Tretie strany, ktoré môžu nastaviť technické cookies:</p>
+    <h2 id="cl8"><span class="num">VIII.</span>Automatizované rozhodovanie a profilovanie</h2>
+    <p><span class="clause-num">8.1</span>Prevádzkovateľ <strong>nevykonáva</strong> automatizované rozhodovanie ani profilovanie v zmysle čl. 22 GDPR, ktoré by malo právne účinky alebo podstatne ovplyvňovalo dotknuté osoby.</p>
+
+    <h2 id="cl9"><span class="num">IX.</span>Zabezpečenie údajov</h2>
+    <p><span class="clause-num">9.1</span>Prevádzkovateľ implementuje primerané technické a organizačné opatrenia v zmysle čl. 32 GDPR, aby zabezpečil úroveň ochrany zodpovedajúcu riziku, najmä:</p>
     <ul>
-      <li><strong>Google Fonts</strong> — pre načítanie fontov (CSS)</li>
-      <li><strong>OpenStreetMap</strong> — pre zobrazenie mapy v sekcii Kontakt</li>
+      <li>HTTPS/TLS šifrovanie pre prenos údajov;</li>
+      <li>kontrolu prístupových oprávnení a autentifikáciu;</li>
+      <li>pravidelné zálohovanie údajov;</li>
+      <li>logovanie prístupov k údajom;</li>
+      <li>mlčanlivosť všetkých zamestnancov a Sprostredkovateľov;</li>
+      <li>fyzické zabezpečenie sídla a archívov;</li>
+      <li>pravidelné posudzovanie a aktualizáciu bezpečnostných opatrení.</li>
     </ul>
+    <p><span class="clause-num">9.2</span>V prípade porušenia ochrany osobných údajov, ktoré by mohlo viesť k vysokému riziku pre práva a slobody dotknutých osôb, Prevádzkovateľ oznámi porušenie dozornému orgánu do 72 hodín a postihnutým dotknutým osobám bez zbytočného odkladu (čl. 33 a 34 GDPR).</p>
 
-    <h2>7. Bezpečnosť</h2>
-    <p>Vaše údaje chránime technickými a organizačnými opatreniami: HTTPS šifrovanie, prístupové oprávnenia, pravidelné zálohovanie, mlčanlivosť zamestnancov, fyzické zabezpečenie.</p>
+    <h2 id="cl10"><span class="num">X.</span>Cookies a sledovacie technológie</h2>
+    <p><span class="clause-num">10.1</span>Webová stránka <a href="https://neseme.sk">neseme.sk</a> používa výlučne <strong>technicky nevyhnutné cookies</strong>. Nepoužívame analytické, marketingové ani reklamné cookies a nevykonávame profilovanie. Detaily sú v samostatnom dokumente <a href="/cookies.html">Zásady používania cookies</a>.</p>
 
-    <h2>8. Kontakt</h2>
-    <p>Pre uplatnenie ktoréhokoľvek práva, otázky alebo žiadosti nás kontaktujte:</p>
+    <h2 id="cl11"><span class="num">XI.</span>Sťažnosť dozornému orgánu</h2>
+    <p><span class="clause-num">11.1</span>Dotknutá osoba má právo podať sťažnosť dozornému orgánu, ak sa domnieva, že spracúvanie jej osobných údajov je v rozpore s GDPR alebo ZOOÚ.</p>
     <div class="info-card">
-      <strong>Orostone s.r.o.</strong>
-      Landererova 8, 811 09 Bratislava<br>
-      E-mail: <a href="mailto:ahoj@neseme.sk?subject=GDPR%20žiadosť">ahoj@neseme.sk</a><br>
-      Tel: <a href="tel:+421917588738">+421 917 588 738</a>
+      <strong>Úrad na ochranu osobných údajov Slovenskej republiky</strong>
+      Hraničná 12, 820 07 Bratislava 27<br>
+      Web: <a href="https://dataprotection.gov.sk" target="_blank" rel="noopener">dataprotection.gov.sk</a><br>
+      E-mail: <a href="mailto:statny.dozor@pdp.gov.sk">statny.dozor@pdp.gov.sk</a><br>
+      Telefón: +421 2 32 31 32 14
     </div>
 
-    <h2>9. Zmeny dokumentu</h2>
-    <p>Tieto zásady môžeme pravidelne aktualizovať. Aktuálne znenie je vždy na tejto stránke s dátumom účinnosti.</p>
+    <h2 id="cl12"><span class="num">XII.</span>Záverečné ustanovenia</h2>
+    <p><span class="clause-num">12.1</span>Tieto Zásady nadobúdajú platnosť a účinnosť dňom 6. mája 2026 a nahrádzajú všetky predchádzajúce verzie.</p>
+    <p><span class="clause-num">12.2</span>Prevádzkovateľ si vyhradzuje právo Zásady jednostranne meniť. O podstatných zmenách bude dotknuté osoby informovať najneskôr 14 dní pred nadobudnutím účinnosti.</p>
+    <p><span class="clause-num">12.3</span>Aktuálne znenie Zásad je vždy zverejnené na webovej stránke <a href="https://neseme.sk/ochrana-osobnych-udajov.html">neseme.sk/ochrana-osobnych-udajov</a>.</p>
+    <p><span class="clause-num">12.4</span>V otázkach týmito Zásadami neupravených sa primerane použijú ustanovenia GDPR, ZOOÚ a iných platných právnych predpisov.</p>
+
+    <div class="info-card" style="margin-top:48px">
+      <strong>Kontakt pre uplatnenie práv a otázky</strong>
+      Orostone s.r.o., Landererova 8, 811 09 Bratislava<br>
+      E-mail: <a href="mailto:ahoj@neseme.sk?subject=GDPR%20žiadosť">ahoj@neseme.sk</a><br>
+      Telefón: <a href="tel:+421917588738">+421 917 588 738</a><br>
+      Po–Ne · 7:00–21:00
+    </div>
+
+    <div class="info-card">
+      <strong>Súvisiace dokumenty</strong>
+      <a href="/cookies.html">Zásady používania cookies</a><br>
+      <a href="/obchodne-podmienky.html">Všeobecné obchodné podmienky</a><br>
+      <a href="/reklamacny-poriadok.html">Reklamačný poriadok</a><br>
+      <a href="/odstupenie-od-zmluvy.html">Odstúpenie od zmluvy</a>
+    </div>
   </main>
 
   <footer>
-    © 2026 Orostone s.r.o. · <a href="/kontakt.html" style="color: var(--c-secondary); text-decoration: none;">Kontakt</a>
+    © 2026 Orostone s.r.o. · <a href="/kontakt.html">Kontakt</a> · <a href="/cookies.html">Cookies</a>
   </footer>
 </body>
 </html>

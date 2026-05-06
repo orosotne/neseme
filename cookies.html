@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="theme-color" content="#111111" />
   <meta name="robots" content="index, follow" />
-  <title>Cookies — Neseme</title>
-  <meta name="description" content="Zásady používania cookies na webe neseme.sk. Orostone s.r.o. používa iba technicky nevyhnutné cookies." />
+  <title>Zásady používania cookies — Neseme | Orostone s.r.o.</title>
+  <meta name="description" content="Zásady používania cookies v zmysle smernice 2002/58/ES (ePrivacy), § 55 zák. 351/2011 Z. z. a Nariadenia (EÚ) 2016/679 (GDPR). Orostone s.r.o. (Neseme)." />
   <link rel="canonical" href="https://neseme.sk/cookies.html" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
@@ -29,11 +29,11 @@
       --ease: cubic-bezier(0.22, 1, 0.36, 1);
     }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { -webkit-text-size-adjust: 100%; }
-    body { font-family: var(--font-body); font-size: 16px; line-height: 1.7; color: var(--c-primary); background: var(--c-bg); -webkit-font-smoothing: antialiased; }
+    html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+    body { font-family: var(--font-body); font-size: 15px; line-height: 1.7; color: var(--c-primary); background: var(--c-bg); -webkit-font-smoothing: antialiased; }
     a { color: var(--c-primary); text-decoration: underline; }
     a:hover { color: var(--c-secondary); }
-    .header { padding: 24px 32px; border-bottom: 1px solid var(--c-border); }
+    .header { padding: 24px 32px; border-bottom: 1px solid var(--c-border); position: sticky; top: 0; background: var(--c-bg); z-index: 10; }
     .header-inner { max-width: 960px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; }
     .logo { display: flex; align-items: center; gap: 8px; font-family: var(--font-display); font-weight: 900; font-size: 22px; letter-spacing: -0.02em; text-transform: uppercase; text-decoration: none; color: var(--c-primary); }
     .logo-mark { display: inline-block; width: 1.2em; height: 0.78em; position: relative; flex-shrink: 0; }
@@ -43,65 +43,43 @@
     main { max-width: 720px; margin: 0 auto; padding: 64px 32px 96px; }
     .eyebrow { display: inline-flex; align-items: center; gap: 12px; font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--c-secondary); margin-bottom: 16px; }
     .eyebrow::before { content: ''; width: 28px; height: 1px; background: var(--c-secondary); }
-    h1 { font-family: var(--font-display); font-weight: 900; font-size: clamp(36px, 5vw, 56px); line-height: 1.05; letter-spacing: -0.025em; text-transform: uppercase; padding-top: 0.14em; margin-bottom: 16px; }
-    .updated { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--c-text-secondary); margin-bottom: 48px; }
-    h2 { font-family: var(--font-display); font-weight: 900; font-size: 22px; letter-spacing: -0.01em; text-transform: uppercase; padding-top: 0.1em; margin-top: 48px; margin-bottom: 12px; }
-    p, li { margin-bottom: 12px; }
-    ul, ol { padding-left: 24px; margin-bottom: 16px; }
-    .info-card { background: var(--c-surface); padding: 24px 28px; border-left: 3px solid var(--c-secondary); border-radius: 4px; margin: 24px 0; font-size: 15px; }
+    h1 { font-family: var(--font-display); font-weight: 900; font-size: clamp(32px, 4.5vw, 48px); line-height: 1.05; letter-spacing: -0.025em; text-transform: uppercase; padding-top: 0.14em; margin-bottom: 16px; }
+    .doc-meta { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--c-text-secondary); margin-bottom: 32px; padding-bottom: 24px; border-bottom: 1px solid var(--c-border); }
+    .doc-meta p { margin-bottom: 6px; }
+    .doc-meta strong { color: var(--c-primary); }
+    .toc { background: var(--c-surface); padding: 24px 28px; border-radius: 4px; margin: 32px 0 48px; }
+    .toc-title { font-family: var(--font-display); font-weight: 900; font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--c-text-secondary); margin-bottom: 12px; }
+    .toc ol { list-style: none; padding: 0; margin: 0; column-count: 2; column-gap: 24px; font-size: 13px; }
+    .toc ol li { margin-bottom: 6px; break-inside: avoid; }
+    .toc ol li a { color: var(--c-primary); text-decoration: none; }
+    .toc ol li a:hover { color: var(--c-secondary); text-decoration: underline; }
+    @media (max-width: 600px) { .toc ol { column-count: 1; } }
+    h2 { font-family: var(--font-display); font-weight: 900; font-size: 20px; letter-spacing: -0.01em; text-transform: uppercase; padding-top: 0.1em; margin-top: 48px; margin-bottom: 16px; scroll-margin-top: 80px; }
+    h2 .num { color: var(--c-secondary); display: inline-block; min-width: 1.5em; }
+    h3 { font-family: var(--font-display); font-weight: 700; font-size: 15px; margin-top: 20px; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.02em; }
+    p, li { margin-bottom: 10px; }
+    p { text-align: justify; }
+    .clause-num { font-family: var(--font-mono); font-size: 13px; color: var(--c-secondary); margin-right: 8px; font-weight: 500; }
+    ul, ol { padding-left: 24px; margin-bottom: 14px; }
+    ul li, ol li { margin-bottom: 6px; }
+    .info-card { background: var(--c-surface); padding: 24px 28px; border-left: 3px solid var(--c-secondary); border-radius: 4px; margin: 24px 0; font-size: 14px; }
     .info-card strong { display: block; margin-bottom: 8px; }
-    .badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 6px 12px;
-      background: var(--c-success);
-      color: var(--c-bg);
-      border-radius: 30px;
-      font-family: var(--font-mono);
-      font-size: 11px;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      font-weight: 500;
-    }
-    .badge::before {
-      content: '';
-      width: 8px;
-      height: 8px;
-      background: var(--c-bg);
-      border-radius: 50%;
-    }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin: 24px 0;
-      font-size: 14px;
-    }
-    table th, table td {
-      text-align: left;
-      padding: 14px 12px;
-      border-bottom: 1px solid var(--c-border);
-      vertical-align: top;
-    }
-    table th {
-      font-family: var(--font-display);
-      font-weight: 700;
-      font-size: 12px;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--c-text-secondary);
-      background: var(--c-surface);
-    }
-    table code {
-      font-family: var(--font-mono);
-      font-size: 12px;
-      background: var(--c-surface);
-      padding: 2px 6px;
-      border-radius: 4px;
-    }
-    @media (max-width: 600px) {
-      table { font-size: 13px; }
-      table th, table td { padding: 10px 8px; }
+    .badge { display: inline-flex; align-items: center; gap: 8px; padding: 6px 12px; background: var(--c-success); color: var(--c-bg); border-radius: 30px; font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 500; }
+    .badge::before { content: ''; width: 8px; height: 8px; background: var(--c-bg); border-radius: 50%; }
+    table { width: 100%; border-collapse: collapse; margin: 24px 0; font-size: 13px; }
+    table th, table td { text-align: left; padding: 12px 10px; border-bottom: 1px solid var(--c-border); vertical-align: top; }
+    table th { font-family: var(--font-display); font-weight: 700; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--c-text-secondary); background: var(--c-surface); }
+    table code { font-family: var(--font-mono); font-size: 12px; background: var(--c-surface); padding: 2px 6px; border-radius: 4px; word-break: break-all; }
+    @media (max-width: 600px) { table { font-size: 12px; } table th, table td { padding: 10px 6px; } }
+
+    @media print {
+      .header { position: static; }
+      .back-link { display: none; }
+      .toc { background: none; padding: 0; }
+      h2, h3 { page-break-after: avoid; page-break-inside: avoid; }
+      .info-card, table { page-break-inside: avoid; }
+      a[href^="http"]::after { content: " (" attr(href) ")"; font-size: 9pt; color: #555; }
+      a[href^="mailto"]::after { content: " <" attr(href) ">"; font-size: 9pt; color: #555; }
     }
     footer { border-top: 1px solid var(--c-border); padding: 32px; text-align: center; font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.08em; color: var(--c-text-secondary); }
     footer a { color: var(--c-secondary); text-decoration: none; }
@@ -120,117 +98,224 @@
 
   <main>
     <div class="eyebrow">Právne dokumenty</div>
-    <h1>Cookies<br>na neseme.sk</h1>
-    <div class="updated">Účinné od 6. mája 2026 · Zákon 351/2011 Z. z. § 55 ods. 5</div>
+    <h1>Zásady<br>používania cookies</h1>
+    <div class="doc-meta">
+      <p><strong>Vydavateľ:</strong> Orostone s.r.o.</p>
+      <p><strong>Verzia:</strong> 1.0</p>
+      <p><strong>Dátum vydania:</strong> 6. máj 2026</p>
+      <p><strong>Účinnosť:</strong> od 6. mája 2026</p>
+      <p><strong>Právny základ:</strong> § 55 ods. 5 zák. č. 351/2011 Z. z., čl. 6 GDPR, smernica 2002/58/ES (ePrivacy)</p>
+    </div>
 
-    <p style="margin-bottom: 24px"><span class="badge">Bez tracking cookies</span></p>
+    <p style="margin-bottom: 24px"><span class="badge">Žiadne tracking cookies · Žiadna analytika</span></p>
 
-    <p>Web <strong>neseme.sk</strong> používa <strong>iba technicky nevyhnutné cookies</strong>, ktoré sú potrebné pre fungovanie stránky. <strong>Nepoužívame</strong> analytické, marketingové ani reklamné cookies a netrackujeme správanie návštevníkov.</p>
+    <p>Tieto Zásady používania cookies (ďalej len „<strong>Zásady</strong>") obchodnej spoločnosti <strong>Orostone s.r.o.</strong>, prevádzkovateľa webovej lokality <a href="https://neseme.sk">neseme.sk</a> (ďalej len „<strong>Webstránka</strong>"), poskytujú návštevníkom Webstránky transparentné informácie o používaní súborov cookies a obdobných technológií v zmysle ust. § 55 ods. 5 zákona č. 351/2011 Z. z. o elektronických komunikáciách v znení neskorších predpisov (ďalej len „<strong>ZEK</strong>"), Nariadenia Európskeho parlamentu a Rady (EÚ) 2016/679 z 27. apríla 2016 o ochrane fyzických osôb pri spracúvaní osobných údajov (ďalej len „<strong>GDPR</strong>") a smernice Európskeho parlamentu a Rady 2002/58/ES o súkromí a elektronických komunikáciách (ďalej len „<strong>ePrivacy</strong>"), v znení smernice 2009/136/ES.</p>
 
-    <h2>1. Čo sú cookies</h2>
-    <p>Cookies sú malé textové súbory, ktoré web ukladá vo vašom prehliadači. Slúžia na zapamätanie si nastavení a zabezpečenie základnej funkčnosti stránky. Nepoužívajú sa na identifikáciu konkrétnej osoby.</p>
+    <div class="info-card">
+      <strong>Prevádzkovateľ Webstránky</strong>
+      Orostone s.r.o., Landererova 8, 811 09 Bratislava — Staré Mesto, Slovenská republika<br>
+      IČO: 55 254 772 · DIČ: 2121930580 · IČ DPH: SK2121930580<br>
+      E-mail: <a href="mailto:ahoj@neseme.sk?subject=Cookies">ahoj@neseme.sk</a> · Telefón: <a href="tel:+421917588738">+421 917 588 738</a>
+    </div>
 
-    <h2>2. Aké cookies používame</h2>
+    <div class="toc" aria-label="Obsah dokumentu">
+      <div class="toc-title">Obsah</div>
+      <ol>
+        <li><a href="#cl1">Definície a právny rámec</a></li>
+        <li><a href="#cl2">Kategórie cookies a obdobných technológií</a></li>
+        <li><a href="#cl3">Súhlas a právny základ spracúvania</a></li>
+        <li><a href="#cl4">Konkrétne cookies a technológie</a></li>
+        <li><a href="#cl5">Doba uchovávania</a></li>
+        <li><a href="#cl6">Tretie strany a medzinárodné prenosy</a></li>
+        <li><a href="#cl7">Práva dotknutých osôb</a></li>
+        <li><a href="#cl8">Správa cookies v prehliadači</a></li>
+        <li><a href="#cl9">Zmena nastavenia súhlasu</a></li>
+        <li><a href="#cl10">Záverečné ustanovenia</a></li>
+      </ol>
+    </div>
 
-    <h3 style="font-family:var(--font-display); font-weight:900; font-size:18px; margin-top:24px; margin-bottom:12px; text-transform:uppercase">Vlastné cookies (1st-party)</h3>
+    <h2 id="cl1"><span class="num">I.</span>Definície a právny rámec</h2>
+    <p><span class="clause-num">1.1</span>Pre účely týchto Zásad sa rozumie:</p>
+    <ul>
+      <li><strong>Cookies</strong> — krátke textové údaje, ktoré sú ukladané v koncovom zariadení používateľa (prehliadač, mobilná aplikácia) Webstránkou alebo treťou stranou pri návšteve Webstránky;</li>
+      <li><strong>Obdobné technológie</strong> — najmä webové majáky (web beacons), pixely, lokálne úložisko prehliadača (localStorage, sessionStorage), IndexedDB, fingerprinting, ktoré plnia podobnú funkciu ako cookies;</li>
+      <li><strong>Návštevník</strong> — fyzická osoba, ktorá sa pripája k Webstránke;</li>
+      <li><strong>Súhlas</strong> — slobodný, konkrétny, informovaný a jednoznačný prejav vôle Návštevníka v zmysle čl. 4 ods. 11 GDPR a § 14 ZEK.</li>
+    </ul>
+    <p><span class="clause-num">1.2</span>Právny rámec používania cookies tvoria predovšetkým:</p>
+    <ul>
+      <li>§ 55 ods. 5 ZEK (povinnosť informovať o používaní cookies a získať súhlas — okrem nevyhnutných cookies);</li>
+      <li>čl. 5 ods. 3 ePrivacy smernice;</li>
+      <li>čl. 6 GDPR (právny základ spracúvania osobných údajov);</li>
+      <li>usmernenia Európskeho výboru pre ochranu údajov (EDPB), najmä Guidelines 05/2020 on consent under Regulation 2016/679;</li>
+      <li>stanoviská Úradu na ochranu osobných údajov SR (ÚOOÚ).</li>
+    </ul>
 
+    <h2 id="cl2"><span class="num">II.</span>Kategórie cookies a obdobných technológií</h2>
+    <p><span class="clause-num">2.1</span>Cookies sa štandardne klasifikujú do nasledujúcich kategórií:</p>
+    <ul>
+      <li><strong>Technicky nevyhnutné cookies</strong> — sú nevyhnutné pre samotné fungovanie Webstránky a poskytnutie služby výslovne požadovanej Návštevníkom (napr. uchovanie preferencie súhlasu s cookies). <em>Nepodliehajú súhlasu</em> v zmysle čl. 5 ods. 3 ePrivacy smernice;</li>
+      <li><strong>Funkčné cookies</strong> — umožňujú zapamätanie si volieb Návštevníka (jazyk, prihlásenie, preferencie). Vyžadujú súhlas;</li>
+      <li><strong>Analytické / štatistické cookies</strong> — slúžia na meranie návštevnosti a správania Návštevníkov. Vyžadujú súhlas;</li>
+      <li><strong>Marketingové / reklamné cookies</strong> — slúžia na profilovanie a cielenú reklamu. Vyžadujú výslovný súhlas;</li>
+      <li><strong>Cookies sociálnych sietí</strong> — pochádzajú zo sociálnych médií (Facebook, Instagram, LinkedIn). Vyžadujú súhlas.</li>
+    </ul>
+    <p><span class="clause-num">2.2</span><strong>Webstránka neseme.sk používa výlučne cookies kategórie „technicky nevyhnutné" a obmedzene technické cookies tretích strán nevyhnutné pre fungovanie integrovaných služieb (Google Fonts, OpenStreetMap).</strong> Webstránka <strong>nepoužíva</strong> analytické, marketingové ani reklamné cookies a <strong>nevykonáva profilovanie</strong> v zmysle čl. 22 GDPR.</p>
+
+    <h2 id="cl3"><span class="num">III.</span>Súhlas a právny základ spracúvania</h2>
+    <p><span class="clause-num">3.1</span>Technicky nevyhnutné cookies <strong>nevyžadujú súhlas</strong> Návštevníka v zmysle čl. 5 ods. 3 vety druhej ePrivacy smernice a § 55 ods. 5 ZEK, pretože sú nevyhnutné pre samotné fungovanie Webstránky.</p>
+    <p><span class="clause-num">3.2</span>Pri prvej návšteve Webstránky sa zobrazí <strong>informačný banner</strong>, ktorý Návštevníka informuje o používaní technicky nevyhnutných cookies. Stlačením tlačidla „Rozumiem" Návštevník potvrdzuje, že vzal informáciu na vedomie. Ide o informačný banner, nie o súhlasový dialóg, keďže žiadne ne-nevyhnutné cookies sa neukladajú.</p>
+    <p><span class="clause-num">3.3</span>Právnym základom spracúvania osobných údajov získavaných prostredníctvom technicky nevyhnutných cookies je <strong>oprávnený záujem prevádzkovateľa</strong> (čl. 6 ods. 1 písm. f) GDPR) na zabezpečení riadneho fungovania Webstránky a jej bezpečnosti.</p>
+    <p><span class="clause-num">3.4</span>Ak by Webstránka v budúcnosti začala používať analytické alebo marketingové cookies, bude pred ich uložením vyžiadaný výslovný a informovaný súhlas Návštevníka v súlade s čl. 4 ods. 11 GDPR.</p>
+
+    <h2 id="cl4"><span class="num">IV.</span>Konkrétne cookies a technológie používané na Webstránke</h2>
+
+    <h3>4.1 Vlastné technológie (1st-party)</h3>
     <table>
       <thead>
         <tr>
           <th>Názov</th>
+          <th>Druh</th>
           <th>Účel</th>
-          <th>Trvanie</th>
+          <th>Doba</th>
+          <th>Kategória</th>
         </tr>
       </thead>
       <tbody>
         <tr>
           <td><code>neseme-cookies-ack</code></td>
-          <td>Zapamätá si, že ste potvrdili cookie banner — aby sa už nezobrazoval pri ďalšej návšteve. Uložené v <code>localStorage</code>, nie ako cookie.</td>
-          <td>Trvalé (do vymazania v prehliadači)</td>
+          <td>localStorage</td>
+          <td>Uchová informáciu o tom, že Návštevník potvrdil informačný banner — banner sa nezobrazuje pri ďalších návštevách.</td>
+          <td>Trvalé (do vymazania)</td>
+          <td>Technicky nevyhnutné</td>
         </tr>
       </tbody>
     </table>
 
-    <h3 style="font-family:var(--font-display); font-weight:900; font-size:18px; margin-top:32px; margin-bottom:12px; text-transform:uppercase">Cookies tretích strán (3rd-party)</h3>
-
-    <p>Tieto môžu byť nastavené externými službami, ktoré používame:</p>
-
+    <h3>4.2 Cookies tretích strán (3rd-party)</h3>
+    <p>Tieto cookies môžu byť nastavené externými službami integrovanými na Webstránke. Všetky uvedené tretie strany majú vlastné zásady ochrany súkromia, ktoré odporúčame Návštevníkom preštudovať.</p>
     <table>
       <thead>
         <tr>
           <th>Služba</th>
+          <th>Poskytovateľ</th>
           <th>Účel</th>
-          <th>Viac info</th>
+          <th>Zásady ochrany súkromia</th>
         </tr>
       </thead>
       <tbody>
         <tr>
           <td><strong>Google Fonts</strong></td>
-          <td>Načítanie webových fontov (Jost, Inter, JetBrains Mono). Nastavuje technické cookies pre cache a CDN.</td>
+          <td>Google Ireland Limited</td>
+          <td>Načítanie webových fontov (Jost, Inter, JetBrains Mono). Môžu byť nastavené technické cookies pre cache a CDN.</td>
           <td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a></td>
         </tr>
         <tr>
           <td><strong>OpenStreetMap</strong></td>
-          <td>Zobrazenie mapy v sekcii Kontakt cez iframe. Mapa môže nastaviť technické cookies.</td>
+          <td>OpenStreetMap Foundation</td>
+          <td>Zobrazenie mapy v sekcii Kontakt prostredníctvom embed iframe. Môžu byť nastavené technické cookies.</td>
           <td><a href="https://wiki.osmfoundation.org/wiki/Privacy_Policy" target="_blank" rel="noopener">osmfoundation.org/Privacy</a></td>
         </tr>
         <tr>
           <td><strong>Vercel</strong></td>
-          <td>Hostingová služba. Môže ukladať technické cookies pre bezpečnosť, deduplication a edge routing.</td>
+          <td>Vercel Inc.</td>
+          <td>Hosting Webstránky a CDN doručovanie. Môžu byť nastavené technické cookies pre bezpečnosť, deduplikáciu a edge routing.</td>
           <td><a href="https://vercel.com/legal/privacy-policy" target="_blank" rel="noopener">vercel.com/legal/privacy-policy</a></td>
         </tr>
         <tr>
           <td><strong>Unsplash</strong></td>
-          <td>CDN pre vybrané obrázky. Bez sledovania, žiadne reklamné cookies.</td>
+          <td>Unsplash, Inc.</td>
+          <td>CDN pre vybrané obrázky. Žiadne reklamné ani sledovacie cookies, výlučne technické.</td>
           <td><a href="https://unsplash.com/privacy" target="_blank" rel="noopener">unsplash.com/privacy</a></td>
         </tr>
       </tbody>
     </table>
 
     <div class="info-card">
-      <strong>Bez analytiky</strong>
-      Nepoužívame Google Analytics, Facebook Pixel, ani žiadne iné analytické či marketingové nástroje. Nezhromažďujeme údaje o vašom správaní pre profilovanie alebo reklamu.
+      <strong>Vyhlásenie o nepoužívaní analytiky a tracking technológií</strong>
+      Webstránka <strong>nepoužíva</strong> Google Analytics, Google Tag Manager, Facebook Pixel, LinkedIn Insight Tag, ani žiadne iné analytické či marketingové nástroje. Na Webstránke neprebieha cross-site tracking, browser fingerprinting ani profilovanie Návštevníkov v zmysle čl. 22 GDPR.
     </div>
 
-    <h2>3. Súhlas s cookies</h2>
-    <p>3.1. Technicky nevyhnutné cookies <strong>nevyžadujú váš súhlas</strong> — sú potrebné pre fungovanie stránky (čl. 5 ods. 3 smernice ePrivacy).</p>
-    <p>3.2. Pri prvej návšteve sa zobrazí informačný banner. Stlačením „Rozumiem" potvrdíte, že ste informáciu vzali na vedomie. Banner sa už nezobrazí pri ďalších návštevách.</p>
+    <h2 id="cl5"><span class="num">V.</span>Doba uchovávania</h2>
+    <p><span class="clause-num">5.1</span>Cookies sa rozdeľujú podľa doby uchovávania na:</p>
+    <ul>
+      <li><strong>Session cookies</strong> — sú vymazané po zatvorení prehliadača;</li>
+      <li><strong>Trvalé cookies</strong> — ostávajú uložené do uplynutia ich expirácie alebo do ich vymazania Návštevníkom.</li>
+    </ul>
+    <p><span class="clause-num">5.2</span>Konkrétne doby uchovávania jednotlivých cookies sú uvedené v tabuľkách v čl. IV týchto Zásad.</p>
 
-    <h2>4. Ako spravovať cookies v prehliadači</h2>
-    <p>Cookies môžete kedykoľvek vymazať alebo zablokovať v nastaveniach prehliadača:</p>
+    <h2 id="cl6"><span class="num">VI.</span>Tretie strany a medzinárodné prenosy</h2>
+    <p><span class="clause-num">6.1</span>Niektoré z uvedených tretích strán majú sídlo mimo Európskeho hospodárskeho priestoru (EHP), najmä v USA. Prenos osobných údajov sa v takom prípade uskutočňuje na základe:</p>
+    <ul>
+      <li><strong>Štandardných zmluvných doložiek</strong> (SCC) prijatých Európskou komisiou (Vykonávacie rozhodnutie Komisie (EÚ) 2021/914);</li>
+      <li><strong>EU-US Data Privacy Framework</strong> (kde je tretia strana certifikovaná);</li>
+      <li>iných primeraných záruk podľa kapitoly V GDPR.</li>
+    </ul>
+    <p><span class="clause-num">6.2</span>Prevádzkovateľ Webstránky neprenáša osobné údaje tretím stranám na účely odlišné od poskytovania samotných služieb (hosting, doručovanie obsahu, mapy, fonty).</p>
+
+    <h2 id="cl7"><span class="num">VII.</span>Práva dotknutých osôb</h2>
+    <p><span class="clause-num">7.1</span>Každý Návštevník má v zmysle čl. 15–22 GDPR nasledujúce práva v súvislosti so spracúvaním osobných údajov získaných prostredníctvom cookies:</p>
+    <ul>
+      <li><strong>právo na prístup</strong> k osobným údajom (čl. 15 GDPR);</li>
+      <li><strong>právo na opravu</strong> nesprávnych osobných údajov (čl. 16 GDPR);</li>
+      <li><strong>právo na vymazanie</strong> osobných údajov / „právo byť zabudnutý" (čl. 17 GDPR);</li>
+      <li><strong>právo na obmedzenie spracúvania</strong> (čl. 18 GDPR);</li>
+      <li><strong>právo na prenosnosť údajov</strong> (čl. 20 GDPR);</li>
+      <li><strong>právo namietať</strong> proti spracúvaniu (čl. 21 GDPR);</li>
+      <li><strong>právo odvolať súhlas</strong> kedykoľvek, ak je spracúvanie založené na súhlase (čl. 7 ods. 3 GDPR);</li>
+      <li><strong>právo podať sťažnosť</strong> dozornému orgánu — Úradu na ochranu osobných údajov SR (ÚOOÚ).</li>
+    </ul>
+    <p><span class="clause-num">7.2</span>Práva si môžete uplatniť kontaktovaním prevádzkovateľa na e-mailovej adrese <a href="mailto:ahoj@neseme.sk?subject=GDPR%20žiadosť">ahoj@neseme.sk</a>. Bližšie informácie sú uvedené v <a href="/ochrana-osobnych-udajov.html">Zásadách ochrany osobných údajov</a>.</p>
+
+    <h2 id="cl8"><span class="num">VIII.</span>Správa cookies v prehliadači</h2>
+    <p><span class="clause-num">8.1</span>Cookies môžete kedykoľvek vymazať alebo zablokovať priamo v nastaveniach Vášho prehliadača. Návody na správu cookies pre najpoužívanejšie prehliadače:</p>
     <ul>
       <li><a href="https://support.google.com/chrome/answer/95647" target="_blank" rel="noopener">Google Chrome</a></li>
       <li><a href="https://support.mozilla.org/sk/kb/povolenie-zakazanie-cookies" target="_blank" rel="noopener">Mozilla Firefox</a></li>
-      <li><a href="https://support.apple.com/sk-sk/guide/safari/sfri11471/mac" target="_blank" rel="noopener">Safari</a></li>
+      <li><a href="https://support.apple.com/sk-sk/guide/safari/sfri11471/mac" target="_blank" rel="noopener">Safari (macOS)</a></li>
+      <li><a href="https://support.apple.com/sk-sk/HT201265" target="_blank" rel="noopener">Safari (iOS)</a></li>
       <li><a href="https://support.microsoft.com/sk-sk/microsoft-edge" target="_blank" rel="noopener">Microsoft Edge</a></li>
+      <li><a href="https://help.opera.com/en/latest/web-preferences/" target="_blank" rel="noopener">Opera</a></li>
     </ul>
-    <p>Upozornenie: Vypnutie cookies môže obmedziť funkčnosť stránky.</p>
+    <p><span class="clause-num">8.2</span>Vypnutím alebo blokovaním cookies môže byť obmedzená funkčnosť Webstránky alebo niektorých jej súčastí.</p>
+    <p><span class="clause-num">8.3</span>Návštevník môže využiť aj funkciu „Do Not Track" (DNT) vo svojom prehliadači, ktorú Webstránka rešpektuje.</p>
 
-    <h2>5. Ako vymazať cookie banner súhlas</h2>
-    <p>Ak chcete znova zobraziť cookie banner pri ďalšej návšteve:</p>
+    <h2 id="cl9"><span class="num">IX.</span>Zmena nastavenia súhlasu</h2>
+    <p><span class="clause-num">9.1</span>Vzhľadom na to, že Webstránka používa výlučne technicky nevyhnutné cookies a obdobné technológie, na uloženie informácie o potvrdení informačného banneru sa využíva mechanizmus localStorage namiesto cookies.</p>
+    <p><span class="clause-num">9.2</span>Ak chcete, aby sa informačný banner zobrazil pri ďalšej návšteve, môžete vymazať záznam <code>neseme-cookies-ack</code> v lokálnom úložisku prehliadača nasledujúcim postupom:</p>
     <ol>
-      <li>Otvorte <strong>DevTools</strong> v prehliadači (klávesy F12 alebo Cmd+Option+I)</li>
-      <li>Choďte na záložku <strong>Application</strong> → <strong>Local Storage</strong> → <code>neseme.sk</code></li>
-      <li>Vymažte položku <code>neseme-cookies-ack</code></li>
-      <li>Obnovte stránku — banner sa zobrazí znova</li>
+      <li>Otvorte Vývojárske nástroje vo Vašom prehliadači (klávesy F12 alebo Cmd+Option+I);</li>
+      <li>Prejdite na záložku <strong>Application</strong> (Chrome/Edge) alebo <strong>Storage</strong> (Firefox/Safari);</li>
+      <li>V sekcii <strong>Local Storage</strong> rozkliknite položku <code>neseme.sk</code>;</li>
+      <li>Vymažte záznam <code>neseme-cookies-ack</code>;</li>
+      <li>Obnovte stránku — banner sa znovu zobrazí.</li>
     </ol>
 
-    <h2>6. Súvisiace dokumenty</h2>
-    <ul>
-      <li><a href="/ochrana-osobnych-udajov.html">Ochrana osobných údajov (GDPR)</a></li>
-      <li><a href="/obchodne-podmienky.html">Všeobecné obchodné podmienky</a></li>
-    </ul>
+    <h2 id="cl10"><span class="num">X.</span>Záverečné ustanovenia</h2>
+    <p><span class="clause-num">10.1</span>Tieto Zásady nadobúdajú platnosť a účinnosť dňom 6. mája 2026.</p>
+    <p><span class="clause-num">10.2</span>Prevádzkovateľ si vyhradzuje právo Zásady jednostranne meniť. O podstatných zmenách bude Návštevníkov informovať najneskôr 14 dní pred nadobudnutím ich účinnosti prostredníctvom Webstránky.</p>
+    <p><span class="clause-num">10.3</span>Aktuálne znenie Zásad je vždy zverejnené na adrese <a href="https://neseme.sk/cookies.html">neseme.sk/cookies</a>.</p>
+    <p><span class="clause-num">10.4</span>Ak je niektoré ustanovenie týchto Zásad neplatné alebo neúčinné, ostatné ustanovenia ostávajú v plnom rozsahu v platnosti.</p>
+    <p><span class="clause-num">10.5</span>Tieto Zásady sa spravujú právnym poriadkom Slovenskej republiky a aktmi Európskej únie v oblasti ochrany osobných údajov a elektronických komunikácií.</p>
 
-    <h2>7. Kontakt</h2>
-    <div class="info-card">
-      <strong>Orostone s.r.o.</strong>
-      Landererova 8, 811 09 Bratislava<br>
-      E-mail: <a href="mailto:ahoj@neseme.sk?subject=Otázka%20o%20cookies">ahoj@neseme.sk</a><br>
-      Tel: <a href="tel:+421917588738">+421 917 588 738</a>
+    <div class="info-card" style="margin-top:48px">
+      <strong>Kontakt pre otázky a uplatnenie práv</strong>
+      Orostone s.r.o., Landererova 8, 811 09 Bratislava<br>
+      E-mail: <a href="mailto:ahoj@neseme.sk?subject=Cookies">ahoj@neseme.sk</a><br>
+      Telefón: <a href="tel:+421917588738">+421 917 588 738</a><br><br>
+
+      <strong>Dozorný orgán</strong>
+      Úrad na ochranu osobných údajov Slovenskej republiky<br>
+      Hraničná 12, 820 07 Bratislava<br>
+      Web: <a href="https://dataprotection.gov.sk" target="_blank" rel="noopener">dataprotection.gov.sk</a>
     </div>
 
-    <h2>8. Zmeny dokumentu</h2>
-    <p>Tieto zásady môžeme aktualizovať. Aktuálne znenie je vždy zverejnené na tejto stránke s dátumom účinnosti.</p>
+    <div class="info-card">
+      <strong>Súvisiace dokumenty</strong>
+      <a href="/ochrana-osobnych-udajov.html">Zásady ochrany osobných údajov (GDPR)</a><br>
+      <a href="/obchodne-podmienky.html">Všeobecné obchodné podmienky</a><br>
+      <a href="/reklamacny-poriadok.html">Reklamačný poriadok</a>
+    </div>
   </main>
 
   <footer>

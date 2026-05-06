@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="theme-color" content="#111111" />
   <meta name="robots" content="index, follow" />
-  <title>Všeobecné obchodné podmienky — Neseme</title>
-  <meta name="description" content="Všeobecné obchodné podmienky spoločnosti Orostone s.r.o. (značka Neseme) pre prepravné služby v Bratislave a na Slovensku." />
+  <title>Všeobecné obchodné podmienky — Neseme | Orostone s.r.o.</title>
+  <meta name="description" content="Všeobecné obchodné podmienky spoločnosti Orostone s.r.o. (značka Neseme) pre prepravu, výnos a montáž. Vypracované v súlade s platnou slovenskou legislatívou." />
   <link rel="canonical" href="https://neseme.sk/obchodne-podmienky.html" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
@@ -28,11 +28,11 @@
       --ease: cubic-bezier(0.22, 1, 0.36, 1);
     }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { -webkit-text-size-adjust: 100%; }
-    body { font-family: var(--font-body); font-size: 16px; line-height: 1.7; color: var(--c-primary); background: var(--c-bg); -webkit-font-smoothing: antialiased; }
+    html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+    body { font-family: var(--font-body); font-size: 15px; line-height: 1.7; color: var(--c-primary); background: var(--c-bg); -webkit-font-smoothing: antialiased; }
     a { color: var(--c-primary); text-decoration: underline; }
     a:hover { color: var(--c-secondary); }
-    .header { padding: 24px 32px; border-bottom: 1px solid var(--c-border); }
+    .header { padding: 24px 32px; border-bottom: 1px solid var(--c-border); position: sticky; top: 0; background: var(--c-bg); z-index: 10; }
     .header-inner { max-width: 960px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; }
     .logo { display: flex; align-items: center; gap: 8px; font-family: var(--font-display); font-weight: 900; font-size: 22px; letter-spacing: -0.02em; text-transform: uppercase; text-decoration: none; color: var(--c-primary); }
     .logo-mark { display: inline-block; width: 1.2em; height: 0.78em; position: relative; flex-shrink: 0; }
@@ -42,14 +42,57 @@
     main { max-width: 720px; margin: 0 auto; padding: 64px 32px 96px; }
     .eyebrow { display: inline-flex; align-items: center; gap: 12px; font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--c-secondary); margin-bottom: 16px; }
     .eyebrow::before { content: ''; width: 28px; height: 1px; background: var(--c-secondary); }
-    h1 { font-family: var(--font-display); font-weight: 900; font-size: clamp(36px, 5vw, 56px); line-height: 1.05; letter-spacing: -0.025em; text-transform: uppercase; padding-top: 0.14em; margin-bottom: 16px; }
-    .updated { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--c-text-secondary); margin-bottom: 48px; }
-    h2 { font-family: var(--font-display); font-weight: 900; font-size: 22px; letter-spacing: -0.01em; text-transform: uppercase; padding-top: 0.1em; margin-top: 48px; margin-bottom: 12px; }
-    h3 { font-family: var(--font-display); font-weight: 700; font-size: 17px; margin-top: 24px; margin-bottom: 8px; }
-    p, li { margin-bottom: 12px; }
-    ul, ol { padding-left: 24px; margin-bottom: 16px; }
-    .info-card { background: var(--c-surface); padding: 24px 28px; border-left: 3px solid var(--c-secondary); border-radius: 4px; margin: 24px 0; font-size: 15px; }
+    h1 { font-family: var(--font-display); font-weight: 900; font-size: clamp(32px, 4.5vw, 48px); line-height: 1.05; letter-spacing: -0.025em; text-transform: uppercase; padding-top: 0.14em; margin-bottom: 16px; }
+    .doc-meta { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--c-text-secondary); margin-bottom: 32px; padding-bottom: 24px; border-bottom: 1px solid var(--c-border); }
+    .doc-meta p { margin-bottom: 6px; }
+    .doc-meta strong { color: var(--c-primary); }
+
+    /* Table of contents */
+    .toc { background: var(--c-surface); padding: 24px 28px; border-radius: 4px; margin: 32px 0 48px; }
+    .toc-title { font-family: var(--font-display); font-weight: 900; font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--c-text-secondary); margin-bottom: 12px; }
+    .toc ol { list-style: none; padding: 0; margin: 0; column-count: 2; column-gap: 24px; font-size: 13px; }
+    .toc ol li { margin-bottom: 6px; break-inside: avoid; }
+    .toc ol li a { color: var(--c-primary); text-decoration: none; }
+    .toc ol li a:hover { color: var(--c-secondary); text-decoration: underline; }
+    @media (max-width: 600px) { .toc ol { column-count: 1; } }
+
+    h2 {
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: 20px;
+      letter-spacing: -0.01em;
+      text-transform: uppercase;
+      padding-top: 0.1em;
+      margin-top: 48px;
+      margin-bottom: 16px;
+      scroll-margin-top: 80px;
+    }
+    h2 .num { color: var(--c-secondary); display: inline-block; min-width: 1.5em; }
+    h3 { font-family: var(--font-display); font-weight: 700; font-size: 15px; margin-top: 20px; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.02em; }
+    p, li { margin-bottom: 10px; }
+    p { text-align: justify; }
+    .clause { padding-left: 20px; margin-bottom: 8px; }
+    .clause-num { font-family: var(--font-mono); font-size: 13px; color: var(--c-secondary); margin-right: 8px; font-weight: 500; }
+    ul, ol { padding-left: 24px; margin-bottom: 14px; }
+    ul li, ol li { margin-bottom: 6px; }
+    .info-card { background: var(--c-surface); padding: 24px 28px; border-left: 3px solid var(--c-secondary); border-radius: 4px; margin: 24px 0; font-size: 14px; }
     .info-card strong { display: block; margin-bottom: 8px; }
+    .legal-ref { font-style: italic; color: var(--c-text-secondary); font-size: 13px; }
+    .definition { background: var(--c-surface); padding: 16px 20px; border-radius: 4px; margin-bottom: 8px; }
+    .definition strong { color: var(--c-primary); }
+
+    /* Print */
+    @media print {
+      .header { position: static; box-shadow: none; }
+      .back-link { display: none; }
+      .toc { background: none; padding: 0; }
+      h2 { page-break-after: avoid; }
+      h2, h3 { page-break-inside: avoid; }
+      .info-card { page-break-inside: avoid; }
+      a[href^="http"]::after { content: " (" attr(href) ")"; font-size: 9pt; color: #555; }
+      a[href^="mailto"]::after { content: " <" attr(href) ">"; font-size: 9pt; color: #555; }
+    }
+
     footer { border-top: 1px solid var(--c-border); padding: 32px; text-align: center; font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.08em; color: var(--c-text-secondary); }
     footer a { color: var(--c-secondary); text-decoration: none; }
   </style>
@@ -68,125 +111,250 @@
   <main>
     <div class="eyebrow">Právne dokumenty</div>
     <h1>Všeobecné<br>obchodné podmienky</h1>
-    <div class="updated">Účinné od 6. mája 2026 · Občiansky zákonník + zákon 250/2007 Z. z.</div>
-
-    <p>Tieto všeobecné obchodné podmienky (ďalej len „<strong>VOP</strong>") upravujú vzťah medzi spoločnosťou <strong>Orostone s.r.o.</strong> (značka <strong>Neseme</strong>) ako poskytovateľom prepravných služieb a objednávateľom.</p>
-
-    <div class="info-card">
-      <strong>Poskytovateľ</strong>
-      Orostone s.r.o., Landererova 8, 811 09 Bratislava<br>
-      IČO: 55 254 772 · DIČ: 2121930580 · IČ DPH: SK2121930580<br>
-      Zapísaná v Obchodnom registri Okresného súdu Bratislava I<br>
-      E-mail: <a href="mailto:ahoj@neseme.sk">ahoj@neseme.sk</a> · Tel: <a href="tel:+421917588738">+421 917 588 738</a>
+    <div class="doc-meta">
+      <p><strong>Vydavateľ:</strong> Orostone s.r.o.</p>
+      <p><strong>Verzia:</strong> 1.0</p>
+      <p><strong>Dátum vydania:</strong> 6. máj 2026</p>
+      <p><strong>Účinnosť:</strong> od 6. mája 2026</p>
+      <p><strong>Nahrádza:</strong> všetky predchádzajúce verzie</p>
     </div>
 
-    <h2>1. Úvodné ustanovenia</h2>
-    <p>1.1. Tieto VOP sa vzťahujú na všetky zmluvy o preprave, výnose a montáži uzavreté medzi poskytovateľom a objednávateľom, či už ide o spotrebiteľa (B2C) alebo o podnikateľa (B2B).</p>
-    <p>1.2. Odoslaním objednávky objednávateľ potvrdzuje, že sa s týmito VOP oboznámil a súhlasí s nimi.</p>
-    <p>1.3. Vzťahy neupravené týmito VOP sa riadia platnými právnymi predpismi Slovenskej republiky, najmä Občianskym zákonníkom (zák. č. 40/1964 Zb.), zákonom o ochrane spotrebiteľa (zák. č. 250/2007 Z. z.) a Obchodným zákonníkom (zák. č. 513/1991 Zb.).</p>
+    <p>Tento dokument predstavuje Všeobecné obchodné podmienky obchodnej spoločnosti <strong>Orostone s.r.o.</strong>, vydávané podľa ust. § 273 zákona č. 513/1991 Zb. Obchodný zákonník v znení neskorších predpisov, ktoré upravujú práva a povinnosti zmluvných strán pri poskytovaní prepravných, vynáškových a montážnych služieb pod obchodnou značkou „Neseme" (ďalej len „<strong>VOP</strong>").</p>
 
-    <h2>2. Predmet zmluvy</h2>
-    <p>2.1. Poskytovateľ sa zaväzuje vykonať pre objednávateľa prepravu, výnos a/alebo montáž zásielky podľa parametrov objednávky.</p>
-    <p>2.2. Objednávateľ sa zaväzuje uhradiť cenu za poskytnuté služby v dohodnutom termíne.</p>
-    <p>2.3. Druhy služieb:</p>
-    <ul>
-      <li><strong>Neseme XL</strong> — preprava nadrozmerných zásielok do 500 kg</li>
-      <li><strong>Neseme Elektro</strong> — doručenie a zapojenie bielej techniky</li>
-      <li><strong>Neseme Home</strong> — výnos na poschodie a montáž</li>
-      <li><strong>Neseme Business</strong> — B2B preprava pre e-shopy</li>
-      <li><strong>Neseme Express</strong> — same-day doručenie v Bratislave</li>
-    </ul>
-
-    <h2>3. Objednávka služby</h2>
-    <p>3.1. Objednávku je možné uskutočniť:</p>
-    <ul>
-      <li>Telefonicky na čísle <a href="tel:+421917588738">+421 917 588 738</a></li>
-      <li>E-mailom na <a href="mailto:ahoj@neseme.sk">ahoj@neseme.sk</a></li>
-      <li>Cez kontaktný formulár na <a href="/kontakt.html">neseme.sk/kontakt</a></li>
-    </ul>
-    <p>3.2. Objednávka musí obsahovať: meno/firmu, kontakt, adresu vyzdvihnutia a doručenia, rozmery a hmotnosť zásielky, požadovaný termín, prípadne poschodie pri výnose.</p>
-    <p>3.3. Zmluva je uzavretá v okamihu, keď poskytovateľ potvrdí prijatie objednávky a dohodne s objednávateľom termín doručenia (telefonicky alebo písomne).</p>
-
-    <h2>4. Cena a platobné podmienky</h2>
-    <p>4.1. Ceny sú uvedené v cenníku na webovej stránke alebo individuálne dohodnuté pri B2B zmluvách.</p>
-    <p>4.2. Ceny zahŕňajú DPH (20 %), dopravu, výnos a štandardné poistenie zásielky do 5 000 €.</p>
-    <p>4.3. Platba prebieha:</p>
-    <ul>
-      <li><strong>B2C</strong> — pri prevzatí zásielky v hotovosti alebo bankovým prevodom po fakturácii</li>
-      <li><strong>B2B</strong> — bankovým prevodom na základe faktúry so splatnosťou 14 dní</li>
-    </ul>
-    <p>4.4. Pri omeškaní platby si poskytovateľ účtuje úrok z omeškania v zákonnej výške.</p>
-
-    <h2>5. Termín a spôsob doručenia</h2>
-    <p>5.1. Termín doručenia sa dohodne pri objednávke a poskytovateľ ho potvrdí najmenej 24 hodín pred plánovaným doručením (telefonická avizácia).</p>
-    <p>5.2. Štandardné doručovacie zóny:</p>
-    <ul>
-      <li><strong>Domáca zóna</strong> (Bratislava + 60 km) — do 24 hodín</li>
-      <li><strong>Celé Slovensko</strong> — do 48 hodín</li>
-      <li><strong>Express</strong> (Bratislava) — do 90 minút</li>
-    </ul>
-    <p>5.3. Ak nie je objednávateľ na dohodnutej adrese a nezareaguje na avizáciu, opätovné doručenie sa účtuje podľa cenníka.</p>
-
-    <h2>6. Práva a povinnosti poskytovateľa</h2>
-    <p>6.1. Poskytovateľ je povinný:</p>
-    <ul>
-      <li>Vykonať službu v dohodnutom termíne a kvalite</li>
-      <li>Bezpečne upevniť a chrániť zásielku počas prepravy</li>
-      <li>Avizovať doručenie najmenej 30 minút pred príchodom</li>
-      <li>Vyhotoviť fotodokumentáciu odovzdania (POD)</li>
-      <li>Pri poškodení zásielky postupovať podľa Reklamačného poriadku</li>
-    </ul>
-
-    <h2>7. Práva a povinnosti objednávateľa</h2>
-    <p>7.1. Objednávateľ je povinný:</p>
-    <ul>
-      <li>Poskytnúť pravdivé informácie o zásielke (rozmery, hmotnosť, krehkosť)</li>
-      <li>Byť dostupný na dohodnutom termíne alebo poveriť inú osobu prevzatím</li>
-      <li>Zabezpečiť prístup k miestu vyzdvihnutia/doručenia (parkovanie, výťah)</li>
-      <li>Skontrolovať zásielku pri prevzatí a prípadné viditeľné poškodenia ihneď nahlásiť</li>
-      <li>Zaplatiť dohodnutú cenu</li>
-    </ul>
-
-    <h2>8. Zodpovednosť za škodu a poistenie</h2>
-    <p>8.1. Poskytovateľ zodpovedá za škodu spôsobenú na zásielke od prevzatia po odovzdanie objednávateľovi, maximálne do výšky poistnej sumy <strong>5 000 € na zásielku</strong>.</p>
-    <p>8.2. Pre vyššie hodnoty zásielky je možné dohodnúť individuálne navýšenie poistenia (predmet samostatnej dohody).</p>
-    <p>8.3. Poskytovateľ nezodpovedá za:</p>
-    <ul>
-      <li>Škodu spôsobenú nesprávnym balením zásielky objednávateľom</li>
-      <li>Škodu spôsobenú vyššou mocou (živelná pohroma, dopravná nehoda, ktorú spôsobila tretia osoba)</li>
-      <li>Skryté vady zásielky neoznámené pri objednávke</li>
-    </ul>
-
-    <h2>9. Reklamácie</h2>
-    <p>9.1. Postup pri reklamácii a uplatnenie práv z vád upravuje samostatný <a href="/reklamacny-poriadok.html">Reklamačný poriadok</a>.</p>
-    <p>9.2. Objednávateľ má právo na bezplatné riešenie sporu prostredníctvom alternatívneho riešenia sporov (ARS) — kontakt: <a href="https://www.soi.sk" target="_blank" rel="noopener">Slovenská obchodná inšpekcia (SOI)</a> alebo platforma <a href="https://ec.europa.eu/consumers/odr" target="_blank" rel="noopener">RSO</a>.</p>
-
-    <h2>10. Odstúpenie od zmluvy</h2>
-    <p>10.1. Spotrebiteľ (B2C) má právo odstúpiť od zmluvy do <strong>14 dní</strong> bez uvedenia dôvodu, podľa <a href="/odstupenie-od-zmluvy.html">samostatného postupu</a>.</p>
-    <p>10.2. Toto právo neplatí, ak služba bola poskytnutá s výslovným súhlasom spotrebiteľa pred uplynutím lehoty (napr. expresná doprava do 90 minút).</p>
-    <p>10.3. Pri B2B zmluvách sa odstúpenie riadi dohodou strán a Obchodným zákonníkom.</p>
-
-    <h2>11. Ochrana osobných údajov</h2>
-    <p>11.1. Spracúvanie osobných údajov upravuje samostatný dokument <a href="/ochrana-osobnych-udajov.html">Ochrana osobných údajov</a>.</p>
-
-    <h2>12. Záverečné ustanovenia</h2>
-    <p>12.1. Tieto VOP sú platné a účinné odo dňa 6. mája 2026.</p>
-    <p>12.2. Poskytovateľ si vyhradzuje právo VOP meniť. Aktuálne znenie je vždy zverejnené na webovej stránke.</p>
-    <p>12.3. Ak je niektoré ustanovenie VOP neplatné, ostatné ustanovenia ostávajú v platnosti.</p>
-    <p>12.4. Akékoľvek spory sa prednostne riešia mimosúdne. Ak to nie je možné, sú miestne príslušné súdy Slovenskej republiky.</p>
-
-    <h2>13. Kontakt</h2>
     <div class="info-card">
-      <strong>Orostone s.r.o.</strong>
-      Landererova 8, 811 09 Bratislava<br>
-      E-mail: <a href="mailto:ahoj@neseme.sk">ahoj@neseme.sk</a><br>
-      Tel: <a href="tel:+421917588738">+421 917 588 738</a><br>
+      <strong>Identifikácia poskytovateľa</strong>
+      Obchodné meno: Orostone s.r.o.<br>
+      Sídlo: Landererova 8, 811 09 Bratislava — mestská časť Staré Mesto, Slovenská republika<br>
+      IČO: 55 254 772 · DIČ: 2121930580 · IČ DPH: SK2121930580 (registrácia podľa § 4 ZDPH od 11.04.2023)<br>
+      Zapísaná v Obchodnom registri Mestského súdu Bratislava III<br>
+      E-mail: <a href="mailto:ahoj@neseme.sk">ahoj@neseme.sk</a> · Telefón: <a href="tel:+421917588738">+421 917 588 738</a>
+    </div>
+
+    <div class="toc" aria-label="Obsah dokumentu">
+      <div class="toc-title">Obsah</div>
+      <ol>
+        <li><a href="#cl1">Úvodné ustanovenia</a></li>
+        <li><a href="#cl2">Definície pojmov</a></li>
+        <li><a href="#cl3">Predmet zmluvy</a></li>
+        <li><a href="#cl4">Druhy poskytovaných služieb</a></li>
+        <li><a href="#cl5">Objednávka a uzavretie zmluvy</a></li>
+        <li><a href="#cl6">Cena, platobné podmienky a fakturácia</a></li>
+        <li><a href="#cl7">Termín, miesto a spôsob plnenia</a></li>
+        <li><a href="#cl8">Práva a povinnosti poskytovateľa</a></li>
+        <li><a href="#cl9">Práva a povinnosti objednávateľa</a></li>
+        <li><a href="#cl10">Zodpovednosť za škodu a poistenie</a></li>
+        <li><a href="#cl11">Vyššia moc</a></li>
+        <li><a href="#cl12">Reklamácie a vady plnenia</a></li>
+        <li><a href="#cl13">Odstúpenie od zmluvy</a></li>
+        <li><a href="#cl14">Ochrana osobných údajov</a></li>
+        <li><a href="#cl15">Doručovanie a komunikácia</a></li>
+        <li><a href="#cl16">Riešenie sporov a rozhodné právo</a></li>
+        <li><a href="#cl17">Záverečné ustanovenia</a></li>
+      </ol>
+    </div>
+
+    <h2 id="cl1"><span class="num">I.</span>Úvodné ustanovenia</h2>
+    <p><span class="clause-num">1.1</span>Tieto VOP upravujú vzťahy medzi obchodnou spoločnosťou Orostone s.r.o. ako poskytovateľom služieb (ďalej len „<strong>poskytovateľ</strong>" alebo „<strong>Neseme</strong>") a objednávateľom týchto služieb (ďalej len „<strong>objednávateľ</strong>"), pričom za objednávateľa sa považuje každá fyzická alebo právnická osoba, ktorá si u poskytovateľa objedná služby vymedzené v článku IV. týchto VOP.</p>
+    <p><span class="clause-num">1.2</span>Tieto VOP sa vzťahujú na všetky zmluvné vzťahy uzatvorené medzi poskytovateľom a objednávateľom, ktorých predmetom je poskytovanie prepravných, vynáškových a/alebo montážnych služieb, a tvoria neoddeliteľnú súčasť každej zmluvy uzavretej v súlade s nimi.</p>
+    <p><span class="clause-num">1.3</span>Vzťahy a otázky neupravené týmito VOP sa spravujú najmä:</p>
+    <ul>
+      <li>zákonom č. 40/1964 Zb. Občiansky zákonník v znení neskorších predpisov (ďalej len „<strong>OZ</strong>"),</li>
+      <li>zákonom č. 513/1991 Zb. Obchodný zákonník v znení neskorších predpisov (ďalej len „<strong>ObchZ</strong>") — pri B2B vzťahoch,</li>
+      <li>zákonom č. 250/2007 Z. z. o ochrane spotrebiteľa v znení neskorších predpisov (ďalej len „<strong>ZOS</strong>"),</li>
+      <li>zákonom č. 102/2014 Z. z. o ochrane spotrebiteľa pri predaji tovaru alebo poskytovaní služieb na základe zmluvy uzavretej na diaľku alebo zmluvy uzavretej mimo prevádzkových priestorov predávajúceho,</li>
+      <li>zákonom č. 391/2015 Z. z. o alternatívnom riešení spotrebiteľských sporov (ďalej len „<strong>ZARS</strong>"),</li>
+      <li>zákonom č. 18/2018 Z. z. o ochrane osobných údajov a Nariadením Európskeho parlamentu a Rady (EÚ) 2016/679 (GDPR).</li>
+    </ul>
+    <p><span class="clause-num">1.4</span>Odoslaním objednávky objednávateľ výslovne potvrdzuje, že sa s týmito VOP riadne oboznámil, ich obsahu porozumel a v plnom rozsahu s nimi súhlasí.</p>
+
+    <h2 id="cl2"><span class="num">II.</span>Definície pojmov</h2>
+    <p>Pre účely týchto VOP majú nasledujúce pojmy nasledovný význam:</p>
+
+    <div class="definition">
+      <strong>Spotrebiteľ</strong> — fyzická osoba, ktorá pri uzatváraní a plnení spotrebiteľskej zmluvy nekoná v rámci predmetu svojej obchodnej činnosti alebo inej podnikateľskej činnosti (§ 2 písm. a) ZOS).
+    </div>
+    <div class="definition">
+      <strong>Podnikateľ (B2B objednávateľ)</strong> — fyzická alebo právnická osoba, ktorá koná v rámci svojej podnikateľskej činnosti alebo inej zárobkovej činnosti.
+    </div>
+    <div class="definition">
+      <strong>Zmluva</strong> — zmluva o preprave veci, vynesení a/alebo montáži uzavretá medzi poskytovateľom a objednávateľom akoukoľvek formou predpokladanou týmito VOP.
+    </div>
+    <div class="definition">
+      <strong>Zásielka</strong> — vec, ktorá je predmetom prepravy, výnosu alebo montáže podľa zmluvy, vrátane jej obalu a príslušenstva.
+    </div>
+    <div class="definition">
+      <strong>Avizácia</strong> — telefonická alebo SMS notifikácia objednávateľa pred plánovaným doručením, najmenej 30 minút vopred.
+    </div>
+    <div class="definition">
+      <strong>POD (Proof of Delivery)</strong> — fotodokumentácia odovzdania zásielky vyhotovená poskytovateľom v okamihu odovzdania.
+    </div>
+    <div class="definition">
+      <strong>Domáca zóna</strong> — územie do 60 km od sídla poskytovateľa v Bratislave.
+    </div>
+    <div class="definition">
+      <strong>Vyššia moc (vis maior)</strong> — okolnosť uvedená v článku XI. týchto VOP.
+    </div>
+
+    <h2 id="cl3"><span class="num">III.</span>Predmet zmluvy</h2>
+    <p><span class="clause-num">3.1</span>Predmetom zmluvy je záväzok poskytovateľa vykonať pre objednávateľa za úplatu službu spočívajúcu v preprave, vynesení a/alebo montáži zásielky podľa parametrov dohodnutých v objednávke, a záväzok objednávateľa za riadne poskytnutú službu zaplatiť dohodnutú cenu.</p>
+    <p><span class="clause-num">3.2</span>Zmluva sa uzatvára výlučne na konkrétnu zásielku alebo na vopred dohodnutý opakovaný plán doručovania (B2B rámcová zmluva).</p>
+    <p><span class="clause-num">3.3</span>Zmluvný vzťah vzniká okamihom potvrdenia objednávky poskytovateľom v zmysle čl. V týchto VOP.</p>
+
+    <h2 id="cl4"><span class="num">IV.</span>Druhy poskytovaných služieb</h2>
+    <p><span class="clause-num">4.1</span>Poskytovateľ poskytuje nasledujúce kategórie služieb:</p>
+    <ol>
+      <li><strong>Neseme XL</strong> — preprava nadrozmerných zásielok s maximálnou hmotnosťou jednotlivého kusu do 500 kg, vrátane bezpečného upevnenia a doručenia na miesto určenia;</li>
+      <li><strong>Neseme Elektro</strong> — doručenie bielej techniky a spotrebičov vrátane ich pripojenia do elektrickej siete a vodovodnej prípojky, vykonania funkčnej skúšky a odvozu pôvodného spotrebiča (ak je súčasťou objednávky);</li>
+      <li><strong>Neseme Home</strong> — vyzdvihnutie tovaru, jeho preprava, výnos na požadované poschodie a prípadná montáž v bytovej alebo nebytovej jednotke objednávateľa;</li>
+      <li><strong>Neseme Business</strong> — pravidelné B2B zvozy a rozvozy pre obchodných partnerov na základe rámcovej zmluvy s definovaným SLA (Service Level Agreement);</li>
+      <li><strong>Neseme Express</strong> — zrýchlené doručenie na území Bratislavy a okolia s cieľovou dobou plnenia 90 minút od potvrdenia objednávky.</li>
+    </ol>
+    <p><span class="clause-num">4.2</span>Aktuálne ceny a parametre jednotlivých služieb sú zverejnené na webovej stránke <a href="https://neseme.sk">neseme.sk</a> alebo dohodnuté individuálne (B2B).</p>
+
+    <h2 id="cl5"><span class="num">V.</span>Objednávka a uzavretie zmluvy</h2>
+    <p><span class="clause-num">5.1</span>Objednávku služby je možné uskutočniť:</p>
+    <ul>
+      <li>telefonicky na čísle <a href="tel:+421917588738">+421 917 588 738</a> (Po–Ne, 7:00–21:00),</li>
+      <li>elektronicky e-mailom na adresu <a href="mailto:ahoj@neseme.sk">ahoj@neseme.sk</a>,</li>
+      <li>prostredníctvom kontaktného formulára na webovej stránke <a href="https://neseme.sk/kontakt.html">neseme.sk/kontakt</a>.</li>
+    </ul>
+    <p><span class="clause-num">5.2</span>Objednávka musí obsahovať najmä: identifikačné údaje objednávateľa, kontaktné údaje, presnú adresu vyzdvihnutia a doručenia (vrátane čísla poschodia, prítomnosti výťahu a špecifikácie prístupu), opis zásielky (typ, rozmery, hmotnosť, krehkosť), požadovaný termín a prípadné osobitné požiadavky.</p>
+    <p><span class="clause-num">5.3</span>Objednávka je návrhom na uzavretie zmluvy zo strany objednávateľa. Zmluva je uzavretá okamihom, keď poskytovateľ objednávku potvrdí písomne (e-mailom, SMS alebo prostredníctvom telefonickej komunikácie zaznamenanej v internom systéme), pričom potvrdenie obsahuje aspoň: dohodnutý termín plnenia, cenu a stručný opis služby.</p>
+    <p><span class="clause-num">5.4</span>Poskytovateľ si vyhradzuje právo objednávku odmietnuť alebo nepotvrdiť, najmä v prípade, ak (i) zásielka prekračuje technické možnosti poskytovateľa, (ii) objednávka neobsahuje potrebné údaje, (iii) v dohodnutom termíne nie je voľná kapacita, alebo (iv) obsah zásielky je v rozpore s právnymi predpismi.</p>
+
+    <h2 id="cl6"><span class="num">VI.</span>Cena, platobné podmienky a fakturácia</h2>
+    <p><span class="clause-num">6.1</span>Cena za poskytnutú službu je stanovená podľa cenníka poskytovateľa platného v čase uzavretia zmluvy alebo individuálnou dohodou pri B2B vzťahoch.</p>
+    <p><span class="clause-num">6.2</span>Všetky ceny sú uvedené vrátane príslušnej dane z pridanej hodnoty (DPH) v zákonnej výške 20 %.</p>
+    <p><span class="clause-num">6.3</span>Cena obsahuje: prepravu, naloženie a vyloženie, výnos na požadované poschodie (v rámci definovaných balíčkov), štandardné poistenie zásielky do hodnoty 5 000 €, fotodokumentáciu odovzdania (POD) a telefonickú avizáciu.</p>
+    <p><span class="clause-num">6.4</span>Cena nezahŕňa: čakanie na mieste nad 15 minút po dohodnutom termíne, opätovné doručenie z dôvodov na strane objednávateľa, špeciálnu manipulačnú techniku (žeriav, výsuvný rebrík) ani navýšenie poistnej sumy nad 5 000 €.</p>
+    <p><span class="clause-num">6.5</span>Spôsoby úhrady ceny:</p>
+    <ul>
+      <li><strong>Spotrebiteľ (B2C):</strong> v hotovosti pri prevzatí zásielky alebo bezhotovostne na základe vystavenej faktúry/dokladu so splatnosťou v deň poskytnutia služby;</li>
+      <li><strong>Podnikateľ (B2B):</strong> bezhotovostne na účet poskytovateľa na základe faktúry so štandardnou splatnosťou 14 dní odo dňa vystavenia, pokiaľ nie je dohodnuté inak.</li>
+    </ul>
+    <p><span class="clause-num">6.6</span>V prípade omeškania objednávateľa s úhradou je poskytovateľ oprávnený požadovať úrok z omeškania vo výške podľa § 369 ods. 2 ObchZ pri B2B alebo podľa § 517 ods. 2 OZ pri B2C, ako aj náhradu nákladov spojených s vymáhaním pohľadávky.</p>
+    <p><span class="clause-num">6.7</span>Faktúra obsahuje všetky náležitosti podľa zákona č. 222/2004 Z. z. o dani z pridanej hodnoty a § 71 ZDPH.</p>
+
+    <h2 id="cl7"><span class="num">VII.</span>Termín, miesto a spôsob plnenia</h2>
+    <p><span class="clause-num">7.1</span>Termín plnenia sa dohodne pri uzavretí zmluvy. Štandardné maximálne doby plnenia:</p>
+    <ul>
+      <li>Domáca zóna (do 60 km od Bratislavy) — do 24 hodín od potvrdenia objednávky;</li>
+      <li>Územie celého Slovenska — do 48 hodín od potvrdenia objednávky;</li>
+      <li>Express (Bratislava) — do 90 minút od potvrdenia objednávky;</li>
+      <li>B2B rámcové zvozy — podľa dohodnutého rozvrhu v rámcovej zmluve.</li>
+    </ul>
+    <p><span class="clause-num">7.2</span>Poskytovateľ je povinný realizovať telefonickú avizáciu najmenej 30 minút pred plánovaným doručením.</p>
+    <p><span class="clause-num">7.3</span>Ak objednávateľ na dohodnutom mieste a v dohodnutom termíne nie je prítomný a neodpovedá na avizáciu, poskytovateľ je oprávnený zásielku doručiť poverenej osobe (rodinný príslušník, kolega), prípadne ju vrátiť do skladu. Opätovné doručenie sa účtuje podľa cenníka.</p>
+    <p><span class="clause-num">7.4</span>Pri prevzatí zásielky je objednávateľ povinný skontrolovať jej zjavný stav a v prípade viditeľných vád ich písomne zaznamenať v preberacom protokole.</p>
+
+    <h2 id="cl8"><span class="num">VIII.</span>Práva a povinnosti poskytovateľa</h2>
+    <p><span class="clause-num">8.1</span>Poskytovateľ je povinný:</p>
+    <ul>
+      <li>poskytnúť službu riadne, včas a v kvalite zodpovedajúcej dohodnutým parametrom a profesionálnemu štandardu odvetvia;</li>
+      <li>zabezpečiť dvojčlenný tím s adekvátnym vybavením pre prepravu nadrozmerného tovaru;</li>
+      <li>zásielku počas prepravy bezpečne upevniť a chrániť pred pohybom, mechanickým poškodením a nepriaznivými klimatickými vplyvmi;</li>
+      <li>realizovať telefonickú avizáciu pred doručením;</li>
+      <li>vyhotoviť fotodokumentáciu odovzdania (POD) a túto archivovať najmenej po dobu reklamačnej lehoty;</li>
+      <li>v prípade vzniku škody na zásielke postupovať podľa <a href="/reklamacny-poriadok.html">Reklamačného poriadku</a>;</li>
+      <li>zachovávať mlčanlivosť o všetkých skutočnostiach, ktoré mu boli zverené v súvislosti s plnením zmluvy.</li>
+    </ul>
+    <p><span class="clause-num">8.2</span>Poskytovateľ je oprávnený odmietnuť prepravu zásielky, ktorá:</p>
+    <ul>
+      <li>obsahuje predmety zakázané zákonom (drogy, zbrane, výbušniny);</li>
+      <li>obsahuje živé zvieratá, ľudské pozostatky alebo orgánmi;</li>
+      <li>obsahuje nebezpečné látky bez príslušnej dokumentácie ADR;</li>
+      <li>presahuje technické možnosti poskytovateľa (hmotnosť nad 500 kg na kus bez individuálnej dohody);</li>
+      <li>nie je vhodne zabalená alebo by jej preprava ohrozila bezpečnosť osôb alebo majetku.</li>
+    </ul>
+
+    <h2 id="cl9"><span class="num">IX.</span>Práva a povinnosti objednávateľa</h2>
+    <p><span class="clause-num">9.1</span>Objednávateľ je povinný:</p>
+    <ul>
+      <li>poskytnúť poskytovateľovi pravdivé, úplné a presné informácie potrebné pre riadne splnenie zmluvy;</li>
+      <li>zabezpečiť riadne zabalenie zásielky tak, aby vyhovovalo charakteru tovaru a bežným prepravným podmienkam;</li>
+      <li>byť osobne prítomný na dohodnutom mieste v dohodnutom čase, prípadne písomne poveriť inú osobu prevzatím;</li>
+      <li>zabezpečiť prístup pre vozidlo poskytovateľa (dostatočne široký vchod, parkovacie miesto v primeranej blízkosti);</li>
+      <li>zaplatiť dohodnutú cenu v dohodnutom termíne;</li>
+      <li>pri prevzatí skontrolovať zásielku a zjavné vady ihneď nahlásiť (zápisom do preberacieho protokolu).</li>
+    </ul>
+    <p><span class="clause-num">9.2</span>Objednávateľ má právo na:</p>
+    <ul>
+      <li>poskytnutie služby v dohodnutej kvalite a termíne;</li>
+      <li>fotodokumentáciu odovzdania zásielky;</li>
+      <li>uplatnenie reklamácie podľa <a href="/reklamacny-poriadok.html">Reklamačného poriadku</a>;</li>
+      <li>v prípade spotrebiteľa — odstúpenie od zmluvy v zákonnej lehote 14 dní za podmienok upravených v <a href="/odstupenie-od-zmluvy.html">samostatnom dokumente</a>;</li>
+      <li>ochranu osobných údajov podľa <a href="/ochrana-osobnych-udajov.html">príslušných zásad</a> a Nariadenia (EÚ) 2016/679 (GDPR).</li>
+    </ul>
+
+    <h2 id="cl10"><span class="num">X.</span>Zodpovednosť za škodu a poistenie</h2>
+    <p><span class="clause-num">10.1</span>Poskytovateľ zodpovedá za škodu spôsobenú stratou, zničením alebo poškodením zásielky od okamihu jej prevzatia až po jej riadne odovzdanie objednávateľovi alebo poverenej osobe v zmysle ust. § 622 a nasl. OZ pri spotrebiteľoch a § 622 a nasl. ObchZ pri B2B.</p>
+    <p><span class="clause-num">10.2</span>Štandardná maximálna výška náhrady škody zo strany poskytovateľa je obmedzená sumou <strong>5 000 € na jednu zásielku</strong> (zodpovedá hodnote štandardného poistenia). Pre vyššie hodnoty zásielky je nutné dohodnúť individuálne navýšenie poistnej sumy pred uzavretím zmluvy, ktoré bude predmetom samostatného dodatku alebo osobitnej zmluvy.</p>
+    <p><span class="clause-num">10.3</span>Poskytovateľ <strong>nezodpovedá za škodu</strong>, ak:</p>
+    <ul>
+      <li>vznikla v dôsledku nesprávneho alebo nedostatočného balenia zásielky objednávateľom;</li>
+      <li>vznikla v dôsledku nesprávnych alebo neúplných údajov poskytnutých objednávateľom;</li>
+      <li>vznikla pôsobením vyššej moci (čl. XI týchto VOP);</li>
+      <li>ide o vady, ktoré objednávateľ neoznámil pri prevzatí, hoci ich pri vynaložení obvyklej pozornosti zistiť mohol;</li>
+      <li>ide o skryté vlastnosti zásielky neoznámené objednávateľom (krehkosť, kvapaliny, materiál citlivý na otrasy);</li>
+      <li>ide o ušlý zisk, nepriame škody alebo následnú stratu, pokiaľ to nebolo výslovne dohodnuté.</li>
+    </ul>
+    <p><span class="clause-num">10.4</span>Náhrada škody sa uplatňuje výlučne postupom podľa <a href="/reklamacny-poriadok.html">Reklamačného poriadku</a>.</p>
+
+    <h2 id="cl11"><span class="num">XI.</span>Vyššia moc</h2>
+    <p><span class="clause-num">11.1</span>Žiadna zo zmluvných strán nezodpovedá za nesplnenie alebo oneskorené splnenie záväzku, ktoré bolo spôsobené vyššou mocou (vis maior). Za vyššiu moc sa považujú najmä: živelné pohromy, vojnový konflikt, štátom vyhlásená mimoriadna situácia alebo núdzový stav, terorizmus, štrajky a hromadné protesty obmedzujúce dopravu, dopravné nehody zavinené tretími osobami, dlhodobé výpadky elektrickej energie alebo telekomunikačných služieb, epidémie a pandémie a opatrenia štátnych orgánov v reakcii na ne.</p>
+    <p><span class="clause-num">11.2</span>Strana, ktorej v plnení záväzku zabraňuje vyššia moc, je povinná druhú stranu o tomto bezodkladne informovať a vyvinúť maximálne úsilie na minimalizáciu dôsledkov.</p>
+    <p><span class="clause-num">11.3</span>Ak vyššia moc trvá dlhšie ako 30 dní, ktorákoľvek zo zmluvných strán je oprávnená od zmluvy odstúpiť bez nároku na náhradu škody.</p>
+
+    <h2 id="cl12"><span class="num">XII.</span>Reklamácie a vady plnenia</h2>
+    <p><span class="clause-num">12.1</span>Postup uplatnenia práv z vád služby a poškodenia zásielky upravuje samostatný dokument — <a href="/reklamacny-poriadok.html">Reklamačný poriadok</a>, ktorý tvorí neoddeliteľnú súčasť týchto VOP.</p>
+    <p><span class="clause-num">12.2</span>Spotrebiteľ má právo na bezplatné mimosúdne riešenie sporu prostredníctvom orgánov alternatívneho riešenia spotrebiteľských sporov (ARS) podľa ZARS:</p>
+    <ul>
+      <li>Slovenská obchodná inšpekcia (SOI), Bajkalská 21/A, 827 99 Bratislava, web: <a href="https://www.soi.sk" target="_blank" rel="noopener">www.soi.sk</a>;</li>
+      <li>Európska platforma pre online riešenie sporov (RSO): <a href="https://ec.europa.eu/consumers/odr" target="_blank" rel="noopener">ec.europa.eu/consumers/odr</a>.</li>
+    </ul>
+
+    <h2 id="cl13"><span class="num">XIII.</span>Odstúpenie od zmluvy</h2>
+    <p><span class="clause-num">13.1</span>Spotrebiteľ má v zmysle § 7 a nasl. zákona č. 102/2014 Z. z. právo odstúpiť od zmluvy uzavretej na diaľku v lehote 14 dní bez uvedenia dôvodu. Postup uplatnenia tohto práva, výnimky a vzorový formulár sú upravené v samostatnom dokumente — <a href="/odstupenie-od-zmluvy.html">Odstúpenie od zmluvy</a>.</p>
+    <p><span class="clause-num">13.2</span>Pri B2B vzťahoch sa odstúpenie od zmluvy spravuje ustanoveniami ObchZ a dohodou strán; právo na 14-dňové odstúpenie podľa zákona č. 102/2014 Z. z. sa neuplatňuje.</p>
+    <p><span class="clause-num">13.3</span>Poskytovateľ je oprávnený odstúpiť od zmluvy v prípade, ak (i) objednávateľ porušuje svoje povinnosti zo zmluvy podstatným spôsobom, (ii) je proti objednávateľovi vedené konkurzné alebo reštrukturalizačné konanie, (iii) v dôsledku vyššej moci nie je možné zmluvu riadne plniť dlhšie ako 30 dní.</p>
+
+    <h2 id="cl14"><span class="num">XIV.</span>Ochrana osobných údajov</h2>
+    <p><span class="clause-num">14.1</span>Spracúvanie osobných údajov objednávateľa upravuje samostatný dokument <a href="/ochrana-osobnych-udajov.html">Zásady ochrany osobných údajov</a>, vypracovaný v súlade s Nariadením Európskeho parlamentu a Rady (EÚ) 2016/679 (GDPR) a zákonom č. 18/2018 Z. z. o ochrane osobných údajov.</p>
+    <p><span class="clause-num">14.2</span>Dozorným orgánom v oblasti ochrany osobných údajov je Úrad na ochranu osobných údajov Slovenskej republiky, Hraničná 12, 820 07 Bratislava, web: <a href="https://dataprotection.gov.sk" target="_blank" rel="noopener">dataprotection.gov.sk</a>.</p>
+
+    <h2 id="cl15"><span class="num">XV.</span>Doručovanie a komunikácia</h2>
+    <p><span class="clause-num">15.1</span>Pre účely doručovania písomností, ak nie je v zmluve dohodnuté inak, sa za doručené považujú:</p>
+    <ul>
+      <li>e-mailové správy odoslané na e-mailovú adresu druhej zmluvnej strany — okamihom ich potvrdeného doručenia;</li>
+      <li>písomnosti zaslané doporučeným listom na adresu sídla, resp. trvalého pobytu druhej zmluvnej strany — najneskôr piaty pracovný deň po preukázateľnom odoslaní, aj keď ich adresát neprevzal.</li>
+    </ul>
+    <p><span class="clause-num">15.2</span>Telefonická komunikácia môže byť pre interné potreby poskytovateľa zaznamenaná, o čom je objednávateľ informovaný úvodným hlasovým oznámením pred začatím hovoru.</p>
+
+    <h2 id="cl16"><span class="num">XVI.</span>Riešenie sporov a rozhodné právo</h2>
+    <p><span class="clause-num">16.1</span>Akékoľvek spory vzniknuté zo zmluvy alebo v súvislosti s ňou budú zmluvné strany riešiť prednostne mimosúdnou cestou rokovaním v dobrej viere.</p>
+    <p><span class="clause-num">16.2</span>Pokiaľ sa spor nepodarí vyriešiť mimosúdne, je daná právomoc všeobecných súdov Slovenskej republiky. Pri B2B sporoch sa miestna príslušnosť riadi sídlom poskytovateľa.</p>
+    <p><span class="clause-num">16.3</span>Tieto VOP a všetky zmluvy uzavreté na ich základe sa spravujú právnym poriadkom Slovenskej republiky s vylúčením kolíznych noriem.</p>
+    <p><span class="clause-num">16.4</span>Pri zmluvách so spotrebiteľmi je aplikácia rozhodného práva v rozsahu, v ktorom by spotrebiteľa zbavila ochrany podľa kogentných ustanovení práva štátu jeho obvyklého pobytu, vylúčená v zmysle čl. 6 Nariadenia (ES) č. 593/2008 (Rím I).</p>
+
+    <h2 id="cl17"><span class="num">XVII.</span>Záverečné ustanovenia</h2>
+    <p><span class="clause-num">17.1</span>Tieto VOP nadobúdajú platnosť a účinnosť dňom 6. mája 2026.</p>
+    <p><span class="clause-num">17.2</span>Poskytovateľ si vyhradzuje právo VOP jednostranne meniť. Aktuálne znenie VOP je vždy zverejnené na webovej stránke <a href="https://neseme.sk/obchodne-podmienky.html">neseme.sk/obchodne-podmienky</a>. Zmena VOP je voči už uzavretým zmluvám účinná až po jej výslovnom akceptovaní druhou stranou.</p>
+    <p><span class="clause-num">17.3</span><strong>Oddeliteľnosť ustanovení:</strong> Ak sa niektoré ustanovenie týchto VOP stane neplatným, neúčinným alebo nevykonateľným, ostatné ustanovenia ostávajú v plnom rozsahu v platnosti. Zmluvné strany sa zaväzujú nahradiť neplatné ustanovenie novým, ktoré sa svojim obsahom a účelom najviac priblíži pôvodnému ustanoveniu.</p>
+    <p><span class="clause-num">17.4</span><strong>Vzdanie sa práv:</strong> Skutočnosť, že niektorá zo zmluvných strán neuplatní právo zo zmluvy alebo VOP v určitom prípade, neznamená, že sa tohto práva vzdáva pre budúcnosť.</p>
+    <p><span class="clause-num">17.5</span>Tieto VOP sú vyhotovené v slovenskom jazyku. Pri rozporoch medzi prekladmi a slovenským znením je rozhodujúce slovenské znenie.</p>
+    <p><span class="clause-num">17.6</span>VOP sú archivované poskytovateľom v elektronickej forme po dobu 10 rokov v zmysle zákona č. 431/2002 Z. z. o účtovníctve.</p>
+
+    <div class="info-card" style="margin-top:48px">
+      <strong>Kontakt pre otázky k VOP</strong>
+      Orostone s.r.o., Landererova 8, 811 09 Bratislava<br>
+      E-mail: <a href="mailto:ahoj@neseme.sk?subject=VOP">ahoj@neseme.sk</a><br>
+      Telefón: <a href="tel:+421917588738">+421 917 588 738</a><br>
       Po–Ne · 7:00–21:00
     </div>
   </main>
 
   <footer>
-    © 2026 Orostone s.r.o. · <a href="/kontakt.html">Kontakt</a> · <a href="/ochrana-osobnych-udajov.html">Ochrana údajov</a>
+    © 2026 Orostone s.r.o. · <a href="/kontakt.html">Kontakt</a> · <a href="/ochrana-osobnych-udajov.html">Ochrana údajov</a> · <a href="/reklamacny-poriadok.html">Reklamácie</a>
   </footer>
 </body>
 </html>
