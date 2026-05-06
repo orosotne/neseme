@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 80" preserveAspectRatio="xMinYMid meet">
+  <!-- Mark (swoosh) -->
+  <g transform="translate(0 28)">
+    <path d="M0 18 L 8 0 H 50 V 8 L 42 26 H 0 Z" fill="#111111"/>
+  </g>
+  <!-- Text NESEME -->
+  <text x="68" y="55"
+        font-family="Jost, system-ui, sans-serif"
+        font-weight="900"
+        font-size="44"
+        letter-spacing="-1.4"
+        fill="#111111">NESEME</text>
+</svg>
