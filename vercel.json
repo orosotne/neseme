@@ -13,7 +13,15 @@
     { "source": "/terms", "destination": "/obchodne-podmienky", "permanent": true },
     { "source": "/reklamacie", "destination": "/reklamacny-poriadok", "permanent": true },
     { "source": "/odstupenie", "destination": "/odstupenie-od-zmluvy", "permanent": true },
-    { "source": "/withdrawal", "destination": "/odstupenie-od-zmluvy", "permanent": true }
+    { "source": "/withdrawal", "destination": "/odstupenie-od-zmluvy", "permanent": true },
+    { "source": "/about", "destination": "/o-nas", "permanent": true },
+    { "source": "/o-nas", "destination": "/o-nas", "permanent": false },
+    { "source": "/career", "destination": "/kariera", "permanent": true },
+    { "source": "/careers", "destination": "/kariera", "permanent": true },
+    { "source": "/jobs", "destination": "/kariera", "permanent": true },
+    { "source": "/press", "destination": "/pre-media", "permanent": true },
+    { "source": "/media", "destination": "/pre-media", "permanent": true },
+    { "source": "/press-kit", "destination": "/pre-media", "permanent": true }
   ],
   "headers": [
     {

@@ -15,6 +15,24 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://neseme.sk/o-nas.html</loc>
+    <lastmod>2026-05-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://neseme.sk/kariera.html</loc>
+    <lastmod>2026-05-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://neseme.sk/pre-media.html</loc>
+    <lastmod>2026-05-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://neseme.sk/obchodne-podmienky.html</loc>
     <lastmod>2026-05-06</lastmod>
     <changefreq>yearly</changefreq>

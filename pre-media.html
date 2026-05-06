@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#111111" />
+  <meta name="format-detection" content="telephone=no" />
+
+  <title>Pre médiá — Neseme | Press Kit | Orostone s.r.o.</title>
+  <meta name="description" content="Press kit, oficiálne fakty, brand assets a kontakty pre médiá. Neseme — XL doprava, výnos a montáž v Bratislave." />
+  <link rel="canonical" href="https://neseme.sk/pre-media.html" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="sk_SK" />
+  <meta property="og:site_name" content="Neseme" />
+  <meta property="og:url" content="https://neseme.sk/pre-media.html" />
+  <meta property="og:title" content="Pre médiá — Neseme | Press Kit" />
+  <meta property="og:description" content="Press kit, fakty, brand assets a kontakty pre médiá." />
+  <meta property="og:image" content="https://neseme.sk/og-image.svg" />
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="apple-touch-icon" href="/favicon.svg" />
+  <link rel="manifest" href="/manifest.json" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;700;900&family=Inter:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --c-primary: #111111; --c-primary-hover: #292929; --c-secondary: #FA5400;
+      --c-bg: #FFFFFF; --c-surface: #F5F5F5;
+      --c-text-primary: #111111; --c-text-secondary: #707072; --c-border: #E5E5E5;
+      --font-display: 'Jost', system-ui, sans-serif;
+      --font-body: 'Inter', system-ui, sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+      --radius-button: 30px; --ease: cubic-bezier(0.22, 1, 0.36, 1);
+      --duration: 200ms; --container: 1440px;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+    body { font-family: var(--font-body); font-size: 15px; line-height: 1.6; color: var(--c-text-primary); background: var(--c-bg); -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+    a, button { -webkit-tap-highlight-color: transparent; }
+    button { font: inherit; border: none; background: none; cursor: pointer; color: inherit; }
+    a { color: inherit; text-decoration: none; }
+
+    .skip-to-content { position: absolute; top: -100px; left: 16px; z-index: 9999; padding: 12px 20px; background: var(--c-primary); color: var(--c-bg); font-family: var(--font-display); font-weight: 700; font-size: 14px; letter-spacing: 0.04em; text-transform: uppercase; border-radius: 8px; transition: top 200ms var(--ease); }
+    .skip-to-content:focus { top: 16px; outline: 2px solid var(--c-secondary); }
+
+    .header { position: sticky; top: 0; z-index: 100; background: var(--c-bg); transition: box-shadow 200ms var(--ease); }
+    .header.scrolled { box-shadow: 0 2px 4px rgba(0,0,0,0.05); border-bottom: 1px solid var(--c-border); }
+    .header-inner { max-width: var(--container); margin: 0 auto; padding: 0 32px; height: 64px; display: flex; align-items: center; justify-content: space-between; gap: 32px; }
+    .logo { display: flex; align-items: center; gap: 8px; font-family: var(--font-display); font-weight: 900; font-size: 24px; letter-spacing: -0.02em; text-transform: uppercase; flex-shrink: 0; }
+    .logo-mark { display: inline-block; width: 1.2em; height: 0.78em; position: relative; flex-shrink: 0; }
+    .logo-mark::before { content: ''; position: absolute; inset: 0; background: var(--c-primary); clip-path: polygon(0 70%, 35% 0, 100% 0, 100% 30%, 65% 100%, 0 100%); }
+    .nav { display: flex; align-items: center; gap: 28px; flex: 1; }
+    .nav-link { font-weight: 500; font-size: 14px; letter-spacing: 0.02em; transition: color var(--duration) var(--ease); }
+    .nav-link:hover { color: var(--c-secondary); }
+    .header-actions { display: flex; align-items: center; gap: 16px; }
+    .header-phone { display: flex; align-items: center; gap: 8px; font-family: var(--font-mono); font-size: 13px; transition: color var(--duration) var(--ease); }
+    .header-phone:hover { color: var(--c-secondary); }
+    .menu-toggle { display: none; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; height: 48px; padding: 0 28px; font-family: var(--font-body); font-weight: 500; font-size: 14px; letter-spacing: 0.02em; text-transform: uppercase; border-radius: var(--radius-button); transition: all var(--duration) var(--ease); white-space: nowrap; cursor: pointer; }
+    .btn-primary { background: var(--c-primary); color: var(--c-bg); }
+    .btn-primary:hover { background: var(--c-primary-hover); }
+    .btn-orange { background: var(--c-secondary); color: var(--c-bg); }
+    .btn-orange:hover { background: #d94900; }
+    .btn-secondary { background: var(--c-bg); color: var(--c-primary); border: 1px solid var(--c-primary); }
+    .btn-secondary:hover { background: var(--c-primary); color: var(--c-bg); }
+    .btn-ghost-light { background: transparent; color: var(--c-bg); border: 1px solid rgba(255,255,255,0.4); }
+    .btn-ghost-light:hover { background: var(--c-bg); color: var(--c-primary); }
+    .btn-arrow svg { transition: transform var(--duration) var(--ease); }
+    .btn-arrow:hover svg { transform: translateX(4px); }
+
+    /* HERO */
+    .hero { background: var(--c-primary); color: var(--c-bg); padding: 120px 32px 96px; position: relative; overflow: hidden; }
+    .hero-bg { position: absolute; bottom: -60px; right: -80px; font-family: var(--font-display); font-weight: 900; font-size: clamp(220px, 32vw, 460px); line-height: 0.85; letter-spacing: -0.04em; color: rgba(255,255,255,0.04); pointer-events: none; user-select: none; }
+    .hero-inner { max-width: var(--container); margin: 0 auto; position: relative; z-index: 1; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 12px; font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--c-secondary); margin-bottom: 24px; }
+    .eyebrow::before { content: ''; width: 32px; height: 1px; background: var(--c-secondary); }
+    .hero h1 { font-family: var(--font-display); font-weight: 900; font-size: clamp(48px, 8vw, 120px); line-height: 0.98; letter-spacing: -0.025em; text-transform: uppercase; padding-top: 0.18em; margin-bottom: 24px; }
+    .hero h1 .o { color: var(--c-secondary); }
+    .hero p.lead { font-size: 19px; line-height: 1.6; color: rgba(255,255,255,0.85); max-width: 720px; margin-bottom: 32px; }
+
+    .press-contact-banner { display: inline-flex; align-items: center; gap: 16px; padding: 16px 24px; background: rgba(250,84,0,0.1); border-left: 3px solid var(--c-secondary); border-radius: 8px; }
+    .press-contact-banner strong { font-family: var(--font-display); font-weight: 700; font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--c-secondary); }
+    .press-contact-banner a { color: var(--c-bg); font-family: var(--font-mono); font-size: 14px; }
+
+    /* QUICK FACTS */
+    .facts { background: var(--c-bg); padding: 96px 32px; }
+    .facts-inner { max-width: var(--container); margin: 0 auto; }
+    .facts-header { display: flex; justify-content: space-between; align-items: flex-end; gap: 48px; margin-bottom: 48px; flex-wrap: wrap; }
+    .facts-header h2 { font-family: var(--font-display); font-weight: 900; font-size: clamp(36px, 5vw, 56px); line-height: 1.05; letter-spacing: -0.025em; text-transform: uppercase; padding-top: 0.14em; margin-top: 16px; }
+    .facts-header h2 .o { color: var(--c-secondary); }
+    .facts-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border-top: 1px solid var(--c-border); border-bottom: 1px solid var(--c-border); }
+    .fact { padding: 32px 40px; display: grid; grid-template-columns: 200px 1fr; gap: 32px; align-items: start; border-bottom: 1px solid var(--c-border); }
+    .fact:nth-child(odd) { border-right: 1px solid var(--c-border); }
+    .fact:nth-last-child(-n+2) { border-bottom: none; }
+    .fact-label { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--c-text-secondary); padding-top: 4px; }
+    .fact-value { font-family: var(--font-display); font-weight: 700; font-size: 18px; letter-spacing: -0.01em; line-height: 1.4; }
+    .fact-value strong { color: var(--c-secondary); }
+
+    /* STATS */
+    .stats { background: var(--c-primary); color: var(--c-bg); padding: 96px 32px; position: relative; overflow: hidden; }
+    .stats::before { content: ''; position: absolute; inset: 0; background-image: radial-gradient(circle, rgba(255,255,255,0.06) 1px, transparent 1px); background-size: 32px 32px; pointer-events: none; }
+    .stats-inner { max-width: var(--container); margin: 0 auto; position: relative; z-index: 1; }
+    .stats-header { margin-bottom: 48px; }
+    .stats-header h2 { font-family: var(--font-display); font-weight: 900; font-size: clamp(32px, 4vw, 56px); line-height: 1.05; letter-spacing: -0.025em; text-transform: uppercase; padding-top: 0.14em; margin-top: 12px; }
+    .stats-header h2 .o { color: var(--c-secondary); }
+    .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; }
+    .stat { padding: 32px 32px 0; border-right: 1px solid rgba(255,255,255,0.12); position: relative; }
+    .stat:last-child { border-right: none; }
+    .stat::before { content: ''; position: absolute; top: 0; left: 32px; width: 24px; height: 2px; background: var(--c-secondary); }
+    .stat-num { font-family: var(--font-display); font-weight: 900; font-size: clamp(48px, 5.5vw, 80px); line-height: 0.92; letter-spacing: -0.035em; margin-bottom: 12px; }
+    .stat-num .small { font-size: 0.4em; color: var(--c-secondary); margin-left: 4px; vertical-align: top; }
+    .stat-label { font-family: var(--font-display); font-weight: 700; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.85); }
+
+    /* BOILERPLATE */
+    .boilerplate { background: var(--c-surface); padding: 120px 32px; }
+    .boilerplate-inner { max-width: var(--container); margin: 0 auto; display: grid; grid-template-columns: 1fr 2fr; gap: 64px; align-items: start; }
+    .boilerplate-label { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--c-secondary); position: sticky; top: 96px; }
+    .boilerplate-text h2 { font-family: var(--font-display); font-weight: 900; font-size: clamp(28px, 3.5vw, 40px); line-height: 1.05; letter-spacing: -0.02em; text-transform: uppercase; padding-top: 0.14em; margin-bottom: 24px; }
+    .boilerplate-text h2 .o { color: var(--c-secondary); }
+    .boilerplate-text p { font-size: 16px; line-height: 1.7; color: var(--c-text-primary); margin-bottom: 16px; }
+    .boilerplate-text p strong { font-weight: 600; }
+    .boilerplate-actions { display: flex; gap: 12px; margin-top: 24px; flex-wrap: wrap; }
+    .boilerplate-actions .btn-secondary { font-size: 13px; padding: 0 20px; height: 40px; }
+
+    /* BRAND ASSETS */
+    .assets { background: var(--c-bg); padding: 120px 32px; }
+    .assets-inner { max-width: var(--container); margin: 0 auto; }
+    .assets-header { margin-bottom: 64px; max-width: 720px; }
+    .assets-header h2 { font-family: var(--font-display); font-weight: 900; font-size: clamp(36px, 5vw, 56px); line-height: 1.05; letter-spacing: -0.025em; text-transform: uppercase; padding-top: 0.14em; margin-top: 16px; }
+    .assets-header h2 .o { color: var(--c-secondary); }
+    .assets-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .asset-card { background: var(--c-surface); padding: 0; overflow: hidden; transition: transform var(--duration) var(--ease); display: flex; flex-direction: column; }
+    .asset-card:hover { transform: translateY(-4px); }
+    .asset-preview { aspect-ratio: 16/10; display: flex; align-items: center; justify-content: center; background: var(--c-primary); position: relative; overflow: hidden; }
+    .asset-preview.light { background: var(--c-bg); border: 1px solid var(--c-border); }
+    .asset-preview svg { max-width: 60%; max-height: 60%; }
+    .asset-info { padding: 24px 28px; }
+    .asset-info h3 { font-family: var(--font-display); font-weight: 900; font-size: 18px; letter-spacing: -0.01em; text-transform: uppercase; padding-top: 0.1em; margin-bottom: 8px; }
+    .asset-info p { font-size: 13px; color: var(--c-text-secondary); margin-bottom: 16px; }
+    .asset-meta { display: flex; gap: 16px; font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.06em; color: var(--c-text-secondary); margin-bottom: 16px; }
+    .asset-meta span::before { content: '·'; margin-right: 6px; }
+    .asset-meta span:first-child::before { content: ''; margin-right: 0; }
+    .asset-download { display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-display); font-weight: 700; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--c-primary); border-bottom: 1px solid var(--c-primary); padding-bottom: 4px; transition: color var(--duration) var(--ease), border-color var(--duration) var(--ease); align-self: flex-start; }
+    .asset-download:hover { color: var(--c-secondary); border-color: var(--c-secondary); }
+
+    .brand-rules { margin-top: 64px; padding: 40px 0; border-top: 1px solid var(--c-border); display: grid; grid-template-columns: 1fr 1fr; gap: 48px; }
+    .brand-rule h3 { font-family: var(--font-display); font-weight: 900; font-size: 18px; letter-spacing: -0.01em; text-transform: uppercase; padding-top: 0.1em; margin-bottom: 16px; display: flex; align-items: center; gap: 12px; }
+    .brand-rule h3::before { content: ''; width: 24px; height: 2px; background: var(--c-secondary); }
+    .brand-rule ul { list-style: none; padding: 0; }
+    .brand-rule li { padding: 8px 0; padding-left: 20px; position: relative; font-size: 14px; color: var(--c-text-secondary); }
+    .brand-rule.do li::before { content: '+'; position: absolute; left: 0; color: var(--c-secondary); font-weight: 900; font-family: var(--font-display); font-size: 16px; }
+    .brand-rule.dont li::before { content: '×'; position: absolute; left: 0; color: #D43F21; font-weight: 900; font-family: var(--font-display); font-size: 18px; }
+
+    /* COLORS */
+    .colors { background: var(--c-surface); padding: 120px 32px; }
+    .colors-inner { max-width: var(--container); margin: 0 auto; }
+    .colors-header { margin-bottom: 48px; max-width: 720px; }
+    .colors-header h2 { font-family: var(--font-display); font-weight: 900; font-size: clamp(32px, 4vw, 48px); line-height: 1.05; letter-spacing: -0.025em; text-transform: uppercase; padding-top: 0.14em; margin-top: 16px; }
+    .colors-header h2 .o { color: var(--c-secondary); }
+    .colors-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .color-card { background: var(--c-bg); overflow: hidden; }
+    .color-swatch { aspect-ratio: 4/3; display: flex; align-items: flex-end; padding: 24px; }
+    .color-swatch.dark { background: var(--c-primary); color: var(--c-bg); }
+    .color-swatch.orange { background: var(--c-secondary); color: var(--c-bg); }
+    .color-swatch.light { background: var(--c-bg); color: var(--c-primary); border-bottom: 1px solid var(--c-border); }
+    .color-swatch h3 { font-family: var(--font-display); font-weight: 900; font-size: 22px; letter-spacing: -0.01em; text-transform: uppercase; padding-top: 0.1em; }
+    .color-info { padding: 20px 24px; display: grid; grid-template-columns: 1fr 1fr; gap: 8px 16px; }
+    .color-info .label { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.06em; color: var(--c-text-secondary); text-transform: uppercase; }
+    .color-info .value { font-family: var(--font-mono); font-size: 13px; font-weight: 500; }
+
+    /* MEDIA CONTACTS */
+    .contacts { background: var(--c-bg); padding: 120px 32px; }
+    .contacts-inner { max-width: var(--container); margin: 0 auto; display: grid; grid-template-columns: 1fr 2fr; gap: 64px; align-items: start; }
+    .contacts-label { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--c-secondary); position: sticky; top: 96px; }
+    .contact-card { background: var(--c-primary); color: var(--c-bg); padding: 48px; border-radius: 8px; }
+    .contact-card h2 { font-family: var(--font-display); font-weight: 900; font-size: clamp(28px, 3.5vw, 36px); line-height: 1.05; letter-spacing: -0.02em; text-transform: uppercase; padding-top: 0.14em; margin-bottom: 24px; }
+    .contact-card h2 .o { color: var(--c-secondary); }
+    .contact-card p { font-size: 16px; line-height: 1.6; color: rgba(255,255,255,0.7); margin-bottom: 32px; }
+    .contact-list { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; padding: 24px 0; border-top: 1px solid rgba(255,255,255,0.12); border-bottom: 1px solid rgba(255,255,255,0.12); margin-bottom: 24px; }
+    .contact-list-item .label { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.08em; color: rgba(255,255,255,0.6); text-transform: uppercase; margin-bottom: 6px; }
+    .contact-list-item .value { font-family: var(--font-display); font-weight: 700; font-size: 18px; letter-spacing: -0.01em; }
+    .contact-list-item a { transition: color var(--duration) var(--ease); }
+    .contact-list-item a:hover { color: var(--c-secondary); }
+    .response-time { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.06em; color: rgba(255,255,255,0.6); display: flex; align-items: center; gap: 10px; margin-bottom: 24px; }
+    .response-time::before { content: ''; width: 8px; height: 8px; background: var(--c-secondary); border-radius: 50%; }
+    .contact-card-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+    .contact-card .btn-orange { background: var(--c-secondary); color: var(--c-bg); }
+    .contact-card .btn-ghost-light { color: var(--c-bg); border-color: rgba(255,255,255,0.4); }
+
+    /* FOOTER */
+    .footer { background: var(--c-primary); color: var(--c-bg); padding: 96px 32px 48px; }
+    .footer-inner { max-width: var(--container); margin: 0 auto; }
+    .footer-grid { display: grid; grid-template-columns: 1.6fr 1fr 1fr 1fr 1.1fr; gap: 40px; padding-bottom: 64px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+    .footer-brand p { margin-top: 24px; font-size: 14px; line-height: 1.6; color: rgba(255,255,255,0.7); max-width: 320px; margin-bottom: 24px; }
+    .footer-brand .logo { color: var(--c-bg); }
+    .footer-brand .logo .logo-mark::before { background: var(--c-bg); }
+    .footer-col h4 { font-family: var(--font-display); font-weight: 700; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.7); margin-bottom: 16px; }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 10px; }
+    .footer-col a, .footer-col span { font-size: 14px; color: rgba(255,255,255,0.85); transition: color var(--duration) var(--ease); }
+    .footer-col a:hover { color: var(--c-secondary); }
+    .footer-bottom { padding-top: 32px; display: flex; justify-content: space-between; align-items: center; gap: 24px; flex-wrap: wrap; }
+    .footer-bottom-meta { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.04em; color: rgba(255,255,255,0.6); }
+    .footer-bottom-phone { display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-mono); font-size: 13px; letter-spacing: 0.04em; color: rgba(255,255,255,0.85); }
+    .footer-bottom-phone svg { color: var(--c-secondary); }
+
+    .cookie-banner { position: fixed; bottom: 16px; left: 16px; right: 16px; max-width: 560px; margin: 0 auto; background: var(--c-primary); color: var(--c-bg); padding: 20px 24px; border-radius: 12px; box-shadow: 0 8px 32px rgba(0,0,0,0.18); z-index: 999; display: flex; gap: 16px; align-items: center; font-size: 13px; line-height: 1.5; opacity: 0; transform: translateY(20px); transition: all 300ms var(--ease); pointer-events: none; }
+    .cookie-banner.visible { opacity: 1; transform: translateY(0); pointer-events: auto; }
+    .cookie-banner-text { flex: 1; color: rgba(255,255,255,0.85); }
+    .cookie-banner-text a { color: var(--c-secondary); text-decoration: underline; }
+    .cookie-banner-btn { background: var(--c-secondary); color: var(--c-bg); padding: 10px 20px; border-radius: 30px; font-family: var(--font-body); font-weight: 500; font-size: 13px; letter-spacing: 0.04em; text-transform: uppercase; cursor: pointer; flex-shrink: 0; border: none; }
+
+    .mobile-menu { position: fixed; inset: 0; background: var(--c-primary); color: var(--c-bg); z-index: 200; transform: translateX(100%); transition: transform 300ms var(--ease); display: flex; flex-direction: column; padding: 24px 24px env(safe-area-inset-bottom, 24px); overflow-y: auto; }
+    .mobile-menu.open { transform: translateX(0); }
+    .mobile-menu-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 48px; padding-top: env(safe-area-inset-top, 0); }
+    .mobile-menu-header .logo { color: var(--c-bg); }
+    .mobile-menu-header .logo .logo-mark::before { background: var(--c-bg); }
+    .mobile-menu-close { width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; border: 1px solid rgba(255,255,255,0.15); border-radius: 50%; }
+    .mobile-menu-nav { display: flex; flex-direction: column; flex: 1; }
+    .mobile-menu-nav a { padding: 18px 0; display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid rgba(255,255,255,0.1); font-family: var(--font-display); font-weight: 900; font-size: 28px; letter-spacing: -0.02em; text-transform: uppercase; }
+    .mobile-menu-nav a .idx { font-family: var(--font-mono); font-size: 11px; color: rgba(255,255,255,0.6); font-weight: 400; letter-spacing: 0.1em; }
+    body.menu-open { overflow: hidden; }
+
+    @media (max-width: 1100px) {
+      .facts-grid { grid-template-columns: 1fr; }
+      .fact:nth-child(odd) { border-right: none; }
+      .fact { grid-template-columns: 160px 1fr; padding: 24px 28px; }
+      .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 32px 0; }
+      .stat:nth-child(2) { border-right: none; }
+      .stat:nth-child(1), .stat:nth-child(2) { padding-bottom: 32px; border-bottom: 1px solid rgba(255,255,255,0.12); }
+      .boilerplate-inner, .contacts-inner { grid-template-columns: 1fr; gap: 32px; }
+      .boilerplate-label, .contacts-label { position: static; }
+      .assets-grid { grid-template-columns: 1fr 1fr; }
+      .colors-grid { grid-template-columns: 1fr 1fr; }
+      .brand-rules { grid-template-columns: 1fr; gap: 32px; }
+      .footer-grid { grid-template-columns: 1.5fr 1fr 1fr; }
+      .footer-col:nth-child(4), .footer-col:nth-child(5) { display: none; }
+    }
+    @media (max-width: 900px) {
+      .nav, .header-phone { display: none; }
+      .menu-toggle { display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; border: 1px solid var(--c-border); border-radius: 50%; }
+      .header-actions .btn-primary { display: none; }
+    }
+    @media (max-width: 700px) {
+      .header-inner { padding: 0 20px; }
+      .hero { padding: 80px 20px 64px; }
+      .facts, .stats, .boilerplate, .assets, .colors, .contacts { padding: 64px 20px; }
+      .fact { grid-template-columns: 1fr; gap: 8px; }
+      .assets-grid { grid-template-columns: 1fr; }
+      .colors-grid { grid-template-columns: 1fr; }
+      .contact-card { padding: 32px 24px; }
+      .contact-list { grid-template-columns: 1fr; }
+      .footer { padding: 64px 20px 32px; }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+      .footer-bottom { flex-direction: column; align-items: flex-start; }
+    }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; } }
+  </style>
+</head>
+<body>
+
+  <a href="#main" class="skip-to-content">Preskočiť na obsah</a>
+
+  <div class="cookie-banner" id="cookieBanner" role="dialog" aria-live="polite">
+    <div class="cookie-banner-text">Tento web používa iba <strong>technicky nevyhnutné cookies</strong>. Viac v <a href="/cookies.html">Cookies</a>.</div>
+    <button class="cookie-banner-btn" id="cookieBannerOk" type="button">Rozumiem</button>
+  </div>
+
+  <header class="header" id="header">
+    <div class="header-inner">
+      <a href="/" class="logo" aria-label="Neseme — domovská stránka"><span class="logo-mark"></span><span>NESEME</span></a>
+      <nav class="nav">
+        <a href="/#sluzby" class="nav-link">Služby</a>
+        <a href="/#ako-to-funguje" class="nav-link">Ako to funguje</a>
+        <a href="/#firmy" class="nav-link">Pre firmy</a>
+        <a href="/#oblasti" class="nav-link">Pokrytie</a>
+        <a href="/#cennik" class="nav-link">Cenník</a>
+        <a href="kontakt.html" class="nav-link">Kontakt</a>
+      </nav>
+      <div class="header-actions">
+        <a href="tel:+421917588738" class="header-phone">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <span>+421 917 588 738</span>
+        </a>
+        <a href="mailto:media@neseme.sk?subject=Press%20kit%20otázka" class="btn btn-primary">Press kit</a>
+        <button class="menu-toggle" aria-label="Menu" id="menuOpen">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true">
+    <div class="mobile-menu-header">
+      <a href="/" class="logo"><span class="logo-mark"></span><span>NESEME</span></a>
+      <button class="mobile-menu-close" aria-label="Zavrieť menu" id="menuClose">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
+    </div>
+    <nav class="mobile-menu-nav">
+      <a href="/#sluzby"><span>Služby</span><span class="idx">01</span></a>
+      <a href="/#ako-to-funguje"><span>Ako to funguje</span><span class="idx">02</span></a>
+      <a href="/#firmy"><span>Pre firmy</span><span class="idx">03</span></a>
+      <a href="/#oblasti"><span>Pokrytie</span><span class="idx">04</span></a>
+      <a href="/#cennik"><span>Cenník</span><span class="idx">05</span></a>
+      <a href="kontakt.html"><span>Kontakt</span><span class="idx">06</span></a>
+    </nav>
+  </div>
+
+  <main id="main">
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-bg" aria-hidden="true">PRESS</div>
+      <div class="hero-inner">
+        <div class="eyebrow">Pre médiá · Press Kit</div>
+        <h1>Fakty,<br>čísla<br><span class="o">a kontakty.</span></h1>
+        <p class="lead">
+          Všetko, čo médiá potrebujú o značke Neseme — oficiálne fakty o spoločnosti, štatistiky, brand assets na stiahnutie a priame kontakty pre redaktorov a novinárov.
+        </p>
+        <div class="press-contact-banner">
+          <strong>Press kontakt</strong>
+          <a href="mailto:media@neseme.sk">media@neseme.sk</a>
+          <a href="tel:+421917588738">+421 917 588 738</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- QUICK FACTS -->
+    <section class="facts">
+      <div class="facts-inner">
+        <div class="facts-header">
+          <div>
+            <div class="eyebrow">Spoločnosť</div>
+            <h2>Fakty <span class="o">na pohľad.</span></h2>
+          </div>
+        </div>
+        <div class="facts-grid">
+          <div class="fact">
+            <div class="fact-label">Obchodné meno</div>
+            <div class="fact-value">Orostone s.r.o.</div>
+          </div>
+          <div class="fact">
+            <div class="fact-label">Značka</div>
+            <div class="fact-value"><strong>Neseme</strong></div>
+          </div>
+          <div class="fact">
+            <div class="fact-label">Sídlo</div>
+            <div class="fact-value">Landererova 8<br>811 09 Bratislava</div>
+          </div>
+          <div class="fact">
+            <div class="fact-label">Identifikačné údaje</div>
+            <div class="fact-value">IČO 55 254 772<br>DIČ 2121930580<br>IČ DPH SK2121930580</div>
+          </div>
+          <div class="fact">
+            <div class="fact-label">Založené</div>
+            <div class="fact-value">2019</div>
+          </div>
+          <div class="fact">
+            <div class="fact-label">Sektor</div>
+            <div class="fact-value">XL doprava, výnos a montáž<br>Last-mile logistika · B2B / B2C</div>
+          </div>
+          <div class="fact">
+            <div class="fact-label">Pôsobnosť</div>
+            <div class="fact-value">Bratislava · Celé Slovensko</div>
+          </div>
+          <div class="fact">
+            <div class="fact-label">Web</div>
+            <div class="fact-value"><a href="https://neseme.sk">neseme.sk</a></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STATS -->
+    <section class="stats">
+      <div class="stats-inner">
+        <div class="stats-header">
+          <div class="eyebrow">Kľúčové ukazovatele</div>
+          <h2>Čísla pre <span class="o">redakciu.</span></h2>
+        </div>
+        <div class="stats-grid">
+          <div class="stat">
+            <div class="stat-num">240<span class="small">K+</span></div>
+            <div class="stat-label">Doručených zásielok</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">98<span class="small">%</span></div>
+            <div class="stat-label">FTDR — úspešnosť na prvý pokus</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">90<span class="small">min</span></div>
+            <div class="stat-label">Express čas v Bratislave</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">5<span class="small">000€</span></div>
+            <div class="stat-label">Štandardné poistenie zásielky</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BOILERPLATE -->
+    <section class="boilerplate">
+      <div class="boilerplate-inner">
+        <div class="boilerplate-label">Boilerplate · 01/02</div>
+        <div class="boilerplate-text">
+          <h2>Oficiálny popis <span class="o">spoločnosti.</span></h2>
+
+          <h3 style="font-family:var(--font-display); font-weight:700; font-size:13px; letter-spacing:0.08em; text-transform:uppercase; color:var(--c-secondary); margin-bottom:12px; margin-top:24px;">Krátky (50 slov)</h3>
+          <p><strong>Neseme</strong> je slovenská značka špecializovaná na prepravu, výnos a montáž nadrozmerných zásielok, nábytku a bielej techniky. Pôsobí v Bratislave a po celom Slovensku od roku 2019. Robí to, čo bežný kuriér nerobí — výnos na poschodie, dvojčlenné tímy, telefonickú avizáciu a poistenie do 5 000 € na zásielku.</p>
+
+          <h3 style="font-family:var(--font-display); font-weight:700; font-size:13px; letter-spacing:0.08em; text-transform:uppercase; color:var(--c-secondary); margin-bottom:12px; margin-top:24px;">Dlhý (150 slov)</h3>
+          <p><strong>Neseme</strong> je obchodná značka spoločnosti Orostone s.r.o., založenej v roku 2019 v Bratislave, špecializovanej na last-mile logistiku nadrozmerných zásielok pre domácnosti aj e-shopy.</p>
+          <p>Spoločnosť poskytuje päť kategórií služieb: <strong>Neseme XL</strong> (preprava nadrozmerného tovaru do 500 kg), <strong>Neseme Elektro</strong> (doručenie a zapojenie bielej techniky), <strong>Neseme Home</strong> (výnos na poschodie a montáž), <strong>Neseme Business</strong> (B2B last-mile pre slovenských výrobcov a e-shopy) a <strong>Neseme Express</strong> (same-day doručenie v Bratislave do 90 minút).</p>
+          <p>Od založenia spoločnosť doručila viac ako <strong>240 000 zásielok</strong> s úspešnosťou <strong>98 %</strong> na prvý pokus. Každá zásielka je štandardne poistená do 5 000 €. Spoločnosť pôsobí v Bratislave so skladom v Rači, jej pokrytie zahŕňa celé Slovensko.</p>
+
+          <div class="boilerplate-actions">
+            <button class="btn btn-secondary" onclick="navigator.clipboard.writeText(document.querySelectorAll('.boilerplate-text p')[0].innerText); this.innerText='Skopírované ✓'; setTimeout(()=>this.innerText='Kopírovať krátky text', 2000);">Kopírovať krátky text</button>
+            <button class="btn btn-secondary" onclick="navigator.clipboard.writeText(Array.from(document.querySelectorAll('.boilerplate-text p')).slice(1).map(p=>p.innerText).join('\n\n')); this.innerText='Skopírované ✓'; setTimeout(()=>this.innerText='Kopírovať dlhý text', 2000);">Kopírovať dlhý text</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BRAND ASSETS -->
+    <section class="assets">
+      <div class="assets-inner">
+        <div class="assets-header">
+          <div class="eyebrow">Brand assets</div>
+          <h2>Logo, fonty <span class="o">a obrázky.</span></h2>
+        </div>
+
+        <div class="assets-grid">
+          <div class="asset-card">
+            <div class="asset-preview">
+              <svg width="200" height="120" viewBox="0 0 200 120" xmlns="http://www.w3.org/2000/svg">
+                <g transform="translate(20 35)">
+                  <path d="M0 35L 9 0 H 50 V 12 L 41 50 H 0 Z" fill="#FA5400"/>
+                </g>
+                <text x="84" y="78" font-family="Jost, sans-serif" font-weight="900" font-size="40" letter-spacing="-1.2" fill="#FFFFFF">NESEME</text>
+              </svg>
+            </div>
+            <div class="asset-info">
+              <h3>Logo — Tmavé pozadie</h3>
+              <p>Hlavná verzia loga pre tmavé pozadia. Biely text + oranžová značka.</p>
+              <div class="asset-meta">
+                <span>SVG</span><span>Vektor</span><span>1.2 KB</span>
+              </div>
+              <a href="/favicon.svg" download="neseme-logo-dark.svg" class="asset-download">
+                Stiahnuť SVG ↓
+              </a>
+            </div>
+          </div>
+
+          <div class="asset-card">
+            <div class="asset-preview light">
+              <svg width="200" height="120" viewBox="0 0 200 120" xmlns="http://www.w3.org/2000/svg">
+                <g transform="translate(20 35)">
+                  <path d="M0 35L 9 0 H 50 V 12 L 41 50 H 0 Z" fill="#111111"/>
+                </g>
+                <text x="84" y="78" font-family="Jost, sans-serif" font-weight="900" font-size="40" letter-spacing="-1.2" fill="#111111">NESEME</text>
+              </svg>
+            </div>
+            <div class="asset-info">
+              <h3>Logo — Svetlé pozadie</h3>
+              <p>Verzia loga pre biele a svetlé pozadia. Čierny text + čierna značka.</p>
+              <div class="asset-meta">
+                <span>SVG</span><span>Vektor</span><span>1.2 KB</span>
+              </div>
+              <a href="/favicon.svg" download="neseme-logo-light.svg" class="asset-download">
+                Stiahnuť SVG ↓
+              </a>
+            </div>
+          </div>
+
+          <div class="asset-card">
+            <div class="asset-preview">
+              <img src="/og-image.svg" alt="Neseme press card preview" style="width:100%; height:100%; object-fit:cover;" />
+            </div>
+            <div class="asset-info">
+              <h3>Press kit obrázok</h3>
+              <p>Oficiálny vizuál (1200×630 px) pre tlačové správy a sociálne siete.</p>
+              <div class="asset-meta">
+                <span>SVG</span><span>1200×630</span><span>4 KB</span>
+              </div>
+              <a href="/og-image.svg" download="neseme-press-image.svg" class="asset-download">
+                Stiahnuť SVG ↓
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="brand-rules">
+          <div class="brand-rule do">
+            <h3>Pri použití značky</h3>
+            <ul>
+              <li>Používajte oficiálne logo bez modifikácií</li>
+              <li>Zachovávajte minimálny ochranný priestor okolo loga (1× výška symbolu)</li>
+              <li>Používajte uvedené fonty: Jost (display), Inter (body)</li>
+              <li>Pri zmienke spoločnosti uvádzajte celé znenie „Orostone s.r.o. (značka Neseme)" v právnom kontexte</li>
+              <li>Pre obchodný kontext stačí „Neseme"</li>
+              <li>Konzultujte špeciálne použitia — sponzoring, reklamy — s media@neseme.sk</li>
+            </ul>
+          </div>
+          <div class="brand-rule dont">
+            <h3>Čomu sa vyhnúť</h3>
+            <ul>
+              <li>Nemeňte farby loga (čierna #111, oranžová #FA5400)</li>
+              <li>Nedeformujte logo (nemeňte proporcie)</li>
+              <li>Nepoužívajte logo na nečitateľnom pozadí (nízky kontrast)</li>
+              <li>Nekombinujte logo so značkou inej spoločnosti bez súhlasu</li>
+              <li>Nepoužívajte logo v negatívnom kontexte alebo v paródii</li>
+              <li>Neuverejňujte interné alebo neoverené informácie ako oficiálne stanoviská</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- COLORS -->
+    <section class="colors">
+      <div class="colors-inner">
+        <div class="colors-header">
+          <div class="eyebrow">Brand farby</div>
+          <h2>Paleta <span class="o">spoločnosti.</span></h2>
+        </div>
+        <div class="colors-grid">
+          <div class="color-card">
+            <div class="color-swatch dark">
+              <h3>Neseme Black</h3>
+            </div>
+            <div class="color-info">
+              <span class="label">HEX</span><span class="value">#111111</span>
+              <span class="label">RGB</span><span class="value">17, 17, 17</span>
+              <span class="label">CMYK</span><span class="value">0, 0, 0, 93</span>
+              <span class="label">Pantone</span><span class="value">Black 6 C</span>
+            </div>
+          </div>
+
+          <div class="color-card">
+            <div class="color-swatch orange">
+              <h3>Neseme Orange</h3>
+            </div>
+            <div class="color-info">
+              <span class="label">HEX</span><span class="value">#FA5400</span>
+              <span class="label">RGB</span><span class="value">250, 84, 0</span>
+              <span class="label">CMYK</span><span class="value">0, 80, 100, 0</span>
+              <span class="label">Pantone</span><span class="value">021 C</span>
+            </div>
+          </div>
+
+          <div class="color-card">
+            <div class="color-swatch light">
+              <h3>Pure White</h3>
+            </div>
+            <div class="color-info">
+              <span class="label">HEX</span><span class="value">#FFFFFF</span>
+              <span class="label">RGB</span><span class="value">255, 255, 255</span>
+              <span class="label">CMYK</span><span class="value">0, 0, 0, 0</span>
+              <span class="label">Pantone</span><span class="value">White</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACTS -->
+    <section class="contacts">
+      <div class="contacts-inner">
+        <div class="contacts-label">Kontakt · 03/03</div>
+        <div class="contact-card">
+          <h2>Kontakt <span class="o">pre médiá.</span></h2>
+          <p>Sme dostupní každý deň. Pre tlačové otázky, citácie, expertné stanoviská alebo dohodu interview.</p>
+
+          <div class="contact-list">
+            <div class="contact-list-item">
+              <div class="label">Press kontakt</div>
+              <div class="value"><a href="mailto:media@neseme.sk">media@neseme.sk</a></div>
+            </div>
+            <div class="contact-list-item">
+              <div class="label">Telefón</div>
+              <div class="value"><a href="tel:+421917588738">+421 917 588 738</a></div>
+            </div>
+            <div class="contact-list-item">
+              <div class="label">Hovorca / vyjadrenia</div>
+              <div class="value">Konateľ spoločnosti</div>
+            </div>
+            <div class="contact-list-item">
+              <div class="label">Sídlo</div>
+              <div class="value">Landererova 8, BA</div>
+            </div>
+          </div>
+
+          <div class="response-time">Reagujeme do 4 hodín v pracovných dňoch · Po–Ne 7:00–21:00</div>
+
+          <div class="contact-card-actions">
+            <a href="mailto:media@neseme.sk?subject=Press%20otázka&amp;body=Dobrý%20deň%2C%0A%0Asom%20redaktor%2Fka%20pre%20...%0A-%20Médium%3A%0A-%20Téma%3A%0A-%20Termín%20uzávierky%3A%0A%0AĎakujem." class="btn btn-orange btn-arrow">
+              Poslať press otázku
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+            </a>
+            <a href="tel:+421917588738" class="btn btn-ghost-light">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              Zavolať
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="/" class="logo" aria-label="Neseme — domovská stránka">
+            <span class="logo-mark"></span><span>NESEME</span>
+          </a>
+          <p>XL doprava, výnos a montáž pre domácnosti aj e-shopy. Bratislava a celé Slovensko.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Služby</h4>
+          <ul>
+            <li><a href="/#sluzby">Neseme XL</a></li>
+            <li><a href="/#sluzby">Neseme Elektro</a></li>
+            <li><a href="/#sluzby">Neseme Home</a></li>
+            <li><a href="/#firmy">Neseme Business</a></li>
+            <li><a href="/#sluzby">Neseme Express</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Spoločnosť</h4>
+          <ul>
+            <li><a href="o-nas.html">O nás</a></li>
+            <li><a href="kariera.html">Kariéra</a></li>
+            <li><a href="pre-media.html">Pre médiá</a></li>
+            <li><a href="kontakt.html">Kontakt</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Právne dokumenty</h4>
+          <ul>
+            <li><a href="obchodne-podmienky.html">Obchodné podmienky</a></li>
+            <li><a href="reklamacny-poriadok.html">Reklamačný poriadok</a></li>
+            <li><a href="odstupenie-od-zmluvy.html">Odstúpenie od zmluvy</a></li>
+            <li><a href="ochrana-osobnych-udajov.html">Ochrana údajov</a></li>
+            <li><a href="cookies.html">Cookies</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Kontakt</h4>
+          <ul>
+            <li><a href="tel:+421917588738">+421 917 588 738</a></li>
+            <li><a href="mailto:ahoj@neseme.sk">ahoj@neseme.sk</a></li>
+            <li><a href="https://maps.google.com/?q=Landererova+8,+Bratislava" target="_blank" rel="noopener">Landererova 8, BA</a></li>
+            <li><span>Po–Ne · 7:00–21:00</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span class="footer-bottom-meta">© 2026 Orostone s.r.o. · <a href="kontakt.html" style="color:rgba(255,255,255,0.7); text-decoration:underline;">Fakturačné údaje</a></span>
+        <a href="tel:+421917588738" class="footer-bottom-phone">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          +421 917 588 738
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 8) header.classList.add('scrolled'); else header.classList.remove('scrolled');
+    }, { passive: true });
+
+    const menuOpen = document.getElementById('menuOpen');
+    const menuClose = document.getElementById('menuClose');
+    const mobileMenu = document.getElementById('mobileMenu');
+    if (menuOpen) menuOpen.addEventListener('click', () => { mobileMenu.classList.add('open'); document.body.classList.add('menu-open'); });
+    if (menuClose) menuClose.addEventListener('click', () => { mobileMenu.classList.remove('open'); document.body.classList.remove('menu-open'); });
+    document.querySelectorAll('.mobile-menu-nav a').forEach(a => a.addEventListener('click', () => { mobileMenu.classList.remove('open'); document.body.classList.remove('menu-open'); }));
+
+    (function () {
+      const banner = document.getElementById('cookieBanner');
+      const btn = document.getElementById('cookieBannerOk');
+      if (!banner || !btn) return;
+      try { if (localStorage.getItem('neseme-cookies-ack') === '1') return; } catch (e) {}
+      setTimeout(() => banner.classList.add('visible'), 800);
+      btn.addEventListener('click', () => {
+        try { localStorage.setItem('neseme-cookies-ack', '1'); } catch (e) {}
+        banner.classList.remove('visible');
+        setTimeout(() => banner.remove(), 400);
+      });
+    })();
+  </script>
+</body>
+</html>

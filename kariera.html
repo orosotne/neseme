@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#111111" />
+  <meta name="format-detection" content="telephone=no" />
+
+  <title>Kariéra — Neseme | Pridajte sa k tímu | Bratislava</title>
+  <meta name="description" content="Hľadáme vodičov B/C, závozcov a kuriérov pre Neseme. Stála práca, fixný plat + bonusy, profi tím v Bratislave. Pošlite životopis na ahoj@neseme.sk." />
+  <link rel="canonical" href="https://neseme.sk/kariera.html" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="sk_SK" />
+  <meta property="og:site_name" content="Neseme" />
+  <meta property="og:url" content="https://neseme.sk/kariera.html" />
+  <meta property="og:title" content="Kariéra — Neseme | Pridajte sa k tímu" />
+  <meta property="og:description" content="Hľadáme vodičov, závozcov a kuriérov pre profi tím v Bratislave." />
+  <meta property="og:image" content="https://neseme.sk/og-image.svg" />
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="apple-touch-icon" href="/favicon.svg" />
+  <link rel="manifest" href="/manifest.json" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;700;900&family=Inter:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --c-primary: #111111; --c-primary-hover: #292929; --c-secondary: #FA5400;
+      --c-bg: #FFFFFF; --c-surface: #F5F5F5;
+      --c-text-primary: #111111; --c-text-secondary: #707072; --c-border: #E5E5E5;
+      --font-display: 'Jost', system-ui, sans-serif;
+      --font-body: 'Inter', system-ui, sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+      --radius-button: 30px; --ease: cubic-bezier(0.22, 1, 0.36, 1);
+      --duration: 200ms; --container: 1440px;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+    body { font-family: var(--font-body); font-size: 15px; line-height: 1.6; color: var(--c-text-primary); background: var(--c-bg); -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+    a, button { -webkit-tap-highlight-color: transparent; }
+    button { font: inherit; border: none; background: none; cursor: pointer; color: inherit; }
+    a { color: inherit; text-decoration: none; }
+
+    .skip-to-content { position: absolute; top: -100px; left: 16px; z-index: 9999; padding: 12px 20px; background: var(--c-primary); color: var(--c-bg); font-family: var(--font-display); font-weight: 700; font-size: 14px; letter-spacing: 0.04em; text-transform: uppercase; border-radius: 8px; transition: top 200ms var(--ease); }
+    .skip-to-content:focus { top: 16px; outline: 2px solid var(--c-secondary); }
+
+    /* HEADER */
+    .header { position: sticky; top: 0; z-index: 100; background: var(--c-bg); transition: box-shadow 200ms var(--ease); }
+    .header.scrolled { box-shadow: 0 2px 4px rgba(0,0,0,0.05); border-bottom: 1px solid var(--c-border); }
+    .header-inner { max-width: var(--container); margin: 0 auto; padding: 0 32px; height: 64px; display: flex; align-items: center; justify-content: space-between; gap: 32px; }
+    .logo { display: flex; align-items: center; gap: 8px; font-family: var(--font-display); font-weight: 900; font-size: 24px; letter-spacing: -0.02em; text-transform: uppercase; flex-shrink: 0; }
+    .logo-mark { display: inline-block; width: 1.2em; height: 0.78em; position: relative; flex-shrink: 0; }
+    .logo-mark::before { content: ''; position: absolute; inset: 0; background: var(--c-primary); clip-path: polygon(0 70%, 35% 0, 100% 0, 100% 30%, 65% 100%, 0 100%); }
+    .nav { display: flex; align-items: center; gap: 28px; flex: 1; }
+    .nav-link { font-weight: 500; font-size: 14px; letter-spacing: 0.02em; transition: color var(--duration) var(--ease); }
+    .nav-link:hover { color: var(--c-secondary); }
+    .header-actions { display: flex; align-items: center; gap: 16px; }
+    .header-phone { display: flex; align-items: center; gap: 8px; font-family: var(--font-mono); font-size: 13px; transition: color var(--duration) var(--ease); }
+    .header-phone:hover { color: var(--c-secondary); }
+    .menu-toggle { display: none; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; height: 48px; padding: 0 28px; font-family: var(--font-body); font-weight: 500; font-size: 14px; letter-spacing: 0.02em; text-transform: uppercase; border-radius: var(--radius-button); transition: all var(--duration) var(--ease); white-space: nowrap; cursor: pointer; }
+    .btn-primary { background: var(--c-primary); color: var(--c-bg); }
+    .btn-primary:hover { background: var(--c-primary-hover); }
+    .btn-orange { background: var(--c-secondary); color: var(--c-bg); }
+    .btn-orange:hover { background: #d94900; }
+    .btn-secondary { background: var(--c-bg); color: var(--c-primary); border: 1px solid var(--c-primary); }
+    .btn-secondary:hover { background: var(--c-primary); color: var(--c-bg); }
+    .btn-ghost-light { background: transparent; color: var(--c-bg); border: 1px solid rgba(255,255,255,0.4); }
+    .btn-ghost-light:hover { background: var(--c-bg); color: var(--c-primary); }
+    .btn-arrow svg { transition: transform var(--duration) var(--ease); }
+    .btn-arrow:hover svg { transform: translateX(4px); }
+
+    /* HERO */
+    .hero { background: var(--c-primary); color: var(--c-bg); padding: 120px 32px 96px; position: relative; overflow: hidden; }
+    .hero-bg { position: absolute; bottom: -60px; right: -80px; font-family: var(--font-display); font-weight: 900; font-size: clamp(220px, 32vw, 460px); line-height: 0.85; letter-spacing: -0.04em; color: rgba(255,255,255,0.04); pointer-events: none; user-select: none; }
+    .hero-inner { max-width: var(--container); margin: 0 auto; position: relative; z-index: 1; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 12px; font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--c-secondary); margin-bottom: 24px; }
+    .eyebrow::before { content: ''; width: 32px; height: 1px; background: var(--c-secondary); }
+    .hero h1 { font-family: var(--font-display); font-weight: 900; font-size: clamp(48px, 8vw, 120px); line-height: 0.98; letter-spacing: -0.025em; text-transform: uppercase; padding-top: 0.18em; margin-bottom: 24px; }
+    .hero h1 .o { color: var(--c-secondary); }
+    .hero p.lead { font-size: 19px; line-height: 1.6; color: rgba(255,255,255,0.85); max-width: 680px; }
+    .hero-meta { display: flex; gap: 32px; margin-top: 40px; flex-wrap: wrap; }
+    .hero-meta-item { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.7); display: flex; align-items: center; gap: 8px; }
+    .hero-meta-item::before { content: ''; width: 6px; height: 6px; background: var(--c-secondary); border-radius: 50%; }
+
+    /* WHY US */
+    .why { background: var(--c-bg); padding: 120px 32px; }
+    .why-inner { max-width: var(--container); margin: 0 auto; }
+    .why-header { margin-bottom: 64px; max-width: 720px; }
+    .why-header h2 { font-family: var(--font-display); font-weight: 900; font-size: clamp(36px, 5vw, 64px); line-height: 1.05; letter-spacing: -0.025em; text-transform: uppercase; padding-top: 0.14em; margin-top: 16px; }
+    .why-header h2 .o { color: var(--c-secondary); }
+    .why-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+    .why-card { padding: 40px 32px; background: var(--c-surface); position: relative; transition: background var(--duration) var(--ease); }
+    .why-card:hover { background: var(--c-primary); color: var(--c-bg); }
+    .why-card:hover h3, .why-card:hover .why-num { color: var(--c-bg); }
+    .why-card:hover p { color: rgba(255,255,255,0.7); }
+    .why-num { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.12em; color: var(--c-secondary); display: block; margin-bottom: 24px; }
+    .why-card h3 { font-family: var(--font-display); font-weight: 900; font-size: 22px; letter-spacing: -0.01em; line-height: 1.1; text-transform: uppercase; padding-top: 0.1em; margin-bottom: 14px; transition: color var(--duration) var(--ease); }
+    .why-card p { font-size: 15px; line-height: 1.6; color: var(--c-text-secondary); transition: color var(--duration) var(--ease); }
+
+    /* OPEN POSITIONS */
+    .positions { background: var(--c-surface); padding: 120px 32px; }
+    .positions-inner { max-width: var(--container); margin: 0 auto; }
+    .positions-header { display: flex; justify-content: space-between; align-items: flex-end; gap: 48px; margin-bottom: 64px; flex-wrap: wrap; }
+    .positions-header h2 { font-family: var(--font-display); font-weight: 900; font-size: clamp(36px, 5vw, 64px); line-height: 1.05; letter-spacing: -0.025em; text-transform: uppercase; padding-top: 0.14em; margin-top: 16px; }
+    .positions-header h2 .o { color: var(--c-secondary); }
+    .positions-header p { font-size: 16px; line-height: 1.6; color: var(--c-text-secondary); max-width: 520px; }
+    .positions-list { display: flex; flex-direction: column; gap: 4px; }
+    .position { background: var(--c-bg); padding: 32px 40px; display: grid; grid-template-columns: auto 1fr auto auto; align-items: center; gap: 32px; transition: background var(--duration) var(--ease), transform var(--duration) var(--ease); cursor: pointer; }
+    .position:hover { background: var(--c-primary); color: var(--c-bg); transform: translateX(4px); }
+    .position:hover .position-num, .position:hover .position-meta-item { color: rgba(255,255,255,0.7); }
+    .position:hover .position-meta-item::before { background: var(--c-secondary); }
+    .position-num { font-family: var(--font-mono); font-size: 13px; letter-spacing: 0.08em; color: var(--c-text-secondary); }
+    .position h3 { font-family: var(--font-display); font-weight: 900; font-size: 22px; letter-spacing: -0.01em; text-transform: uppercase; padding-top: 0.1em; }
+    .position-meta { display: flex; gap: 24px; }
+    .position-meta-item { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--c-text-secondary); display: flex; align-items: center; gap: 6px; }
+    .position-meta-item::before { content: ''; width: 6px; height: 6px; background: var(--c-secondary); border-radius: 50%; }
+    .position-arrow { width: 48px; height: 48px; border-radius: 50%; border: 1px solid var(--c-border); display: flex; align-items: center; justify-content: center; transition: all var(--duration) var(--ease); flex-shrink: 0; }
+    .position:hover .position-arrow { background: var(--c-secondary); border-color: var(--c-secondary); color: var(--c-bg); transform: rotate(-45deg); }
+    .position-arrow svg { transition: transform var(--duration) var(--ease); }
+
+    .position-detail { display: none; padding: 32px 40px; background: var(--c-bg); border-top: 1px solid var(--c-border); }
+    .position.open + .position-detail { display: block; }
+    .position-detail h4 { font-family: var(--font-display); font-weight: 700; font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--c-secondary); margin: 24px 0 12px; }
+    .position-detail h4:first-child { margin-top: 0; }
+    .position-detail ul { list-style: none; padding: 0; }
+    .position-detail li { padding: 8px 0; padding-left: 20px; position: relative; font-size: 14px; line-height: 1.6; color: var(--c-text-secondary); }
+    .position-detail li::before { content: '+'; position: absolute; left: 0; color: var(--c-secondary); font-weight: 900; font-family: var(--font-display); font-size: 16px; }
+    .position-detail .actions { margin-top: 32px; display: flex; gap: 12px; flex-wrap: wrap; }
+
+    .no-positions { text-align: center; padding: 80px 32px; background: var(--c-bg); }
+    .no-positions h3 { font-family: var(--font-display); font-weight: 900; font-size: 28px; letter-spacing: -0.01em; text-transform: uppercase; padding-top: 0.1em; margin-bottom: 16px; }
+    .no-positions p { font-size: 16px; color: var(--c-text-secondary); max-width: 520px; margin: 0 auto 32px; }
+
+    /* BENEFITS */
+    .benefits { background: var(--c-bg); padding: 120px 32px; }
+    .benefits-inner { max-width: var(--container); margin: 0 auto; }
+    .benefits-header { margin-bottom: 64px; max-width: 720px; }
+    .benefits-header h2 { font-family: var(--font-display); font-weight: 900; font-size: clamp(36px, 5vw, 64px); line-height: 1.05; letter-spacing: -0.025em; text-transform: uppercase; padding-top: 0.14em; margin-top: 16px; }
+    .benefits-header h2 .o { color: var(--c-secondary); }
+    .benefits-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px 64px; }
+    .benefit { display: grid; grid-template-columns: 56px 1fr; gap: 24px; align-items: start; padding: 24px 0; border-top: 1px solid var(--c-border); }
+    .benefit-icon { width: 56px; height: 56px; border-radius: 50%; background: var(--c-surface); display: flex; align-items: center; justify-content: center; color: var(--c-primary); flex-shrink: 0; }
+    .benefit h3 { font-family: var(--font-display); font-weight: 900; font-size: 18px; letter-spacing: -0.01em; line-height: 1.2; text-transform: uppercase; padding-top: 0.1em; margin-bottom: 6px; }
+    .benefit p { font-size: 14px; line-height: 1.6; color: var(--c-text-secondary); }
+
+    /* PROCESS */
+    .process { background: var(--c-primary); color: var(--c-bg); padding: 120px 32px; }
+    .process-inner { max-width: var(--container); margin: 0 auto; }
+    .process-header { margin-bottom: 64px; max-width: 720px; }
+    .process-header h2 { font-family: var(--font-display); font-weight: 900; font-size: clamp(36px, 5vw, 64px); line-height: 1.05; letter-spacing: -0.025em; text-transform: uppercase; padding-top: 0.14em; margin-top: 16px; }
+    .process-header h2 .o { color: var(--c-secondary); }
+    .process-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; border-top: 1px solid rgba(255,255,255,0.12); border-bottom: 1px solid rgba(255,255,255,0.12); }
+    .process-step { padding: 48px 32px; border-right: 1px solid rgba(255,255,255,0.12); }
+    .process-step:last-child { border-right: none; }
+    .step-num { font-family: var(--font-display); font-weight: 900; font-size: 96px; line-height: 1; letter-spacing: -0.04em; color: var(--c-bg); margin-bottom: 24px; position: relative; display: inline-block; }
+    .step-num::after { content: ''; position: absolute; bottom: 14px; right: -10px; width: 10px; height: 10px; background: var(--c-secondary); border-radius: 50%; }
+    .process-step h3 { font-family: var(--font-display); font-weight: 900; font-size: 18px; letter-spacing: -0.01em; text-transform: uppercase; padding-top: 0.1em; margin-bottom: 12px; }
+    .process-step p { font-size: 14px; line-height: 1.6; color: rgba(255,255,255,0.7); }
+
+    /* CTA */
+    .cta-strip { background: var(--c-secondary); color: var(--c-bg); padding: 96px 32px; }
+    .cta-strip-inner { max-width: var(--container); margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+    .cta-strip h2 { font-family: var(--font-display); font-weight: 900; font-size: clamp(36px, 5vw, 64px); line-height: 1.05; letter-spacing: -0.025em; text-transform: uppercase; padding-top: 0.14em; }
+    .cta-strip-text p { font-size: 16px; line-height: 1.6; margin-bottom: 24px; color: rgba(255,255,255,0.9); }
+    .cta-strip-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+    .cta-strip .btn-primary { background: var(--c-bg); color: var(--c-primary); }
+    .cta-strip .btn-primary:hover { background: var(--c-primary); color: var(--c-bg); }
+    .cta-strip .btn-ghost-light { color: var(--c-bg); border-color: rgba(255,255,255,0.6); }
+    .cta-strip .btn-ghost-light:hover { background: var(--c-bg); color: var(--c-secondary); }
+
+    /* FOOTER */
+    .footer { background: var(--c-primary); color: var(--c-bg); padding: 96px 32px 48px; }
+    .footer-inner { max-width: var(--container); margin: 0 auto; }
+    .footer-grid { display: grid; grid-template-columns: 1.6fr 1fr 1fr 1fr 1.1fr; gap: 40px; padding-bottom: 64px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+    .footer-brand p { margin-top: 24px; font-size: 14px; line-height: 1.6; color: rgba(255,255,255,0.7); max-width: 320px; margin-bottom: 24px; }
+    .footer-brand .logo { color: var(--c-bg); }
+    .footer-brand .logo .logo-mark::before { background: var(--c-bg); }
+    .footer-col h4 { font-family: var(--font-display); font-weight: 700; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.7); margin-bottom: 16px; }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 10px; }
+    .footer-col a, .footer-col span { font-size: 14px; color: rgba(255,255,255,0.85); transition: color var(--duration) var(--ease); }
+    .footer-col a:hover { color: var(--c-secondary); }
+    .footer-bottom { padding-top: 32px; display: flex; justify-content: space-between; align-items: center; gap: 24px; flex-wrap: wrap; }
+    .footer-bottom-meta { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.04em; color: rgba(255,255,255,0.6); }
+    .footer-bottom-phone { display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-mono); font-size: 13px; letter-spacing: 0.04em; color: rgba(255,255,255,0.85); }
+    .footer-bottom-phone svg { color: var(--c-secondary); }
+
+    /* COOKIE BANNER */
+    .cookie-banner { position: fixed; bottom: 16px; left: 16px; right: 16px; max-width: 560px; margin: 0 auto; background: var(--c-primary); color: var(--c-bg); padding: 20px 24px; border-radius: 12px; box-shadow: 0 8px 32px rgba(0,0,0,0.18); z-index: 999; display: flex; gap: 16px; align-items: center; font-size: 13px; line-height: 1.5; opacity: 0; transform: translateY(20px); transition: all 300ms var(--ease); pointer-events: none; }
+    .cookie-banner.visible { opacity: 1; transform: translateY(0); pointer-events: auto; }
+    .cookie-banner-text { flex: 1; color: rgba(255,255,255,0.85); }
+    .cookie-banner-text a { color: var(--c-secondary); text-decoration: underline; }
+    .cookie-banner-btn { background: var(--c-secondary); color: var(--c-bg); padding: 10px 20px; border-radius: 30px; font-family: var(--font-body); font-weight: 500; font-size: 13px; letter-spacing: 0.04em; text-transform: uppercase; cursor: pointer; flex-shrink: 0; border: none; }
+
+    /* MOBILE MENU */
+    .mobile-menu { position: fixed; inset: 0; background: var(--c-primary); color: var(--c-bg); z-index: 200; transform: translateX(100%); transition: transform 300ms var(--ease); display: flex; flex-direction: column; padding: 24px 24px env(safe-area-inset-bottom, 24px); overflow-y: auto; }
+    .mobile-menu.open { transform: translateX(0); }
+    .mobile-menu-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 48px; padding-top: env(safe-area-inset-top, 0); }
+    .mobile-menu-header .logo { color: var(--c-bg); }
+    .mobile-menu-header .logo .logo-mark::before { background: var(--c-bg); }
+    .mobile-menu-close { width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; border: 1px solid rgba(255,255,255,0.15); border-radius: 50%; }
+    .mobile-menu-nav { display: flex; flex-direction: column; flex: 1; }
+    .mobile-menu-nav a { padding: 18px 0; display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid rgba(255,255,255,0.1); font-family: var(--font-display); font-weight: 900; font-size: 28px; letter-spacing: -0.02em; text-transform: uppercase; }
+    .mobile-menu-nav a .idx { font-family: var(--font-mono); font-size: 11px; color: rgba(255,255,255,0.6); font-weight: 400; letter-spacing: 0.1em; }
+    body.menu-open { overflow: hidden; }
+
+    @media (max-width: 1100px) {
+      .why-grid, .benefits-grid { grid-template-columns: 1fr 1fr; }
+      .process-grid { grid-template-columns: 1fr 1fr; border-bottom: none; }
+      .process-step { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.12); }
+      .process-step:nth-child(2n) { border-right: none; }
+      .process-step:nth-child(odd) { border-right: 1px solid rgba(255,255,255,0.12); }
+      .cta-strip-inner { grid-template-columns: 1fr; gap: 24px; }
+      .footer-grid { grid-template-columns: 1.5fr 1fr 1fr; }
+      .footer-col:nth-child(4), .footer-col:nth-child(5) { display: none; }
+      .position { grid-template-columns: 1fr auto; gap: 16px; padding: 24px 28px; }
+      .position-num, .position-meta { display: none; }
+    }
+    @media (max-width: 900px) {
+      .nav, .header-phone { display: none; }
+      .menu-toggle { display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; border: 1px solid var(--c-border); border-radius: 50%; }
+      .header-actions .btn-primary { display: none; }
+    }
+    @media (max-width: 700px) {
+      .header-inner { padding: 0 20px; }
+      .hero { padding: 80px 20px 64px; }
+      .why, .positions, .benefits, .process, .cta-strip { padding: 64px 20px; }
+      .why-grid, .benefits-grid { grid-template-columns: 1fr; }
+      .process-grid { grid-template-columns: 1fr; }
+      .process-step { border-right: none !important; }
+      .footer { padding: 64px 20px 32px; }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+      .footer-bottom { flex-direction: column; align-items: flex-start; }
+    }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; } }
+  </style>
+</head>
+<body>
+
+  <a href="#main" class="skip-to-content">Preskočiť na obsah</a>
+
+  <div class="cookie-banner" id="cookieBanner" role="dialog" aria-live="polite">
+    <div class="cookie-banner-text">Tento web používa iba <strong>technicky nevyhnutné cookies</strong>. Viac v <a href="/cookies.html">Cookies</a>.</div>
+    <button class="cookie-banner-btn" id="cookieBannerOk" type="button">Rozumiem</button>
+  </div>
+
+  <header class="header" id="header">
+    <div class="header-inner">
+      <a href="/" class="logo" aria-label="Neseme — domovská stránka">
+        <span class="logo-mark"></span><span>NESEME</span>
+      </a>
+      <nav class="nav">
+        <a href="/#sluzby" class="nav-link">Služby</a>
+        <a href="/#ako-to-funguje" class="nav-link">Ako to funguje</a>
+        <a href="/#firmy" class="nav-link">Pre firmy</a>
+        <a href="/#oblasti" class="nav-link">Pokrytie</a>
+        <a href="/#cennik" class="nav-link">Cenník</a>
+        <a href="kontakt.html" class="nav-link">Kontakt</a>
+      </nav>
+      <div class="header-actions">
+        <a href="tel:+421917588738" class="header-phone">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <span>+421 917 588 738</span>
+        </a>
+        <a href="mailto:ahoj@neseme.sk?subject=Životopis" class="btn btn-primary">Pošlite CV</a>
+        <button class="menu-toggle" aria-label="Menu" id="menuOpen">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true">
+    <div class="mobile-menu-header">
+      <a href="/" class="logo"><span class="logo-mark"></span><span>NESEME</span></a>
+      <button class="mobile-menu-close" aria-label="Zavrieť menu" id="menuClose">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
+    </div>
+    <nav class="mobile-menu-nav">
+      <a href="/#sluzby"><span>Služby</span><span class="idx">01</span></a>
+      <a href="/#ako-to-funguje"><span>Ako to funguje</span><span class="idx">02</span></a>
+      <a href="/#firmy"><span>Pre firmy</span><span class="idx">03</span></a>
+      <a href="/#oblasti"><span>Pokrytie</span><span class="idx">04</span></a>
+      <a href="/#cennik"><span>Cenník</span><span class="idx">05</span></a>
+      <a href="kontakt.html"><span>Kontakt</span><span class="idx">06</span></a>
+    </nav>
+  </div>
+
+  <main id="main">
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-bg" aria-hidden="true">JOIN</div>
+      <div class="hero-inner">
+        <div class="eyebrow">Kariéra · Pridajte sa</div>
+        <h1>Hľadáme<br>ľudí, ktorí<br><span class="o">to vedia.</span></h1>
+        <p class="lead">
+          Sme tím, ktorý sa stará o veci ostatných ako o vlastné. Hľadáme vodičov, závozcov a kuriérov, ktorí chcú robiť poriadnu robotu pri preprave nábytku, bielej techniky a XL zásielok v Bratislave a okolí.
+        </p>
+        <div class="hero-meta">
+          <span class="hero-meta-item">Stála práca · Pracovná zmluva</span>
+          <span class="hero-meta-item">Fixný plat + bonusy</span>
+          <span class="hero-meta-item">Bratislava · Sklad Rača</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY US -->
+    <section class="why">
+      <div class="why-inner">
+        <div class="why-header">
+          <div class="eyebrow">Prečo Neseme</div>
+          <h2>Robte robotu, <span class="o">ktorá dáva zmysel.</span></h2>
+        </div>
+        <div class="why-grid">
+          <div class="why-card">
+            <span class="why-num">01 / Tím</span>
+            <h3>Stabilný kolektív</h3>
+            <p>Pracujete v dvojičkách s vyškolenými kolegami. Máme nízku fluktuáciu — viac ako polovica tímu je s nami od založenia.</p>
+          </div>
+          <div class="why-card">
+            <span class="why-num">02 / Vybavenie</span>
+            <h3>Profesionálna výbava</h3>
+            <p>Nové dodávky, vyzdvihovacie remene, pásy, ochrana rohov, vozíky. Žiadne improvizácie — všetko, čo potrebujete na poriadnu robotu.</p>
+          </div>
+          <div class="why-card">
+            <span class="why-num">03 / Plat</span>
+            <h3>Fixný plat + výkonové bonusy</h3>
+            <p>Mesačný fixný plat na pracovnú zmluvu + bonusy podľa počtu zásielok a hodnotenia zákazníkov. Vyplatené presne na čas, každý 15.</p>
+          </div>
+          <div class="why-card">
+            <span class="why-num">04 / Pracovný čas</span>
+            <h3>Predvídateľný rozvrh</h3>
+            <p>Pracovný čas Po–Pi 8:00–17:00, voliteľne víkendy s príplatkom 30 %. Žiadne nočné šichty. Plánovacia tabuľa zverejnená týždeň vopred.</p>
+          </div>
+          <div class="why-card">
+            <span class="why-num">05 / Rast</span>
+            <h3>Možnosť posunu vyššie</h3>
+            <p>Po 12 mesiacoch možnosť postupu na pozíciu seniorského vodiča alebo team-leadera s vyšším platom a manažérskou zodpovednosťou.</p>
+          </div>
+          <div class="why-card">
+            <span class="why-num">06 / Atmosféra</span>
+            <h3>Žiadne korpopráce</h3>
+            <p>Sme malá-stredná firma. Šéf chodí s tímom na obed, konflikty sa riešia priamo, dobré nápady idú do procesu hneď.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- OPEN POSITIONS -->
+    <section class="positions">
+      <div class="positions-inner">
+        <div class="positions-header">
+          <div>
+            <div class="eyebrow">Aktuálne pozície</div>
+            <h2>Hľadáme do <span class="o">tímu.</span></h2>
+          </div>
+          <p>Nenašli ste sa v žiadnej pozícii? Aj tak nám pošlite CV — ozveme sa vám, keď otvoríme nové miesto.</p>
+        </div>
+
+        <div class="positions-list">
+          <!-- Position 1 -->
+          <div class="position" data-position="1">
+            <span class="position-num">01</span>
+            <h3>Vodič dodávky B/C</h3>
+            <div class="position-meta">
+              <span class="position-meta-item">Bratislava</span>
+              <span class="position-meta-item">Plný úväzok</span>
+              <span class="position-meta-item">1 200–1 600 €/mes</span>
+            </div>
+            <div class="position-arrow">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+            </div>
+          </div>
+          <div class="position-detail">
+            <h4>Čo budete robiť</h4>
+            <ul>
+              <li>Doručovanie nábytku, bielej techniky a XL zásielok zákazníkom v Bratislave a po SR</li>
+              <li>Práca v dvojici so závozcom — naloženie, upevnenie, výnos, montáž</li>
+              <li>Telefonická avizácia pred doručením, fotodokumentácia odovzdania</li>
+              <li>Drobné opravy a údržba dodávky</li>
+            </ul>
+            <h4>Čo od vás očakávame</h4>
+            <ul>
+              <li>Vodičský preukaz skupiny B (skupina C výhodou, ale nie podmienka)</li>
+              <li>Min. 1 rok skúseností s vedením dodávky alebo nákladného vozidla</li>
+              <li>Fyzickú zdatnosť (zásielky do 50 kg na osobu)</li>
+              <li>Spoľahlivosť, vystupovanie, slušnosť ku zákazníkom</li>
+              <li>Bezúhonnosť, čistý register</li>
+            </ul>
+            <h4>Ponúkame</h4>
+            <ul>
+              <li>Fixný plat 1 200 € + bonusy 200–400 € mesačne podľa výkonu</li>
+              <li>Pracovnú zmluvu na dobu neurčitú po 3-mesačnej skúšobnej dobe</li>
+              <li>Stravné lístky 5,50 € / pracovný deň</li>
+              <li>Telefón a tablet na služobné účely</li>
+              <li>Príplatky za víkendy (30 %) a sviatky (50 %)</li>
+              <li>Pravidelné teambuildingy</li>
+            </ul>
+            <div class="actions">
+              <a href="mailto:ahoj@neseme.sk?subject=Vodič%20B%2FC%20-%20žiadosť%20o%20prácu&amp;body=Dobrý%20deň%2C%0A%0Amám%20záujem%20o%20pozíciu%20vodiča%20dodávky.%0A-%20Meno%20a%20priezvisko%3A%0A-%20Telefón%3A%0A-%20Skúsenosti%3A%0A%0AŽivotopis%20pripájam%20v%20prílohe." class="btn btn-primary btn-arrow">
+                Poslať životopis
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+              </a>
+              <a href="tel:+421917588738" class="btn btn-secondary">Volať +421 917 588 738</a>
+            </div>
+          </div>
+
+          <!-- Position 2 -->
+          <div class="position" data-position="2">
+            <span class="position-num">02</span>
+            <h3>Závozca / Asistent vodiča</h3>
+            <div class="position-meta">
+              <span class="position-meta-item">Bratislava</span>
+              <span class="position-meta-item">Plný úväzok</span>
+              <span class="position-meta-item">900–1 200 €/mes</span>
+            </div>
+            <div class="position-arrow">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+            </div>
+          </div>
+          <div class="position-detail">
+            <h4>Čo budete robiť</h4>
+            <ul>
+              <li>Práca v dvojici s vodičom — naloženie zásielky, jej upevnenie a vyloženie</li>
+              <li>Výnos zásielky na poschodie (s výťahom aj bez)</li>
+              <li>Montáž a inštalácia bielej techniky a nábytku</li>
+              <li>Komunikácia so zákazníkom pri odovzdaní</li>
+            </ul>
+            <h4>Čo od vás očakávame</h4>
+            <ul>
+              <li>Vodičský preukaz skupiny B nie je nutný</li>
+              <li>Fyzická zdatnosť (zásielky do 50 kg na osobu)</li>
+              <li>Manuálna zručnosť — práca s skrutkovačom, montážnym náradím</li>
+              <li>Spoľahlivosť, slušnosť, schopnosť pracovať v tíme</li>
+              <li>Bezúhonnosť, čistý register</li>
+            </ul>
+            <h4>Ponúkame</h4>
+            <ul>
+              <li>Fixný plat 900 € + bonusy 100–300 € mesačne</li>
+              <li>Pracovnú zmluvu na dobu neurčitú</li>
+              <li>Stravné lístky 5,50 € / deň</li>
+              <li>Pracovné oblečenie a obuv</li>
+              <li>Príplatky za víkendy a sviatky</li>
+            </ul>
+            <div class="actions">
+              <a href="mailto:ahoj@neseme.sk?subject=Závozca%20-%20žiadosť%20o%20prácu&amp;body=Dobrý%20deň%2C%0A%0Amám%20záujem%20o%20pozíciu%20závozcu.%0A-%20Meno%3A%0A-%20Telefón%3A%0A-%20Skúsenosti%3A%0A%0AŽivotopis%20v%20prílohe." class="btn btn-primary btn-arrow">
+                Poslať životopis
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+              </a>
+              <a href="tel:+421917588738" class="btn btn-secondary">Volať +421 917 588 738</a>
+            </div>
+          </div>
+
+          <!-- Position 3 -->
+          <div class="position" data-position="3">
+            <span class="position-num">03</span>
+            <h3>Dispečer / Koordinátor zásielok</h3>
+            <div class="position-meta">
+              <span class="position-meta-item">Bratislava · Office</span>
+              <span class="position-meta-item">Plný úväzok</span>
+              <span class="position-meta-item">1 100–1 500 €/mes</span>
+            </div>
+            <div class="position-arrow">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+            </div>
+          </div>
+          <div class="position-detail">
+            <h4>Čo budete robiť</h4>
+            <ul>
+              <li>Plánovanie a koordinácia zásielok pre 2–4 dodávky denne</li>
+              <li>Komunikácia so zákazníkmi (telefón, e-mail)</li>
+              <li>Prijímanie a evidencia objednávok, fakturácia</li>
+              <li>Riešenie reklamácií a operatívnych situácií</li>
+              <li>Reportovanie pre B2B partnerov</li>
+            </ul>
+            <h4>Čo od vás očakávame</h4>
+            <ul>
+              <li>Skúsenosti s logistikou alebo dispečingom (výhoda)</li>
+              <li>Výborná komunikácia v slovenčine, základy AJ</li>
+              <li>Schopnosť multitaskingu a riešenia problémov</li>
+              <li>Práca s počítačom, MS Office, Google Workspace</li>
+              <li>Stresová odolnosť</li>
+            </ul>
+            <h4>Ponúkame</h4>
+            <ul>
+              <li>Fixný plat 1 100 € + bonusy 200–400 € mesačne</li>
+              <li>Pracovnú zmluvu na dobu neurčitú</li>
+              <li>Možnosť čiastočného home-officu po zácviku</li>
+              <li>Vlastný notebook a telefón</li>
+              <li>5 týždňov dovolenky</li>
+              <li>Vzdelávanie v logistike a manažmente</li>
+            </ul>
+            <div class="actions">
+              <a href="mailto:ahoj@neseme.sk?subject=Dispečer%20-%20žiadosť%20o%20prácu&amp;body=Dobrý%20deň%2C%0A%0Amám%20záujem%20o%20pozíciu%20dispečera.%0A-%20Meno%3A%0A-%20Telefón%3A%0A-%20Skúsenosti%3A%0A%0AŽivotopis%20v%20prílohe." class="btn btn-primary btn-arrow">
+                Poslať životopis
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+              </a>
+              <a href="tel:+421917588738" class="btn btn-secondary">Volať +421 917 588 738</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BENEFITS -->
+    <section class="benefits">
+      <div class="benefits-inner">
+        <div class="benefits-header">
+          <div class="eyebrow">Benefity</div>
+          <h2>Čo dostanete navyše. <span class="o">Bez výnimiek.</span></h2>
+        </div>
+        <div class="benefits-grid">
+          <div class="benefit">
+            <div class="benefit-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg>
+            </div>
+            <div>
+              <h3>Pracovná zmluva</h3>
+              <p>Doba neurčitá od prvého dňa po skúšobke. Žiadny SZČO ani brigáda.</p>
+            </div>
+          </div>
+          <div class="benefit">
+            <div class="benefit-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            </div>
+            <div>
+              <h3>Predvídateľný rozvrh</h3>
+              <p>Po–Pi 8:00–17:00. Plán týždeň vopred. Voliteľné víkendy s príplatkom 30 %.</p>
+            </div>
+          </div>
+          <div class="benefit">
+            <div class="benefit-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 10h18M7 14h2"/></svg>
+            </div>
+            <div>
+              <h3>Stravné lístky</h3>
+              <p>5,50 € na pracovný deň. Vyplatené elektronicky na kartu Up Déjeuner.</p>
+            </div>
+          </div>
+          <div class="benefit">
+            <div class="benefit-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12l2-2 5 5 11-11"/></svg>
+            </div>
+            <div>
+              <h3>Bonusy za výkon</h3>
+              <p>200–400 € mesačne podľa počtu zásielok a NPS hodnotenia od zákazníkov.</p>
+            </div>
+          </div>
+          <div class="benefit">
+            <div class="benefit-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4h4v16M4 4v16h12"/></svg>
+            </div>
+            <div>
+              <h3>Mobilný telefón</h3>
+              <p>Služobný telefón a tablet pre komunikáciu so zákazníkom a navigáciu.</p>
+            </div>
+          </div>
+          <div class="benefit">
+            <div class="benefit-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 12l3 3 5-5"/></svg>
+            </div>
+            <div>
+              <h3>Pracovné oblečenie</h3>
+              <p>Brandované tričká, zimná bunda, rukavice, bezpečnostná obuv. Všetko od nás.</p>
+            </div>
+          </div>
+          <div class="benefit">
+            <div class="benefit-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+            </div>
+            <div>
+              <h3>Vzdelávanie</h3>
+              <p>Pravidelné školenia (BOZP, manipulácia s nákladom, komunikácia so zákazníkom).</p>
+            </div>
+          </div>
+          <div class="benefit">
+            <div class="benefit-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="7" r="4"/><circle cx="17" cy="7" r="4"/><path d="M3 21v-2a4 4 0 0 1 4-4h4M13 21v-2a4 4 0 0 1 4-4h4"/></svg>
+            </div>
+            <div>
+              <h3>Teambuildingy</h3>
+              <p>Spoločné akcie 2× ročne — leto, zima. Všetko platí firma.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROCESS -->
+    <section class="process">
+      <div class="process-inner">
+        <div class="process-header">
+          <div class="eyebrow">Ako to prebehne</div>
+          <h2>Štyri kroky <span class="o">k nástupu.</span></h2>
+        </div>
+        <div class="process-grid">
+          <div class="process-step">
+            <div class="step-num">01</div>
+            <h3>Pošlete CV</h3>
+            <p>E-mailom na ahoj@neseme.sk alebo cez tlačidlo pri pozícii. Potvrdíme prijatie do 24 h.</p>
+          </div>
+          <div class="process-step">
+            <div class="step-num">02</div>
+            <h3>Telefonický rozhovor</h3>
+            <p>15-minútový hovor o vašich skúsenostiach a očakávaniach. Termín si dohodneme podľa vás.</p>
+          </div>
+          <div class="process-step">
+            <div class="step-num">03</div>
+            <h3>Skúšobný deň</h3>
+            <p>1 deň s naším tímom — sledujete prácu, pomáhate, spoznáte realitu. Platený.</p>
+          </div>
+          <div class="process-step">
+            <div class="step-num">04</div>
+            <h3>Nástup</h3>
+            <p>Pri obojstrannej zhode podpisujeme zmluvu. Nástup do 14 dní podľa vašich možností.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-strip">
+      <div class="cta-strip-inner">
+        <h2>Tak <span style="color:var(--c-primary);">poďme</span> na to.</h2>
+        <div class="cta-strip-text">
+          <p>Pošlite životopis a stručne napíšte, prečo by ste sa hodili. Reagujeme do 24 hodín. Cez víkendy aj sviatky.</p>
+          <div class="cta-strip-actions">
+            <a href="mailto:ahoj@neseme.sk?subject=Životopis&amp;body=Dobrý%20deň%2C%0A%0Amám%20záujem%20o%20prácu%20v%20Neseme.%0A-%20Meno%20a%20priezvisko%3A%0A-%20Telefón%3A%0A-%20O%20akú%20pozíciu%20mám%20záujem%3A%0A-%20Stručne%20o%20mne%3A%0A%0AŽivotopis%20pripájam%20v%20prílohe." class="btn btn-primary btn-arrow">
+              Poslať životopis
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+            </a>
+            <a href="tel:+421917588738" class="btn btn-ghost-light">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              Volať +421 917 588 738
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="/" class="logo" aria-label="Neseme — domovská stránka">
+            <span class="logo-mark"></span><span>NESEME</span>
+          </a>
+          <p>XL doprava, výnos a montáž pre domácnosti aj e-shopy. Bratislava a celé Slovensko.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Služby</h4>
+          <ul>
+            <li><a href="/#sluzby">Neseme XL</a></li>
+            <li><a href="/#sluzby">Neseme Elektro</a></li>
+            <li><a href="/#sluzby">Neseme Home</a></li>
+            <li><a href="/#firmy">Neseme Business</a></li>
+            <li><a href="/#sluzby">Neseme Express</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Spoločnosť</h4>
+          <ul>
+            <li><a href="o-nas.html">O nás</a></li>
+            <li><a href="kariera.html">Kariéra</a></li>
+            <li><a href="pre-media.html">Pre médiá</a></li>
+            <li><a href="kontakt.html">Kontakt</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Právne dokumenty</h4>
+          <ul>
+            <li><a href="obchodne-podmienky.html">Obchodné podmienky</a></li>
+            <li><a href="reklamacny-poriadok.html">Reklamačný poriadok</a></li>
+            <li><a href="odstupenie-od-zmluvy.html">Odstúpenie od zmluvy</a></li>
+            <li><a href="ochrana-osobnych-udajov.html">Ochrana údajov</a></li>
+            <li><a href="cookies.html">Cookies</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Kontakt</h4>
+          <ul>
+            <li><a href="tel:+421917588738">+421 917 588 738</a></li>
+            <li><a href="mailto:ahoj@neseme.sk">ahoj@neseme.sk</a></li>
+            <li><a href="https://maps.google.com/?q=Landererova+8,+Bratislava" target="_blank" rel="noopener">Landererova 8, BA</a></li>
+            <li><span>Po–Ne · 7:00–21:00</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span class="footer-bottom-meta">© 2026 Orostone s.r.o. · <a href="kontakt.html" style="color:rgba(255,255,255,0.7); text-decoration:underline;">Fakturačné údaje</a></span>
+        <a href="tel:+421917588738" class="footer-bottom-phone">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          +421 917 588 738
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 8) header.classList.add('scrolled'); else header.classList.remove('scrolled');
+    }, { passive: true });
+
+    const menuOpen = document.getElementById('menuOpen');
+    const menuClose = document.getElementById('menuClose');
+    const mobileMenu = document.getElementById('mobileMenu');
+    if (menuOpen) menuOpen.addEventListener('click', () => { mobileMenu.classList.add('open'); document.body.classList.add('menu-open'); });
+    if (menuClose) menuClose.addEventListener('click', () => { mobileMenu.classList.remove('open'); document.body.classList.remove('menu-open'); });
+    document.querySelectorAll('.mobile-menu-nav a').forEach(a => a.addEventListener('click', () => { mobileMenu.classList.remove('open'); document.body.classList.remove('menu-open'); }));
+
+    document.querySelectorAll('.position').forEach(p => {
+      p.addEventListener('click', () => p.classList.toggle('open'));
+    });
+
+    (function () {
+      const banner = document.getElementById('cookieBanner');
+      const btn = document.getElementById('cookieBannerOk');
+      if (!banner || !btn) return;
+      try { if (localStorage.getItem('neseme-cookies-ack') === '1') return; } catch (e) {}
+      setTimeout(() => banner.classList.add('visible'), 800);
+      btn.addEventListener('click', () => {
+        try { localStorage.setItem('neseme-cookies-ack', '1'); } catch (e) {}
+        banner.classList.remove('visible');
+        setTimeout(() => banner.remove(), 400);
+      });
+    })();
+  </script>
+</body>
+</html>
