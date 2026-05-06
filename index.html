@@ -389,9 +389,10 @@
     }
     .logo-mark {
       display: inline-block;
-      width: 28px;
-      height: 18px;
+      width: 1.2em;
+      height: 0.78em;
       position: relative;
+      flex-shrink: 0;
     }
     .logo-mark::before {
       content: '';
@@ -2436,7 +2437,7 @@
     @media (max-width: 380px) {
       .header-actions { gap: 8px; }
       .logo { font-size: 20px; }
-      .logo-mark { width: 22px; height: 14px; }
+      /* logo-mark scales via em — no override needed */
       .hero-title { font-size: clamp(32px, 11vw, 48px); }
       .section-title { font-size: clamp(30px, 9vw, 44px); }
       .manifesto-text { font-size: clamp(34px, 10vw, 52px); }
