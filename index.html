@@ -414,6 +414,7 @@
       color: var(--c-text-primary);
       transition: color var(--duration) var(--ease);
       position: relative;
+      white-space: nowrap;
     }
     .nav-link:hover { color: var(--c-secondary); }
     .nav-link::after {
@@ -438,7 +439,10 @@
       font-weight: 700;
       font-size: 15px;
       letter-spacing: 0.01em;
+      white-space: nowrap;
+      flex-shrink: 0;
     }
+    .header-phone span { white-space: nowrap; }
     .header-phone svg { color: var(--c-secondary); }
 
     .menu-toggle { display: none; }
@@ -2156,6 +2160,14 @@
     /* ============================================================
        RESPONSIVE
        ============================================================ */
+    /* Intermediate desktop — hide phone to give nav breathing room */
+    @media (max-width: 1180px) {
+      .header-phone { display: none; }
+      .header-inner { gap: 24px; }
+      .nav { gap: 22px; }
+      .nav-link { font-size: 14px; }
+    }
+
     @media (max-width: 1100px) {
       .services-grid { grid-template-columns: repeat(2, 1fr); }
       .service-card { min-height: 420px; }

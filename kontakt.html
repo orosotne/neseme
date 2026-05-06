@@ -332,6 +332,7 @@
       font-weight: 500; font-size: 14px;
       letter-spacing: 0.02em;
       transition: color var(--duration) var(--ease);
+      white-space: nowrap;
     }
     .nav-link:hover { color: var(--c-secondary); }
     .nav-link.active { color: var(--c-secondary); }
@@ -341,7 +342,10 @@
       font-family: var(--font-mono); font-size: 13px;
       letter-spacing: 0.02em;
       transition: color var(--duration) var(--ease);
+      white-space: nowrap;
+      flex-shrink: 0;
     }
+    .header-phone span { white-space: nowrap; }
     .header-phone:hover { color: var(--c-secondary); }
     .menu-toggle { display: none; }
 
@@ -844,6 +848,14 @@
     body.menu-open { overflow: hidden; }
 
     /* RESPONSIVE */
+    /* Intermediate desktop — hide phone for nav breathing room */
+    @media (max-width: 1180px) {
+      .header-phone { display: none; }
+      .header-inner { gap: 24px; }
+      .nav { gap: 22px; }
+      .nav-link { font-size: 13px; }
+    }
+
     @media (max-width: 1024px) {
       .contact-grid { grid-template-columns: 1fr; gap: 64px; }
       .contact-form-wrap { position: static; }
