@@ -105,8 +105,15 @@
   }
   </script>
 
+  <!-- Performance: preconnect + DNS prefetch -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="dns-prefetch" href="https://images.unsplash.com" />
+
+  <!-- Prefetch contact page (likely next navigation) -->
+  <link rel="prefetch" href="/kontakt.html" />
+
+  <!-- Fonts (display=swap prevents FOIT) -->
   <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;700;900&family=Inter:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
 
   <style>
@@ -2382,7 +2389,7 @@
        ============================================================ -->
   <header class="header" id="header">
     <div class="header-inner">
-      <a href="#" class="logo" aria-label="Neseme">
+      <a href="/" class="logo" aria-label="Neseme — domovská stránka">
         <span class="logo-mark"></span>
         <span>NESEME</span>
       </a>
@@ -2412,7 +2419,7 @@
        ============================================================ -->
   <div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-label="Menu">
     <div class="mobile-menu-header">
-      <a href="#" class="logo">
+      <a href="/" class="logo" aria-label="Neseme — domovská stránka">
         <span class="logo-mark"></span>
         <span>NESEME</span>
       </a>
@@ -3003,7 +3010,11 @@
           <div class="business-visual-overlay"></div>
           <img
             src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1400&q=80"
-            alt="Sklad s veľkými zásielkami"
+            alt="Sklad s nadrozmernými zásielkami pripravenými na doručenie"
+            width="1400"
+            height="1050"
+            loading="lazy"
+            decoding="async"
             onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1553413077-190dd305871c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1400&q=80';"
           />
           <div class="business-visual-text">
@@ -3334,7 +3345,7 @@
     <div class="footer-inner">
       <div class="footer-grid">
         <div class="footer-brand">
-          <a href="#" class="logo">
+          <a href="/" class="logo" aria-label="Neseme — domovská stránka">
             <span class="logo-mark"></span>
             <span>NESEME</span>
           </a>
@@ -3347,31 +3358,31 @@
         <div class="footer-col">
           <h4>Služby</h4>
           <ul>
-            <li><a href="#">Neseme XL</a></li>
-            <li><a href="#">Neseme Elektro</a></li>
-            <li><a href="#">Neseme Home</a></li>
-            <li><a href="#">Neseme Business</a></li>
-            <li><a href="#">Neseme Express</a></li>
+            <li><a href="#sluzby">Neseme XL</a></li>
+            <li><a href="#sluzby">Neseme Elektro</a></li>
+            <li><a href="#sluzby">Neseme Home</a></li>
+            <li><a href="#firmy">Neseme Business</a></li>
+            <li><a href="#sluzby">Neseme Express</a></li>
           </ul>
         </div>
 
         <div class="footer-col">
           <h4>Firma</h4>
           <ul>
-            <li><a href="#">O nás</a></li>
-            <li><a href="#">Kariéra</a></li>
+            <li><a href="#firmy">O nás</a></li>
+            <li><a href="mailto:ahoj@neseme.sk?subject=Kariéra">Kariéra</a></li>
             <li><a href="kontakt.html">Kontakt</a></li>
-            <li><a href="#">Pre médiá</a></li>
+            <li><a href="mailto:ahoj@neseme.sk?subject=Pre%20médiá">Pre médiá</a></li>
           </ul>
         </div>
 
         <div class="footer-col">
           <h4>Pre firmy</h4>
           <ul>
-            <li><a href="#">B2B partnerstvo</a></li>
-            <li><a href="#">API dokumentácia</a></li>
-            <li><a href="#">Cenník B2B</a></li>
-            <li><a href="#">Prípadové štúdie</a></li>
+            <li><a href="#firmy">B2B partnerstvo</a></li>
+            <li><a href="mailto:ahoj@neseme.sk?subject=API%20dokumentácia">API dokumentácia</a></li>
+            <li><a href="mailto:ahoj@neseme.sk?subject=B2B%20cenník">Cenník B2B</a></li>
+            <li><a href="mailto:ahoj@neseme.sk?subject=Prípadová%20štúdia">Prípadové štúdie</a></li>
           </ul>
         </div>
 
