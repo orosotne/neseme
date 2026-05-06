@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#111111" />
+  <meta name="robots" content="index, follow" />
+  <title>Ochrana osobných údajov — Neseme</title>
+  <meta name="description" content="Zásady ochrany osobných údajov spoločnosti Orostone s.r.o. (značka Neseme). Spracovanie podľa GDPR." />
+  <link rel="canonical" href="https://neseme.sk/ochrana-osobnych-udajov.html" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;700;900&family=Inter:wght@400;500;700&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --c-primary: #111111;
+      --c-secondary: #FA5400;
+      --c-bg: #FFFFFF;
+      --c-surface: #F5F5F5;
+      --c-text-secondary: #707072;
+      --c-border: #E5E5E5;
+      --font-display: 'Jost', system-ui, sans-serif;
+      --font-body: 'Inter', system-ui, sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+      --ease: cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { -webkit-text-size-adjust: 100%; }
+    body {
+      font-family: var(--font-body);
+      font-size: 16px;
+      line-height: 1.7;
+      color: var(--c-primary);
+      background: var(--c-bg);
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: var(--c-primary); text-decoration: underline; }
+    a:hover { color: var(--c-secondary); }
+    .header {
+      padding: 24px 32px;
+      border-bottom: 1px solid var(--c-border);
+    }
+    .header-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: 22px;
+      letter-spacing: -0.02em;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: var(--c-primary);
+    }
+    .logo-mark {
+      display: inline-block;
+      width: 26px;
+      height: 16px;
+      position: relative;
+    }
+    .logo-mark::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: var(--c-primary);
+      clip-path: polygon(0 70%, 35% 0, 100% 0, 100% 30%, 65% 100%, 0 100%);
+    }
+    .back-link {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: var(--c-text-secondary);
+    }
+    .back-link:hover { color: var(--c-secondary); }
+    main {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 64px 32px 96px;
+    }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-family: var(--font-mono);
+      font-size: 12px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--c-secondary);
+      margin-bottom: 16px;
+    }
+    .eyebrow::before {
+      content: '';
+      width: 28px;
+      height: 1px;
+      background: var(--c-secondary);
+    }
+    h1 {
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: clamp(36px, 5vw, 56px);
+      line-height: 1.05;
+      letter-spacing: -0.025em;
+      text-transform: uppercase;
+      padding-top: 0.14em;
+      margin-bottom: 16px;
+    }
+    .updated {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--c-text-secondary);
+      margin-bottom: 48px;
+    }
+    h2 {
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: 22px;
+      letter-spacing: -0.01em;
+      text-transform: uppercase;
+      padding-top: 0.1em;
+      margin-top: 48px;
+      margin-bottom: 12px;
+    }
+    h3 {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 17px;
+      margin-top: 24px;
+      margin-bottom: 8px;
+    }
+    p, li { margin-bottom: 12px; }
+    ul, ol { padding-left: 24px; margin-bottom: 16px; }
+    .info-card {
+      background: var(--c-surface);
+      padding: 24px 28px;
+      border-left: 3px solid var(--c-secondary);
+      border-radius: 4px;
+      margin: 24px 0;
+      font-size: 15px;
+    }
+    .info-card strong { display: block; margin-bottom: 8px; }
+    footer {
+      border-top: 1px solid var(--c-border);
+      padding: 32px;
+      text-align: center;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      color: var(--c-text-secondary);
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="header-inner">
+      <a href="/" class="logo" aria-label="Neseme — domovská stránka">
+        <span class="logo-mark"></span>
+        <span>NESEME</span>
+      </a>
+      <a href="/" class="back-link">← Späť na hlavnú</a>
+    </div>
+  </header>
+
+  <main>
+    <div class="eyebrow">Právne dokumenty</div>
+    <h1>Ochrana<br>osobných údajov</h1>
+    <div class="updated">Účinné od 6. mája 2026 · GDPR + zákon č. 18/2018 Z. z.</div>
+
+    <p>Spoločnosť <strong>Orostone s.r.o.</strong> (značka <strong>Neseme</strong>) rešpektuje vaše súkromie. Tento dokument vysvetľuje, aké osobné údaje spracúvame, na aký účel, ako ich chránime a aké máte práva.</p>
+
+    <div class="info-card">
+      <strong>Prevádzkovateľ</strong>
+      Orostone s.r.o., Landererova 8, 811 09 Bratislava<br>
+      IČO: 55 254 772 · DIČ: 2121930580 · IČ DPH: SK2121930580<br>
+      E-mail: <a href="mailto:ahoj@neseme.sk">ahoj@neseme.sk</a> · Tel: <a href="tel:+421917588738">+421 917 588 738</a>
+    </div>
+
+    <h2>1. Aké údaje spracúvame</h2>
+    <p>Pri objednávke dopravy alebo dopyte spracúvame:</p>
+    <ul>
+      <li><strong>Identifikačné údaje:</strong> meno a priezvisko, názov firmy</li>
+      <li><strong>Kontaktné údaje:</strong> telefón, e-mail, adresa doručenia a vyzdvihnutia</li>
+      <li><strong>Údaje o zásielke:</strong> rozmery, váha, druh tovaru, fotodokumentácia odovzdania</li>
+      <li><strong>Fakturačné údaje:</strong> IČO, DIČ, IČ DPH, fakturačná adresa (pri B2B)</li>
+      <li><strong>Technické údaje:</strong> IP adresa, typ prehliadača, čas návštevy (z logov servera)</li>
+    </ul>
+
+    <h2>2. Účel spracúvania</h2>
+    <ul>
+      <li><strong>Plnenie zmluvy</strong> — zabezpečenie dopravy, výnosu a montáže (čl. 6 ods. 1 písm. b GDPR)</li>
+      <li><strong>Plnenie zákonných povinností</strong> — fakturácia, účtovníctvo, archivácia (čl. 6 ods. 1 písm. c GDPR)</li>
+      <li><strong>Oprávnený záujem</strong> — riešenie reklamácií, evidencia odovzdania, ochrana pred zneužitím (čl. 6 ods. 1 písm. f GDPR)</li>
+      <li><strong>Súhlas</strong> — pri marketingovej komunikácii, ak ho výslovne udelíte (čl. 6 ods. 1 písm. a GDPR)</li>
+    </ul>
+
+    <h2>3. Doba uchovávania</h2>
+    <ul>
+      <li>Údaje k objednávke: <strong>10 rokov</strong> (zákon o účtovníctve)</li>
+      <li>Daňové doklady: <strong>10 rokov</strong></li>
+      <li>Komunikácia s klientmi: <strong>3 roky</strong></li>
+      <li>Logy servera: <strong>30 dní</strong></li>
+    </ul>
+
+    <h2>4. Komu údaje poskytujeme</h2>
+    <p>Údaje neposkytujeme tretím stranám, okrem nasledujúcich príjemcov:</p>
+    <ul>
+      <li><strong>Účtovník</strong> — pre vedenie účtovníctva (zmluva o spracúvaní)</li>
+      <li><strong>Orgány verejnej moci</strong> — daňový úrad, súdy (ak to vyžaduje zákon)</li>
+      <li><strong>Poskytovatelia IT služieb</strong> — Vercel Inc. (hosting), Google LLC (e-mail) — všetci so štandardnými zmluvnými doložkami pre prenos do EÚ/USA</li>
+    </ul>
+
+    <h2>5. Vaše práva</h2>
+    <p>Máte právo:</p>
+    <ul>
+      <li><strong>Na prístup</strong> k vašim osobným údajom (čl. 15 GDPR)</li>
+      <li><strong>Na opravu</strong> nesprávnych údajov (čl. 16 GDPR)</li>
+      <li><strong>Na výmaz</strong> ("právo byť zabudnutý"), ak je to možné (čl. 17 GDPR)</li>
+      <li><strong>Na obmedzenie spracúvania</strong> (čl. 18 GDPR)</li>
+      <li><strong>Na prenosnosť údajov</strong> (čl. 20 GDPR)</li>
+      <li><strong>Namietať</strong> proti spracúvaniu (čl. 21 GDPR)</li>
+      <li><strong>Odvolať súhlas</strong>, ak ste ho udelili</li>
+      <li><strong>Podať sťažnosť</strong> Úradu na ochranu osobných údajov SR (<a href="https://dataprotection.gov.sk" target="_blank" rel="noopener">dataprotection.gov.sk</a>)</li>
+    </ul>
+
+    <h2>6. Cookies</h2>
+    <p>Web <strong>neseme.sk</strong> používa iba <strong>technicky nevyhnutné cookies</strong> (pre fungovanie stránky), ktoré nepotrebujú váš súhlas. Nepoužívame analytické ani reklamné cookies.</p>
+    <p>Tretie strany, ktoré môžu nastaviť technické cookies:</p>
+    <ul>
+      <li><strong>Google Fonts</strong> — pre načítanie fontov (CSS)</li>
+      <li><strong>OpenStreetMap</strong> — pre zobrazenie mapy v sekcii Kontakt</li>
+    </ul>
+
+    <h2>7. Bezpečnosť</h2>
+    <p>Vaše údaje chránime technickými a organizačnými opatreniami: HTTPS šifrovanie, prístupové oprávnenia, pravidelné zálohovanie, mlčanlivosť zamestnancov, fyzické zabezpečenie.</p>
+
+    <h2>8. Kontakt</h2>
+    <p>Pre uplatnenie ktoréhokoľvek práva, otázky alebo žiadosti nás kontaktujte:</p>
+    <div class="info-card">
+      <strong>Orostone s.r.o.</strong>
+      Landererova 8, 811 09 Bratislava<br>
+      E-mail: <a href="mailto:ahoj@neseme.sk?subject=GDPR%20žiadosť">ahoj@neseme.sk</a><br>
+      Tel: <a href="tel:+421917588738">+421 917 588 738</a>
+    </div>
+
+    <h2>9. Zmeny dokumentu</h2>
+    <p>Tieto zásady môžeme pravidelne aktualizovať. Aktuálne znenie je vždy na tejto stránke s dátumom účinnosti.</p>
+  </main>
+
+  <footer>
+    © 2026 Orostone s.r.o. · <a href="/kontakt.html" style="color: var(--c-secondary); text-decoration: none;">Kontakt</a>
+  </footer>
+</body>
+</html>

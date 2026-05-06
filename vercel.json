@@ -2,6 +2,13 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "cleanUrls": true,
   "trailingSlash": false,
+  "redirects": [
+    { "source": "/index", "destination": "/", "permanent": true },
+    { "source": "/index.html", "destination": "/", "permanent": true },
+    { "source": "/home", "destination": "/", "permanent": true },
+    { "source": "/contact", "destination": "/kontakt", "permanent": true },
+    { "source": "/privacy", "destination": "/ochrana-osobnych-udajov", "permanent": true }
+  ],
   "headers": [
     {
       "source": "/(.*)",
@@ -28,7 +35,7 @@
         },
         {
           "key": "Content-Security-Policy",
-          "value": "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: https://images.unsplash.com; frame-src https://www.openstreetmap.org; connect-src 'self'; base-uri 'self'; form-action 'self' mailto:; frame-ancestors 'self';"
+          "value": "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: https://images.unsplash.com; frame-src https://www.openstreetmap.org; connect-src 'self'; base-uri 'self'; form-action 'self' mailto:; frame-ancestors 'self'; manifest-src 'self'; upgrade-insecure-requests;"
         }
       ]
     },
@@ -62,6 +69,13 @@
       "headers": [
         { "key": "Content-Type", "value": "text/plain; charset=utf-8" },
         { "key": "Cache-Control", "value": "public, max-age=3600" }
+      ]
+    },
+    {
+      "source": "/manifest.json",
+      "headers": [
+        { "key": "Content-Type", "value": "application/manifest+json; charset=utf-8" },
+        { "key": "Cache-Control", "value": "public, max-age=86400" }
       ]
     }
   ]

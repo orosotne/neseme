@@ -38,11 +38,18 @@
   <meta name="twitter:description" content="Veľké veci až k vám domov. Doprava, výnos a montáž bielej techniky a nábytku. Bratislava + celé Slovensko." />
   <meta name="twitter:image" content="https://neseme.sk/og-image.svg" />
 
-  <!-- Favicon -->
+  <!-- Favicon + PWA manifest -->
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <link rel="alternate icon" type="image/png" href="/favicon.svg" />
   <link rel="apple-touch-icon" href="/favicon.svg" />
   <link rel="mask-icon" href="/favicon.svg" color="#FA5400" />
+  <link rel="manifest" href="/manifest.json" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Neseme" />
+  <meta name="application-name" content="Neseme" />
+  <meta name="msapplication-TileColor" content="#111111" />
+  <meta name="color-scheme" content="light" />
 
   <!-- JSON-LD Local Business Schema -->
   <script type="application/ld+json">
@@ -161,6 +168,88 @@
        ============================================================ */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+    /* Cookie banner */
+    .cookie-banner {
+      position: fixed;
+      bottom: 16px;
+      left: 16px;
+      right: 16px;
+      max-width: 560px;
+      margin: 0 auto;
+      background: var(--c-primary);
+      color: var(--c-bg);
+      padding: 20px 24px;
+      border-radius: 12px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+      z-index: 999;
+      display: flex;
+      gap: 16px;
+      align-items: center;
+      font-size: 13px;
+      line-height: 1.5;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 300ms var(--ease), transform 300ms var(--ease);
+      pointer-events: none;
+    }
+    .cookie-banner.visible {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+    .cookie-banner-text {
+      flex: 1;
+      color: rgba(255,255,255,0.85);
+    }
+    .cookie-banner-text a {
+      color: var(--c-secondary);
+      text-decoration: underline;
+    }
+    .cookie-banner-text a:hover { color: var(--c-bg); }
+    .cookie-banner-btn {
+      background: var(--c-secondary);
+      color: var(--c-bg);
+      padding: 10px 20px;
+      border-radius: 30px;
+      font-family: var(--font-body);
+      font-weight: 500;
+      font-size: 13px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      cursor: pointer;
+      flex-shrink: 0;
+      border: none;
+      transition: background var(--duration) var(--ease);
+    }
+    .cookie-banner-btn:hover { background: #d94900; }
+    @media (max-width: 560px) {
+      .cookie-banner { flex-direction: column; align-items: flex-start; padding: 16px; }
+      .cookie-banner-btn { width: 100%; padding: 12px; }
+    }
+
+    /* Skip link — accessibility */
+    .skip-to-content {
+      position: absolute;
+      top: -100px;
+      left: 16px;
+      z-index: 9999;
+      padding: 12px 20px;
+      background: var(--c-primary);
+      color: var(--c-bg);
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 14px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      border-radius: 8px;
+      transition: top 200ms var(--ease);
+    }
+    .skip-to-content:focus {
+      top: 16px;
+      outline: 2px solid var(--c-secondary);
+      outline-offset: 2px;
+    }
     body {
       font-family: var(--font-body);
       font-size: 15px;
@@ -253,7 +342,7 @@
     .btn-ghost-light {
       background: transparent;
       color: var(--c-bg);
-      border: 1px solid rgba(255,255,255,0.4);
+      border: 1px solid rgba(255,255,255,0.6);
     }
     .btn-ghost-light:hover {
       background: var(--c-bg);
@@ -1342,7 +1431,7 @@
       font-size: 11px;
       letter-spacing: 0.1em;
       text-transform: uppercase;
-      color: rgba(255,255,255,0.5);
+      color: rgba(255,255,255,0.7);
       text-align: right;
       flex-shrink: 0;
     }
@@ -1384,7 +1473,7 @@
       font-family: var(--font-mono);
       font-size: 11px;
       letter-spacing: 0.12em;
-      color: rgba(255,255,255,0.4);
+      color: rgba(255,255,255,0.6);
       margin-bottom: 24px;
       display: flex;
       align-items: center;
@@ -1455,7 +1544,7 @@
       font-family: var(--font-mono);
       font-size: 11px;
       letter-spacing: 0.06em;
-      color: rgba(255,255,255,0.4);
+      color: rgba(255,255,255,0.6);
     }
 
     /* ============================================================
@@ -1888,7 +1977,7 @@
     }
     .footer-grid {
       display: grid;
-      grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+      grid-template-columns: 2fr 1fr 1fr 1.2fr;
       gap: 48px;
       padding-bottom: 64px;
       border-bottom: 1px solid rgba(255,255,255,0.1);
@@ -1929,25 +2018,22 @@
     .footer-bottom-meta {
       font-family: var(--font-mono);
       font-size: 12px;
-      color: rgba(255,255,255,0.5);
+      color: rgba(255,255,255,0.7);
       letter-spacing: 0.04em;
       text-transform: uppercase;
     }
-    .footer-social { display: flex; gap: 12px; }
-    .footer-social a {
-      width: 36px;
-      height: 36px;
-      border-radius: 50%;
-      background: rgba(255,255,255,0.08);
-      display: flex;
+    .footer-bottom-phone {
+      display: inline-flex;
       align-items: center;
-      justify-content: center;
-      transition: all var(--duration) var(--ease);
+      gap: 8px;
+      font-family: var(--font-mono);
+      font-size: 13px;
+      letter-spacing: 0.04em;
+      color: rgba(255,255,255,0.85);
+      transition: color var(--duration) var(--ease);
     }
-    .footer-social a:hover {
-      background: var(--c-secondary);
-      transform: translateY(-2px);
-    }
+    .footer-bottom-phone:hover { color: var(--c-secondary); }
+    .footer-bottom-phone svg { color: var(--c-secondary); }
 
     /* ============================================================
        ANIMATIONS
@@ -2073,7 +2159,6 @@
       .services-grid { grid-template-columns: repeat(2, 1fr); }
       .service-card { min-height: 420px; }
       .footer-grid { grid-template-columns: 1.5fr 1fr 1fr; }
-      .footer-col:nth-child(4), .footer-col:nth-child(5) { display: none; }
       .business-grid, .coverage-grid { gap: 48px; }
       .business-grid { grid-template-columns: 1fr 1fr; }
       .coverage-grid { grid-template-columns: 1fr 1fr; }
@@ -2370,6 +2455,29 @@
       .mobile-menu { padding-left: max(24px, env(safe-area-inset-left)); padding-right: max(24px, env(safe-area-inset-right)); padding-bottom: max(24px, env(safe-area-inset-bottom)); }
     }
 
+    /* Print stylesheet — for sharing/printing pages */
+    @media print {
+      .header, .mobile-menu, .footer-bottom-phone,
+      .marquee-stripe, .van-band, .stats-band, .cta-final,
+      .cookie-banner, .skip-to-content, .menu-toggle,
+      .hero-cta, .business-cta { display: none !important; }
+      body { font-size: 11pt; line-height: 1.4; color: #000; background: #fff; }
+      .hero, .section, .business, .coverage, .pricing, .footer {
+        padding: 16pt 0; background: #fff !important; color: #000 !important;
+      }
+      .hero-bg-text, .van-band-bg-text, .manifesto-bg, .cta-final-bg { display: none !important; }
+      .hero-title, .section-title, .manifesto-text, .cta-final-title { color: #000 !important; }
+      .hero-title .accent, .o { color: #000 !important; text-decoration: underline; }
+      a { color: #000; text-decoration: underline; }
+      a[href^="http"]::after, a[href^="mailto"]::after, a[href^="tel"]::after {
+        content: " (" attr(href) ")";
+        font-size: 9pt;
+        color: #555;
+      }
+      .hero-medallion, .van-band-stat, .van-band-tag { display: none !important; }
+      [data-reveal] { opacity: 1 !important; transform: none !important; }
+    }
+
     /* Reduce motion for users who prefer it */
     @media (prefers-reduced-motion: reduce) {
       *, *::before, *::after {
@@ -2383,6 +2491,16 @@
   </style>
 </head>
 <body>
+
+  <a href="#main" class="skip-to-content">Preskočiť na obsah</a>
+
+  <!-- Cookie consent banner (GDPR) -->
+  <div class="cookie-banner" id="cookieBanner" role="dialog" aria-live="polite" aria-label="Súhlas s cookies">
+    <div class="cookie-banner-text">
+      Tento web používa iba <strong>technicky nevyhnutné cookies</strong> potrebné pre fungovanie stránky. Nepoužívame analytické ani marketingové cookies. Viac v <a href="/ochrana-osobnych-udajov.html">Ochrane osobných údajov</a>.
+    </div>
+    <button class="cookie-banner-btn" id="cookieBannerOk" type="button">Rozumiem</button>
+  </div>
 
   <!-- ============================================================
        HEADER
@@ -2451,6 +2569,8 @@
       <span>ahoj@neseme.sk</span>
     </div>
   </div>
+
+  <main id="main">
 
   <!-- ============================================================
        HERO
@@ -2635,10 +2755,10 @@
           <line x1="4" y1="110" x2="16" y2="110" stroke="rgba(255,255,255,0.85)" stroke-width="2.5" stroke-linecap="round"/>
           <line x1="204" y1="110" x2="216" y2="110" stroke="rgba(255,255,255,0.85)" stroke-width="2.5" stroke-linecap="round"/>
           <!-- Diagonal subtle markers -->
-          <circle cx="42" cy="42" r="2" fill="rgba(255,255,255,0.5)"/>
-          <circle cx="178" cy="42" r="2" fill="rgba(255,255,255,0.5)"/>
-          <circle cx="42" cy="178" r="2" fill="rgba(255,255,255,0.5)"/>
-          <circle cx="178" cy="178" r="2" fill="rgba(255,255,255,0.5)"/>
+          <circle cx="42" cy="42" r="2" fill="rgba(255,255,255,0.7)"/>
+          <circle cx="178" cy="42" r="2" fill="rgba(255,255,255,0.7)"/>
+          <circle cx="42" cy="178" r="2" fill="rgba(255,255,255,0.7)"/>
+          <circle cx="178" cy="178" r="2" fill="rgba(255,255,255,0.7)"/>
           <!-- Rotating dashed ring -->
           <g class="medallion-spin">
             <circle cx="110" cy="110" r="90" fill="none" stroke="rgba(255,255,255,0.45)" stroke-width="1" stroke-dasharray="3 6"/>
@@ -3171,10 +3291,10 @@
 
             <!-- Scale bar bottom-right -->
             <g transform="translate(290 372)">
-              <line x1="0" y1="0" x2="80" y2="0" stroke="rgba(255,255,255,0.5)" stroke-width="1.2"/>
-              <line x1="0" y1="-3" x2="0" y2="3" stroke="rgba(255,255,255,0.5)" stroke-width="1.2"/>
-              <line x1="40" y1="-2" x2="40" y2="2" stroke="rgba(255,255,255,0.5)" stroke-width="1"/>
-              <line x1="80" y1="-3" x2="80" y2="3" stroke="rgba(255,255,255,0.5)" stroke-width="1.2"/>
+              <line x1="0" y1="0" x2="80" y2="0" stroke="rgba(255,255,255,0.7)" stroke-width="1.2"/>
+              <line x1="0" y1="-3" x2="0" y2="3" stroke="rgba(255,255,255,0.7)" stroke-width="1.2"/>
+              <line x1="40" y1="-2" x2="40" y2="2" stroke="rgba(255,255,255,0.7)" stroke-width="1"/>
+              <line x1="80" y1="-3" x2="80" y2="3" stroke="rgba(255,255,255,0.7)" stroke-width="1.2"/>
               <text x="0" y="-7" fill="rgba(255,255,255,0.6)" font-family="JetBrains Mono" font-size="8">0</text>
               <text x="80" y="-7" fill="rgba(255,255,255,0.6)" font-family="JetBrains Mono" font-size="8" text-anchor="end">60 km</text>
             </g>
@@ -3332,11 +3452,13 @@
               Volať +421 917 588 738
             </a>
           </div>
-          <p style="margin-top:16px; font-size:13px; color:rgba(255,255,255,0.5);">Po–Ne · 7:00–21:00 · Reagujeme do 60 min</p>
+          <p style="margin-top:16px; font-size:13px; color:rgba(255,255,255,0.7);">Po–Ne · 7:00–21:00 · Reagujeme do 60 min</p>
         </div>
       </div>
     </div>
   </section>
+
+  </main>
 
   <!-- ============================================================
        FOOTER
@@ -3367,22 +3489,13 @@
         </div>
 
         <div class="footer-col">
-          <h4>Firma</h4>
+          <h4>Spoločnosť</h4>
           <ul>
-            <li><a href="#firmy">O nás</a></li>
-            <li><a href="mailto:ahoj@neseme.sk?subject=Kariéra">Kariéra</a></li>
+            <li><a href="/">Domov</a></li>
+            <li><a href="#firmy">Pre firmy</a></li>
+            <li><a href="#cennik">Cenník</a></li>
             <li><a href="kontakt.html">Kontakt</a></li>
-            <li><a href="mailto:ahoj@neseme.sk?subject=Pre%20médiá">Pre médiá</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-col">
-          <h4>Pre firmy</h4>
-          <ul>
-            <li><a href="#firmy">B2B partnerstvo</a></li>
-            <li><a href="mailto:ahoj@neseme.sk?subject=API%20dokumentácia">API dokumentácia</a></li>
-            <li><a href="mailto:ahoj@neseme.sk?subject=B2B%20cenník">Cenník B2B</a></li>
-            <li><a href="mailto:ahoj@neseme.sk?subject=Prípadová%20štúdia">Prípadové štúdie</a></li>
+            <li><a href="ochrana-osobnych-udajov.html">Ochrana údajov</a></li>
           </ul>
         </div>
 
@@ -3399,12 +3512,10 @@
 
       <div class="footer-bottom">
         <span class="footer-bottom-meta">© 2026 Orostone s.r.o. · <a href="kontakt.html" style="color:rgba(255,255,255,0.7); text-decoration:underline;">Fakturačné údaje</a></span>
-        <div class="footer-social">
-          <a href="#" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17" cy="7" r="1" fill="currentColor"/></svg></a>
-          <a href="#" aria-label="Facebook"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M9 8H6v4h3v12h5V12h3.6l.4-4h-4V6.5c0-1 .2-1.5 1.4-1.5H18V0h-3.5C10.7 0 9 1.7 9 5v3z"/></svg></a>
-          <a href="#" aria-label="LinkedIn"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM5 8H0v16h5V8zm7.98 0H8v16h5v-8.4c0-4.6 6-5 6 0V24h5v-9.4c0-7.8-9-7.5-11-3.6V8h-.02z"/></svg></a>
-          <a href="#" aria-label="TikTok"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19 8.5a7.6 7.6 0 0 1-4-1.2v8.2a6 6 0 1 1-6-6V13a3 3 0 1 0 3 3V0h3.5a4.5 4.5 0 0 0 4.5 4.5v4z"/></svg></a>
-        </div>
+        <a href="tel:+421917588738" class="footer-bottom-phone" aria-label="Zavolajte na +421 917 588 738">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          +421 917 588 738
+        </a>
       </div>
     </div>
   </footer>
@@ -3458,6 +3569,23 @@
     setVH();
     window.addEventListener('resize', setVH);
     window.addEventListener('orientationchange', setVH);
+
+    // Cookie consent banner (GDPR)
+    (function () {
+      const banner = document.getElementById('cookieBanner');
+      const acceptBtn = document.getElementById('cookieBannerOk');
+      if (!banner || !acceptBtn) return;
+      try {
+        if (localStorage.getItem('neseme-cookies-ack') === '1') return;
+      } catch (e) { /* localStorage blocked — show banner anyway */ }
+      // Show after small delay so it doesn't block initial paint
+      setTimeout(() => banner.classList.add('visible'), 800);
+      acceptBtn.addEventListener('click', () => {
+        try { localStorage.setItem('neseme-cookies-ack', '1'); } catch (e) {}
+        banner.classList.remove('visible');
+        setTimeout(() => banner.remove(), 400);
+      });
+    })();
   </script>
 </body>
 </html>

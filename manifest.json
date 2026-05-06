@@ -1,0 +1,28 @@
+{
+  "name": "Neseme — XL doprava, výnos a montáž",
+  "short_name": "Neseme",
+  "description": "Doprava, výnos a montáž bielej techniky, nábytku a nadrozmerných zásielok v Bratislave a okolí.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#FFFFFF",
+  "theme_color": "#111111",
+  "lang": "sk-SK",
+  "dir": "ltr",
+  "categories": ["business", "lifestyle", "productivity"],
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
+    }
+  ]
+}
