@@ -7,7 +7,13 @@
     { "source": "/index.html", "destination": "/", "permanent": true },
     { "source": "/home", "destination": "/", "permanent": true },
     { "source": "/contact", "destination": "/kontakt", "permanent": true },
-    { "source": "/privacy", "destination": "/ochrana-osobnych-udajov", "permanent": true }
+    { "source": "/privacy", "destination": "/ochrana-osobnych-udajov", "permanent": true },
+    { "source": "/gdpr", "destination": "/ochrana-osobnych-udajov", "permanent": true },
+    { "source": "/vop", "destination": "/obchodne-podmienky", "permanent": true },
+    { "source": "/terms", "destination": "/obchodne-podmienky", "permanent": true },
+    { "source": "/reklamacie", "destination": "/reklamacny-poriadok", "permanent": true },
+    { "source": "/odstupenie", "destination": "/odstupenie-od-zmluvy", "permanent": true },
+    { "source": "/withdrawal", "destination": "/odstupenie-od-zmluvy", "permanent": true }
   ],
   "headers": [
     {

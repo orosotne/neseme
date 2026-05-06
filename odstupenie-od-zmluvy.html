@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#111111" />
+  <meta name="robots" content="index, follow" />
+  <title>Odstúpenie od zmluvy — Neseme</title>
+  <meta name="description" content="Postup odstúpenia od zmluvy do 14 dní pre spotrebiteľov. Vzorový formulár Orostone s.r.o. (značka Neseme)." />
+  <link rel="canonical" href="https://neseme.sk/odstupenie-od-zmluvy.html" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;700;900&family=Inter:wght@400;500;700&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --c-primary: #111111;
+      --c-secondary: #FA5400;
+      --c-bg: #FFFFFF;
+      --c-surface: #F5F5F5;
+      --c-text-secondary: #707072;
+      --c-border: #E5E5E5;
+      --c-warning: #FFC107;
+      --font-display: 'Jost', system-ui, sans-serif;
+      --font-body: 'Inter', system-ui, sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+      --ease: cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { -webkit-text-size-adjust: 100%; }
+    body { font-family: var(--font-body); font-size: 16px; line-height: 1.7; color: var(--c-primary); background: var(--c-bg); -webkit-font-smoothing: antialiased; }
+    a { color: var(--c-primary); text-decoration: underline; }
+    a:hover { color: var(--c-secondary); }
+    .header { padding: 24px 32px; border-bottom: 1px solid var(--c-border); }
+    .header-inner { max-width: 960px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; }
+    .logo { display: flex; align-items: center; gap: 8px; font-family: var(--font-display); font-weight: 900; font-size: 22px; letter-spacing: -0.02em; text-transform: uppercase; text-decoration: none; color: var(--c-primary); }
+    .logo-mark { display: inline-block; width: 1.2em; height: 0.78em; position: relative; flex-shrink: 0; }
+    .logo-mark::before { content: ''; position: absolute; inset: 0; background: var(--c-primary); clip-path: polygon(0 70%, 35% 0, 100% 0, 100% 30%, 65% 100%, 0 100%); }
+    .back-link { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none; color: var(--c-text-secondary); }
+    .back-link:hover { color: var(--c-secondary); }
+    main { max-width: 720px; margin: 0 auto; padding: 64px 32px 96px; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 12px; font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--c-secondary); margin-bottom: 16px; }
+    .eyebrow::before { content: ''; width: 28px; height: 1px; background: var(--c-secondary); }
+    h1 { font-family: var(--font-display); font-weight: 900; font-size: clamp(36px, 5vw, 56px); line-height: 1.05; letter-spacing: -0.025em; text-transform: uppercase; padding-top: 0.14em; margin-bottom: 16px; }
+    .updated { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--c-text-secondary); margin-bottom: 48px; }
+    h2 { font-family: var(--font-display); font-weight: 900; font-size: 22px; letter-spacing: -0.01em; text-transform: uppercase; padding-top: 0.1em; margin-top: 48px; margin-bottom: 12px; }
+    p, li { margin-bottom: 12px; }
+    ul, ol { padding-left: 24px; margin-bottom: 16px; }
+    .info-card { background: var(--c-surface); padding: 24px 28px; border-left: 3px solid var(--c-secondary); border-radius: 4px; margin: 24px 0; font-size: 15px; }
+    .info-card strong { display: block; margin-bottom: 8px; }
+    .warning-card { background: #FFF8E1; padding: 20px 24px; border-left: 3px solid var(--c-warning); border-radius: 4px; margin: 24px 0; font-size: 15px; }
+
+    /* Withdrawal form */
+    .form-wrap {
+      background: var(--c-primary);
+      color: var(--c-bg);
+      padding: 40px 32px;
+      border-radius: 8px;
+      margin: 40px 0;
+    }
+    .form-wrap h3 {
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: 24px;
+      letter-spacing: -0.01em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    .form-wrap > p { color: rgba(255,255,255,0.7); font-size: 14px; margin-bottom: 24px; }
+    .form-row { margin-bottom: 16px; }
+    .form-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+    .form-label {
+      display: block;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.6);
+      margin-bottom: 6px;
+    }
+    .form-input, .form-textarea {
+      width: 100%;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid transparent;
+      border-radius: 8px;
+      padding: 14px 16px;
+      font-family: var(--font-body);
+      font-size: 15px;
+      color: var(--c-bg);
+      transition: border-color 200ms var(--ease), background 200ms var(--ease);
+    }
+    .form-input:focus, .form-textarea:focus {
+      outline: none;
+      border-color: var(--c-secondary);
+      background: rgba(255,255,255,0.1);
+    }
+    .form-input::placeholder, .form-textarea::placeholder { color: rgba(255,255,255,0.3); }
+    .form-textarea { min-height: 100px; resize: vertical; }
+    .form-submit {
+      width: 100%;
+      background: var(--c-secondary);
+      color: var(--c-bg);
+      border: none;
+      border-radius: 30px;
+      padding: 16px 28px;
+      font-family: var(--font-body);
+      font-weight: 500;
+      font-size: 14px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background 200ms var(--ease);
+      margin-top: 8px;
+    }
+    .form-submit:hover { background: #d94900; }
+    @media (max-width: 560px) {
+      .form-grid-2 { grid-template-columns: 1fr; }
+      .form-wrap { padding: 28px 20px; }
+    }
+
+    footer { border-top: 1px solid var(--c-border); padding: 32px; text-align: center; font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.08em; color: var(--c-text-secondary); }
+    footer a { color: var(--c-secondary); text-decoration: none; }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="header-inner">
+      <a href="/" class="logo" aria-label="Neseme — domovská stránka">
+        <span class="logo-mark"></span>
+        <span>NESEME</span>
+      </a>
+      <a href="/" class="back-link">← Späť na hlavnú</a>
+    </div>
+  </header>
+
+  <main>
+    <div class="eyebrow">Právne dokumenty</div>
+    <h1>Odstúpenie<br>od zmluvy</h1>
+    <div class="updated">Účinné od 6. mája 2026 · Občiansky zákonník § 1829</div>
+
+    <p>Ako spotrebiteľ máte zákonné právo odstúpiť od zmluvy uzavretej na diaľku <strong>do 14 dní</strong> bez uvedenia dôvodu, v zmysle § 1829 a nasl. Občianskeho zákonníka.</p>
+
+    <div class="warning-card">
+      <strong>Upozornenie:</strong> Toto právo platí <strong>iba pre spotrebiteľov (B2C)</strong> a <strong>iba na zmluvy uzatvorené na diaľku</strong> (telefonicky, e-mailom alebo cez webový formulár). Pri B2B zmluvách (medzi podnikateľmi) sa odstúpenie riadi dohodou strán a Obchodným zákonníkom.
+    </div>
+
+    <h2>1. Lehota na odstúpenie</h2>
+    <p>1.1. Lehota 14 dní začína plynúť odo dňa <strong>uzavretia zmluvy</strong> (potvrdenie objednávky poskytovateľom).</p>
+    <p>1.2. Odstúpenie je včasné, ak ho spotrebiteľ odošle pred uplynutím 14-dňovej lehoty (rozhoduje dátum odoslania, nie doručenia).</p>
+
+    <h2>2. Kedy NEMÁ právo odstúpiť</h2>
+    <p>Spotrebiteľ stráca právo odstúpenia podľa § 1840 OZ, ak:</p>
+    <ul>
+      <li>Služba bola poskytnutá s jeho výslovným súhlasom pred uplynutím 14-dňovej lehoty (napríklad <strong>Express doprava do 90 minút</strong> alebo doprava objednaná na rovnaký deň)</li>
+      <li>Zmluva bola plne splnená pred uplatnením práva odstúpenia</li>
+    </ul>
+    <p>V takom prípade je spotrebiteľ povinný zaplatiť cenu za už poskytnutú časť služby.</p>
+
+    <h2>3. Spôsob odstúpenia</h2>
+    <p>Odstúpiť od zmluvy je možné troma spôsobmi:</p>
+    <ol>
+      <li><strong>Vyplnením formulára nižšie</strong> — odošle sa nám e-mailom</li>
+      <li><strong>E-mailom</strong> na <a href="mailto:ahoj@neseme.sk?subject=Odstúpenie%20od%20zmluvy">ahoj@neseme.sk</a> s textom „Odstupujem od zmluvy uzavretej dňa..."</li>
+      <li><strong>Písomne</strong> na adresu: Orostone s.r.o., Landererova 8, 811 09 Bratislava</li>
+    </ol>
+
+    <h2>4. Vzorový formulár</h2>
+    <p>Použite ho podľa potreby. Po odoslaní vám potvrdíme prijatie e-mailom.</p>
+
+    <div class="form-wrap">
+      <h3>Formulár odstúpenia</h3>
+      <p>Vyplňte a odošlite — otvorí sa váš e-mailový klient s pripravenou správou.</p>
+
+      <form id="withdrawalForm" action="mailto:ahoj@neseme.sk" method="post" enctype="text/plain">
+        <div class="form-grid-2">
+          <div>
+            <label class="form-label" for="meno">Meno a priezvisko *</label>
+            <input class="form-input" id="meno" name="meno" type="text" required autocomplete="name" />
+          </div>
+          <div>
+            <label class="form-label" for="adresa">Adresa *</label>
+            <input class="form-input" id="adresa" name="adresa" type="text" required autocomplete="street-address" />
+          </div>
+        </div>
+
+        <div class="form-grid-2">
+          <div>
+            <label class="form-label" for="email">E-mail *</label>
+            <input class="form-input" id="email" name="email" type="email" required autocomplete="email" />
+          </div>
+          <div>
+            <label class="form-label" for="telefon">Telefón</label>
+            <input class="form-input" id="telefon" name="telefon" type="tel" autocomplete="tel" />
+          </div>
+        </div>
+
+        <div class="form-grid-2">
+          <div>
+            <label class="form-label" for="datum-objednavky">Dátum objednávky *</label>
+            <input class="form-input" id="datum-objednavky" name="datum-objednavky" type="date" required />
+          </div>
+          <div>
+            <label class="form-label" for="cislo-objednavky">Číslo objednávky / faktúry</label>
+            <input class="form-input" id="cislo-objednavky" name="cislo-objednavky" type="text" />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <label class="form-label" for="popis-sluzby">Popis služby *</label>
+          <input class="form-input" id="popis-sluzby" name="popis-sluzby" type="text" required placeholder="napr. Neseme XL — preprava sedačky" />
+        </div>
+
+        <div class="form-row">
+          <label class="form-label" for="dovod">Dôvod (voliteľné)</label>
+          <textarea class="form-textarea" id="dovod" name="dovod" placeholder="Spotrebiteľ nemusí uvádzať dôvod."></textarea>
+        </div>
+
+        <button type="submit" class="form-submit">
+          Odoslať odstúpenie od zmluvy
+        </button>
+      </form>
+    </div>
+
+    <h2>5. Vrátenie peňazí</h2>
+    <p>5.1. Po prijatí odstúpenia vám poskytovateľ vráti všetky platby <strong>do 14 dní</strong> rovnakým spôsobom, akým boli prijaté (bankovým prevodom, ak nedohodneme inak).</p>
+    <p>5.2. Ak ste súhlasili s poskytnutím služby pred uplynutím 14-dňovej lehoty a služba bola čiastočne poskytnutá, máme právo požadovať pomernú časť ceny zodpovedajúcu rozsahu plnenia.</p>
+
+    <h2>6. Kontakt na uplatnenie odstúpenia</h2>
+    <div class="info-card">
+      <strong>Orostone s.r.o.</strong>
+      Landererova 8, 811 09 Bratislava<br>
+      E-mail: <a href="mailto:ahoj@neseme.sk?subject=Odstúpenie%20od%20zmluvy">ahoj@neseme.sk</a><br>
+      Tel: <a href="tel:+421917588738">+421 917 588 738</a><br>
+      Po–Ne · 7:00–21:00
+    </div>
+
+    <h2>7. Súvisiace dokumenty</h2>
+    <ul>
+      <li><a href="/obchodne-podmienky.html">Všeobecné obchodné podmienky</a></li>
+      <li><a href="/reklamacny-poriadok.html">Reklamačný poriadok</a></li>
+      <li><a href="/ochrana-osobnych-udajov.html">Ochrana osobných údajov</a></li>
+    </ul>
+  </main>
+
+  <footer>
+    © 2026 Orostone s.r.o. · <a href="/obchodne-podmienky.html">VOP</a> · <a href="/kontakt.html">Kontakt</a>
+  </footer>
+</body>
+</html>

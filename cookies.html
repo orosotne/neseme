@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#111111" />
+  <meta name="robots" content="index, follow" />
+  <title>Cookies — Neseme</title>
+  <meta name="description" content="Zásady používania cookies na webe neseme.sk. Orostone s.r.o. používa iba technicky nevyhnutné cookies." />
+  <link rel="canonical" href="https://neseme.sk/cookies.html" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;700;900&family=Inter:wght@400;500;700&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --c-primary: #111111;
+      --c-secondary: #FA5400;
+      --c-bg: #FFFFFF;
+      --c-surface: #F5F5F5;
+      --c-text-secondary: #707072;
+      --c-border: #E5E5E5;
+      --c-success: #128A09;
+      --font-display: 'Jost', system-ui, sans-serif;
+      --font-body: 'Inter', system-ui, sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+      --ease: cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { -webkit-text-size-adjust: 100%; }
+    body { font-family: var(--font-body); font-size: 16px; line-height: 1.7; color: var(--c-primary); background: var(--c-bg); -webkit-font-smoothing: antialiased; }
+    a { color: var(--c-primary); text-decoration: underline; }
+    a:hover { color: var(--c-secondary); }
+    .header { padding: 24px 32px; border-bottom: 1px solid var(--c-border); }
+    .header-inner { max-width: 960px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; }
+    .logo { display: flex; align-items: center; gap: 8px; font-family: var(--font-display); font-weight: 900; font-size: 22px; letter-spacing: -0.02em; text-transform: uppercase; text-decoration: none; color: var(--c-primary); }
+    .logo-mark { display: inline-block; width: 1.2em; height: 0.78em; position: relative; flex-shrink: 0; }
+    .logo-mark::before { content: ''; position: absolute; inset: 0; background: var(--c-primary); clip-path: polygon(0 70%, 35% 0, 100% 0, 100% 30%, 65% 100%, 0 100%); }
+    .back-link { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none; color: var(--c-text-secondary); }
+    .back-link:hover { color: var(--c-secondary); }
+    main { max-width: 720px; margin: 0 auto; padding: 64px 32px 96px; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 12px; font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--c-secondary); margin-bottom: 16px; }
+    .eyebrow::before { content: ''; width: 28px; height: 1px; background: var(--c-secondary); }
+    h1 { font-family: var(--font-display); font-weight: 900; font-size: clamp(36px, 5vw, 56px); line-height: 1.05; letter-spacing: -0.025em; text-transform: uppercase; padding-top: 0.14em; margin-bottom: 16px; }
+    .updated { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--c-text-secondary); margin-bottom: 48px; }
+    h2 { font-family: var(--font-display); font-weight: 900; font-size: 22px; letter-spacing: -0.01em; text-transform: uppercase; padding-top: 0.1em; margin-top: 48px; margin-bottom: 12px; }
+    p, li { margin-bottom: 12px; }
+    ul, ol { padding-left: 24px; margin-bottom: 16px; }
+    .info-card { background: var(--c-surface); padding: 24px 28px; border-left: 3px solid var(--c-secondary); border-radius: 4px; margin: 24px 0; font-size: 15px; }
+    .info-card strong { display: block; margin-bottom: 8px; }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 12px;
+      background: var(--c-success);
+      color: var(--c-bg);
+      border-radius: 30px;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-weight: 500;
+    }
+    .badge::before {
+      content: '';
+      width: 8px;
+      height: 8px;
+      background: var(--c-bg);
+      border-radius: 50%;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 24px 0;
+      font-size: 14px;
+    }
+    table th, table td {
+      text-align: left;
+      padding: 14px 12px;
+      border-bottom: 1px solid var(--c-border);
+      vertical-align: top;
+    }
+    table th {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--c-text-secondary);
+      background: var(--c-surface);
+    }
+    table code {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      background: var(--c-surface);
+      padding: 2px 6px;
+      border-radius: 4px;
+    }
+    @media (max-width: 600px) {
+      table { font-size: 13px; }
+      table th, table td { padding: 10px 8px; }
+    }
+    footer { border-top: 1px solid var(--c-border); padding: 32px; text-align: center; font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.08em; color: var(--c-text-secondary); }
+    footer a { color: var(--c-secondary); text-decoration: none; }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="header-inner">
+      <a href="/" class="logo" aria-label="Neseme — domovská stránka">
+        <span class="logo-mark"></span>
+        <span>NESEME</span>
+      </a>
+      <a href="/" class="back-link">← Späť na hlavnú</a>
+    </div>
+  </header>
+
+  <main>
+    <div class="eyebrow">Právne dokumenty</div>
+    <h1>Cookies<br>na neseme.sk</h1>
+    <div class="updated">Účinné od 6. mája 2026 · Zákon 351/2011 Z. z. § 55 ods. 5</div>
+
+    <p style="margin-bottom: 24px"><span class="badge">Bez tracking cookies</span></p>
+
+    <p>Web <strong>neseme.sk</strong> používa <strong>iba technicky nevyhnutné cookies</strong>, ktoré sú potrebné pre fungovanie stránky. <strong>Nepoužívame</strong> analytické, marketingové ani reklamné cookies a netrackujeme správanie návštevníkov.</p>
+
+    <h2>1. Čo sú cookies</h2>
+    <p>Cookies sú malé textové súbory, ktoré web ukladá vo vašom prehliadači. Slúžia na zapamätanie si nastavení a zabezpečenie základnej funkčnosti stránky. Nepoužívajú sa na identifikáciu konkrétnej osoby.</p>
+
+    <h2>2. Aké cookies používame</h2>
+
+    <h3 style="font-family:var(--font-display); font-weight:900; font-size:18px; margin-top:24px; margin-bottom:12px; text-transform:uppercase">Vlastné cookies (1st-party)</h3>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Názov</th>
+          <th>Účel</th>
+          <th>Trvanie</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>neseme-cookies-ack</code></td>
+          <td>Zapamätá si, že ste potvrdili cookie banner — aby sa už nezobrazoval pri ďalšej návšteve. Uložené v <code>localStorage</code>, nie ako cookie.</td>
+          <td>Trvalé (do vymazania v prehliadači)</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3 style="font-family:var(--font-display); font-weight:900; font-size:18px; margin-top:32px; margin-bottom:12px; text-transform:uppercase">Cookies tretích strán (3rd-party)</h3>
+
+    <p>Tieto môžu byť nastavené externými službami, ktoré používame:</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Služba</th>
+          <th>Účel</th>
+          <th>Viac info</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Google Fonts</strong></td>
+          <td>Načítanie webových fontov (Jost, Inter, JetBrains Mono). Nastavuje technické cookies pre cache a CDN.</td>
+          <td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a></td>
+        </tr>
+        <tr>
+          <td><strong>OpenStreetMap</strong></td>
+          <td>Zobrazenie mapy v sekcii Kontakt cez iframe. Mapa môže nastaviť technické cookies.</td>
+          <td><a href="https://wiki.osmfoundation.org/wiki/Privacy_Policy" target="_blank" rel="noopener">osmfoundation.org/Privacy</a></td>
+        </tr>
+        <tr>
+          <td><strong>Vercel</strong></td>
+          <td>Hostingová služba. Môže ukladať technické cookies pre bezpečnosť, deduplication a edge routing.</td>
+          <td><a href="https://vercel.com/legal/privacy-policy" target="_blank" rel="noopener">vercel.com/legal/privacy-policy</a></td>
+        </tr>
+        <tr>
+          <td><strong>Unsplash</strong></td>
+          <td>CDN pre vybrané obrázky. Bez sledovania, žiadne reklamné cookies.</td>
+          <td><a href="https://unsplash.com/privacy" target="_blank" rel="noopener">unsplash.com/privacy</a></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="info-card">
+      <strong>Bez analytiky</strong>
+      Nepoužívame Google Analytics, Facebook Pixel, ani žiadne iné analytické či marketingové nástroje. Nezhromažďujeme údaje o vašom správaní pre profilovanie alebo reklamu.
+    </div>
+
+    <h2>3. Súhlas s cookies</h2>
+    <p>3.1. Technicky nevyhnutné cookies <strong>nevyžadujú váš súhlas</strong> — sú potrebné pre fungovanie stránky (čl. 5 ods. 3 smernice ePrivacy).</p>
+    <p>3.2. Pri prvej návšteve sa zobrazí informačný banner. Stlačením „Rozumiem" potvrdíte, že ste informáciu vzali na vedomie. Banner sa už nezobrazí pri ďalších návštevách.</p>
+
+    <h2>4. Ako spravovať cookies v prehliadači</h2>
+    <p>Cookies môžete kedykoľvek vymazať alebo zablokovať v nastaveniach prehliadača:</p>
+    <ul>
+      <li><a href="https://support.google.com/chrome/answer/95647" target="_blank" rel="noopener">Google Chrome</a></li>
+      <li><a href="https://support.mozilla.org/sk/kb/povolenie-zakazanie-cookies" target="_blank" rel="noopener">Mozilla Firefox</a></li>
+      <li><a href="https://support.apple.com/sk-sk/guide/safari/sfri11471/mac" target="_blank" rel="noopener">Safari</a></li>
+      <li><a href="https://support.microsoft.com/sk-sk/microsoft-edge" target="_blank" rel="noopener">Microsoft Edge</a></li>
+    </ul>
+    <p>Upozornenie: Vypnutie cookies môže obmedziť funkčnosť stránky.</p>
+
+    <h2>5. Ako vymazať cookie banner súhlas</h2>
+    <p>Ak chcete znova zobraziť cookie banner pri ďalšej návšteve:</p>
+    <ol>
+      <li>Otvorte <strong>DevTools</strong> v prehliadači (klávesy F12 alebo Cmd+Option+I)</li>
+      <li>Choďte na záložku <strong>Application</strong> → <strong>Local Storage</strong> → <code>neseme.sk</code></li>
+      <li>Vymažte položku <code>neseme-cookies-ack</code></li>
+      <li>Obnovte stránku — banner sa zobrazí znova</li>
+    </ol>
+
+    <h2>6. Súvisiace dokumenty</h2>
+    <ul>
+      <li><a href="/ochrana-osobnych-udajov.html">Ochrana osobných údajov (GDPR)</a></li>
+      <li><a href="/obchodne-podmienky.html">Všeobecné obchodné podmienky</a></li>
+    </ul>
+
+    <h2>7. Kontakt</h2>
+    <div class="info-card">
+      <strong>Orostone s.r.o.</strong>
+      Landererova 8, 811 09 Bratislava<br>
+      E-mail: <a href="mailto:ahoj@neseme.sk?subject=Otázka%20o%20cookies">ahoj@neseme.sk</a><br>
+      Tel: <a href="tel:+421917588738">+421 917 588 738</a>
+    </div>
+
+    <h2>8. Zmeny dokumentu</h2>
+    <p>Tieto zásady môžeme aktualizovať. Aktuálne znenie je vždy zverejnené na tejto stránke s dátumom účinnosti.</p>
+  </main>
+
+  <footer>
+    © 2026 Orostone s.r.o. · <a href="/ochrana-osobnych-udajov.html">GDPR</a> · <a href="/kontakt.html">Kontakt</a>
+  </footer>
+</body>
+</html>
