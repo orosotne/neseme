@@ -54,7 +54,7 @@
       ]
     },
     {
-      "source": "/(.*\\.(svg|jpg|jpeg|png|webp|avif|ico))",
+      "source": "/:path*.:ext(svg|jpg|jpeg|png|webp|avif|ico)",
       "headers": [
         {
           "key": "Cache-Control",
@@ -63,7 +63,7 @@
       ]
     },
     {
-      "source": "/(.*\\.(html))",
+      "source": "/:path*.html",
       "headers": [
         {
           "key": "Cache-Control",
